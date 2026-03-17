@@ -38,10 +38,10 @@
         const variant = new URLSearchParams(window.location.search).get('variant') || 'raijin';
         const presets = {
             raijin: {
-                speed: 0.055,
-                bloomStrength: 1.35,
-                bloomRadius: 0.35,
-                bloomThreshold: 0.68,
+                speed: 0.0275,
+                bloomStrength: 1.05,
+                bloomRadius: 0.28,
+                bloomThreshold: 0.74,
                 pulseScale: 4.0,
                 pulseThreshold: 0.88,
                 densityLow: 0.32,
@@ -57,7 +57,7 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        renderer.setPixelRatio(1);
         document.body.appendChild(renderer.domElement);
 
         const composer = new EffectComposer(renderer);
@@ -129,14 +129,14 @@
                     float value = 0.0;
                     float amp = 0.5;
                     mat2 rot = mat2(0.84, -0.54, 0.54, 0.84);
-                    for (int i = 0; i < 6; i++) {
+                    for (int i = 0; i < 4; i++) {
                         float octave = float(i);
                         vec3 warp = vec3(
                             noise(p * 0.63 + vec3(3.1, -7.2, 5.4) + uTime * uSpeed * 0.41 + octave * 1.37),
                             noise(p * 0.57 + vec3(-5.8, 2.4, 8.1) - uTime * uSpeed * 0.29 + octave * 0.91),
                             noise(p * 0.69 + vec3(6.2, 4.3, -3.7) + uTime * uSpeed * 0.17 + octave * 1.73)
                         ) - 0.5;
-                        value += amp * noise(p + warp * (0.75 + octave * 0.08));
+                        value += amp * noise(p + warp * (0.42 + octave * 0.05));
                         p.xy = rot * p.xy;
                         p.yz = rot * p.yz;
                         p = p * 1.92
@@ -177,7 +177,7 @@
                     vec3 color = vec3(0.0);
                     float t = 0.0;
 
-                    for (int i = 0; i < 42; i++) {
+                    for (int i = 0; i < 30; i++) {
                         vec3 p = ro + rd * t;
                         vec3 drift = vec3(
                             sin(uTime * uSpeed * 0.9 + p.y * 0.35) * 0.24,
