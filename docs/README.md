@@ -9,6 +9,25 @@
 - `issue-management.md`: Issue 運用ルール
 - `material-inventory.md`: 初期素材インベントリ
 
+## ブランチ / ローカルサーバー
+
+- `main`: GitHub Pages 公開用
+- `develop`: 通常作業用
+- `server.sh`: ローカル確認用サーバー起動スクリプト
+- `serve.py`: no-cache な静的サーバー本体
+- `ops/launchd/com.uminomae.awareness-space.plist`: macOS LaunchAgent 正本
+- 既定ポートは `3003`
+- macOS LaunchAgent により `http://localhost:3003/` で常時起動する前提
+
+## creation-space との構造対応
+
+- `assets/`: 静的アセット
+- `src/`: フロントエンド本体
+- `transform/`: 変換 workflow
+- `build/`: 生成物
+- `scripts/`: 補助スクリプト
+- `index.html`: Pages / ローカル入口
+
 ## 体制
 
 - **Claude が主プロジェクト管理者**

@@ -23,3 +23,10 @@
 - この repo では GitHub Issues を追跡単位の基本とする
 - repo 間依存はチャットだけで済ませず、Issue に記録する
 - Codex で commit する場合は、変更を絞り `Co-Authored-By: Codex <noreply@openai.com>` を含める
+
+## Git / ローカル確認
+
+- 通常作業ブランチは `develop`
+- `main` は GitHub Pages 公開用ブランチとして扱う
+- ローカル確認は `bash server.sh` を使い、既定ポートは `3003`
+- `3003` は macOS の LaunchAgent で常時起動する前提で扱う

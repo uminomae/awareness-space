@@ -46,3 +46,9 @@ Phase 2:
 - 重要な作業単位には GitHub Issue を持たせる
 - repo 間の前提は Issue か docs に明記する
 - repo 内ルールはチャットだけでなく追跡対象ファイルに残す
+
+## ブランチ / 公開方針
+
+- `main`: GitHub Pages 公開用
+- `develop`: 日常作業用
+- ローカル確認は `develop` を `http://localhost:3003/` で常時配信する

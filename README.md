@@ -9,6 +9,14 @@
 - 管理ハブ: `docs/README.md`
 - Issue 運用ルール: `docs/issue-management.md`
 
+## ブランチ運用
+
+- `main`: GitHub Pages 公開用
+- `develop`: 日常作業用
+
+ローカル確認は `develop` ブランチで行い、既定ポートは `3003`。
+`bash server.sh` で `http://localhost:3003/` を起動できる。
+
 ## 体制
 
 - **Claude が主プロジェクト管理者**
