@@ -163,9 +163,9 @@
                     uv = camRot * uv;
 
                     vec3 ro = vec3(
-                        sin(camAngleA) * 0.28,
-                        cos(camAngleB) * 0.18,
-                        3.0 + sin(uTime * uSpeed * 0.37) * 0.12
+                        sin(camAngleA) * 0.22,
+                        cos(camAngleB) * 0.14,
+                        4.8 + sin(uTime * uSpeed * 0.37) * 0.08
                     );
                     vec3 rd = normalize(vec3(
                         uv + vec2(
@@ -184,7 +184,7 @@
                             cos(uTime * uSpeed * 0.6 + p.x * 0.28) * 0.18,
                             sin(uTime * uSpeed * 0.4 + p.z * 0.21) * 0.12
                         );
-                        float n = fbm(p + drift + vec3(0.0, uTime * uSpeed * 0.08, 0.0));
+                        float n = fbm(p * 0.72 + drift + vec3(0.0, uTime * uSpeed * 0.08, 0.0));
                         float density = smoothstep(uDensityLow, uDensityHigh, n);
                         vec3 waterColor = mix(uWaterA, uWaterB, density);
 
