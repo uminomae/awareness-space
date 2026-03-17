@@ -40,7 +40,9 @@ docs/ に置かないもの:
 | `docs/quality-management.md` | 品質基準 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
+| `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
+| `knowledge/m1-consciousness-os/part-1-introduction.md` | M1 意識OS 系列（Part1） |
 | `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 | `transform/domains/README.md` | awareness-space 版 domains pipeline の入口 |

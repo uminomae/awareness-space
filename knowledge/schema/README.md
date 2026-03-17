@@ -22,5 +22,5 @@
 
 ## 移行状態
 
-- 2026-03-17 時点では `README` のみの初期設置
-- 次に `five-stages.md` の移設または新規整備を検討
+- 2026-03-17 時点で `four-layers.md`、`four-modules.md`、`withhold-matching-v2.md` を追加
+- `five-stages.md` は引き続き設計対象（未移設）
