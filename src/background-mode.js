@@ -1,7 +1,8 @@
-const DEFAULT_MODE = 'flow';
-const MODES = new Set(['flow', 'pulse', 'uzu']);
+const DEFAULT_MODE = 'raijin';
+const MODES = new Set(['raijin', 'uzu']);
 
 function normalizeMode(mode) {
+    if (mode === 'flow') return 'raijin';
     return MODES.has(mode) ? mode : DEFAULT_MODE;
 }
 

@@ -35,13 +35,13 @@
         import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
         import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
-        const variant = new URLSearchParams(window.location.search).get('variant') || 'flow';
+        const variant = new URLSearchParams(window.location.search).get('variant') || 'raijin';
         const presets = {
-            flow: {
-                speed: 0.22,
-                bloomStrength: 1.7,
-                bloomRadius: 0.45,
-                bloomThreshold: 0.62,
+            raijin: {
+                speed: 0.11,
+                bloomStrength: 1.35,
+                bloomRadius: 0.35,
+                bloomThreshold: 0.68,
                 pulseScale: 4.0,
                 pulseThreshold: 0.88,
                 densityLow: 0.32,
@@ -49,28 +49,15 @@
                 waterA: new THREE.Color('#061824'),
                 waterB: new THREE.Color('#0d6d67'),
                 glow: new THREE.Color('#7df6ff'),
-            },
-            pulse: {
-                speed: 0.42,
-                bloomStrength: 2.4,
-                bloomRadius: 0.7,
-                bloomThreshold: 0.48,
-                pulseScale: 6.8,
-                pulseThreshold: 0.78,
-                densityLow: 0.26,
-                densityHigh: 0.66,
-                waterA: new THREE.Color('#170818'),
-                waterB: new THREE.Color('#8d2ec7'),
-                glow: new THREE.Color('#ffd37d'),
-            },
+            }
         };
-        const config = presets[variant] || presets.flow;
+        const config = presets[variant] || presets.raijin;
 
         const scene = new THREE.Scene();
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
         document.body.appendChild(renderer.domElement);
 
         const composer = new EffectComposer(renderer);
@@ -156,7 +143,7 @@
                     vec3 color = vec3(0.0);
                     float t = 0.0;
 
-                    for (int i = 0; i < 60; i++) {
+                    for (int i = 0; i < 42; i++) {
                         vec3 p = ro + rd * t;
                         float n = fbm(p + vec3(0.0, uTime * 0.08, 0.0));
                         float density = smoothstep(uDensityLow, uDensityHigh, n);
