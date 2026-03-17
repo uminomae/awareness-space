@@ -2,7 +2,7 @@ import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
-import { initReportsCards } from './reports-cards.js';
+import { initReports, setReportsLanguage } from './reports/index.js';
 
 installStartupErrorHandlers();
 
@@ -18,6 +18,7 @@ function initLanguageToggle() {
         });
         toggle.textContent = lang === 'en' ? '日本語' : 'English';
         toggle.setAttribute('aria-label', lang === 'en' ? 'Switch language to Japanese' : '言語を英語に切り替え');
+        setReportsLanguage(lang);
     }
 
     let current = 'ja';
@@ -67,7 +68,10 @@ function start() {
     initLanguageToggle();
     initScrollHints();
     initHashLinks();
-    initReportsCards();
+    initReports().catch((error) => {
+        console.error('[awareness-space] reports bootstrap failed:', error);
+        showStartupErrorOverlay(error);
+    });
 }
 
 try {

@@ -21,7 +21,7 @@
 
 - `transform/domains/` では、この読み替えを前提に report 単位を扱う
 - `knowledge/domains/` はこの domain 単位の受け皿とする
-- `assets/reports/reports.json` もこの domain 単位に合わせていく
+- REPORTS UI の manifest 正本は `transform/domains/publish/domains/index.json` とする
 
 ## 4. 非採用
 

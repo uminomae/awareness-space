@@ -12,14 +12,18 @@
 ## 役割
 
 `evidence/` 由来の領域別資料を、再編集して読みやすい形で保持する場所。  
-この時点では設計を先に揃え、資料は順次移設していく。
+この時点では `awareness-space` 独自の domain 単位で report を順次追加していく。
 
 ## 収載方針
 
-- まずは `D01-D30` など領域番号を起点に、言語別の report を整備
-- `reports/` や `materials/` の追加は必要最小で開始し、既存 overview を参照可能な状態を維持
+- `docs/domains-mapping.md` の読み替えルールに従い、意識モデルの構成要素を domain として扱う
+- 各 domain には `ja/report.md` を最小単位として置き、必要に応じて `en/` や補助資料を追加する
+- 計画書や運用メモはここに置かず、`docs/` または `evidence/` に残す
 
 ## 移行状態
 
-- 2026-03-17 時点でディレクトリのみ
-- 将来、`D01-D30` 系の領域報告の移設を優先
+- 2026-03-17 時点で以下の report を配置済み
+- `fo-axis/ja/report.md`
+- `four-layers/ja/report.md`
+- `withhold/ja/report.md`
+- 将来、M1 意識OS や concept notes も domain report として追加する

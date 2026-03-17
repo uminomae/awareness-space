@@ -9,35 +9,43 @@
 `creation-space` の REPORTS に対応する位置づけとして、
 `awareness-space` でも report を一覧、カード、詳細の3層で扱う。
 
-## 2. report の構造
+## 2. 現在公開している report
+
+現時点では、次の domain report を公開している。
+
+1. `knowledge/domains/fo-axis/ja/report.md`
+2. `knowledge/domains/four-layers/ja/report.md`
+3. `knowledge/domains/withhold/ja/report.md`
+
+いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
+
+## 3. report の構造
 
 構造メモ:
 
 - `../docs/report-structure.md`
 
-ここでは、report を
+`awareness-space` では report を
 
 1. 一覧
 2. カード
 3. 詳細
 
-の3層で扱う方針を整理している。
+の3層で扱う。
+今回追加したのは「詳細」に当たる本文であり、カードはこの本文への導線として使う。
 
-## 3. workflow
+## 4. 計画書との区別
 
-report 変換の入口:
+次の文書は重要だが、report ではなく設計・調査運用の文書として扱う。
 
-- `../transform/reports/README.md`
+- `../docs/material-inventory.md`
+- `../evidence/d01-d30-intake-plan.md`
+- `../docs/report-structure.md`
 
-現時点では workflow 自体は最小だが、将来的に Markdown / PDF / bilingual 出力へつなぐ入口とする。
+これらは「何をどう進めるか」を定める文書であり、「何が見えてきたか」を読むための report とは分ける。
 
-## 4. 現在の report エントリ
+## 5. 次の拡張
 
-現時点では、調査報告カードとして次を持つ。
-
-- F-O軸 起点メモ
-- 初期素材インベントリ
-- D01-D30 取り込み方針
-- 調査報告の構造
-
-これらは report の最初の入口であり、今後個別 report が増えていく前提で置いている。
+- M1 意識OS の report 追加
+- concept notes 系 report の追加
+- report 間の相互参照と横断 index の整備

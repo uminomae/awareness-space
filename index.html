@@ -11,7 +11,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./src/styles/shell.css">
   <link rel="stylesheet" href="./src/styles/topbar.css">
+  <link rel="stylesheet" href="./src/styles/reports.css">
+  <link rel="stylesheet" href="./src/styles/viewer.css">
   <link rel="stylesheet" href="./src/styles/awareness.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "marked": "https://cdn.jsdelivr.net/npm/marked@15.0.7/lib/marked.esm.js",
+        "dompurify": "https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.es.mjs"
+      }
+    }
+  </script>
 
   <script type="module" src="./src/main.js"></script>
 </head>
@@ -255,12 +266,45 @@
             調査報告
           </a>
         </h2>
-        <div class="row g-3 awareness-card-grid">
-          <div id="reports-card-grid" class="row g-3 awareness-card-grid"></div>
+        <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
+        <div id="reports-error" class="alert alert-danger py-2 px-3 d-none mb-3" role="alert"></div>
+        <div class="reports-overview mb-3">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2" id="reports-primary-actions">
+            <button id="reports-open-status-btn" type="button" class="btn btn-outline-light btn-sm reports-status-cta">調査内容</button>
+          </div>
+          <div id="reports-metrics" class="row g-2" aria-live="polite"></div>
+        </div>
+        <div class="reports-tab-content reports-stack">
+          <section class="reports-stack-section">
+            <h3 id="reports-domains-heading" class="reports-subheading">領域別レポート</h3>
+            <p id="reports-level-legend" class="reports-level-legend mb-2">進捗分類を読み込み中...</p>
+            <div id="reports-table-filters" class="d-none flex-wrap gap-2 mb-2" role="group" aria-label="領域別レポート絞り込み"></div>
+            <div id="reports-domain-grid" class="reports-domain-grid row row-cols-2 row-cols-md-5 g-2" aria-live="polite">
+              <div class="reports-domain-empty col-12 text-body-secondary">読み込み中...</div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="modal fade" id="reports-md-modal" tabindex="-1" aria-labelledby="reports-md-modal-title">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content reports-md-modal-content border border-secondary-subtle">
+        <div class="modal-header">
+          <h5 id="reports-md-modal-title" class="modal-title">Markdown</h5>
+          <div class="reports-md-header-actions d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
+            <a id="reports-md-open-pdf" class="btn btn-outline-light btn-sm" href="#" target="_blank" rel="noopener">PDFを開く</a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body pt-2 px-3 pb-3">
+          <div id="reports-md-meta" class="small text-body-secondary px-2 pt-1"></div>
+          <article id="reports-md-content" class="reports-md-content mt-2"></article>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer id="tech-footer">
     <div class="tech-footer-line">awareness-space / GitHub Pages / develop: localhost:3003</div>
