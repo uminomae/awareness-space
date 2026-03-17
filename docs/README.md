@@ -7,6 +7,7 @@
 - `../PROJECT.md`: プロジェクト憲章
 - `../CLAUDE.md`: Codex 作業ルール
 - `issue-management.md`: Issue 運用ルール
+- `material-inventory.md`: 初期素材インベントリ
 
 ## 体制
 
