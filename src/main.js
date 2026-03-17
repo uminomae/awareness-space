@@ -3,6 +3,7 @@ import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
 import { initReportsCards } from './reports-cards.js';
+import { initStatusLine } from './status-line.js';
 
 installStartupErrorHandlers();
 
@@ -68,6 +69,7 @@ function start() {
     initScrollHints();
     initHashLinks();
     initReportsCards();
+    initStatusLine();
 }
 
 try {
