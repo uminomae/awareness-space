@@ -31,17 +31,11 @@
     </script>
     <script type="module">
         import * as THREE from 'three';
-        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 
         const variant = new URLSearchParams(window.location.search).get('variant') || 'raijin';
         const presets = {
             raijin: {
                 speed: 0.22,
-                bloomStrength: 1.7,
-                bloomRadius: 0.45,
-                bloomThreshold: 0.62,
                 pulseScale: 4.0,
                 pulseThreshold: 0.88,
                 densityLow: 0.32,
@@ -57,18 +51,8 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.25));
         document.body.appendChild(renderer.domElement);
-
-        const composer = new EffectComposer(renderer);
-        composer.addPass(new RenderPass(scene, camera));
-        const bloomPass = new UnrealBloomPass(
-            new THREE.Vector2(window.innerWidth, window.innerHeight),
-            config.bloomStrength,
-            config.bloomRadius,
-            config.bloomThreshold
-        );
-        composer.addPass(bloomPass);
 
         const uniforms = {
             uTime: { value: 0.0 },
@@ -128,9 +112,15 @@
                 float fbm(vec3 p) {
                     float value = 0.0;
                     float amp = 0.5;
-                    for (int i = 0; i < 6; i++) {
-                        value += amp * noise(p);
-                        p = p * 2.0 + vec3(7.0, 13.0, 17.0) + uTime * uSpeed;
+                    for (int i = 0; i < 5; i++) {
+                        float octave = float(i);
+                        vec3 phaseOffset = vec3(
+                            sin(uTime * uSpeed * 0.41 + octave * 1.13),
+                            cos(uTime * uSpeed * 0.33 + octave * 0.87),
+                            sin(uTime * uSpeed * 0.27 + octave * 1.57)
+                        ) * (0.55 + octave * 0.08);
+                        value += amp * noise(p + phaseOffset);
+                        p = p * 1.96 + vec3(7.0, 13.0, 17.0) + phaseOffset;
                         amp *= 0.5;
                     }
                     return value;
@@ -138,24 +128,56 @@
 
                 void main() {
                     vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-                    vec3 ro = vec3(0.0, 0.0, 3.0);
-                    vec3 rd = normalize(vec3(uv, -1.0));
+                    float orbitA = uTime * uSpeed * 0.18;
+                    float orbitB = uTime * uSpeed * 0.11;
+                    mat2 rot = mat2(cos(orbitA), -sin(orbitA), sin(orbitA), cos(orbitA));
+                    vec2 rotatedUv = rot * uv;
+
+                    vec3 ro = vec3(
+                        sin(orbitA) * 0.18,
+                        cos(orbitB) * 0.11,
+                        3.05
+                    );
+                    vec3 rd = normalize(vec3(
+                        rotatedUv + vec2(
+                            sin(orbitB) * 0.03,
+                            cos(orbitA) * 0.025
+                        ),
+                        -1.0
+                    ));
                     vec3 color = vec3(0.0);
                     float t = 0.0;
 
-                    for (int i = 0; i < 60; i++) {
+                    for (int i = 0; i < 48; i++) {
                         vec3 p = ro + rd * t;
-                        float n = fbm(p + vec3(0.0, uTime * 0.08, 0.0));
+                        vec3 drift = vec3(
+                            sin(uTime * uSpeed * 0.53 + p.y * 0.24),
+                            cos(uTime * uSpeed * 0.37 + p.x * 0.19),
+                            sin(uTime * uSpeed * 0.29 + p.z * 0.17)
+                        ) * 0.22;
+                        float n = fbm(p + drift + vec3(0.0, uTime * 0.08, 0.0));
                         float density = smoothstep(uDensityLow, uDensityHigh, n);
                         vec3 waterColor = mix(uWaterA, uWaterB, density);
 
                         float iface = smoothstep(0.06, 0.0, abs(n - 0.5));
-                        float pulsePhase = sin(p.x * uPulseScale + p.y * (uPulseScale + 2.0) - uTime * (uPulseScale + 1.2) + n * 10.0);
-                        float pulse = smoothstep(uPulseThreshold, 1.0, pulsePhase);
-                        vec3 emitColor = uGlow * iface * pulse * 7.0;
+                        float pulseA = sin(
+                            p.x * uPulseScale
+                            + p.y * (uPulseScale + 2.0)
+                            - uTime * (uPulseScale + 1.2)
+                            + n * 10.0
+                        );
+                        float pulseB = sin(
+                            length(p.xy) * (uPulseScale + 1.35)
+                            - uTime * (uPulseScale + 0.4) * 0.7
+                            + n * 7.0
+                        );
+                        float pulse = smoothstep(uPulseThreshold, 1.0, pulseA) * 0.72
+                            + smoothstep(uPulseThreshold + 0.05, 1.0, pulseB) * 0.28;
+                        float halo = smoothstep(0.18, 0.0, abs(n - 0.5));
+                        vec3 emitColor = uGlow * (iface * pulse * 6.4 + halo * 0.42);
 
                         color += (waterColor * 0.1 + emitColor) * exp(-t * 0.4) * 0.05;
-                        t += 0.06;
+                        t += 0.065;
                     }
 
                     color = pow(color, vec3(1.0 / 2.2));
@@ -173,7 +195,6 @@
             const width = window.innerWidth;
             const height = window.innerHeight;
             renderer.setSize(width, height);
-            composer.setSize(width, height);
             uniforms.uResolution.value.set(width, height);
         });
 
@@ -181,7 +202,7 @@
         function animate() {
             requestAnimationFrame(animate);
             uniforms.uTime.value = clock.getElapsedTime();
-            composer.render();
+            renderer.render(scene, camera);
         }
 
         animate();
