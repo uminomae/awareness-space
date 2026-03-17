@@ -37,6 +37,8 @@ docs/ に置かないもの:
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `docs/report-structure.md` | 調査報告の構造メモ |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
+| `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
+| `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 
 ## 3. ファイルカタログ
