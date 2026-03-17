@@ -17,3 +17,7 @@
 ## 現在フェーズ
 
 - Phase 1: repo bootstrap と Issue 運用整備
+
+## ローカル作業領域
+
+- `.cache/threejs/`: Three.js の背景試作用ページ置き場。必要なものだけ後で追跡対象へ移す
