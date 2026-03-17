@@ -1,48 +1,48 @@
 # PROJECT.md
 
-## Purpose
+## 目的
 
-`awareness-space` is the working repository for a new exploration of awareness.
-It starts from prior materials in `kesson-driven-thinking`, but its goal is not simple migration.
-The goal is to build a clearer exploration structure for awareness itself.
+`awareness-space` は、意識について新しい探索を進めるための作業リポジトリである。
+出発点として `kesson-driven-thinking` の既存資料を活用するが、目的は単純な移設ではない。
+意識そのものを探索するための、より明確な構造をつくることを目指す。
 
-## Strong Governance Rule
+## 強い体制ルール
 
-- **Claude is the main project manager**
-- **`awareness-space` is Codex's working repository**
-- Codex owns repo-internal execution: bootstrap, implementation, structure, and day-to-day work
-- Claude owns cross-repo management: parent issues, priorities, dependencies, and sequencing
-- This rule changes only by explicit instruction from pjdhiro
+- **Claude が主プロジェクト管理者**
+- **`awareness-space` は Codex の担当リポジトリ**
+- Codex は repo 内実務: bootstrap、実装、構造化、日常作業を担う
+- Claude は repo 横断管理: 親 Issue、優先順位、依存関係、順序づけを担う
+- この体制変更は pjdhiro の明示指示がある場合のみ
 
-## Current Scope
+## 現在のスコープ
 
 Phase 1:
-- Repository bootstrap
-- Initial governance and issue workflow
-- Material inventory
+- リポジトリ bootstrap
+- 初期の体制整備と Issue 運用整備
+- 素材インベントリ作成
 
 Phase 2:
-- Bring in selected source material from `kesson-driven-thinking`
-- Start awareness-specific exploration documents
+- `kesson-driven-thinking` から選定素材を取り込む
+- awareness-space 固有の探索文書を立ち上げる
 
-## Canonical References
+## 正本参照
 
-- D1-D4 canonical source:
+- D1-D4 正本:
   `~/dev/kesson-driven-thinking/base/schema/core-definitions.md`
-- Parent issue in `kesson-driven-thinking`:
+- `kesson-driven-thinking` 側の親 Issue:
   `#280`
 
-## Initial Material Buckets
+## 初期素材バケット
 
-- schema candidates
-- M1 consciousness OS texts
-- concept notes CN-001 to CN-007
-- D01-D30 evidence from Issue #62 lineage
+- schema 候補
+- M1 consciousness OS テキスト
+- concept note CN-001 〜 CN-007
+- Issue #62 系譜の D01-D30 evidence
 - `creation-space-refs`
-- `m2-exploration` and `m2-evidence` skills
+- `m2-exploration` と `m2-evidence` skills
 
-## Quality Bar
+## 品質基準
 
-- Every substantial work item should have a GitHub Issue
-- Cross-repo assumptions must be written in issues or docs
-- Repo-internal rules should live in tracked files, not only in chat
+- 重要な作業単位には GitHub Issue を持たせる
+- repo 間の前提は Issue か docs に明記する
+- repo 内ルールはチャットだけでなく追跡対象ファイルに残す

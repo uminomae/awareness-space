@@ -1,15 +1,15 @@
 ---
 name: Ops
-about: Repo operations, workflow, or maintenance work
+about: repo運用、workflow、保守作業
 title: "ops: "
 labels: ["ops"]
 assignees: []
 ---
 
-## Purpose
+## 目的
 
-## Scope
+## スコープ
 
-## Done Condition
+## 完了条件
 
-## Related
+## 関連

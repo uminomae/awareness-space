@@ -1,3 +1,3 @@
 # skills
 
-Repo-specific skills and working procedures for `awareness-space`.
+`awareness-space` 固有の skill と作業手順置き場。

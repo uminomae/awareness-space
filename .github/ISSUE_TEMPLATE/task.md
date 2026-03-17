@@ -1,15 +1,15 @@
 ---
 name: Task
-about: Bounded setup or implementation work
+about: 範囲が明確な実装・整備作業
 title: "task: "
 labels: ["task"]
 assignees: []
 ---
 
-## Purpose
+## 目的
 
-## Scope
+## スコープ
 
-## Done Condition
+## 完了条件
 
-## Related
+## 関連

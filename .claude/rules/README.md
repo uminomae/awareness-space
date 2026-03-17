@@ -1,3 +1,3 @@
 # .claude/rules
 
-Reserved for repo-specific operating rules when they become necessary.
+repo 固有の運用ルールが必要になったときに追加する。

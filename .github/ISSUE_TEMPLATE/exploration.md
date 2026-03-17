@@ -1,17 +1,17 @@
 ---
 name: Exploration
-about: Open-ended awareness exploration or theory work
+about: 意識に関する開いた探索・理論作業
 title: "exploration: "
 labels: ["exploration"]
 assignees: []
 ---
 
-## Question
+## 問い
 
-## Why It Matters
+## なぜ重要か
 
-## Material
+## 素材
 
-## Done Condition
+## 完了条件
 
-## Related
+## 関連

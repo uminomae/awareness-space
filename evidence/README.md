@@ -1,3 +1,3 @@
 # evidence
 
-Evidence and source material for awareness exploration.
+意識探索のための evidence と素材置き場。

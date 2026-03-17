@@ -1,18 +1,18 @@
 # docs/README.md
 
-This directory is the management hub for `awareness-space`.
+このディレクトリは `awareness-space` の管理ハブ。
 
-## Core Documents
+## 中核文書
 
-- `../PROJECT.md`: project charter
-- `../CLAUDE.md`: Codex operating rules
-- `issue-management.md`: issue workflow and writing rules
+- `../PROJECT.md`: プロジェクト憲章
+- `../CLAUDE.md`: Codex 作業ルール
+- `issue-management.md`: Issue 運用ルール
 
-## Governance
+## 体制
 
-- **Claude is the main project manager**
-- **`awareness-space` is Codex's working repository**
+- **Claude が主プロジェクト管理者**
+- **`awareness-space` は Codex の担当リポジトリ**
 
-## Current Phase
+## 現在フェーズ
 
-- Phase 1: repo bootstrap and issue workflow setup
+- Phase 1: repo bootstrap と Issue 運用整備

@@ -1,25 +1,25 @@
 # CLAUDE.md
 
-Minimal operating rules for working in `awareness-space`.
+`awareness-space` で作業するための最小運用ルール。
 
-## Strong Rule
+## 強いルール
 
-- **Claude is the main project manager**
-- **`awareness-space` is Codex's working repository**
-- Codex handles bootstrap, implementation, structuring, and day-to-day work in this repo
-- Claude manages parent issues, priorities, dependencies, and overall project direction
-- This rule changes only by explicit instruction from pjdhiro
+- **Claude が主プロジェクト管理者**
+- **`awareness-space` は Codex の担当リポジトリ**
+- Codex はこの repo の bootstrap、実装、構造化、日常作業を担う
+- Claude は親 Issue、優先順位、依存関係、全体進行を管理する
+- この体制変更は pjdhiro の明示指示がある場合のみ
 
-## Project Role
+## プロジェクトの位置づけ
 
-- `awareness-space` is an independent exploration repo for the question: what is awareness?
-- Existing material from `kesson-driven-thinking` is source material, not an automatic source of truth
-- D1-D4 remain canonical in `~/dev/kesson-driven-thinking/base/schema/core-definitions.md`
-- The starting hypothesis is the F-O axis: survival and intersubjectivity as a basis for awareness
+- `awareness-space` は、「意識とは何か」を探索する独立リポジトリ
+- `kesson-driven-thinking` の既存資料は素材であり、自動的な正本ではない
+- D1-D4 の正本は `~/dev/kesson-driven-thinking/base/schema/core-definitions.md`
+- 出発点の仮説は F-O軸: 生存と間主観性を基礎とする意識仮説
 
-## Working Rules
+## 作業ルール
 
-- Read `PROJECT.md` and `docs/README.md` before substantial work
-- Use GitHub Issues as the main unit of tracked work in this repo
-- Record cross-repo dependencies in issues instead of managing them ad hoc in chat
-- Keep commits focused and include `Co-Authored-By: Codex <noreply@openai.com>` when committing through Codex
+- 大きな作業の前に `PROJECT.md` と `docs/README.md` を読む
+- この repo では GitHub Issues を追跡単位の基本とする
+- repo 間依存はチャットだけで済ませず、Issue に記録する
+- Codex で commit する場合は、変更を絞り `Co-Authored-By: Codex <noreply@openai.com>` を含める

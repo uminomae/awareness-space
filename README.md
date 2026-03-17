@@ -1,18 +1,18 @@
 # awareness-space
 
-`awareness-space` is the working repository for exploring awareness as an independent project.
+`awareness-space` は、「意識とは何か」を独立に探索するための作業リポジトリです。
 
-## Start Here
+## 入口
 
-- Project charter: `PROJECT.md`
-- Codex working rules: `CLAUDE.md`
-- Management hub: `docs/README.md`
-- Issue workflow: `docs/issue-management.md`
+- プロジェクト憲章: `PROJECT.md`
+- Codex 作業ルール: `CLAUDE.md`
+- 管理ハブ: `docs/README.md`
+- Issue 運用ルール: `docs/issue-management.md`
 
-## Governance
+## 体制
 
-- **Claude is the main project manager**
-- **`awareness-space` is Codex's working repository**
-- Codex handles bootstrap, implementation, structuring, and day-to-day work in this repo
-- Claude manages parent issues, priorities, dependencies, and overall project direction
-- This rule changes only by explicit instruction from pjdhiro
+- **Claude が主プロジェクト管理者**
+- **`awareness-space` は Codex の担当リポジトリ**
+- Codex はこの repo の bootstrap、実装、構造化、日常作業を担う
+- Claude は親 Issue、優先順位、依存関係、全体進行を管理する
+- この体制変更は pjdhiro の明示指示がある場合のみ
