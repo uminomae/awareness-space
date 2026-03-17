@@ -35,6 +35,7 @@ docs/ に置かないもの:
 | `evidence/PROJECT.md` | 調査憲章。調査目的・起点仮説・現在地の正本 |
 | `docs/issue-management.md` | Issue 運用ルール |
 | `docs/material-inventory.md` | 初期素材インベントリ |
+| `docs/report-structure.md` | 調査報告の構造メモ |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 

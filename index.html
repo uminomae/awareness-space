@@ -234,12 +234,12 @@
     </div>
   </section>
 
-  <section id="workspace-section" aria-labelledby="workspace-section-heading">
+  <section id="reports-section" aria-labelledby="reports-section-heading">
     <div class="section-content-wrap">
       <div class="container d-flex flex-column mt-1">
         <h2 class="section-heading">
-          <a id="workspace-section-heading" href="#workspace-section" class="section-heading-link">
-            WORKSPACE
+          <a id="reports-section-heading" href="#reports-section" class="section-heading-link">
+            調査報告
           </a>
         </h2>
         <div class="row g-3 awareness-card-grid">
@@ -247,26 +247,28 @@
             <article class="card kesson-card awareness-card h-100">
               <div class="card-body">
                 <p class="awareness-card-kicker">Structure</p>
-                <h3 class="card-title">creation-space 型の構造</h3>
-                <p class="card-text">assets, src, transform, build, scripts を持つ Pages 前提のレイアウトへ移行済み。</p>
+                <h3 class="card-title">調査報告の構造</h3>
+                <p class="card-text">一覧、カード、詳細の3層で report を見せるための入口メモ。</p>
+                <a class="awareness-card-link" href="./docs/report-structure.md">読む</a>
               </div>
             </article>
           </div>
           <div class="col-12 col-md-4">
             <article class="card kesson-card awareness-card h-100">
               <div class="card-body">
-                <p class="awareness-card-kicker">Local</p>
-                <h3 class="card-title">localhost:3003</h3>
-                <p class="card-text">`develop` ブランチを macOS LaunchAgent で常時配信し、Pages 前の確認を固定する。</p>
+                <p class="awareness-card-kicker">Workflow</p>
+                <h3 class="card-title">reports workflow</h3>
+                <p class="card-text">将来の report 出力を受ける `transform/reports/` の入口。</p>
+                <a class="awareness-card-link" href="./transform/reports/README.md">開く</a>
               </div>
             </article>
           </div>
           <div class="col-12 col-md-4">
             <article class="card kesson-card awareness-card h-100">
               <div class="card-body">
-                <p class="awareness-card-kicker">Three.js</p>
-                <h3 class="card-title">背景試作</h3>
-                <p class="card-text">`.cache/threejs/kitai.html` を起点に、背景表現を追跡対象へ昇格させる準備を進める。</p>
+                <p class="awareness-card-kicker">Status</p>
+                <h3 class="card-title">現在の報告状態</h3>
+                <p class="card-text">D01-D30 取り込み方針と evidence 正本を踏まえ、report 単位の設計をこれから進める段階。</p>
               </div>
             </article>
           </div>
@@ -289,9 +291,10 @@
       <div class="list-group awareness-offcanvas-list">
         <a class="list-group-item list-group-item-action" href="#model-section">MODEL</a>
         <a class="list-group-item list-group-item-action" href="#evidence-section">EVIDENCE</a>
-        <a class="list-group-item list-group-item-action" href="#workspace-section">WORKSPACE</a>
+        <a class="list-group-item list-group-item-action" href="#reports-section">REPORTS</a>
         <a class="list-group-item list-group-item-action" href="./evidence/PROJECT.md">調査憲章</a>
         <a class="list-group-item list-group-item-action" href="./evidence/d01-d30-intake-plan.md">D01-D30 取り込み方針</a>
+        <a class="list-group-item list-group-item-action" href="./docs/report-structure.md">調査報告の構造</a>
         <a class="list-group-item list-group-item-action" href="./knowledge/fo-axis-starting-memo.md">F-O軸 起点メモ</a>
         <a class="list-group-item list-group-item-action" href="./docs/material-inventory.md">初期素材インベントリ</a>
       </div>
