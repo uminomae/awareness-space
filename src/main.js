@@ -1,6 +1,7 @@
 import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-error-overlay.js';
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
+import { initBackgroundModeSwitcher } from './background-mode.js';
 
 installStartupErrorHandlers();
 
@@ -61,6 +62,7 @@ function initHashLinks() {
 function start() {
     initFontSizeCtrl();
     initMobileNavAutoCollapse();
+    initBackgroundModeSwitcher();
     initLanguageToggle();
     initScrollHints();
     initHashLinks();

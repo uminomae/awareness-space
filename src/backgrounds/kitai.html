@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kitai background</title>
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+        import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+        import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+
+        const variant = new URLSearchParams(window.location.search).get('variant') || 'flow';
+        const presets = {
+            flow: {
+                speed: 0.22,
+                bloomStrength: 1.7,
+                bloomRadius: 0.45,
+                bloomThreshold: 0.62,
+                pulseScale: 4.0,
+                pulseThreshold: 0.88,
+                densityLow: 0.32,
+                densityHigh: 0.72,
+                waterA: new THREE.Color('#061824'),
+                waterB: new THREE.Color('#0d6d67'),
+                glow: new THREE.Color('#7df6ff'),
+            },
+            pulse: {
+                speed: 0.42,
+                bloomStrength: 2.4,
+                bloomRadius: 0.7,
+                bloomThreshold: 0.48,
+                pulseScale: 6.8,
+                pulseThreshold: 0.78,
+                densityLow: 0.26,
+                densityHigh: 0.66,
+                waterA: new THREE.Color('#170818'),
+                waterB: new THREE.Color('#8d2ec7'),
+                glow: new THREE.Color('#ffd37d'),
+            },
+        };
+        const config = presets[variant] || presets.flow;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+        const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        document.body.appendChild(renderer.domElement);
+
+        const composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(window.innerWidth, window.innerHeight),
+            config.bloomStrength,
+            config.bloomRadius,
+            config.bloomThreshold
+        );
+        composer.addPass(bloomPass);
+
+        const uniforms = {
+            uTime: { value: 0.0 },
+            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            uSpeed: { value: config.speed },
+            uPulseScale: { value: config.pulseScale },
+            uPulseThreshold: { value: config.pulseThreshold },
+            uDensityLow: { value: config.densityLow },
+            uDensityHigh: { value: config.densityHigh },
+            uWaterA: { value: config.waterA },
+            uWaterB: { value: config.waterB },
+            uGlow: { value: config.glow },
+        };
+
+        const material = new THREE.ShaderMaterial({
+            vertexShader: `
+                void main() {
+                    gl_Position = vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform float uTime;
+                uniform vec2 uResolution;
+                uniform float uSpeed;
+                uniform float uPulseScale;
+                uniform float uPulseThreshold;
+                uniform float uDensityLow;
+                uniform float uDensityHigh;
+                uniform vec3 uWaterA;
+                uniform vec3 uWaterB;
+                uniform vec3 uGlow;
+
+                float hash(vec3 p) {
+                    return fract(sin(dot(p, vec3(127.1, 311.7, 191.999))) * 43758.5453123);
+                }
+
+                float noise(vec3 p) {
+                    vec3 i = floor(p);
+                    vec3 f = fract(p);
+                    f = f * f * (3.0 - 2.0 * f);
+
+                    return mix(
+                        mix(
+                            mix(hash(i + vec3(0.0, 0.0, 0.0)), hash(i + vec3(1.0, 0.0, 0.0)), f.x),
+                            mix(hash(i + vec3(0.0, 1.0, 0.0)), hash(i + vec3(1.0, 1.0, 0.0)), f.x),
+                            f.y
+                        ),
+                        mix(
+                            mix(hash(i + vec3(0.0, 0.0, 1.0)), hash(i + vec3(1.0, 0.0, 1.0)), f.x),
+                            mix(hash(i + vec3(0.0, 1.0, 1.0)), hash(i + vec3(1.0, 1.0, 1.0)), f.x),
+                            f.y
+                        ),
+                        f.z
+                    );
+                }
+
+                float fbm(vec3 p) {
+                    float value = 0.0;
+                    float amp = 0.5;
+                    for (int i = 0; i < 6; i++) {
+                        value += amp * noise(p);
+                        p = p * 2.0 + vec3(7.0, 13.0, 17.0) + uTime * uSpeed;
+                        amp *= 0.5;
+                    }
+                    return value;
+                }
+
+                void main() {
+                    vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
+                    vec3 ro = vec3(0.0, 0.0, 3.0);
+                    vec3 rd = normalize(vec3(uv, -1.0));
+                    vec3 color = vec3(0.0);
+                    float t = 0.0;
+
+                    for (int i = 0; i < 60; i++) {
+                        vec3 p = ro + rd * t;
+                        float n = fbm(p + vec3(0.0, uTime * 0.08, 0.0));
+                        float density = smoothstep(uDensityLow, uDensityHigh, n);
+                        vec3 waterColor = mix(uWaterA, uWaterB, density);
+
+                        float iface = smoothstep(0.06, 0.0, abs(n - 0.5));
+                        float pulsePhase = sin(p.x * uPulseScale + p.y * (uPulseScale + 2.0) - uTime * (uPulseScale + 1.2) + n * 10.0);
+                        float pulse = smoothstep(uPulseThreshold, 1.0, pulsePhase);
+                        vec3 emitColor = uGlow * iface * pulse * 7.0;
+
+                        color += (waterColor * 0.1 + emitColor) * exp(-t * 0.4) * 0.05;
+                        t += 0.06;
+                    }
+
+                    color = pow(color, vec3(1.0 / 2.2));
+                    color *= 1.0 - length(uv) * 0.28;
+                    gl_FragColor = vec4(color, 1.0);
+                }
+            `,
+            uniforms,
+        });
+
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        scene.add(new THREE.Mesh(geometry, material));
+
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            composer.setSize(width, height);
+            uniforms.uResolution.value.set(width, height);
+        });
+
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            uniforms.uTime.value = clock.getElapsedTime();
+            composer.render();
+        }
+
+        animate();
+    </script>
+</body>
+</html>
