@@ -111,6 +111,10 @@
 |---|---|
 | `evidence/PROJECT.md` | 調査憲章。調査目的、起点仮説、現在地の正本 |
 | `evidence/README.md` | evidence ディレクトリの入口 |
+| `evidence/review/` | 横断レビュー、進捗設計、設計判断ログ、将来のレビュー成果 |
+| `evidence/work/` | D01-D30 初期スキャン、一次候補、取り込み前の中間素材 |
+| `evidence/deepdive/` | Level2 以降の深掘り探索（準備/プレースホルダ） |
+| `evidence/archive/` | Revise 前の evidence 退避を管理 |
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `knowledge/fo-axis-starting-memo.md` | F-O軸 起点メモ |
 | `src/` | Web UI 本体 |
