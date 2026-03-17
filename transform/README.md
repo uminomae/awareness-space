@@ -10,3 +10,4 @@
 ## 入口
 
 - `reports/README.md`: 調査報告の変換 workflow 入口
+- `domains/README.md`: awareness-space 版 domains pipeline の入口（FO軸/4層モデル/Withhold/M1意識OS/CN 系）
