@@ -128,20 +128,20 @@
 
                 void main() {
                     vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-                    float orbitA = uTime * uSpeed * 0.18;
-                    float orbitB = uTime * uSpeed * 0.11;
+                    float orbitA = uTime * 0.11;
+                    float orbitB = uTime * 0.07;
                     mat2 rot = mat2(cos(orbitA), -sin(orbitA), sin(orbitA), cos(orbitA));
                     vec2 rotatedUv = rot * uv;
 
                     vec3 ro = vec3(
-                        sin(orbitA) * 0.18,
-                        cos(orbitB) * 0.11,
-                        3.05
+                        sin(orbitA) * 0.34 + sin(uTime * 0.031) * 0.08,
+                        cos(orbitB) * 0.18 + sin(uTime * 0.043) * 0.06,
+                        3.15 + sin(uTime * 0.023) * 0.12
                     );
                     vec3 rd = normalize(vec3(
                         rotatedUv + vec2(
-                            sin(orbitB) * 0.03,
-                            cos(orbitA) * 0.025
+                            sin(orbitB) * 0.07,
+                            cos(orbitA) * 0.05
                         ),
                         -1.0
                     ));
@@ -151,30 +151,38 @@
                     for (int i = 0; i < 48; i++) {
                         vec3 p = ro + rd * t;
                         vec3 drift = vec3(
-                            sin(uTime * uSpeed * 0.53 + p.y * 0.24),
-                            cos(uTime * uSpeed * 0.37 + p.x * 0.19),
-                            sin(uTime * uSpeed * 0.29 + p.z * 0.17)
+                            sin(uTime * 0.41 + p.y * 0.24 + sin(uTime * 0.019) * 2.3),
+                            cos(uTime * 0.29 + p.x * 0.19 + cos(uTime * 0.017) * 1.9),
+                            sin(uTime * 0.23 + p.z * 0.17 + sin(uTime * 0.013) * 2.7)
                         ) * 0.22;
-                        float n = fbm(p + drift + vec3(0.0, uTime * 0.08, 0.0));
+                        float n = fbm(p + drift + vec3(
+                            sin(uTime * 0.061) * 1.7,
+                            uTime * 0.05,
+                            cos(uTime * 0.047) * 1.9
+                        ));
                         float density = smoothstep(uDensityLow, uDensityHigh, n);
                         vec3 waterColor = mix(uWaterA, uWaterB, density);
 
                         float iface = smoothstep(0.06, 0.0, abs(n - 0.5));
-                        float pulseA = sin(
-                            p.x * uPulseScale
-                            + p.y * (uPulseScale + 2.0)
-                            - uTime * (uPulseScale + 1.2)
-                            + n * 10.0
-                        );
-                        float pulseB = sin(
-                            length(p.xy) * (uPulseScale + 1.35)
-                            - uTime * (uPulseScale + 0.4) * 0.7
-                            + n * 7.0
-                        );
-                        float pulse = smoothstep(uPulseThreshold, 1.0, pulseA) * 0.72
-                            + smoothstep(uPulseThreshold + 0.05, 1.0, pulseB) * 0.28;
+                        float pulseA = noise(vec3(
+                            p.x * 1.7 + uTime * 0.37,
+                            p.y * 2.1 - uTime * 0.23,
+                            p.z * 1.3 + uTime * 0.17
+                        ));
+                        float pulseB = noise(vec3(
+                            length(p.xy) * 2.4 - uTime * 0.19,
+                            p.z * 1.6 + uTime * 0.27,
+                            n * 6.0 + uTime * 0.11
+                        ));
+                        float pulseC = noise(vec3(
+                            p.yx * 1.2,
+                            uTime * 0.09 + length(p.yz) * 1.8
+                        ));
+                        float pulse = smoothstep(0.78, 1.0, pulseA) * 0.52
+                            + smoothstep(0.74, 1.0, pulseB) * 0.31
+                            + smoothstep(0.81, 1.0, pulseC) * 0.22;
                         float halo = smoothstep(0.18, 0.0, abs(n - 0.5));
-                        vec3 emitColor = uGlow * (iface * pulse * 6.4 + halo * 0.42);
+                        vec3 emitColor = uGlow * (iface * pulse * 6.8 + halo * 0.38);
 
                         color += (waterColor * 0.1 + emitColor) * exp(-t * 0.4) * 0.05;
                         t += 0.065;
