@@ -1,0 +1,148 @@
+body.awareness-page {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(46, 72, 116, 0.18), transparent 38%),
+    radial-gradient(circle at 78% 28%, rgba(74, 114, 179, 0.14), transparent 42%),
+    #050508;
+}
+
+.awareness-page #overlay {
+  bottom: 11%;
+  opacity: 0.92;
+  filter: blur(0);
+  transform: none;
+  max-width: min(70vw, 760px);
+}
+
+.awareness-page #title-h1 {
+  letter-spacing: clamp(0.16em, 1.0vmin, 0.34em);
+}
+
+.awareness-page #taglines {
+  max-width: min(62vw, 560px);
+}
+
+#hero-spacer {
+  height: 118vh;
+}
+
+#knowledge-section,
+#evidence-section,
+#workspace-section {
+  position: relative;
+  z-index: 5;
+}
+
+.awareness-card-grid {
+  margin-top: 1.25rem;
+}
+
+.awareness-card {
+  --bs-card-bg: rgba(20, 25, 40, 0.78);
+  border: 1px solid rgba(var(--color-accent), 0.16);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+}
+
+.awareness-card-kicker {
+  margin-bottom: 0.55rem;
+  color: rgba(var(--color-sub-text), 0.7);
+  font-family: var(--kesson-font-mono-ui);
+  font-size: var(--kesson-font-size-ui-sm, 0.80rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.awareness-card .card-title {
+  margin-bottom: 0.8rem;
+}
+
+.awareness-card .card-text {
+  line-height: 1.8;
+}
+
+.awareness-card-link {
+  color: rgba(var(--color-link), 0.88);
+  text-decoration: none;
+  font-family: var(--kesson-font-mono-ui);
+  font-size: var(--kesson-font-size-ui-sm, 0.80rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.awareness-card-link:hover,
+.awareness-card-link:focus-visible {
+  color: rgba(180, 210, 255, 1);
+}
+
+.awareness-panel {
+  margin-top: 1.25rem;
+  padding: 1.2rem 1.3rem;
+  border: 1px solid rgba(var(--color-accent), 0.16);
+  border-radius: 4px;
+  background: rgba(20, 25, 40, 0.72);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.awareness-panel-lead {
+  margin: 0 0 0.9rem;
+  color: rgba(var(--color-heading), 0.88);
+  line-height: 1.9;
+}
+
+.awareness-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: rgba(var(--color-sub-text), 0.74);
+  line-height: 1.9;
+}
+
+.awareness-offcanvas-list .list-group-item {
+  background: rgba(20, 25, 40, 0.42);
+  border-color: rgba(var(--color-accent), 0.12);
+  color: rgba(var(--color-heading), 0.84);
+}
+
+.offcanvas-kesson {
+  --bs-offcanvas-width: var(--kesson-offcanvas-width);
+  width: var(--kesson-offcanvas-width);
+  background: var(--kesson-offcanvas-bg);
+}
+
+.offcanvas-kesson .offcanvas-title {
+  color: var(--kesson-offcanvas-heading);
+  letter-spacing: 0.15em;
+}
+
+.offcanvas-kesson .offcanvas-header {
+  border-bottom: 1px solid rgba(var(--color-accent), 0.12);
+}
+
+.offcanvas-kesson .offcanvas-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.offcanvas-kesson .offcanvas-body::-webkit-scrollbar-thumb {
+  background: var(--kesson-scrollbar-thumb);
+  border-radius: 3px;
+}
+
+.awareness-offcanvas-list .list-group-item:hover,
+.awareness-offcanvas-list .list-group-item:focus-visible {
+  background: rgba(46, 72, 116, 0.4);
+  color: rgba(var(--color-heading), 0.98);
+}
+
+@media (max-width: 767.98px) {
+  .awareness-page #overlay {
+    left: 6%;
+    right: 6%;
+    max-width: none;
+  }
+
+  .awareness-page #taglines {
+    max-width: none;
+  }
+
+  #hero-spacer {
+    height: 96vh;
+  }
+}
