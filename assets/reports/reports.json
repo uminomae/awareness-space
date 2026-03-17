@@ -1,11 +1,25 @@
 {
   "reports": [
     {
+      "id": "AWR-000",
+      "title": "意識モデル 総覧",
+      "category": "総覧",
+      "summary": "F-O軸、4層モデル、Withhold、M1 意識OS を束ねる入口。",
+      "href": "./knowledge/model-overview.md"
+    },
+    {
       "id": "AWR-001",
       "title": "F-O軸 起点メモ",
       "category": "モデル",
       "summary": "生存と間主観性を最小座標系として、意識探索の入口を定義する。",
       "href": "./knowledge/fo-axis-starting-memo.md"
+    },
+    {
+      "id": "AWR-002A",
+      "title": "調査内容 総覧",
+      "category": "research",
+      "summary": "調査憲章、素材インベントリ、D01-D30 取り込み方針を束ねる入口。",
+      "href": "./evidence/research-overview.md"
     },
     {
       "id": "AWR-002",
@@ -27,6 +41,13 @@
       "category": "reports",
       "summary": "一覧、カード、詳細の3層で report を見せるための構造メモ。",
       "href": "./docs/report-structure.md"
+    },
+    {
+      "id": "AWR-005",
+      "title": "調査報告 総覧",
+      "category": "reports",
+      "summary": "調査報告セクション全体を読むための入口。",
+      "href": "./knowledge/reports-overview.md"
     }
   ]
 }
