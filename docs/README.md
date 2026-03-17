@@ -39,6 +39,7 @@ docs/ に置かないもの:
 | `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
 | `docs/quality-management.md` | 品質基準 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
+| `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
