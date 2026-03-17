@@ -38,10 +38,10 @@
         const variant = new URLSearchParams(window.location.search).get('variant') || 'raijin';
         const presets = {
             raijin: {
-                speed: 0.0275,
-                bloomStrength: 1.05,
-                bloomRadius: 0.28,
-                bloomThreshold: 0.74,
+                speed: 0.22,
+                bloomStrength: 1.7,
+                bloomRadius: 0.45,
+                bloomThreshold: 0.62,
                 pulseScale: 4.0,
                 pulseThreshold: 0.88,
                 densityLow: 0.32,
@@ -57,7 +57,7 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(1);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         document.body.appendChild(renderer.domElement);
 
         const composer = new EffectComposer(renderer);
@@ -128,28 +128,9 @@
                 float fbm(vec3 p) {
                     float value = 0.0;
                     float amp = 0.5;
-                    mat2 rot = mat2(0.84, -0.54, 0.54, 0.84);
-                    for (int i = 0; i < 4; i++) {
-                        float octave = float(i);
-                        vec3 warp = vec3(
-                            noise(p * 0.63 + vec3(3.1, -7.2, 5.4) + uTime * uSpeed * 0.41 + octave * 1.37),
-                            noise(p * 0.57 + vec3(-5.8, 2.4, 8.1) - uTime * uSpeed * 0.29 + octave * 0.91),
-                            noise(p * 0.69 + vec3(6.2, 4.3, -3.7) + uTime * uSpeed * 0.17 + octave * 1.73)
-                        ) - 0.5;
-                        value += amp * noise(p + warp * (0.42 + octave * 0.05));
-                        p.xy = rot * p.xy;
-                        p.yz = rot * p.yz;
-                        p = p * 1.92
-                            + vec3(
-                                7.0 + sin(uTime * uSpeed * 0.71 + octave * 1.13) * 1.7,
-                                13.0 + cos(uTime * uSpeed * 0.47 + octave * 0.83) * 2.1,
-                                17.0 + sin(uTime * uSpeed * 0.29 + octave * 1.57) * 1.3
-                            )
-                            + vec3(
-                                uTime * uSpeed * 0.23,
-                                uTime * uSpeed * -0.17,
-                                uTime * uSpeed * 0.31
-                            );
+                    for (int i = 0; i < 6; i++) {
+                        value += amp * noise(p);
+                        p = p * 2.0 + vec3(7.0, 13.0, 17.0) + uTime * uSpeed;
                         amp *= 0.5;
                     }
                     return value;
@@ -157,58 +138,20 @@
 
                 void main() {
                     vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
-                    float camAngleA = uTime * uSpeed * 1.9;
-                    float camAngleB = uTime * uSpeed * 1.1;
-                    mat2 camRot = mat2(cos(camAngleA), -sin(camAngleA), sin(camAngleA), cos(camAngleA));
-                    uv = camRot * uv;
-
-                    vec3 ro = vec3(
-                        sin(camAngleA) * 0.22,
-                        cos(camAngleB) * 0.14,
-                        4.8 + sin(uTime * uSpeed * 0.37) * 0.08
-                    );
-                    vec3 rd = normalize(vec3(
-                        uv + vec2(
-                            sin(camAngleB * 1.7) * 0.05,
-                            cos(camAngleA * 0.73) * 0.04
-                        ),
-                        -1.0
-                    ));
+                    vec3 ro = vec3(0.0, 0.0, 3.0);
+                    vec3 rd = normalize(vec3(uv, -1.0));
                     vec3 color = vec3(0.0);
                     float t = 0.0;
 
-                    for (int i = 0; i < 30; i++) {
+                    for (int i = 0; i < 60; i++) {
                         vec3 p = ro + rd * t;
-                        vec3 drift = vec3(
-                            sin(uTime * uSpeed * 0.9 + p.y * 0.35) * 0.24,
-                            cos(uTime * uSpeed * 0.6 + p.x * 0.28) * 0.18,
-                            sin(uTime * uSpeed * 0.4 + p.z * 0.21) * 0.12
-                        );
-                        float n = fbm(p * 0.72 + drift + vec3(0.0, uTime * uSpeed * 0.08, 0.0));
+                        float n = fbm(p + vec3(0.0, uTime * 0.08, 0.0));
                         float density = smoothstep(uDensityLow, uDensityHigh, n);
                         vec3 waterColor = mix(uWaterA, uWaterB, density);
 
                         float iface = smoothstep(0.06, 0.0, abs(n - 0.5));
-                        float pulseA = sin(
-                            p.x * uPulseScale * 0.83
-                            + p.y * (uPulseScale + 1.7)
-                            - uTime * uSpeed * (uPulseScale + 1.2) * 9.0
-                            + n * 10.0
-                        );
-                        float pulseB = sin(
-                            p.y * uPulseScale * 1.11
-                            - p.z * (uPulseScale + 0.9)
-                            + uTime * uSpeed * (uPulseScale + 0.7) * 6.0
-                            + n * 7.0
-                        );
-                        float pulseC = sin(
-                            length(p.xy) * (uPulseScale + 2.6)
-                            - uTime * uSpeed * 15.0
-                            + n * 12.0
-                        );
-                        float pulse = smoothstep(uPulseThreshold, 1.0, pulseA) * 0.55
-                            + smoothstep(uPulseThreshold + 0.03, 1.0, pulseB) * 0.3
-                            + smoothstep(uPulseThreshold + 0.06, 1.0, pulseC) * 0.25;
+                        float pulsePhase = sin(p.x * uPulseScale + p.y * (uPulseScale + 2.0) - uTime * (uPulseScale + 1.2) + n * 10.0);
+                        float pulse = smoothstep(uPulseThreshold, 1.0, pulsePhase);
                         vec3 emitColor = uGlow * iface * pulse * 7.0;
 
                         color += (waterColor * 0.1 + emitColor) * exp(-t * 0.4) * 0.05;
