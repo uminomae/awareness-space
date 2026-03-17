@@ -33,6 +33,52 @@
 - より具体的な親ができるまでは `kesson-driven-thinking#280` を bootstrap 親として使う
 - repo ローカル Issue の進捗が親プロジェクトに影響する場合は、親 Issue にコメントを返す
 
+## 親 Issue 返却ルール
+
+### 親 Issue
+
+- 親 Issue の既定値は `uminomae/kesson-driven-thinking#280`
+
+### 返却トリガー
+
+次のいずれかに当てはまるとき、Codex は親 Issue にコメントを返す。
+
+1. repo bootstrap や公開設定など、repo の運用状態が変わったとき
+2. `awareness-space` 側の Issue を close し、その成果が親プロジェクトの進行状態を変えるとき
+3. 素材選定、コピー元、参照関係など、repo 横断前提を新たに固定したとき
+4. Claude / pjdhiro 側の判断が必要な論点が露出したとき
+
+### 親 Issue に返さなくてよいもの
+
+- repo 内だけで完結し、親プロジェクトの状態を変えない小修正
+- 途中メモや下書きで、判断や依存関係を更新しない作業
+
+### 最小報告フォーマット
+
+親 Issue へのコメントは、原則として以下を含める。
+
+1. 何が完了したか
+2. どのファイルまたは Issue が追加・更新・close されたか
+3. commit SHA
+4. 親から見た意味
+5. 次の自然な着手先
+
+テンプレート:
+
+```md
+## awareness-space#{番号} 完了（Codex, YYYY-MM-DD）
+
+- 追加/更新: `path/to/file`
+- commit: `abcdef0`
+- 状態: awareness-space#{番号} CLOSED
+
+要点:
+- ...
+- ...
+
+次の自然な着手先は `awareness-space#{次番号}`。
+```
+
 ## 運用ルール
 
 - Codex は `awareness-space` 内の Issue を起票・更新してよい
