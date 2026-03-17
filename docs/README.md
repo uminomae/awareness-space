@@ -36,6 +36,9 @@ docs/ に置かないもの:
 | `docs/issue-management.md` | Issue 運用ルール |
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `docs/report-structure.md` | 調査報告の構造メモ |
+| `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
+| `docs/quality-management.md` | 品質基準 |
+| `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
 | `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
