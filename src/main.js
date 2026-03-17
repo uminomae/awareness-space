@@ -2,6 +2,7 @@ import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
+import { initReportsCards } from './reports-cards.js';
 
 installStartupErrorHandlers();
 
@@ -66,6 +67,7 @@ function start() {
     initLanguageToggle();
     initScrollHints();
     initHashLinks();
+    initReportsCards();
 }
 
 try {

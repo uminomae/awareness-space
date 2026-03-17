@@ -1,0 +1,32 @@
+{
+  "reports": [
+    {
+      "id": "AWR-001",
+      "title": "F-O軸 起点メモ",
+      "category": "モデル",
+      "summary": "生存と間主観性を最小座標系として、意識探索の入口を定義する。",
+      "href": "./knowledge/fo-axis-starting-memo.md"
+    },
+    {
+      "id": "AWR-002",
+      "title": "初期素材インベントリ",
+      "category": "調査設計",
+      "summary": "schema、M1、concept notes、D01-D30 evidence 系譜を一覧化した素材地図。",
+      "href": "./docs/material-inventory.md"
+    },
+    {
+      "id": "AWR-003",
+      "title": "D01-D30 取り込み方針",
+      "category": "取り込み",
+      "summary": "`creation-space/evidence/` を一次候補として扱う取り込み方針。",
+      "href": "./evidence/d01-d30-intake-plan.md"
+    },
+    {
+      "id": "AWR-004",
+      "title": "調査報告の構造",
+      "category": "reports",
+      "summary": "一覧、カード、詳細の3層で report を見せるための構造メモ。",
+      "href": "./docs/report-structure.md"
+    }
+  ]
+}
