@@ -1,5 +1,5 @@
 const DEFAULT_MODE = 'flow';
-const MODES = new Set(['flow', 'pulse']);
+const MODES = new Set(['flow', 'pulse', 'uzu']);
 
 function normalizeMode(mode) {
     return MODES.has(mode) ? mode : DEFAULT_MODE;
@@ -40,8 +40,12 @@ function createBackgroundFrame() {
 }
 
 function resolveBackgroundSrc(mode) {
-    const url = new URL('./src/backgrounds/kitai.html', window.location.href);
-    url.searchParams.set('variant', normalizeMode(mode));
+    const normalized = normalizeMode(mode);
+    const filename = normalized === 'uzu' ? 'uzu.html' : 'kitai.html';
+    const url = new URL(`./src/backgrounds/${filename}`, window.location.href);
+    if (normalized !== 'uzu') {
+        url.searchParams.set('variant', normalized);
+    }
     return url.toString();
 }
 
