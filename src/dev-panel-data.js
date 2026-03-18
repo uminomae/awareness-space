@@ -5,6 +5,7 @@ const SCENE_PRESET_VERSIONS = {
 
 const DEFAULT_SCENE_STATES = {
     raijin: {
+        renderScale: 0.85,
         speed: 0.22,
         pulseScale: 4.0,
         pulseThreshold: 0.68,
@@ -43,6 +44,9 @@ const DEFAULT_SCENE_STATES = {
 
 const HELP_TEXT = {
     raijin: {
+        performance: {
+            renderScale: '内部レンダリング解像度です。下げると FPS は上がります。',
+        },
         motion: {
             speed: '時間進行の速度です。',
             pulseScale: '発光パルスの強さです。',
@@ -94,6 +98,7 @@ const HELP_TEXT = {
 };
 
 const GROUP_HELP_JA = {
+    performance: '描画負荷に直結する項目です。',
     motion: '時間進行とパルスの立ち上がり方を調整します。',
     density: '密度と露光のバランスを調整します。',
     color: '主要色を調整します。',
@@ -104,6 +109,13 @@ const GROUP_HELP_JA = {
 
 const GROUPS_BY_SCENE = {
     raijin: [
+        {
+            id: 'performance',
+            title: 'Performance',
+            fields: [
+                ['renderScale', 'Render Scale', 0.6, 1.0, 0.01],
+            ],
+        },
         {
             id: 'motion',
             title: 'Motion',
