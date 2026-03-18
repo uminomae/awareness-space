@@ -76,7 +76,7 @@
             <a id="topbar-knowledge-link" class="nav-link topbar-link" href="#model-section">MODEL</a>
           </li>
           <li class="nav-item">
-            <a id="topbar-evidence-link" class="nav-link topbar-link" href="#evidence-section">RESEARCH</a>
+            <a id="topbar-evidence-link" class="nav-link topbar-link" href="#reports-section">RESEARCH</a>
           </li>
           <li class="nav-item">
             <a id="topbar-reports-link" class="nav-link topbar-link" href="#reports-section">REPORTS</a>
@@ -153,6 +153,7 @@
   <section id="model-section" aria-labelledby="model-section-heading">
     <div class="section-content-wrap">
       <div class="container d-flex flex-column mt-1">
+        <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
         <h2 class="section-heading">
           <a id="model-section-heading" href="#model-section" class="section-heading-link">
             意識モデル
@@ -165,59 +166,14 @@
     </div>
   </section>
 
-  <section id="evidence-section" aria-labelledby="evidence-section-heading">
-    <div class="section-content-wrap">
-      <div class="container d-flex flex-column mt-1">
-        <h2 class="section-heading">
-          <a id="evidence-section-heading" href="#evidence-section" class="section-heading-link">
-            調査内容
-          </a>
-        </h2>
-        <div class="row g-3 awareness-card-grid">
-          <div class="col-12 col-md-6 col-xl-4">
-            <article class="card kesson-card awareness-card h-100">
-              <div class="card-body">
-                <p class="awareness-card-kicker">Charter</p>
-                <h3 class="card-title">調査憲章</h3>
-                <p class="card-text">何を調査するプロジェクトなのか、起点仮説、現在地、次の作業を整理した正本。</p>
-                <a class="awareness-card-link" href="./evidence/PROJECT.md">読む</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <article class="card kesson-card awareness-card h-100">
-              <div class="card-body">
-                <p class="awareness-card-kicker">Inventory</p>
-                <h3 class="card-title">初期素材インベントリ</h3>
-                <p class="card-text">schema、M1、concept note、D01-D30 evidence 系譜、skills を一覧化した素材地図。</p>
-                <a class="awareness-card-link" href="./docs/material-inventory.md">読む</a>
-              </div>
-            </article>
-          </div>
-          <div class="col-12 col-md-6 col-xl-4">
-            <article class="card kesson-card awareness-card h-100">
-              <div class="card-body">
-                <p class="awareness-card-kicker">Intake</p>
-                <h3 class="card-title">D01-D30 取り込み方針</h3>
-                <p class="card-text">`creation-space/evidence/` を一次候補、`chatgpt/output/` を補助系譜とする取り込み方針。</p>
-                <a class="awareness-card-link" href="./evidence/d01-d30-intake-plan.md">読む</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="reports-section" aria-labelledby="reports-section-heading">
     <div class="section-content-wrap">
       <div class="container d-flex flex-column mt-1">
         <h2 class="section-heading">
           <a id="reports-section-heading" href="#reports-section" class="section-heading-link">
-            調査報告
+            RESEARCH
           </a>
         </h2>
-        <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
         <div id="reports-error" class="alert alert-danger py-2 px-3 d-none mb-3" role="alert"></div>
         <div class="reports-overview mb-3">
           <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2" id="reports-primary-actions">
@@ -270,21 +226,7 @@
     <div class="offcanvas-body">
       <div class="list-group awareness-offcanvas-list">
         <a class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
-        <a class="list-group-item list-group-item-action" href="#evidence-section">RESEARCH / 調査内容</a>
-        <a class="list-group-item list-group-item-action" href="#reports-section">REPORTS / 調査報告</a>
-        <a class="list-group-item list-group-item-action" href="./evidence/PROJECT.md">調査憲章</a>
-        <a class="list-group-item list-group-item-action" href="./evidence/d01-d30-intake-plan.md">D01-D30 取り込み方針</a>
-        <a class="list-group-item list-group-item-action" href="./docs/report-structure.md">調査報告の構造</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/schema/README.md">知識スキーマ</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/domains/README.md">領域別ナレッジ</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/fo-axis-starting-memo.md">F-O軸 起点メモ</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/schema/four-layers.md">4層モデル</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/schema/four-modules.md">4モジュール</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/schema/withhold-matching-v2.md">Withhold マッチング表</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/concepts/index.md">概念ノート索引</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/m1-consciousness-os/part-1-introduction.md">M1 Part1 導入</a>
-        <a class="list-group-item list-group-item-action" href="./knowledge/withhold-overview.md">Withhold</a>
-        <a class="list-group-item list-group-item-action" href="./docs/material-inventory.md">初期素材インベントリ</a>
+        <a class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
       </div>
     </div>
   </div>
