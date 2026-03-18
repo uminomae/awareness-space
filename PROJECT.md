@@ -28,11 +28,15 @@
 Phase 1:
 - リポジトリ bootstrap
 - 初期の体制整備と Issue 運用整備
-- 素材インベントリ作成
+- `creation-space` 型 UI / 導線 / report 受け皿の初期整備
+- 現在は残作業として `#43` の性能改善がある
 
 Phase 2:
+- 親 Issue は `#44`
 - `kesson-driven-thinking` から選定素材を取り込む
-- awareness-space 固有の探索文書を立ち上げる
+- D01-D30 evidence の取り込みポリシーを `#46` で固定する
+- 神経現象学と心理学を中核にした source map を `#45` で整備する
+- awareness-space 固有の探索文書と次の実装 Issue 群を立ち上げる
 
 ## 正本参照
 

@@ -86,8 +86,10 @@ docs/ に置かないもの:
 
 ## 7. 現在フェーズ
 
-- Phase 1: bootstrap 後のコンテンツ構造整備
-- 親 Issue: `#6`, `#9`
+- Phase 1: bootstrap と UI parity は概ね完了
+- 現在の実装線: `#43` 風神雷神の FPS 軽量化
+- Phase 2 親: `#44` 意識モデル素材統合
+- Phase 2 の入口: `#45` source map、`#46` D01-D30 evidence 取り込みポリシー固定
 
 ## 8. ローカル作業領域
 

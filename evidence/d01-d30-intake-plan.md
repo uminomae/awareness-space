@@ -48,4 +48,5 @@ Issue `kesson-driven-thinking#280` では、D01-D30 の調査結果を
 
 - D01-D30 のファイル粒度を確認する
 - `awareness-space` 側の置き場を決める
-- 調査報告セクション（Issue `#13`）で見せ方を決める
+- Issue `#46` で取り込みポリシーを固定する
+- Issue `#45` の source map と接続して、比較素材としての見せ方を決める
