@@ -20,7 +20,8 @@ export function initDevPanel({
     initialState = null,
     sceneVariant = 'raijin',
 } = {}) {
-    const sceneState = getDefaultSceneState(sceneVariant);
+    const defaultSceneState = getDefaultSceneState(sceneVariant);
+    const sceneState = cloneSceneState(defaultSceneState);
     if (initialState && typeof initialState === 'object') {
         applySceneState(sceneState, initialState, sceneVariant);
     }
@@ -36,7 +37,10 @@ export function initDevPanel({
     panel.innerHTML = `
         <div class="dev-panel-header">
             <h2 class="dev-panel-title">Dev Panel</h2>
-            <button type="button" class="btn btn-sm btn-outline-light" id="dev-panel-close">Close</button>
+            <div class="dev-panel-header-actions">
+                <button type="button" class="btn btn-sm btn-outline-light" id="dev-panel-reset">Reset</button>
+                <button type="button" class="btn btn-sm btn-outline-light" id="dev-panel-close">Close</button>
+            </div>
         </div>
         <div class="dev-panel-body">
             <div class="accordion" id="dev-panel-accordion"></div>
@@ -279,11 +283,20 @@ export function initDevPanel({
         }
     }
 
+    function resetState() {
+        applySceneState(sceneState, defaultSceneState, sceneVariant);
+        emitStateChanged();
+        syncUIFromState();
+        refreshJson();
+        setStatus('Reset current scene to defaults.');
+    }
+
     toggleBtn.addEventListener('click', () => {
         const willOpen = !panel.classList.contains('is-open') && !panel.classList.contains('open');
         setPanelOpen(willOpen);
     });
 
+    panel.querySelector('#dev-panel-reset').addEventListener('click', resetState);
     panel.querySelector('#dev-panel-close').addEventListener('click', () => {
         setPanelOpen(false);
     });
