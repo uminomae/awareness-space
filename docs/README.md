@@ -40,6 +40,8 @@ docs/ に置かないもの:
 | `docs/quality-management.md` | 品質基準 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート正本 |
+| `docs/session-close-routine.md` | セッション終了処理の正本 |
+| `docs/standing-approvals.md` | 継続承認メモ |
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
@@ -60,6 +62,8 @@ docs/ に置かないもの:
 | `src/backgrounds/` | 背景の tracked prototype |
 | `skills/cli-instruction/SKILL.md` | CLI 指示書作成スキル |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート |
+| `docs/session-close-routine.md` | セッション終了時の手順 |
+| `docs/standing-approvals.md` | 継続承認の記録場所 |
 | `evidence/PROJECT.md` | 調査憲章の正本 |
 | `knowledge/fo-axis-starting-memo.md` | F-O軸 起点メモ |
 
