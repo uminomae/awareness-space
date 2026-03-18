@@ -16,6 +16,7 @@
 
 - `core-source-map.md`: 中核参照地図の正本
 - `research-design-baseline.md`: 既存調査の棚卸しと設計起点の正本
+- `research-design.md`: 調査設計メモ本体の正本
 - `survey-5w1h-source-map.md`: survey 用の補助メモ
 
 ## 補足

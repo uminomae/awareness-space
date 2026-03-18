@@ -99,13 +99,14 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#44`, `#47`
+- 現在の open Issue は `#44`, `#48`
 - source map の正本は `evidence/review/core-source-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
+- 調査設計メモ本体は `evidence/review/research-design.md`
 
 ### 3.2 現在の主作業
 
-- `#47` で既存調査の棚卸しと設計起点を整理する
+- `#48` で調査設計の主質問と方法を固定する
 - `#44` を親として、次の内容統合フェーズの実装順を整理する
 
 ### 3.3 次のアクション
