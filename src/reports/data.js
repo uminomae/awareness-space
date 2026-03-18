@@ -1,17 +1,106 @@
 const DEFAULT_BASE_URL = './';
 const DOMAIN_ID_PATTERN = /^[A-Z0-9][A-Z0-9_-]*$/i;
+const PJDHIRO_PAGES_BASE = 'https://uminomae.github.io/pjdhiro';
+const PJDHIRO_RAW_BASE = 'https://raw.githubusercontent.com/uminomae/pjdhiro/main';
+const AWARENESS_PATH = '/assets/awareness';
+const PJDHIRO_AWARENESS_PAGES = `${PJDHIRO_PAGES_BASE}${AWARENESS_PATH}`;
+const PJDHIRO_AWARENESS_RAW = `${PJDHIRO_RAW_BASE}${AWARENESS_PATH}`;
 
 export const DEFAULT_REPORTS_DATA_URL = './transform/domains/publish/domains/index.json';
 export const DEFAULT_REPORTS_ASSET_BASE = DEFAULT_BASE_URL;
 
 export const STATUS_REPORT_LINKS = {
     ja: {
-        mdUrl: './evidence/research-overview.md',
+        sources: [
+            {
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/survey/ja/md/survey-status.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/survey/ja/pdf/survey-status.pdf`,
+                generatorModel: 'codex:gpt-5',
+            },
+            {
+                mdUrl: './evidence/survey-status.md',
+                generatorModel: 'codex:gpt-5',
+            },
+        ],
     },
     en: {
-        mdUrl: './evidence/research-overview.md',
+        mdUrl: `${PJDHIRO_AWARENESS_RAW}/survey/en/md/survey-status.md`,
+        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/survey/en/pdf/survey-status.pdf`,
+        generatorModel: 'codex:gpt-5',
     },
 };
+
+export const MODEL_GUIDE_LINKS = [
+    {
+        key: 'general',
+        links: {
+            ja: {
+                sources: [
+                    {
+                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-general.md`,
+                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-general.pdf`,
+                        generatorModel: 'codex:gpt-5',
+                    },
+                    {
+                        mdUrl: './knowledge/guides/awareness-general.md',
+                        generatorModel: 'codex:gpt-5',
+                    },
+                ],
+            },
+            en: {
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-general.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-general.pdf`,
+                generatorModel: 'codex:gpt-5',
+            },
+        },
+    },
+    {
+        key: 'designer',
+        links: {
+            ja: {
+                sources: [
+                    {
+                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-designer.md`,
+                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-designer.pdf`,
+                        generatorModel: 'codex:gpt-5',
+                    },
+                    {
+                        mdUrl: './knowledge/guides/awareness-designer.md',
+                        generatorModel: 'codex:gpt-5',
+                    },
+                ],
+            },
+            en: {
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-designer.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-designer.pdf`,
+                generatorModel: 'codex:gpt-5',
+            },
+        },
+    },
+    {
+        key: 'academic',
+        links: {
+            ja: {
+                sources: [
+                    {
+                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-academic.md`,
+                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-academic.pdf`,
+                        generatorModel: 'codex:gpt-5',
+                    },
+                    {
+                        mdUrl: './knowledge/guides/awareness-academic.md',
+                        generatorModel: 'codex:gpt-5',
+                    },
+                ],
+            },
+            en: {
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-academic.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-academic.pdf`,
+                generatorModel: 'codex:gpt-5',
+            },
+        },
+    },
+];
 
 export const DEFAULT_PROGRESS_TAXONOMY = [
     {
@@ -114,6 +203,12 @@ export function resolveLocalizedSources(links, lang = 'ja', assetBaseUrl = docum
     if (!links || typeof links !== 'object') return [];
     const localized = links[normalizeLang(lang)] || links.ja || links.en;
     if (!localized) return [];
+    if (Array.isArray(localized.sources) && localized.sources.length) {
+        return normalizeModalSources({
+            sources: localized.sources,
+            assetBaseUrl,
+        });
+    }
     return normalizeModalSources({
         mdUrl: localized.mdUrl || localized.md || '',
         pdfUrl: localized.pdfUrl || localized.pdf || '',

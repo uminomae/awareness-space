@@ -2,7 +2,7 @@ import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
-import { initReports, setReportsLanguage } from './reports/index.js';
+import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
 
 installStartupErrorHandlers();
 
@@ -52,7 +52,7 @@ function initHashLinks() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (event) => {
             const href = link.getAttribute('href');
-            if (!href || href === '#') return;
+            if (!href || href === '#' || !href.startsWith('#')) return;
             const target = document.querySelector(href);
             if (!target) return;
             event.preventDefault();
@@ -72,6 +72,7 @@ function start() {
         console.error('[awareness-space] reports bootstrap failed:', error);
         showStartupErrorOverlay(error);
     });
+    bindStandaloneMarkdownLinks();
 }
 
 try {

@@ -1,4 +1,5 @@
 import {
+    MODEL_GUIDE_LINKS,
     STATUS_REPORT_LINKS,
     countReportsByProgressLevel,
     hasText,
@@ -10,6 +11,24 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 
 const STRINGS = {
     ja: {
+        featureRead: 'ガイドを開く',
+        features: {
+            general: {
+                title: 'General',
+                modalTitle: '意識モデルの4層構造',
+                description: '一般の読者向けの平易な guide。',
+            },
+            designer: {
+                title: 'Designer',
+                modalTitle: '意識モデルを観察の道具として使う',
+                description: '教育者・支援者・チーム設計者向けの構造案内。',
+            },
+            academic: {
+                title: 'Academic',
+                modalTitle: '意識モデルの構造比較',
+                description: '比較と未解決論点に重心を置いた学術寄り guide。',
+            },
+        },
         tabDomains: '領域別レポート',
         openStatus: '調査内容',
         statusReportTitle: '調査内容',
@@ -32,6 +51,24 @@ const STRINGS = {
         modalGenerated: 'date',
     },
     en: {
+        featureRead: 'Open Guide',
+        features: {
+            general: {
+                title: 'General',
+                modalTitle: 'Awareness Model: Four Layers',
+                description: 'A plain-language guide for general readers.',
+            },
+            designer: {
+                title: 'Designer',
+                modalTitle: 'Using the Awareness Model as an Observation Tool',
+                description: 'A structural guide for educators, supporters, and team designers.',
+            },
+            academic: {
+                title: 'Academic',
+                modalTitle: 'Structural Comparison of the Awareness Model',
+                description: 'An academically oriented guide focused on comparison and open questions.',
+            },
+        },
         tabDomains: 'Domain Reports',
         openStatus: 'Research',
         statusReportTitle: 'Research Overview',
@@ -112,6 +149,7 @@ export function createReportsRenderer({
     }
 
     function cacheDom() {
+        state.dom.featureCards = document.getElementById('model-guide-cards');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
         state.dom.domainsHeading = document.getElementById('reports-domains-heading');
@@ -273,6 +311,60 @@ export function createReportsRenderer({
         card.appendChild(body);
         col.appendChild(card);
         return col;
+    }
+
+    function renderFeatureCards() {
+        if (!state.dom.featureCards) return;
+
+        const strings = getReportsStrings(state.lang);
+        state.dom.featureCards.innerHTML = '';
+
+        const fragment = document.createDocumentFragment();
+        MODEL_GUIDE_LINKS.forEach((guide) => {
+            const featureText = strings.features?.[guide.key];
+            if (!featureText) return;
+
+            const col = document.createElement('div');
+            col.className = 'col';
+
+            const card = document.createElement('article');
+            card.className = 'card kesson-card h-100 reports-feature-card';
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `${featureText.title} ${strings.featureRead}`);
+
+            const body = document.createElement('div');
+            body.className = 'card-body p-2 p-md-3 d-flex flex-column gap-1';
+
+            const title = document.createElement('h3');
+            title.className = 'h6 mb-1 text-light';
+            title.textContent = featureText.title;
+
+            const desc = document.createElement('p');
+            desc.className = 'small mb-0 reports-feature-description';
+            desc.textContent = featureText.description;
+
+            const openCardModal = () => {
+                openMarkdownModal({
+                    title: featureText.modalTitle || featureText.title,
+                    sources: resolveLocalizedSources(guide.links, state.lang),
+                });
+            };
+
+            body.append(title, desc);
+            card.appendChild(body);
+            card.addEventListener('click', openCardModal);
+            card.addEventListener('keydown', (event) => {
+                if (event.key !== 'Enter' && event.key !== ' ') return;
+                event.preventDefault();
+                openCardModal();
+            });
+
+            col.appendChild(card);
+            fragment.appendChild(col);
+        });
+
+        state.dom.featureCards.appendChild(fragment);
     }
 
     function renderMetrics() {
@@ -450,6 +542,7 @@ export function createReportsRenderer({
 
     function renderReports() {
         state.progressLevelCounts = countReportsByProgressLevel(state.reports);
+        renderFeatureCards();
         applyStaticText();
         renderMetrics();
         renderDomainGrid();

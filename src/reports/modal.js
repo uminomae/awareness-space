@@ -87,6 +87,8 @@ export function createReportsModalController({
 
         if (modalContext?.type === 'domain') {
             setActiveDomainModalState(modalContext.domainId, modalContext.historyMode);
+        } else {
+            setActiveDomainModalState('', '');
         }
 
         const modal = ensureMdModalInstance();

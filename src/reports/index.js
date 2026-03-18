@@ -37,6 +37,7 @@ const state = {
     _isHistorySyncing: false,
     historyEventsBound: false,
     dom: {
+        featureCards: null,
         error: null,
         openStatusBtn: null,
         domainsHeading: null,
@@ -196,4 +197,32 @@ export async function initReports({
 export function setReportsLanguage(lang) {
     state.lang = normalizeLang(lang);
     renderer.renderReports();
+}
+
+function getDatasetTitle(node, lang = 'ja') {
+    if (!(node instanceof HTMLElement)) return '';
+    const normalizedLang = normalizeLang(lang);
+    if (normalizedLang === 'en') {
+        return node.dataset.mdTitleEn || node.dataset.mdTitle || '';
+    }
+    return node.dataset.mdTitleJa || node.dataset.mdTitle || '';
+}
+
+export function bindStandaloneMarkdownLinks(selector = '[data-md-modal="1"]') {
+    document.querySelectorAll(selector).forEach((node) => {
+        if (!(node instanceof HTMLAnchorElement) || node.dataset.mdModalBound === '1') return;
+
+        node.addEventListener('click', (event) => {
+            const mdUrl = node.dataset.mdUrl || node.getAttribute('href') || '';
+            if (!mdUrl) return;
+            event.preventDefault();
+            modalController.openMarkdownModal({
+                title: getDatasetTitle(node, state.lang),
+                mdUrl,
+                pdfUrl: node.dataset.pdfUrl || '',
+            });
+        });
+
+        node.dataset.mdModalBound = '1';
+    });
 }

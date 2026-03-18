@@ -1,3 +1,4 @@
+#model-section,
 #reports-section {
   position: relative;
   z-index: 5;
@@ -28,6 +29,9 @@
   --reports-palette-8-rgb: 255, 111, 181;
   --reports-palette-9-rgb: 96, 207, 255;
   --reports-palette-10-rgb: 208, 218, 108;
+}
+
+#reports-section {
   padding-bottom: 1.2rem;
 }
 
@@ -95,6 +99,31 @@
   background: var(--kesson-card-bg);
   padding: var(--reports-panel-padding);
   box-shadow: var(--reports-panel-shadow);
+}
+
+.reports-feature-card {
+  min-height: 8.6rem;
+  cursor: pointer;
+  border: 1px solid rgba(var(--color-accent), 0.18);
+  background: linear-gradient(180deg, rgba(var(--color-accent), 0.12), rgba(var(--color-accent), 0.05));
+  transition: border-color var(--kesson-transition-snappy), box-shadow var(--kesson-transition-snappy), transform var(--kesson-transition-snappy), background-color var(--kesson-transition-snappy);
+}
+
+.reports-feature-card:hover {
+  border-color: rgba(var(--color-accent), 0.36);
+  box-shadow: var(--reports-panel-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.reports-feature-card:focus-visible {
+  outline: 2px solid rgba(var(--color-accent), 0.36);
+  outline-offset: 2px;
+}
+
+.reports-feature-description {
+  color: rgba(var(--color-sub-text), 0.78);
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .reports-stack-section + .reports-stack-section {

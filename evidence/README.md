@@ -6,6 +6,8 @@
 
 - `PROJECT.md`: 調査憲章。目的、起点仮説、現在地の正本
 - `research-overview.md`: 調査内容セクションの総覧
+- `survey-status.md`: 調査内容の読者向け概要
+- `survey-domain-index.md`: 調査索引
 - `d01-d30-intake-plan.md`: D01-D30 evidence の取り込み方針
 
 ## 役割

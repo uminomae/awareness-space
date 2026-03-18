@@ -23,13 +23,19 @@ M1 意識OSは、意識の作動構造を記述するための基盤的な文書
 - F-O軸
 - Withhold
 
-詳細な各 part は、`kesson-driven-thinking` 側の原文を参照しながら
-`awareness-space` 側で再整理していく。
+## どう読むか
 
-## 参照パス
+M1 は 1 本の結論文ではなく、複数の論点を段階的に並べた素材群として読むとよい。
 
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-1-introduction.md`
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-2-interoception.md`
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-3-prediction-error.md`
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-4-fo-evaluation.md`
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-5-withhold.md`
+- Part 1: 全体導入
+- Part 2: 身体状態の足場
+- Part 3: 予測と現実のズレ
+- Part 4: F-O 評価
+- Part 5: Withhold
+
+## 関連入口
+
+- `four-layers-overview.md`
+- `fo-axis-overview.md`
+- `withhold-overview.md`
+- `m1-consciousness-os/part-1-introduction.md`

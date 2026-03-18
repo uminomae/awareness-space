@@ -14,7 +14,8 @@ Withhold は、評価済みの行動準備を即座に実行せず、
 
 怒り、不安、衝動、恐れが生じたとき、
 それをそのまま行動へ流さず、保持し、見直す空間を作る。
-この保持があることで、欠損は単なる不快から探索の起点へ変わる。
+この保持があることで、違和感や緊張は単なる不快で終わらず、
+観察と再評価の対象になる。
 
 ## 単純な抑制との違い
 
@@ -26,9 +27,5 @@ Withhold は、評価済みの行動準備を即座に実行せず、
 ## 関連
 
 - `four-layers-overview.md`
-- `fo-axis-starting-memo.md`
-
-## 正本参照
-
-- `~/dev/kesson-driven-thinking/base/schema/core-definitions.md`
-- `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-5-withhold.md`
+- `fo-axis-overview.md`
+- `m1-consciousness-os-overview.md`
