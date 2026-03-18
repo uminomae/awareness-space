@@ -14,7 +14,8 @@
 
 ## 現状
 
-この `awareness-space` 構成では、まだプレースホルダ段階であり空ディレクトリ。
+- `core-source-map.md`: 中核参照地図の正本
+- `survey-5w1h-source-map.md`: survey 用の補助メモ
 
 ## 補足
 

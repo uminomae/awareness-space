@@ -44,6 +44,7 @@ docs/ に置かないもの:
 | `docs/standing-approvals.md` | 継続承認メモ |
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
+| `evidence/review/core-source-map.md` | 中核参照地図の正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
 | `knowledge/m1-consciousness-os/part-1-introduction.md` | M1 意識OS 系列（Part1） |
@@ -94,7 +95,7 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の実装線: `#43` 風神雷神の FPS 軽量化
+- 現在の exploration 線: `#45` source map
 - Phase 2 親: `#44` 意識モデル素材統合
 - Phase 2 の入口: `#45` source map、`#46` D01-D30 evidence 取り込みポリシー固定
 

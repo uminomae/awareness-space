@@ -2,7 +2,7 @@
 
 **状態**: 進行中
 **開始**: 2026-03
-**更新**: 2026-03-17
+**更新**: 2026-03-18
 
 ## 0. 戦略
 
@@ -86,6 +86,7 @@
 初期素材一覧:
 
 - `docs/material-inventory.md`
+- `evidence/review/core-source-map.md`
 
 ここには schema、M1 consciousness OS、concept notes、D01-D30 evidence 系譜、
 `creation-space-refs`、`m2-*` skills を整理してある。
@@ -98,19 +99,19 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#43`, `#44`, `#45`, `#46`
+- 現在の open Issue は `#44`, `#45`, `#46`
+- source map の正本は `evidence/review/core-source-map.md`
 
 ### 3.2 現在の主作業
 
-- `#43` で風神雷神背景の FPS を 60 目標に軽量化する
 - `#45` で神経現象学と心理学を中核にした source map を整備する
 - `#46` で D01-D30 evidence を比較素材としてどう取り込むかを固定する
 - `#44` を親として、次の内容統合フェーズの実装順を整理する
 
 ### 3.3 次のアクション
 
-- `#43` を完了させ、Phase 1 の残作業を閉じる
 - `#45` の source map を正本パスに固定する
+- 神経現象学 intake と発達心理学 intake の次 Issue を分解する
 - `#46` で D01-D30 の一次コピー元と補助参照の境界を明文化する
 - `#44` 配下に、domain report 化や evidence intake の実装 Issue を追加する
 
