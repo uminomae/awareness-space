@@ -99,22 +99,24 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#44`
+- 現在の open Issue は `#44`, `#47`
 - source map の正本は `evidence/review/core-source-map.md`
+- 調査設計の起点は `evidence/review/research-design-baseline.md`
 
 ### 3.2 現在の主作業
 
-- 神経現象学 intake と発達心理学 intake の次 Issue を立ち上げる
+- `#47` で既存調査の棚卸しと設計起点を整理する
 - `#44` を親として、次の内容統合フェーズの実装順を整理する
 
 ### 3.3 次のアクション
 
-- 神経現象学 intake と発達心理学 intake の次 Issue を分解する
+- 調査の主質問、対象、方法、非対象を固定する
+- 神経現象学 intake と発達心理学 intake を切る前提を作る
 - `#44` 配下に、domain report 化や evidence intake の実装 Issue を追加する
 
 ### 3.4 ブロッカー
 
-- 神経現象学 intake と発達心理学 intake の分解がまだ未着手
+- 調査設計の主質問と完了条件がまだ未固定
 - domain report をどの順で実体化するかが未分解
 
 ## 4. ファイル構成

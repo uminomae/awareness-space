@@ -95,9 +95,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の exploration 線: 中核 source map を正本化済み
+- 現在の exploration 線: `#47` 既存調査の棚卸しと調査設計の起点
 - Phase 2 親: `#44` 意識モデル素材統合
-- Phase 2 の入口: 神経現象学 intake と発達心理学 intake の分解
+- Phase 2 の入口: 調査設計の主質問を固定し、その後に intake を分解
 
 ## 8. ローカル作業領域
 

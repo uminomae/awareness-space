@@ -39,7 +39,7 @@
 次の文書は重要だが、report ではなく設計・調査運用の文書として扱う。
 
 - `../docs/material-inventory.md`
-- `../evidence/d01-d30-intake-plan.md`
+- `../evidence/review/research-design-baseline.md`
 - `../docs/report-structure.md`
 
 これらは「何をどう進めるか」を定める文書であり、「何が見えてきたか」を読むための report とは分ける。

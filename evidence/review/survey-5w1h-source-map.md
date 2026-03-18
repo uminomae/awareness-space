@@ -86,6 +86,7 @@ guide / 調査内容 / report の三層を整備している。
 
 - `awareness-space/evidence/PROJECT.md`
 - `awareness-space/docs/material-inventory.md`
+- `awareness-space/evidence/review/research-design-baseline.md`
 - `awareness-space/evidence/review/core-source-map.md`
 - `creation-space/transform/survey/reader-rules/reader-rules-creation-survey.md`
 
