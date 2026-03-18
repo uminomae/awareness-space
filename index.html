@@ -33,7 +33,7 @@
 <body class="awareness-page">
   <div id="canvas-container" aria-hidden="true"></div>
 
-  <header id="kesson-topbar" class="navbar navbar-expand-md navbar-dark" aria-label="Main menu">
+  <header id="kesson-topbar" class="navbar navbar-expand-xl navbar-dark" aria-label="Main menu">
     <div class="container-fluid px-3 px-md-4">
       <div class="topbar-brand-wrap">
         <a id="topbar-main-title" class="navbar-brand topbar-main-title" href="./">
@@ -97,11 +97,12 @@
     </div>
   </header>
 
-  <div id="graphic-switcher" class="btn-group btn-group-sm" role="group" aria-label="グラフィック切り替え">
-    <button type="button" class="btn btn-outline-light active" data-graphic-mode="raijin" aria-pressed="true" data-ja="風神雷神" data-en="raijin">風神雷神</button>
-    <button type="button" class="btn btn-outline-light" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
-  </div>
-  <div id="dev-version-inline" aria-live="polite" hidden></div>
+  <nav id="graphic-switcher" role="group" aria-label="背景グラフィック切り替え">
+    <span class="graphic-switcher-label">背景</span>
+    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="raijin">風神雷神</button>
+    <button type="button" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
+  </nav>
+  <div id="dev-version-inline" class="dev-version-inline" aria-live="polite" hidden></div>
   <a id="dev-components-link" class="dev-components-link" href="./dev-components.html">Components</a>
 
   <div id="overlay" role="presentation">
