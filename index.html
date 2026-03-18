@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>意識とは</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/shell.css">
+  <link rel="stylesheet" href="./src/styles/topbar.css">
+  <link rel="stylesheet" href="./src/styles/reports.css">
+  <link rel="stylesheet" href="./src/styles/viewer.css">
+  <link rel="stylesheet" href="./src/styles/awareness.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "marked": "https://cdn.jsdelivr.net/npm/marked@15.0.7/lib/marked.esm.js",
+        "dompurify": "https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.es.mjs"
+      }
+    }
+  </script>
+
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body class="awareness-page">
+  <div id="canvas-container" aria-hidden="true"></div>
+
+  <header id="kesson-topbar" class="navbar navbar-expand-md navbar-dark" aria-label="Main menu">
+    <div class="container-fluid px-3 px-md-4">
+      <div class="topbar-brand-wrap">
+        <a id="topbar-main-title" class="navbar-brand topbar-main-title" href="./">
+          意識とは
+        </a>
+        <span id="topbar-preparing-badge" class="badge rounded-pill text-bg-warning-subtle border border-warning-subtle text-warning-emphasis topbar-status-badge">
+          develop
+        </span>
+        <span id="credit-collab" class="topbar-collab-note">AIとの協働作業中</span>
+      </div>
+      <button
+        class="navbar-toggler topbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#kessonTopbarNav"
+        aria-controls="kessonTopbarNav"
+        aria-expanded="false"
+        aria-label="Toggle menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="kessonTopbarNav">
+        <ul class="navbar-nav align-items-md-center gap-md-1">
+          <li class="nav-item">
+            <a id="topbar-home-link" class="nav-link topbar-link" href="../kesson-space/">kesson-driven</a>
+          </li>
+          <li class="nav-item">
+            <a id="topbar-creation-link" class="nav-link topbar-link" href="../creation-space/">creation</a>
+          </li>
+          <li class="nav-item">
+            <a id="topbar-dev-link" class="nav-link topbar-link" href="./?dev">DEV</a>
+          </li>
+          <li class="nav-item">
+            <button
+              id="topbar-articles-btn"
+              type="button"
+              class="nav-link topbar-link topbar-link-btn"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#siteOffcanvas"
+              aria-controls="siteOffcanvas">
+              SECTIONS
+            </button>
+          </li>
+          <li class="nav-item">
+            <a id="topbar-knowledge-link" class="nav-link topbar-link" href="#model-section">MODEL</a>
+          </li>
+          <li class="nav-item">
+            <a id="topbar-evidence-link" class="nav-link topbar-link" href="#reports-section">RESEARCH</a>
+          </li>
+          <li class="nav-item">
+            <a id="topbar-reports-link" class="nav-link topbar-link" href="#reports-section">REPORTS</a>
+          </li>
+          <li class="nav-item">
+            <a
+              id="topbar-blog-link"
+              class="nav-link topbar-link"
+              href="https://uminomae.github.io/pjdhiro/dialogueCreation/"
+              target="_blank"
+              rel="noopener"
+              aria-label="BLOG: 対話記録">
+              BLOG
+            </a>
+          </li>
+          <li class="nav-item">
+            <div class="btn-group btn-group-sm topbar-font-size-ctrl" role="group" aria-label="文字サイズ調整">
+              <button type="button" class="btn topbar-font-btn" id="font-size-down" aria-label="文字を小さく">A-</button>
+              <button type="button" class="btn topbar-font-btn" id="font-size-reset" aria-label="文字サイズをリセット" disabled>↺</button>
+              <button type="button" class="btn topbar-font-btn" id="font-size-up" aria-label="文字を大きく">A+</button>
+            </div>
+          </li>
+          <li class="nav-item topbar-lang-item">
+            <button
+              type="button"
+              id="lang-toggle"
+              class="nav-link topbar-link topbar-link-btn topbar-lang-btn"
+              aria-label="言語を英語に切り替え">
+              English
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div id="graphic-switcher" class="btn-group btn-group-sm" role="group" aria-label="グラフィック切り替え">
+    <button type="button" class="btn btn-outline-light active" data-graphic-mode="raijin" aria-pressed="true" data-ja="雷神" data-en="raijin">雷神</button>
+    <button type="button" class="btn btn-outline-light" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
+  </div>
+
+  <div id="overlay" role="presentation">
+    <div id="taglines">
+      <div class="tagline" data-ja="生存と間主観性から、意識を捉え直す。" data-en="Rethinking awareness from survival and intersubjectivity.">
+        生存と間主観性から、意識を捉え直す。
+      </div>
+      <div class="tagline-en" data-ja="F-O軸を起点にした探索の入口。" data-en="An entry point for exploration from the F-O axis.">
+        F-O軸を起点にした探索の入口。
+      </div>
+    </div>
+    <h1 id="title-h1">意識とは</h1>
+  </div>
+
+  <div id="control-guide">
+    <div class="guide-row guide-desktop">
+      <span class="guide-key" data-ja="scroll" data-en="scroll">scroll</span>
+      <span class="guide-sep">—</span>
+      <span class="guide-action" data-ja="探索を進める" data-en="move through the exploration">探索を進める</span>
+    </div>
+  </div>
+
+  <div id="scroll-hint">
+    <span>scroll</span>
+    <div class="arrow">▾</div>
+  </div>
+
+  <div id="scroll-hint-top">
+    <div class="arrow">▴</div>
+    <span>scroll</span>
+  </div>
+
+  <div id="hero-spacer"></div>
+
+  <section id="model-section" aria-labelledby="model-section-heading">
+    <div class="section-content-wrap">
+      <div class="container d-flex flex-column mt-1">
+        <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
+        <h2 class="section-heading">
+          <a id="model-section-heading" href="#model-section" class="section-heading-link">
+            意識モデル
+          </a>
+        </h2>
+        <div class="reports-tab-content mb-3">
+          <div id="model-guide-cards" class="row row-cols-1 row-cols-md-3 g-2" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reports-section" aria-labelledby="reports-section-heading">
+    <div class="section-content-wrap">
+      <div class="container d-flex flex-column mt-1">
+        <h2 class="section-heading">
+          <a id="reports-section-heading" href="#reports-section" class="section-heading-link">
+            RESEARCH
+          </a>
+        </h2>
+        <div id="reports-error" class="alert alert-danger py-2 px-3 d-none mb-3" role="alert"></div>
+        <div class="reports-overview mb-3">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2" id="reports-primary-actions">
+            <button id="reports-open-status-btn" type="button" class="btn btn-outline-light btn-sm reports-status-cta">調査内容</button>
+          </div>
+          <div id="reports-metrics" class="row g-2" aria-live="polite"></div>
+        </div>
+        <div class="reports-tab-content reports-stack">
+          <section class="reports-stack-section">
+            <h3 id="reports-domains-heading" class="reports-subheading">領域別レポート</h3>
+            <p id="reports-level-legend" class="reports-level-legend mb-2">進捗分類を読み込み中...</p>
+            <div id="reports-table-filters" class="d-none flex-wrap gap-2 mb-2" role="group" aria-label="領域別レポート絞り込み"></div>
+            <div id="reports-domain-grid" class="reports-domain-grid row row-cols-2 row-cols-md-5 g-2" aria-live="polite">
+              <div class="reports-domain-empty col-12 text-body-secondary">読み込み中...</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="reports-md-modal" tabindex="-1" aria-labelledby="reports-md-modal-title">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content reports-md-modal-content border border-secondary-subtle">
+        <div class="modal-header">
+          <h5 id="reports-md-modal-title" class="modal-title">Markdown</h5>
+          <div class="reports-md-header-actions d-flex align-items-center gap-2 flex-shrink-0 ms-auto">
+            <a id="reports-md-open-pdf" class="btn btn-outline-light btn-sm" href="#" target="_blank" rel="noopener">PDFを開く</a>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body pt-2 px-3 pb-3">
+          <div id="reports-md-meta" class="small text-body-secondary px-2 pt-1"></div>
+          <article id="reports-md-content" class="reports-md-content mt-2"></article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="tech-footer">
+    <div class="tech-footer-line">awareness-space / GitHub Pages / develop: localhost:3003</div>
+    <div class="footer-signature">same site language with creation-space</div>
+  </footer>
+
+  <div class="offcanvas offcanvas-end offcanvas-kesson" tabindex="-1" id="siteOffcanvas" data-bs-backdrop="true">
+    <div class="offcanvas-header">
+      <h2 class="offcanvas-title">SECTIONS</h2>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="list-group awareness-offcanvas-list">
+        <a class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
+        <a class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
