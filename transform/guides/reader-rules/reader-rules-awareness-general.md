@@ -1,6 +1,6 @@
-# awareness general — 生成ルール v0.1
+# awareness general — 生成ルール v0.2
 
-**タイトル**: 意識モデルの4層構造  
+**タイトル**: 意識とは何か — 生存と間主観性を手がかりに  
 **読者**: 意識のしくみに関心がある一般の読者  
 **文書類型**: 説明文  
 **文体**: です・ます調。平易。専門用語を増やしすぎない  
@@ -11,10 +11,12 @@
 1. **概要**
    - 何を説明するか、何を説明しないかを最初に置く
    - 難しい理論体系の正当化ではなく、意識モデルの見取り図を渡す文書であることを明示する
+   - 欠損駆動思考そのものはこの repo の主題ではないことを前提にする
 
 2. **意識の流れを説明する**
    - 4層モデルを中心に説明する
-   - F-O軸と Withhold を、4層の流れの中で位置づける
+   - F-O軸を「このモデルの特徴的な仮説」として位置づける
+   - `Withhold` は必要なら補助概念として短く触れるに留める
    - 日常で想像しやすい具体例を入れる
 
 3. **何の役に立つか**
@@ -31,11 +33,14 @@
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を入れない
 - source の内部ラベルをそのまま出さない
 - 「合わなければ置いてください」とは書かない
+- 神経現象学と心理学的知見の統合を中心に置く
+- F-O軸は採択済みの真理ではなく、検証対象の仮説として扱う
+- `Withhold` を中心主題として膨らませない
 
 ## ソース
 
 - `knowledge/four-layers-overview.md`
 - `knowledge/fo-axis-overview.md`
-- `knowledge/withhold-overview.md`
 - `knowledge/m1-consciousness-os-overview.md`
+- `knowledge/concepts-overview.md`
 - 必要に応じて `knowledge/schema/`, `knowledge/m1-consciousness-os/`

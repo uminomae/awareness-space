@@ -1,7 +1,7 @@
-# awareness academic — 生成ルール v0.1
+# awareness academic — 生成ルール v0.2
 
-**タイトル**: 意識モデルの構造比較  
-**読者**: 認知科学・現象学・臨床心理に関心を持つ学際的探索者  
+**タイトル**: 意識モデルと神経現象学・発達心理の接続  
+**読者**: 神経現象学・認知科学・発達心理・臨床心理に関心を持つ学際的探索者  
 **文書類型**: 分析的 guide  
 **文体**: である調。学術的だが査読論文ではない  
 **文字数**: 8,000〜15,000字
@@ -11,13 +11,14 @@
 1. **序論**
    - 何を比較対象にするか
    - 本稿が探索的な guide であり、完成理論の宣言ではないこと
+   - 神経現象学と心理学領域を主な比較軸に置く
 
 2. **モデルの定義**
-   - 4層モデル、F-O軸、Withhold、M1 の位置づけ
+   - 4層モデル、F-O軸、M1 の位置づけ
    - 用語の最小定義
 
 3. **先行研究との接続点**
-   - 予測処理、情動評価、行動準備、保持機能などの比較観点
+   - 神経現象学、発達心理、認知科学、臨床心理との比較観点
    - 一致、近接、相違、未整理を分けて書く
 
 4. **構造的含意**
@@ -36,12 +37,13 @@
 - 断定しすぎない
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を入れない
 - raw source の内部メモや Issue 文脈を本文へ出さない
+- F-O軸は意識モデルの特徴的仮説として扱い、その妥当性を開いたまま書く
+- `Withhold` は主題化せず、必要なら周辺概念として限定的に扱う
 
 ## ソース
 
 - `knowledge/model-overview.md`
 - `knowledge/four-layers-overview.md`
 - `knowledge/fo-axis-overview.md`
-- `knowledge/withhold-overview.md`
 - `knowledge/m1-consciousness-os-overview.md`
 - 必要に応じて `knowledge/schema/`, `knowledge/concepts/`

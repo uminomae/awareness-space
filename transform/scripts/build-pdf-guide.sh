@@ -63,15 +63,15 @@ get_guide_title() {
     local lang="${2:-ja}"
     if [ "$lang" = "en" ]; then
         case "$audience" in
-            general)  echo "The Awareness Model — Four Layers" ;;
+            general)  echo "What Is Awareness? — Survival and Intersubjectivity" ;;
             designer) echo "Using the Awareness Model as an Observation Tool" ;;
-            academic) echo "Structural Comparison of the Awareness Model" ;;
+            academic) echo "Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology" ;;
         esac
     else
         case "$audience" in
-            general)  echo "意識モデルの4層構造" ;;
+            general)  echo "意識とは何か — 生存と間主観性を手がかりに" ;;
             designer) echo "意識モデルを観察の道具として使う" ;;
-            academic) echo "意識モデルの構造比較" ;;
+            academic) echo "意識モデルと神経現象学・発達心理の接続" ;;
         esac
     fi
 }
@@ -81,13 +81,13 @@ get_guide_subtitle() {
     local lang="${2:-ja}"
     if [ "$lang" = "en" ]; then
         case "$audience" in
-            general)  echo "A Plain-Language Guide" ;;
+            general)  echo "A Guide to Awareness as a Model" ;;
             designer) echo "For Educators, Supporters, and Team Designers" ;;
             academic) echo "An Exploratory Guide for Cross-Disciplinary Readers" ;;
         esac
     else
         case "$audience" in
-            general)  echo "一般の読者向け guide" ;;
+            general)  echo "一般の読者向けの意識モデル guide" ;;
             designer) echo "教育者・支援者・チーム設計者向け guide" ;;
             academic) echo "学際的探索者向け guide" ;;
         esac

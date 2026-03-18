@@ -1,4 +1,4 @@
-# awareness designer — 生成ルール v0.1
+# awareness designer — 生成ルール v0.2
 
 **タイトル**: 意識モデルを観察の道具として使う  
 **読者**: 教育者・対人支援者・チーム設計者  
@@ -13,8 +13,9 @@
 
 2. **意識モデルの構造**
    - 4層モデルを観察フレームとして提示する
-   - F-O軸を「何を守ろうとしているか」の読み筋として示す
-   - Withhold を反応停止ではなく再評価の余地として示す
+   - F-O軸を「何を守ろうとしているか / 何との関係を保とうとしているか」の仮説として示す
+   - 神経現象学と発達心理の知見を、観察の足場としてつなぐ
+   - `Withhold` は必要な場合だけ補助概念として扱う
 
 3. **現場で何が見えるか**
    - 学習、支援、対話、チームの場面で起きる観察サインを書く
@@ -33,11 +34,13 @@
 - 「正しい反応」や「成熟した反応」を規定しない
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を入れない
 - 支援実践の万能理論のように見せない
+- F-O軸は検証対象の仮説であり、前提化しすぎない
+- `Withhold` を主要診断概念にしない
 
 ## ソース
 
 - `knowledge/model-overview.md`
 - `knowledge/four-layers-overview.md`
 - `knowledge/fo-axis-overview.md`
-- `knowledge/withhold-overview.md`
 - `knowledge/concepts-overview.md`
+- 必要に応じて発達心理 / 神経現象学に関わる source

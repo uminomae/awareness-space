@@ -15,7 +15,7 @@ const STRINGS = {
         features: {
             general: {
                 title: 'General',
-                modalTitle: '意識モデルの4層構造',
+                modalTitle: '意識とは何か — 生存と間主観性を手がかりに',
                 description: '一般の読者向けの平易な guide。',
             },
             designer: {
@@ -25,8 +25,8 @@ const STRINGS = {
             },
             academic: {
                 title: 'Academic',
-                modalTitle: '意識モデルの構造比較',
-                description: '比較と未解決論点に重心を置いた学術寄り guide。',
+                modalTitle: '意識モデルと神経現象学・発達心理の接続',
+                description: '神経現象学と発達心理を中心にした学術寄り guide。',
             },
         },
         tabDomains: '領域別レポート',
@@ -55,7 +55,7 @@ const STRINGS = {
         features: {
             general: {
                 title: 'General',
-                modalTitle: 'Awareness Model: Four Layers',
+                modalTitle: 'What Is Awareness? — Survival and Intersubjectivity',
                 description: 'A plain-language guide for general readers.',
             },
             designer: {
@@ -65,8 +65,8 @@ const STRINGS = {
             },
             academic: {
                 title: 'Academic',
-                modalTitle: 'Structural Comparison of the Awareness Model',
-                description: 'An academically oriented guide focused on comparison and open questions.',
+                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology',
+                description: 'An academically oriented guide centered on neurophenomenology and developmental psychology.',
             },
         },
         tabDomains: 'Domain Reports',
