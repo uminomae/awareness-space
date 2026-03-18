@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Components — awareness-space</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/shell.css">
+  <link rel="stylesheet" href="./src/styles/topbar.css">
+  <link rel="stylesheet" href="./src/styles/reports.css">
+  <link rel="stylesheet" href="./src/styles/viewer.css">
+  <link rel="stylesheet" href="./src/styles/awareness.css">
+  <link rel="stylesheet" href="./src/styles/dev-legacy.css">
+  <link rel="stylesheet" href="./src/styles/dev-panel.css">
+  <style>
+    body {
+      min-height: 100vh;
+      color: rgba(var(--color-sub-text), 0.84);
+      background:
+        radial-gradient(circle at top left, rgba(46, 72, 116, 0.24), transparent 40%),
+        linear-gradient(180deg, rgba(7, 12, 24, 0.98), rgba(4, 8, 16, 1));
+    }
+
+    main {
+      width: min(1120px, calc(100vw - 2rem));
+      margin: 0 auto;
+      padding: 5rem 0 4rem;
+    }
+
+    .ds-hero,
+    .ds-card {
+      border: 1px solid rgba(var(--color-accent), 0.14);
+      background:
+        radial-gradient(circle at top right, rgba(var(--color-accent), 0.08), transparent 38%),
+        rgba(9, 13, 24, 0.78);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+    }
+
+    .ds-hero {
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ds-card {
+      border-radius: 1rem;
+      padding: 1rem;
+      height: 100%;
+    }
+
+    .ds-kicker,
+    .ds-chip,
+    code {
+      font-family: var(--kesson-font-mono-ui);
+    }
+
+    .ds-kicker,
+    .ds-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.24rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(var(--color-accent), 0.14);
+      background: rgba(var(--color-accent), 0.08);
+      color: rgba(var(--color-highlight), 0.84);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+    }
+
+    .ds-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .ds-swatch {
+      height: 4.5rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(var(--color-heading), 0.08);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="ds-hero">
+      <span class="ds-kicker">awareness-space / dev</span>
+      <h1 class="mt-3 mb-3 text-light">Dev Components</h1>
+      <p class="mb-3">Issue #28 で追加した DEV HUD と補助 UI の確認用ページです。実装方針は creation-space の操作体験に合わせつつ、awareness-space の iframe 背景構成に寄せています。</p>
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-outline-light btn-sm" href="./">Back to root</a>
+        <a class="btn btn-outline-info btn-sm" href="./?dev&graphic=raijin">Open DEV raijin</a>
+        <a class="btn btn-outline-info btn-sm" href="./?dev&graphic=uzu">Open DEV uzu</a>
+      </div>
+    </section>
+
+    <section class="ds-grid">
+      <article class="ds-card">
+        <span class="ds-chip mb-2">HUD</span>
+        <h2 class="h5 text-light">Version / Components</h2>
+        <p>通常表示では非表示、<code>?dev</code> 時のみ左上の version と右上の Components リンクが出ます。</p>
+      </article>
+      <article class="ds-card">
+        <span class="ds-chip mb-2">Panel</span>
+        <h2 class="h5 text-light">PANEL</h2>
+        <p>右端の縦タブから開閉し、variant ごとの shader / bloom / color 状態を JSON ごと保存できます。</p>
+      </article>
+      <article class="ds-card">
+        <span class="ds-chip mb-2">Links</span>
+        <h2 class="h5 text-light">LINKS</h2>
+        <p><code>assets/page-links.json</code> を読み、Open / Copy 付きのリンクハブを offcanvas で開きます。</p>
+      </article>
+    </section>
+
+    <section class="ds-grid mt-4">
+      <article class="ds-card">
+        <h2 class="h5 text-light">Raijin Palette</h2>
+        <div class="ds-swatch mb-2" style="background: linear-gradient(135deg, #061824, #0d6d67, #7df6ff);"></div>
+        <p class="mb-0">液体の密度と発光パルスを調整する構成です。</p>
+      </article>
+      <article class="ds-card">
+        <h2 class="h5 text-light">Uzu Palette</h2>
+        <div class="ds-swatch mb-2" style="background: linear-gradient(135deg, #d1deef, #90abc8, #001543, #0099ff);"></div>
+        <p class="mb-0">渦の密度、pulse、bloom を分離して調整する構成です。</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

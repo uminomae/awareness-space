@@ -14,10 +14,14 @@
   <link rel="stylesheet" href="./src/styles/reports.css">
   <link rel="stylesheet" href="./src/styles/viewer.css">
   <link rel="stylesheet" href="./src/styles/awareness.css">
+  <link rel="stylesheet" href="./src/styles/dev-legacy.css">
+  <link rel="stylesheet" href="./src/styles/dev-panel.css">
 
   <script type="importmap">
     {
       "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
         "marked": "https://cdn.jsdelivr.net/npm/marked@15.0.7/lib/marked.esm.js",
         "dompurify": "https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.es.mjs"
       }
@@ -117,6 +121,8 @@
     <button type="button" class="btn btn-outline-light active" data-graphic-mode="raijin" aria-pressed="true" data-ja="雷神" data-en="raijin">雷神</button>
     <button type="button" class="btn btn-outline-light" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
   </div>
+  <div id="dev-version-inline" aria-live="polite" hidden></div>
+  <a id="dev-components-link" class="dev-components-link" href="./dev-components.html">Components</a>
 
   <div id="overlay" role="presentation">
     <div id="taglines">
