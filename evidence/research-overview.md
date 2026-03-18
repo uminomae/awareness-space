@@ -31,26 +31,20 @@
 - schema
 - M1 consciousness OS
 - concept notes
-- D01-D30 evidence 系譜
 - `creation-space-refs`
 - `m2-*` skills
 がまとまっている。
 
-## 4. D01-D30 取り込み
+## 4. 中核 source map
 
-取り込み方針:
+中核参照地図:
 
-- `d01-d30-intake-plan.md`
-
-現時点では、
-- `creation-space/evidence/` を一次候補
-- `kesson-driven-thinking/chatgpt/output/` を補助系譜
-として扱う。
+- `review/core-source-map.md`
 
 ## 5. 今後の作業
 
 このセクションでは今後、
 - evidence 単位の整理
-- 取り込み済み領域の状態表示
+- intake map の整備
 - report との接続
 を追加していく。

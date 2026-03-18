@@ -34,8 +34,7 @@ Phase 1:
 Phase 2:
 - 親 Issue は `#44`
 - `kesson-driven-thinking` から選定素材を取り込む
-- D01-D30 evidence の取り込みポリシーを `#46` で固定する
-- 神経現象学と心理学を中核にした source map を `#45` で整備する
+- 神経現象学と心理学を中核にした source map は `#45` で正本化済み
 - awareness-space 固有の探索文書と次の実装 Issue 群を立ち上げる
 
 ## 正本参照
@@ -50,7 +49,6 @@ Phase 2:
 - schema 候補
 - M1 consciousness OS テキスト
 - concept note CN-001 〜 CN-007
-- Issue #62 系譜の D01-D30 evidence
 - `creation-space-refs`
 - `m2-exploration` と `m2-evidence` skills
 

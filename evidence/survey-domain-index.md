@@ -62,26 +62,11 @@ guide、overview、report、source のどこから読むかで整理した索引
 
 - `PROJECT.md`
 - `../docs/material-inventory.md`
-- `d01-d30-intake-plan.md`
+- `review/core-source-map.md`
 - `review/survey-5w1h-source-map.md`
 
-## 5. 比較素材としての D01-D30
-
-`awareness-space` は D01-D30 を本体調査として再実施しているのではなく、
-比較素材・参照系譜として扱っています。
-
-本体コピー元の第一候補:
-
-- `~/dev/creation-space/evidence/`
-
-補助系譜:
-
-- `~/dev/kesson-driven-thinking/chatgpt/output/`
-
-## 6. この repo の重心
+## 5. この repo の重心
 
 この repo の重心は、意識モデルそのものの探索です。
 特に、神経現象学と発達心理を含む心理学的知見をどう統合できるか、
 そして生存と間主観性をコアに置く仮説が妥当かどうかを調べています。
-
-したがって、D01-D30 は本体ではなく比較素材です。

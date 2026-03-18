@@ -19,7 +19,7 @@
 - 神経現象学を中心参照に据えつつ、発達心理を含む心理学領域の知見を統合する
 - F-O軸（生存と間主観性）は、この repo の中核仮説であり、**是非を含めた検証対象**として扱う
 - `Withhold` は周辺仮説として扱い、repo 全体の中心主題として固定しない
-- D01-D30 の構造類似調査は、本体調査ではなく比較素材として扱う
+- D01-D30 の構造類似調査は `creation-space` 側の調査であり、この repo のスコープに含めない
 
 ### 0.2 出発点
 
@@ -88,7 +88,7 @@
 - `docs/material-inventory.md`
 - `evidence/review/core-source-map.md`
 
-ここには schema、M1 consciousness OS、concept notes、D01-D30 evidence 系譜、
+ここには schema、M1 consciousness OS、concept notes、
 `creation-space-refs`、`m2-*` skills を整理してある。
 
 ## 3. プロジェクト状態
@@ -99,26 +99,22 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#44`, `#45`, `#46`
+- 現在の open Issue は `#44`
 - source map の正本は `evidence/review/core-source-map.md`
 
 ### 3.2 現在の主作業
 
-- `#45` で神経現象学と心理学を中核にした source map を整備する
-- `#46` で D01-D30 evidence を比較素材としてどう取り込むかを固定する
+- 神経現象学 intake と発達心理学 intake の次 Issue を立ち上げる
 - `#44` を親として、次の内容統合フェーズの実装順を整理する
 
 ### 3.3 次のアクション
 
-- `#45` の source map を正本パスに固定する
 - 神経現象学 intake と発達心理学 intake の次 Issue を分解する
-- `#46` で D01-D30 の一次コピー元と補助参照の境界を明文化する
 - `#44` 配下に、domain report 化や evidence intake の実装 Issue を追加する
 
 ### 3.4 ブロッカー
 
-- D01-D30 evidence の取り込みポリシーが未確定
-- 神経現象学と心理学を中心に据えた source map がまだ固定されていない
+- 神経現象学 intake と発達心理学 intake の分解がまだ未着手
 - domain report をどの順で実体化するかが未分解
 
 ## 4. ファイル構成
@@ -128,7 +124,7 @@
 | `evidence/PROJECT.md` | 調査憲章。調査目的、起点仮説、現在地の正本 |
 | `evidence/README.md` | evidence ディレクトリの入口 |
 | `evidence/review/` | 横断レビュー、進捗設計、設計判断ログ、将来のレビュー成果 |
-| `evidence/work/` | D01-D30 初期スキャン、一次候補、取り込み前の中間素材 |
+| `evidence/work/` | 初期スキャン、一次候補、取り込み前の中間素材 |
 | `evidence/deepdive/` | Level2 以降の深掘り探索（準備/プレースホルダ） |
 | `evidence/archive/` | Revise 前の evidence 退避を管理 |
 | `docs/material-inventory.md` | 初期素材インベントリ |

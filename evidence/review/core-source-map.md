@@ -1,13 +1,13 @@
 # core source map
 
 `awareness-space` が「意識のモデル」を組み立てるときの中核参照地図。
-素材インベントリそのものではなく、**何を中心に読み、何を比較素材として使うか**を固定する正本。
+素材インベントリそのものではなく、**何を中心に読むか**を固定する正本。
 
 ## 1. この map の役割
 
 - 神経現象学と心理学を中心に据える
-- F-O軸、4層モデル、M1、concept notes、D01-D30 比較素材の位置づけを分ける
-- `#46` の D01-D30 取り込みポリシーと、今後の domain report 実装順の前提を与える
+- F-O軸、4層モデル、M1、concept notes の位置づけを分ける
+- 今後の intake と domain report 実装順の前提を与える
 
 ## 2. 中心軸
 
@@ -58,12 +58,10 @@ F-O軸は採択済みの正解ではなく、神経現象学と心理学の知�
 | `knowledge/schema/four-modules.md` | 構成整理の補助 | 支持 source |
 | `knowledge/schema/withhold-matching-v2.md` | 周辺仮説の参照 | 周辺 source |
 
-### 3-3. Layer C: 比較・照明用の source
+### 3-3. Layer C: 周辺の補助 source
 
 | source | 役割 | 現在の扱い |
 |---|---|---|
-| `creation-space/evidence/` 由来の D01-D30 | 意識モデルを外部から照らす比較素材 | 本体調査ではない |
-| `kesson-driven-thinking/chatgpt/output/` | review / reconcile / DR 系譜 | 補助参照 |
 | `evidence/review/survey-5w1h-source-map.md` | survey 用の整理メモ | 補助メモ |
 | `docs/material-inventory.md` | 素材所在の一覧 | インベントリ |
 
@@ -111,12 +109,6 @@ F-O軸は採択済みの正解ではなく、神経現象学と心理学の知�
 - **位置づけ**: 中核ではない
 - **使い方**: 必要な場面で限定的に参照する
 
-### 4-8. D01-D30 比較素材
-
-- **役割**: 意識モデルを外部から照らす比較材料
-- **位置づけ**: 比較 source
-- **使い方**: 中心理論の代替ではなく、外部照明として扱う
-
 ## 5. 今後の intake / report 優先順
 
 ### 優先度 A
@@ -135,8 +127,7 @@ F-O軸は採択済みの正解ではなく、神経現象学と心理学の知�
 ### 優先度 C
 
 1. Withhold
-2. D01-D30 比較素材
-3. creation-space-refs 再構築後の取り込み
+2. creation-space-refs 再構築後の取り込み
 
 ## 6. `#44` 配下の次の実装候補
 
@@ -145,10 +136,8 @@ F-O軸は採択済みの正解ではなく、神経現象学と心理学の知�
 1. 神経現象学 intake map を作る
 2. 発達心理学 intake map を作る
 3. F-O軸 / 4層モデルの report 正本を整理する
-4. `#46` で D01-D30 比較素材の取り込み境界を固定する
 
 ## 7. 正本関係
 
 - この文書は `#45` の正本
 - 素材一覧の正本は `docs/material-inventory.md`
-- D01-D30 の取り込み境界は `evidence/d01-d30-intake-plan.md`

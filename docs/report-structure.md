@@ -68,7 +68,7 @@ manifest を読み込み、
 次の文書は report ではなく、設計・運用・取り込み方針として扱う。
 
 - `docs/material-inventory.md`
-- `evidence/d01-d30-intake-plan.md`
+- `evidence/review/core-source-map.md`
 - `docs/report-structure.md`
 
 ## 6. 次の拡張

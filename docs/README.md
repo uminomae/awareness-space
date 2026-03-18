@@ -1,6 +1,6 @@
 # docs/README.md
 
-**更新日**: 2026-03-17
+**更新日**: 2026-03-18
 
 ## 位置づけ
 
@@ -95,9 +95,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の exploration 線: `#45` source map
+- 現在の exploration 線: 中核 source map を正本化済み
 - Phase 2 親: `#44` 意識モデル素材統合
-- Phase 2 の入口: `#45` source map、`#46` D01-D30 evidence 取り込みポリシー固定
+- Phase 2 の入口: 神経現象学 intake と発達心理学 intake の分解
 
 ## 8. ローカル作業領域
 

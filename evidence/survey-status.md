@@ -5,7 +5,7 @@ lang: ja
 audience: survey
 version: 0.1
 date: 2026-03-18
-source: evidence/PROJECT.md, docs/material-inventory.md, evidence/d01-d30-intake-plan.md
+source: evidence/PROJECT.md, docs/material-inventory.md, evidence/review/core-source-map.md
 rules: reader-rules-awareness-survey.md v0.1
 generator_model: codex:gpt-5
 ---
@@ -40,10 +40,9 @@ F-O軸は、その中で「生存と間主観性をコアに置く見方は妥�
 この調査は、`kesson-driven-thinking` にある schema、M1、concept notes を
 source として活用しながら進めています。
 
-加えて、`creation-space` にある D01-D30 の構造類似調査資産を、
-意識モデルを外部から照らす比較素材として参照します。
-つまり awareness-space は、30領域調査を一から再実施しているのではなく、
-既存の調査資産も含めて意識モデルの探索に再編している段階です。
+加えて、`awareness-space` は `creation-space` の 30領域調査を
+自分たちの調査対象としては扱いません。
+この repo は、意識モデルそのものの探索に集中します。
 
 ## 4. 調査の方法
 
@@ -51,8 +50,7 @@ source として活用しながら進めています。
 
 第一に、schema、M1、concept notes から意識モデルの source を読むこと。
 第二に、神経現象学や発達心理に接続しうる観点を整理すること。
-第三に、D01-D30 の構造類似調査や関連 review を比較素材として参照すること。
-第四に、それらを guide、調査内容、report の三層に分けて、
+第三に、それらを guide、調査内容、report の三層に分けて、
 読者が辿れる公開導線へ整形することです。
 
 この方法では、
@@ -66,7 +64,7 @@ source と公開文書を分離し、
 
 - 調査憲章: `evidence/PROJECT.md`
 - 素材インベントリ: `docs/material-inventory.md`
-- D01-D30 取り込み方針: `evidence/d01-d30-intake-plan.md`
+- 中核 source map: `evidence/review/core-source-map.md`
 - guide: general / designer / academic
 - report: F-O軸、4層モデル、Withhold
 
@@ -77,7 +75,7 @@ source と公開文書を分離し、
 まず全体像を知りたいなら、guide を読むのが最短です。
 構成要素ごとの整理を見たいなら overview 群へ進みます。
 個別の知見を見たいなら report を読みます。
-source の所在や比較素材を確認したいときは、素材インベントリと取り込み方針を参照してください。
+source の所在や優先順位を確認したいときは、素材インベントリと core source map を参照してください。
 
 索引は [意識モデル探索: 調査索引](./survey-domain-index.md) にまとめています。
 
@@ -85,8 +83,7 @@ source の所在や比較素材を確認したいときは、素材インベン�
 
 この調査はまだ進行中です。
 用語の境界、F-O軸の精密化、
-神経現象学と発達心理の知見をどこまで一つのモデルへ統合できるか、
-そして D01-D30 をどこまで awareness 側の比較資産として取り込むかは、
+神経現象学と発達心理の知見をどこまで一つのモデルへ統合できるかは、
 今後さらに整理が必要です。
 
 また、既存 source には内部用語や旧理論語彙が残っています。
