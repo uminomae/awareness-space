@@ -29,6 +29,30 @@
         import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
         import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
         import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+        const DEV_MESSAGE_SOURCE = 'awareness-space-dev-panel';
+        const variant = 'uzu';
+        const state = {
+            noiseScale: 0.62,
+            timeSpeed: 1.0,
+            densityLow: 0.40,
+            densityHigh: 0.66,
+            bodyGain: 0.25,
+            pulseGain: 0.24,
+            edgeWidth: 0.08,
+            saturation: 1.8,
+            vignette: 0.40,
+            bloomStrength: 0.18,
+            bloomRadius: 0.12,
+            bloomThreshold: 0.88,
+            bgTop: '#d1deef',
+            bgMid: '#90abc8',
+            bgLow: '#3d5066',
+            bodyCool: '#00030d',
+            bodyWarm: '#00081b',
+            bodyHot: '#001543',
+            pulseHot: '#0099ff',
+            pulseCool: '#0033cc',
+        };
         // -----------------------------
         // 1. Scene Setup
         // -----------------------------
@@ -38,7 +62,7 @@
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
         const renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: "high-performance" });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5)); // 負荷軽減
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.0)); // 負荷軽減
         document.body.appendChild(renderer.domElement);
         // -----------------------------
         // 2. Post-processing (Bloom)
@@ -50,9 +74,9 @@
         // (解像度, 強度, 半径, 閾値)
         const bloomPass = new UnrealBloomPass(
             new THREE.Vector2(window.innerWidth, window.innerHeight),
-            0.3,  // Bloom strength (最小限)
-            0.2,  // Bloom radius
-            0.8   // Bloom threshold (パルスの最も明るい部分だけ)
+            state.bloomStrength,
+            state.bloomRadius,
+            state.bloomThreshold
         );
         composer.addPass(bloomPass);
         // -----------------------------
@@ -60,11 +84,45 @@
         // -----------------------------
         const uniforms = {
             uTime: { value: 0.0 },
-            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            uNoiseScale: { value: state.noiseScale },
+            uTimeSpeed: { value: state.timeSpeed },
+            uDensityLow: { value: state.densityLow },
+            uDensityHigh: { value: state.densityHigh },
+            uBodyGain: { value: state.bodyGain },
+            uPulseGain: { value: state.pulseGain },
+            uEdgeWidth: { value: state.edgeWidth },
+            uSaturation: { value: state.saturation },
+            uVignette: { value: state.vignette },
+            uBgTop: { value: new THREE.Color(state.bgTop) },
+            uBgMid: { value: new THREE.Color(state.bgMid) },
+            uBgLow: { value: new THREE.Color(state.bgLow) },
+            uBodyCool: { value: new THREE.Color(state.bodyCool) },
+            uBodyWarm: { value: new THREE.Color(state.bodyWarm) },
+            uBodyHot: { value: new THREE.Color(state.bodyHot) },
+            uPulseHot: { value: new THREE.Color(state.pulseHot) },
+            uPulseCool: { value: new THREE.Color(state.pulseCool) }
         };
         const fragmentShader = `
             uniform float uTime;
             uniform vec2 uResolution;
+            uniform float uNoiseScale;
+            uniform float uTimeSpeed;
+            uniform float uDensityLow;
+            uniform float uDensityHigh;
+            uniform float uBodyGain;
+            uniform float uPulseGain;
+            uniform float uEdgeWidth;
+            uniform float uSaturation;
+            uniform float uVignette;
+            uniform vec3 uBgTop;
+            uniform vec3 uBgMid;
+            uniform vec3 uBgLow;
+            uniform vec3 uBodyCool;
+            uniform vec3 uBodyWarm;
+            uniform vec3 uBodyHot;
+            uniform vec3 uPulseHot;
+            uniform vec3 uPulseCool;
             // 3D gradient noise (正しく勾配ベクトルを使用)
             vec3 hash33(vec3 p) {
                 p = fract(p * vec3(443.897, 441.423, 437.195));
@@ -96,9 +154,9 @@
                 float f = 0.0;
                 float amp = 0.5;
                 mat3 m = rot3(0.5); // 固定回転角
-                for(int i = 0; i < 6; i++) {
+                for(int i = 0; i < 4; i++) {
                     f += amp * (noise(p) * 0.5 + 0.5);
-                    p = m * p * 2.0 + vec3(100.0) + uTime * 0.25;
+                    p = m * p * 2.0 + vec3(100.0) + uTime * uTimeSpeed * 0.25;
                     amp *= 0.5;
                 }
                 return f;
@@ -109,59 +167,51 @@
                 vec3 ro = vec3(0.0, 0.0, 4.1); // 少し引いて模様の密度を下げる
                 vec3 rd = normalize(vec3(uv, -1.0)); // レイの方向
                 // 深海の背景グラデーション (液体の隙間から見える)
-                vec3 bgTop = vec3(0.82, 0.87, 0.94);
-                vec3 bgMid = vec3(0.56, 0.67, 0.80);
-                vec3 bgLow = vec3(0.28, 0.36, 0.47);
                 float skyMix = clamp(uv.y * 0.85 + 0.5, 0.0, 1.0);
-                vec3 bgColor = mix(bgLow, bgMid, smoothstep(0.0, 0.55, skyMix));
-                bgColor = mix(bgColor, bgTop, smoothstep(0.45, 1.0, skyMix));
+                vec3 bgColor = mix(uBgLow, uBgMid, smoothstep(0.0, 0.55, skyMix));
+                bgColor = mix(bgColor, uBgTop, smoothstep(0.45, 1.0, skyMix));
                 vec3 color = bgColor;
                 float t = 0.0;
 
                 float absorption = 0.0;
 
                 // ボリューム・レイマーチング
-                for(int i = 0; i < 52; i++) {
+                for(int i = 0; i < 36; i++) {
                     if(absorption > 0.95) break; // 十分不透明になったら打ち切り
                     vec3 p = ro + rd * t;
 
                     // 乱流ノイズ
-                    float n = fbm(p * 0.62 + vec3(0.0, uTime * 0.08, 0.0));
+                    float n = fbm(p * uNoiseScale + vec3(0.0, uTime * uTimeSpeed * 0.08, 0.0));
 
                     // 1. 液体の密度 — 閾値以下は完全に透明
-                    float rawDensity = smoothstep(0.40, 0.66, n); // 鱗状の境界を減らす
-                    if(rawDensity < 0.01) { t += 0.05; continue; } // 透明な空間はスキップ
+                    float rawDensity = smoothstep(uDensityLow, uDensityHigh, n); // 鱗状の境界を減らす
+                    if(rawDensity < 0.02) { t += 0.06; continue; } // 透明な空間はスキップ
                     float liquidDensity = rawDensity * 0.8 + rawDensity * rawDensity * 0.2;
                     float depth = t / 3.0;
 
                     // 2. 炎のような渦 — 芯ほど熱く(明るく)、縁は暗い
                     float heat = liquidDensity * liquidDensity; // 芯の熱さ
-                    vec3 coolColor = vec3(0.0, 0.01, 0.05);      // 外縁: ほぼ黒
-                    vec3 warmColor = vec3(0.0, 0.03, 0.10);      // 中間: 暗ブルー
-                    vec3 hotColor  = vec3(0.0, 0.06, 0.18);      // 芯: ダークブルー
-                    vec3 bodyColor = mix(coolColor, mix(warmColor, hotColor, heat), liquidDensity);
+                    vec3 bodyColor = mix(uBodyCool, mix(uBodyWarm, uBodyHot, heat), liquidDensity);
                     bodyColor *= (0.3 + heat * 0.7);
                     // 揺らぎ — 炎のちらつき
-                    float flicker = noise(p * 2.1 + uTime * 0.45) * 0.5 + 0.5;
+                    float flicker = noise(p * 2.1 + uTime * uTimeSpeed * 0.45) * 0.5 + 0.5;
                     bodyColor *= (0.7 + flicker * 0.5);
 
                     // 3. パルス — 渦芯から放射 + 界面を駆ける
                     float vortexCore = smoothstep(0.5, 1.0, liquidDensity);
                     // 放射パルス: 複数波の干渉で炎のゆらぎ
-                    float rw1 = sin(n * 8.0 - uTime * 3.8 + length(p.xz) * 1.8);
-                    float rw2 = sin(n * 5.5 + uTime * 2.7 - length(p.xy) * 2.6);
-                    float rw3 = sin(p.z * 3.4 - uTime * 4.2 + n * 9.0);
+                    float rw1 = sin(n * 8.0 - uTime * uTimeSpeed * 3.8 + length(p.xz) * 1.8);
+                    float rw2 = sin(n * 5.5 + uTime * uTimeSpeed * 2.7 - length(p.xy) * 2.6);
+                    float rw3 = sin(p.z * 3.4 - uTime * uTimeSpeed * 4.2 + n * 9.0);
                     float radPulse = smoothstep(0.8, 1.0, rw1) + smoothstep(0.85, 1.0, rw2) * 0.6 + smoothstep(0.9, 1.0, rw3) * 0.4;
                     radPulse *= vortexCore;
                     // 界面パルス
-                    float edge = smoothstep(0.08, 0.0, abs(n - 0.5));
-                    float ew = sin(p.x * 2.6 + p.y * 3.3 - uTime * 3.1 + n * 8.0);
+                    float edge = smoothstep(uEdgeWidth, 0.0, abs(n - 0.5));
+                    float ew = sin(p.x * 2.6 + p.y * 3.3 - uTime * uTimeSpeed * 3.1 + n * 8.0);
                     float edgePulse = smoothstep(0.85, 1.0, ew) * edge;
                     float pulse = radPulse + edgePulse;
                     // パルス色: 青〜シアン (白成分を排除)
-                    vec3 pulseHot = vec3(0.0, 0.6, 1.0);   // シアン
-                    vec3 pulseCool = vec3(0.0, 0.2, 0.8);   // ディープブルー
-                    vec3 pulseColor = mix(pulseHot, pulseCool, depth);
+                    vec3 pulseColor = mix(uPulseHot, uPulseCool, depth);
                     vec3 edgeGlow = pulseColor * pulse * 12.0;
 
                     // 4. 蓄積 — 本体とパルスを分離
@@ -169,21 +219,21 @@
                     float atten = exp(-t * 0.3);
                     float transmit = 1.0 - absorption;
                     // 本体: 暗い液体 (吸収で暗くする)
-                    color = color * (1.0 - stepDensity) + bodyColor * stepDensity * transmit * atten * 0.25;
+                    color = color * (1.0 - stepDensity) + bodyColor * stepDensity * transmit * atten * uBodyGain;
                     // パルス: 加算合成 (暗闇の中で光る)
-                    color += edgeGlow * 0.02 * atten;
+                    color += edgeGlow * uPulseGain * atten;
                     absorption += stepDensity * transmit;
 
-                    t += 0.065;
+                    t += 0.075;
                 }
                 // トーンマッピング — 暗部を保持、明部だけ圧縮
                 color = color / (color + vec3(1.2)); // Reinhard (高めの分母で暗部を暗く保つ)
                 color = pow(color, vec3(1.0 / 1.8)); // 暗めのガンマ
                 // 彩度ブースト
                 float luma = dot(color, vec3(0.299, 0.587, 0.114));
-                color = mix(vec3(luma), color, 1.8);
+                color = mix(vec3(luma), color, uSaturation);
                 // ヴィネット
-                color *= 1.0 - length(uv) * 0.4;
+                color *= 1.0 - length(uv) * uVignette;
                 gl_FragColor = vec4(color, 1.0);
             }
         `;
@@ -218,6 +268,50 @@
             // composerを使ってレンダリング (Bloomを含む)
             composer.render();
         }
+
+        function applyState(nextState = {}) {
+            Object.keys(state).forEach((key) => {
+                const candidate = nextState[key];
+                if (typeof state[key] === 'number' && typeof candidate === 'number') {
+                    state[key] = candidate;
+                }
+                if (typeof state[key] === 'string' && typeof candidate === 'string') {
+                    state[key] = candidate;
+                }
+            });
+
+            uniforms.uNoiseScale.value = state.noiseScale;
+            uniforms.uTimeSpeed.value = state.timeSpeed;
+            uniforms.uDensityLow.value = state.densityLow;
+            uniforms.uDensityHigh.value = state.densityHigh;
+            uniforms.uBodyGain.value = state.bodyGain;
+            uniforms.uPulseGain.value = state.pulseGain;
+            uniforms.uEdgeWidth.value = state.edgeWidth;
+            uniforms.uSaturation.value = state.saturation;
+            uniforms.uVignette.value = state.vignette;
+            uniforms.uBgTop.value.set(state.bgTop);
+            uniforms.uBgMid.value.set(state.bgMid);
+            uniforms.uBgLow.value.set(state.bgLow);
+            uniforms.uBodyCool.value.set(state.bodyCool);
+            uniforms.uBodyWarm.value.set(state.bodyWarm);
+            uniforms.uBodyHot.value.set(state.bodyHot);
+            uniforms.uPulseHot.value.set(state.pulseHot);
+            uniforms.uPulseCool.value.set(state.pulseCool);
+            bloomPass.strength = state.bloomStrength;
+            bloomPass.radius = state.bloomRadius;
+            bloomPass.threshold = state.bloomThreshold;
+            window.__awarenessDevState = { variant, state: { ...state } };
+        }
+
+        window.addEventListener('message', (event) => {
+            if (event.origin !== window.location.origin) return;
+            const data = event.data;
+            if (!data || data.source !== DEV_MESSAGE_SOURCE || data.type !== 'dev:apply-state') return;
+            if (data.variant !== variant) return;
+            applyState(data.state);
+        });
+
+        applyState(state);
         animate();
     </script>
 </body>

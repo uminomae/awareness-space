@@ -1,0 +1,40 @@
+{
+  "basePath": "./",
+  "presets": {
+    "root": {
+      "label": "Root",
+      "path": "./"
+    },
+    "dev_raijin": {
+      "label": "DEV: Raijin",
+      "path": "./",
+      "query": {
+        "dev": true,
+        "graphic": "raijin"
+      }
+    },
+    "dev_uzu": {
+      "label": "DEV: Uzu",
+      "path": "./",
+      "query": {
+        "dev": true,
+        "graphic": "uzu"
+      }
+    },
+    "components": {
+      "label": "Components",
+      "path": "./dev-components.html",
+      "query": {}
+    },
+    "model_section": {
+      "label": "Model Section",
+      "path": "./",
+      "hash": "model-section"
+    },
+    "reports_section": {
+      "label": "Reports Section",
+      "path": "./",
+      "hash": "reports-section"
+    }
+  }
+}

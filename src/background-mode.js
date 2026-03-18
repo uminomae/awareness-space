@@ -50,28 +50,57 @@ function resolveBackgroundSrc(mode) {
     return url.toString();
 }
 
-export function initBackgroundModeSwitcher() {
+export function initBackgroundModeSwitcher(options = {}) {
+    const onModeChange = typeof options.onModeChange === 'function' ? options.onModeChange : null;
+    const onFrameLoad = typeof options.onFrameLoad === 'function' ? options.onFrameLoad : null;
     const frame = createBackgroundFrame();
     if (!(frame instanceof HTMLIFrameElement)) return;
 
+    function getCurrentMode() {
+        return normalizeMode(frame.dataset.mode || DEFAULT_MODE);
+    }
+
+    function applyMode(nextMode, { emitChange = true } = {}) {
+        const normalized = normalizeMode(nextMode);
+        if (frame.dataset.mode === normalized && frame.src === resolveBackgroundSrc(normalized)) {
+            setButtonState(normalized);
+            syncModeQuery(normalized);
+            return;
+        }
+        frame.dataset.mode = normalized;
+        frame.src = resolveBackgroundSrc(normalized);
+        setButtonState(normalized);
+        syncModeQuery(normalized);
+        if (emitChange && onModeChange) {
+            onModeChange(normalized, { frame });
+        }
+    }
+
+    frame.addEventListener('load', () => {
+        if (onFrameLoad) {
+            onFrameLoad(getCurrentMode(), { frame });
+        }
+    });
+
     const initial = normalizeMode(new URL(window.location.href).searchParams.get('graphic') || DEFAULT_MODE);
-    frame.src = resolveBackgroundSrc(initial);
-    setButtonState(initial);
-    syncModeQuery(initial);
+    applyMode(initial, { emitChange: false });
 
     document.querySelectorAll('[data-graphic-mode]').forEach((button) => {
         if (!(button instanceof HTMLButtonElement)) return;
         button.addEventListener('click', () => {
             const next = normalizeMode(button.dataset.graphicMode);
-            if (frame.dataset.mode === next) {
-                setButtonState(next);
-                syncModeQuery(next);
-                return;
-            }
-            frame.dataset.mode = next;
-            frame.src = resolveBackgroundSrc(next);
-            setButtonState(next);
-            syncModeQuery(next);
+            applyMode(next);
         });
     });
+
+    return {
+        frame,
+        getCurrentMode,
+        setMode(nextMode) {
+            applyMode(nextMode);
+        },
+        getFrameWindow() {
+            return frame.contentWindow;
+        },
+    };
 }
