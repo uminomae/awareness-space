@@ -44,6 +44,7 @@ Concept Notes は完成済みの教科書ではなく、
 - `model-overview.md`
 - `four-layers-overview.md`
 - `withhold-overview.md`
+- `domains/concept-notes/ja/report.md`
 - `concepts/index.md`
 
 ## まだ決めていないこと

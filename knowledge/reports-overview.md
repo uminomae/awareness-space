@@ -16,6 +16,8 @@
 1. `knowledge/domains/fo-axis/ja/report.md`
 2. `knowledge/domains/four-layers/ja/report.md`
 3. `knowledge/domains/withhold/ja/report.md`
+4. `knowledge/domains/m1-consciousness-os/ja/report.md`
+5. `knowledge/domains/concept-notes/ja/report.md`
 
 いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
 
@@ -46,6 +48,4 @@
 
 ## 5. 次の拡張
 
-- M1 意識OS の report 追加
-- concept notes 系 report の追加
 - report 間の相互参照と横断 index の整備

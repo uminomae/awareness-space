@@ -19,6 +19,7 @@ M1 意識OSは、意識の作動構造を記述するための基盤的な文書
 
 現時点では、以下を M1 の主要入口として扱う。
 
+- `domains/m1-consciousness-os/ja/report.md`
 - 4層モデル
 - F-O軸
 - Withhold
@@ -38,4 +39,5 @@ M1 は 1 本の結論文ではなく、複数の論点を段階的に並べた�
 - `four-layers-overview.md`
 - `fo-axis-overview.md`
 - `withhold-overview.md`
+- `domains/m1-consciousness-os/ja/report.md`
 - `m1-consciousness-os/part-1-introduction.md`
