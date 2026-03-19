@@ -1,8 +1,8 @@
 ---
 title: "意識とは何か — 生存と間主観性を手がかりに"
 lang: ja
-version: 0.2
-date: 2026-03-19
+version: 0.3
+date: 2026-03-20
 generator_model: codex:gpt-5
 ---
 
@@ -16,18 +16,31 @@ generator_model: codex:gpt-5
 いまどんな仮説を立て、何を調べ、どこまで見えていて、
 何がまだ未解決なのかという全体像です。
 
+同時に、この guide 自体は独立した説明文ではなく、
+公開済みの report、調査概要、設計メモへの入口をまとめた **summary** として読みます。
+ここで書く各要点は、
+「すでに公開済みの整理」
+「まだ調査中の論点」
+「これから解像度を上げる計画」
+を分けて扱います。
+
 ## モデルの中心仮説
 
-このモデルの中心には、二つの見方があります。
+現時点での起点仮説は、
+**生存と間主観性の二軸によって、意と呼びたい何かが形成される**
+というものです。
 
-一つは、意識を4つの層の流れとして読む見方です。
+ただし、この「意と呼びたい何か」が何なのかは、
+まだ探索の途中にあります。
+そこで現在は、その仮説を読むための構造枠として
+4層モデルを併用しています。
 
 - Layer 0: 体の状態
 - Layer 1: 予測と現実の差
 - Layer 2: その差が何に関わる問題として受け止められるか
 - Layer 3: 反応をそのまま固定せず、見直しうる余地
 
-もう一つは、Layer 2 を読むための仮説としての F-O軸です。
+Layer 2 を読むための仮説座標系として置いているのが F-O軸です。
 
 - F軸: 生存、安全、防衛、保身
 - O軸: 関係、信頼、所属、間主観性
@@ -36,6 +49,19 @@ generator_model: codex:gpt-5
 安全の問題として受け止めるのか、
 関係の問題として受け止めるのかで、
 立ち上がる情動や次の反応は変わります。
+
+## いま読める論拠
+
+この guide の要点を支える reader-facing な公開物として、
+現時点では少なくとも次があります。
+
+- [F-O軸 report](./knowledge/domains/fo-axis/ja/report.md)
+- [4層モデル report](./knowledge/domains/four-layers/ja/report.md)
+- [Withhold report](./knowledge/domains/withhold/ja/report.md)
+- [M1 意識OS report](./knowledge/domains/m1-consciousness-os/ja/report.md)
+- [Concept Notes report](./knowledge/domains/concept-notes/ja/report.md)
+- [調査報告 総覧](./knowledge/reports-overview.md)
+- [調査概要](./evidence/survey-status.md)
 
 ## その仮説を確かめるために何を調査しているか
 
@@ -52,11 +78,29 @@ generator_model: codex:gpt-5
 加えて、既存の文章資産として M1 と Concept Notes を source 束として読み直し、
 仮説の補助線として使っています。
 
+ただし、ここには段階差があります。
+F-O軸、4層モデル、M1、Concept Notes、Withhold には
+すでに公開済み report があります。
+一方で、神経現象学と発達心理学は
+中核調査軸として重要ですが、
+現時点では reader-facing な専用 report よりも、
+設計メモの段階が先行しています。
+
+- [神経現象学設計メモ](./evidence/review/neurophenomenology-design.md)
+- [発達心理学設計メモ](./evidence/review/developmental-psychology-design.md)
+- [中核 source map](./evidence/review/core-source-map.md)
+
 ## 現時点で何が見えているか
 
 少なくとも今のところ、
 意識を「体の状態から始まり、差が目立ち、その差が方向づけられ、反応の余地が生まれる流れ」として読む見方は、
 かなり有力に見えています。
+
+この見立ては、
+特に F-O軸、4層モデル、M1、Concept Notes の公開 report と overview に支えられています。
+つまり、ここで述べていることの中心部分は完全な思いつきではありません。
+他方で、神経現象学と発達心理学との接続まで
+すでに reader-facing に検証し切ったという意味ではありません。
 
 たとえば、会話の途中で急に強く焦る場面を考えると、
 ただ「不安になった」と見るだけではなく、
@@ -75,11 +119,20 @@ generator_model: codex:gpt-5
 すでに source はかなり蓄積されていますが、
 それをどう統合して意識モデルとして提示するかはまだ固め切っていません。
 
-現在公開している文書も、
-全体の統合理論が完成したというより、
-guide、調査概要、構成要素ごとの公開ドラフトを並行して整えている段階です。
-つまり、「何もない」わけではありませんが、
-「もう結論まで固まった」段階でもありません。
+現在は、少なくとも次の区別が必要です。
+
+- **公開済みの論拠**:
+  F-O軸、4層モデル、Withhold、M1、Concept Notes の report
+- **公開済みの現在地整理**:
+  調査概要と調査索引
+- **まだ設計メモ段階の領域**:
+  神経現象学、発達心理学との接続設計
+
+したがって、いまの `awareness-space` は
+「何もない」状態ではありません。
+ただし、
+「神経現象学や発達心理学を含めた統合理論が reader-facing に出揃っている」
+状態でもありません。
 
 ## 何がまだ未解決か
 
@@ -96,7 +149,8 @@ guide、調査概要、構成要素ごとの公開ドラフトを並行して整
 
 ## 次の入口
 
-- 調査全体の現在地を知りたいなら `evidence/survey-status.md`
-- 観察や支援の場でどう使えるかを知りたいなら designer 版
-- 理論的な比較軸まで見たいなら academic 版
-- 個別論点を掘りたいなら `knowledge/domains/` の構成要素レポート
+- 調査全体の現在地と調査計画を知りたいなら [調査概要](./evidence/survey-status.md)
+- すでに公開済みの論拠を読むなら [調査報告 総覧](./knowledge/reports-overview.md)
+- 観察や支援の場でどう使えるかを知りたいなら `awareness-designer.md`
+- 理論的な比較軸まで見たいなら `awareness-academic.md`
+- 神経現象学や発達心理学との接続は、現時点では [神経現象学設計メモ](./evidence/review/neurophenomenology-design.md) と [発達心理学設計メモ](./evidence/review/developmental-psychology-design.md) が調査計画の入口です

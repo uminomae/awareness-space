@@ -3,10 +3,10 @@ id: survey-status
 title: "意識モデル探索: 調査概要"
 lang: ja
 audience: survey
-version: 0.1
-date: 2026-03-18
+version: 0.2
+date: 2026-03-20
 source: evidence/PROJECT.md, docs/material-inventory.md, evidence/review/core-source-map.md
-rules: reader-rules-awareness-survey.md v0.1
+rules: reader-rules-awareness-survey.md v0.2
 generator_model: codex:gpt-5
 ---
 
@@ -70,7 +70,32 @@ source と公開文書を分離し、
 
 ここでの `Withhold` は、repo 全体の中心主題ではなく、周辺仮説の1つとして扱います。
 
-## 6. どこから読めばよいか
+## 6. 現在公開済みの論拠
+
+reader-facing な公開物として、現時点で次の report を読めます。
+
+- `knowledge/domains/fo-axis/ja/report.md`
+- `knowledge/domains/four-layers/ja/report.md`
+- `knowledge/domains/withhold/ja/report.md`
+- `knowledge/domains/m1-consciousness-os/ja/report.md`
+- `knowledge/domains/concept-notes/ja/report.md`
+
+これらは guide の要点を支える論拠層です。
+guide は summary として読み、詳細な論拠は report 側で追う前提にします。
+
+## 7. 現在まだ設計メモ段階の領域
+
+次の領域は、`awareness-space` の中核調査軸ですが、
+現時点では reader-facing な専用 report よりも設計メモの段階が先行しています。
+
+- `evidence/review/neurophenomenology-design.md`
+- `evidence/review/developmental-psychology-design.md`
+
+したがって、guide でこれらに触れる場合は、
+「すでに report がある論点」ではなく
+「調査中・設計中の論点」として読む必要があります。
+
+## 8. どこから読めばよいか
 
 まず全体像を知りたいなら、guide を読むのが最短です。
 構成要素ごとの整理を見たいなら overview 群へ進みます。
@@ -79,7 +104,19 @@ source の所在や優先順位を確認したいときは、素材インベン�
 
 索引は [意識モデル探索: 調査索引](./survey-domain-index.md) にまとめています。
 
-## 7. 限界と未解決
+## 9. 今後の調査計画
+
+次に進めるべき調査計画は、少なくとも次の通りです。
+
+1. 神経現象学を reader-facing に説明できる report 群を整備する
+2. 発達心理学を reader-facing に説明できる report 群を整備する
+3. guide の各要点を、対応する report / survey / design memo にさらに明示的に対応づける
+4. まだ report のない主張は、調査計画か設計メモとして位置づけ直す
+
+つまり、今後は「仮説を増やすこと」よりも、
+既存の仮説と調査を reader-facing に対応づけていくことが中心課題になります。
+
+## 10. 限界と未解決
 
 この調査はまだ進行中です。
 用語の境界、F-O軸の精密化、

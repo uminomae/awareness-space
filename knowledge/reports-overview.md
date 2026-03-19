@@ -5,6 +5,7 @@
 ## 1. このセクションは何を扱うか
 
 調査報告セクションは、調査結果を「読むための形」に整理するための層である。
+guide の summary を裏づける reader-facing な論拠層でもある。
 
 `creation-space` の REPORTS に対応する位置づけとして、
 `awareness-space` でも report を一覧、カード、詳細の3層で扱う。

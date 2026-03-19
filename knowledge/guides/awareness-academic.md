@@ -1,8 +1,8 @@
 ---
 title: "意識モデルと神経現象学・心理学の接続"
 lang: ja
-version: 0.2
-date: 2026-03-19
+version: 0.3
+date: 2026-03-20
 generator_model: codex:gpt-5
 ---
 
@@ -17,6 +17,9 @@ generator_model: codex:gpt-5
 その仮説を確かめるためにどの調査を参照し、
 現時点で何が見えていて、
 何がまだ未整理なのかを明示することである。
+また、本稿自体は summary であり、
+詳細な reader-facing な論拠は REPORTS、
+進行中の調査設計は survey と design memo に分かれている。
 
 ## モデルの中心仮説
 
@@ -57,6 +60,13 @@ F-O軸、特に O軸側の妥当性をどこまで検証できるかという問
 「神経現象学が経験の記述単位を支え、心理学が関係形成と方向づけの検証軸を支える」
 という分業を仮定しながら進めている。
 
+ただし、この仮定には段階差がある。
+F-O軸、4層モデル、M1、Concept Notes、Withhold には
+reader-facing な report がある。
+一方で、神経現象学と発達心理学については、
+中心参照として重要であるにもかかわらず、
+現時点では専用 report より design memo の段階が先行している。
+
 ## 現時点で何が見えているか
 
 現段階で比較的強く見えているのは、
@@ -73,6 +83,11 @@ F-O軸、特に O軸側の妥当性をどこまで検証できるかという問
 さらに、M1 と Concept Notes を読むと、
 既存 source は断片的ではあるが、
 4層モデル、F-O軸、関係性、信頼、測定といった論点をすでにかなり保持していることも見えている。
+
+したがって、ここでの「見えていること」は、
+主として公開済み report と source map に支えられた整理である。
+他方、神経現象学と発達心理学との厳密な統合条件まで
+reader-facing に記述し終えたとはまだ言えない。
 
 ## どこまで進んでいるか
 
@@ -92,6 +107,12 @@ F-O軸、4層モデル、M1、Concept Notes を起点にした
 「有力な構造仮説と厚い source はあるが、統合の仕方がまだ固まり切っていない」
 と表現するのが最も正確である。
 
+より具体的には、
+
+- report-backed な公開整理は、F-O軸、4層モデル、Withhold、M1、Concept Notes にある
+- survey-backed な現在地整理は `survey-status.md` にある
+- 神経現象学 / 発達心理学は、中心的だが design memo 段階の比重がまだ大きい
+
 ## 未解決の問い
 
 未解決の論点は少なくとも次の通りである。
@@ -105,7 +126,8 @@ F-O軸、4層モデル、M1、Concept Notes を起点にした
 
 ## 参照導線
 
-- 全体像を平易に掴むなら general 版
-- 観察や支援への接続を見るなら designer 版
-- 調査全体の現在地を確認するなら `evidence/survey-status.md`
-- 個別論点をたどるなら `knowledge/domains/` の構成要素レポート
+- 全体像を平易に掴むなら `awareness-general.md`
+- 観察や支援への接続を見るなら `awareness-designer.md`
+- 現在公開済みの論拠を辿るなら [調査報告 総覧](./knowledge/reports-overview.md)
+- 調査全体の現在地と調査計画を確認するなら [調査概要](./evidence/survey-status.md)
+- 神経現象学 / 発達心理学の接続設計は `evidence/review/neurophenomenology-design.md` と `evidence/review/developmental-psychology-design.md` を入口にする
