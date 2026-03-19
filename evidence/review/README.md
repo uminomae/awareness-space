@@ -19,6 +19,7 @@
 - `research-design.md`: 調査設計メモ本体の正本
 - `developmental-psychology-design.md`: 発達心理学調査の設計正本
 - `neurophenomenology-design.md`: 神経現象学調査の設計正本
+- `layer0-interoception-reading.md`: Layer 0 source reading メモ
 - `survey-5w1h-source-map.md`: survey 用の補助メモ
 
 ## 補足
