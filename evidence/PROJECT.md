@@ -2,7 +2,7 @@
 
 **状態**: 進行中
 **開始**: 2026-03
-**更新**: 2026-03-17
+**更新**: 2026-03-18
 
 ## 0. 戦略
 
@@ -19,7 +19,7 @@
 - 神経現象学を中心参照に据えつつ、発達心理を含む心理学領域の知見を統合する
 - F-O軸（生存と間主観性）は、この repo の中核仮説であり、**是非を含めた検証対象**として扱う
 - `Withhold` は周辺仮説として扱い、repo 全体の中心主題として固定しない
-- D01-D30 の構造類似調査は、本体調査ではなく比較素材として扱う
+- D01-D30 の構造類似調査は `creation-space` 側の調査であり、この repo のスコープに含めない
 
 ### 0.2 出発点
 
@@ -86,8 +86,9 @@
 初期素材一覧:
 
 - `docs/material-inventory.md`
+- `evidence/review/core-source-map.md`
 
-ここには schema、M1 consciousness OS、concept notes、D01-D30 evidence 系譜、
+ここには schema、M1 consciousness OS、concept notes、
 `creation-space-refs`、`m2-*` skills を整理してある。
 
 ## 3. プロジェクト状態
@@ -97,26 +98,28 @@
 - `awareness-space` は GitHub Pages 前提の `main` / `develop` 体制を持つ
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
-- コンテンツ構造の親 Issue は `#9`
+- Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
+- 現在の open Issue は `#60`, `#61`
+- source map の正本は `evidence/review/core-source-map.md`
+- 調査設計の起点は `evidence/review/research-design-baseline.md`
+- 調査設計メモ本体は `evidence/review/research-design.md`
+- 発達心理学設計の正本は `evidence/review/developmental-psychology-design.md`
+- 神経現象学設計の正本は `evidence/review/neurophenomenology-design.md`
 
 ### 3.2 現在の主作業
 
-- `creation-space` 型のコンテンツ構造を整備する
-- `evidence/`, `knowledge/`, `src/`, `transform/` の役割を揃える
-- 意識モデルの解説 / 調査内容 / 調査報告の三層を設計する
+- `#60` で M1 意識OS を report_ready へ引き上げる
+- `#61` で Concept Notes report の入口を整理する
 
 ### 3.3 次のアクション
 
-- `#10` 意識モデルの解説セクション
-- `#8` 調査内容セクション
-- `#13` 調査報告セクション
-- `#11` topbar / offcanvas 導線整理
+- M1 report の本文を追加する
+- Concepts の report 接続方針を決める
+- REPORTS manifest への接続を整理する
 
 ### 3.4 ブロッカー
 
-- `evidence/` 側の正本がまだ薄く、調査憲章が作成途上
-- D01-D30 evidence の取り込みポリシーが未確定
-- reports 的な出力構造が未定義
+- source_ready を report_ready へ上げる手順がまだ未実装
 
 ## 4. ファイル構成
 
@@ -125,7 +128,7 @@
 | `evidence/PROJECT.md` | 調査憲章。調査目的、起点仮説、現在地の正本 |
 | `evidence/README.md` | evidence ディレクトリの入口 |
 | `evidence/review/` | 横断レビュー、進捗設計、設計判断ログ、将来のレビュー成果 |
-| `evidence/work/` | D01-D30 初期スキャン、一次候補、取り込み前の中間素材 |
+| `evidence/work/` | 初期スキャン、一次候補、取り込み前の中間素材 |
 | `evidence/deepdive/` | Level2 以降の深掘り探索（準備/プレースホルダ） |
 | `evidence/archive/` | Revise 前の evidence 退避を管理 |
 | `docs/material-inventory.md` | 初期素材インベントリ |

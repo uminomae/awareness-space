@@ -210,7 +210,7 @@ body {
   font-family: var(--kesson-font-serif-display);
   font-size: var(--kesson-graphic-switcher-label, 0.68rem);
   letter-spacing: 0.08em;
-  color: rgba(var(--color-sub-text), 0.45);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.7);
   margin-right: 0.4rem;
   pointer-events: none;
   user-select: none;
@@ -222,7 +222,7 @@ body {
   border: none;
   border-bottom: 1.5px solid transparent;
   padding: 0.2rem 0.5rem 0.22rem;
-  color: rgba(var(--color-sub-text), 0.42);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.78);
   font-family: var(--kesson-font-serif-display);
   font-size: var(--kesson-graphic-switcher-btn, 0.88rem);
   letter-spacing: 0.06em;
@@ -231,7 +231,7 @@ body {
 }
 
 #graphic-switcher button:hover {
-  color: rgba(var(--color-sub-text), 0.6);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-sub-text)), 0.92);
 }
 
 #graphic-switcher button:focus-visible {
@@ -240,8 +240,8 @@ body {
 }
 
 #graphic-switcher button.active {
-  color: rgba(var(--color-highlight), 0.75);
-  border-bottom-color: rgba(var(--color-accent), 0.4);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-highlight)), 0.98);
+  border-bottom-color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-accent)), 0.42);
 }
 
 .nav-label {
@@ -252,7 +252,7 @@ body {
   background: none;
   border: none;
   padding: 0;
-  color: rgba(var(--color-heading), 0.9);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-heading)), 0.94);
   font-family: "Noto Serif JP", "Yu Mincho", "MS PMincho", serif;
   font-size: clamp(0.80rem, 2.8vmin, 1.1rem);
   letter-spacing: clamp(0.05em, 0.4vmin, 0.15em);
@@ -265,7 +265,7 @@ body {
 
 .nav-label:hover {
   filter: blur(0px) !important;
-  color: rgba(var(--color-heading), 1.0);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-heading)), 1.0);
 }
 
 .nav-label:focus-visible,
@@ -277,26 +277,26 @@ body {
 }
 
 .nav-label--gem {
-  color: rgba(180, 195, 240, 0.85);
-  text-shadow: 0 0 12px rgba(123, 143, 232, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+  color: rgba(var(--awareness-ui-text-rgb, 180, 195, 240), 0.88);
+  text-shadow: 0 0 12px rgba(var(--awareness-ui-text-rgb, 123, 143, 232), 0.4), 0 0 4px rgba(0, 0, 0, 0.8);
 }
 
 .nav-label--gem:hover,
 .nav-label--gem:focus-visible,
 .nav-label--gem.is-nav-focused {
-  color: rgba(200, 215, 255, 1.0);
+  color: rgba(var(--awareness-ui-text-strong-rgb, 200, 215, 255), 1.0);
 }
 
 .nav-label--x {
-  color: rgba(220, 225, 240, 0.85);
-  text-shadow: 0 0 12px rgba(180, 190, 220, 0.5), 0 0 4px rgba(0, 0, 0, 0.8);
+  color: rgba(var(--awareness-ui-text-strong-rgb, 220, 225, 240), 0.9);
+  text-shadow: 0 0 12px rgba(var(--awareness-ui-text-rgb, 180, 190, 220), 0.34), 0 0 4px rgba(0, 0, 0, 0.8);
   font-weight: bold;
 }
 
 .nav-label--x:hover,
 .nav-label--x:focus-visible,
 .nav-label--x.is-nav-focused {
-  color: rgba(240, 245, 255, 1.0);
+  color: rgba(var(--awareness-ui-text-strong-rgb, 240, 245, 255), 1.0);
 }
 
 .nav-label--hidden {
@@ -351,7 +351,7 @@ body {
 }
 
 h1 {
-  color: rgba(var(--color-heading), 0.95);
+  color: rgba(var(--awareness-hero-title-rgb, var(--color-heading)), 0.95);
   font-family: "Noto Serif JP", "Yu Mincho", "MS PMincho", serif;
   font-weight: 400;
   font-size: var(--kesson-h1-size);
@@ -363,7 +363,7 @@ h1 {
 }
 
 #overlay a:hover h1 {
-  color: rgba(var(--color-heading), 1.0);
+  color: rgba(var(--awareness-hero-title-hover-rgb, var(--color-heading)), 1.0);
 }
 
 #taglines {
@@ -372,7 +372,7 @@ h1 {
 
 .tagline {
   font-size: var(--kesson-overlay-tagline, 0.80rem);
-  color: rgba(var(--color-heading), 0.75);
+  color: rgba(var(--awareness-hero-tagline-rgb, var(--color-heading)), 0.88);
   font-family: var(--kesson-font-serif-display);
   letter-spacing: 0.05em;
   line-height: 1.8;
@@ -381,7 +381,7 @@ h1 {
 
 .tagline-en {
   font-size: var(--kesson-overlay-tagline-en, 0.80rem);
-  color: rgba(var(--color-heading), 0.55);
+  color: rgba(var(--awareness-hero-tagline-sub-rgb, var(--color-heading)), 0.82);
   font-family: var(--kesson-font-serif-ui);
   letter-spacing: 0.03em;
   line-height: 1.6;
@@ -438,7 +438,7 @@ html[lang="en"] #taglines {
 #left-kesson-link span {
   display: block;
   font-size: var(--kesson-font-size-ui-xs, 0.80rem);
-  color: var(--kesson-ui-label-color);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.7);
   font-family: var(--kesson-font-serif-ui);
   letter-spacing: var(--kesson-letter-ui-wide);
 }
@@ -452,7 +452,7 @@ html[lang="en"] #taglines {
 #scroll-hint-top .arrow,
 #left-kesson-link .arrow {
   font-size: var(--kesson-font-size-ui-arrow, clamp(0.7rem, 3.5vmin, 1.2rem));
-  color: var(--kesson-ui-arrow-color);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.62);
 }
 
 #left-kesson-link {
@@ -474,7 +474,7 @@ html[lang="en"] #taglines {
 
 #left-kesson-link:hover span,
 #left-kesson-link:hover .arrow {
-  color: var(--kesson-ui-label-hover-color);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-sub-text)), 0.95);
 }
 
 #left-kesson-link:focus-visible {
@@ -509,7 +509,7 @@ html[lang="en"] #taglines {
 
 #scroll-hint-top:hover span,
 #scroll-hint-top:hover .arrow {
-  color: var(--kesson-ui-label-hover-color);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-sub-text)), 0.95);
 }
 
 #control-guide {
@@ -532,7 +532,7 @@ html[lang="en"] #taglines {
 
 #control-guide .guide-key {
   font-size: var(--kesson-control-guide, 0.80rem);
-  color: rgba(var(--color-sub-text), 0.35);
+  color: rgba(var(--awareness-ui-text-strong-rgb, var(--color-sub-text)), 0.76);
   font-family: var(--kesson-font-mono-ui);
   letter-spacing: var(--kesson-letter-ui-tight);
   white-space: nowrap;
@@ -540,12 +540,12 @@ html[lang="en"] #taglines {
 
 #control-guide .guide-sep {
   font-size: 0.80rem;
-  color: rgba(var(--color-sub-text), 0.2);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.45);
 }
 
 #control-guide .guide-action {
   font-size: var(--kesson-control-guide, 0.80rem);
-  color: rgba(var(--color-sub-text), 0.3);
+  color: rgba(var(--awareness-ui-text-rgb, var(--color-sub-text)), 0.72);
   font-family: var(--kesson-font-serif-ui);
   letter-spacing: var(--kesson-letter-ui-normal);
   white-space: nowrap;
@@ -698,7 +698,7 @@ html[lang="en"] #taglines {
 
 .tech-footer-line {
   font-size: var(--kesson-footer-line, 0.80rem);
-  color: rgba(150, 175, 210, 0.25);
+  color: rgba(var(--awareness-ui-text-rgb, 150, 175, 210), 0.62);
   font-family: var(--kesson-font-mono-ui);
   letter-spacing: 0.06em;
   line-height: 1.8;
@@ -707,7 +707,7 @@ html[lang="en"] #taglines {
 .footer-signature {
   margin-top: 0.55rem;
   font-size: var(--kesson-footer-signature-size, 0.80rem);
-  color: rgba(195, 214, 241, 0.68);
+  color: rgba(var(--awareness-ui-text-strong-rgb, 195, 214, 241), 0.9);
   font-family: var(--kesson-font-serif-ui);
   letter-spacing: 0.06em;
   line-height: 1.5;

@@ -1,10 +1,11 @@
 const SCENE_PRESET_VERSIONS = {
-    raijin: '2026-03-18-raijin-v1',
-    uzu: '2026-03-18-uzu-v1',
+    raijin: '2026-03-19-raijin-v2',
+    uzu: '2026-03-19-uzu-v2',
 };
 
 const DEFAULT_SCENE_STATES = {
     raijin: {
+        renderScale: 0.8,
         speed: 0.22,
         pulseScale: 4.0,
         pulseThreshold: 0.68,
@@ -16,6 +17,12 @@ const DEFAULT_SCENE_STATES = {
         waterA: '#061824',
         waterB: '#0d6d67',
         glow: '#7df6ff',
+        heroTitle: '#1f3357',
+        heroTitleHover: '#263c64',
+        heroTagline: '#354f79',
+        heroTaglineSub: '#506992',
+        uiText: '#4a6691',
+        uiTextStrong: '#2b426c',
     },
     uzu: {
         noiseScale: 0.62,
@@ -38,11 +45,20 @@ const DEFAULT_SCENE_STATES = {
         bodyHot: '#001543',
         pulseHot: '#0099ff',
         pulseCool: '#0033cc',
+        heroTitle: '#f2f7ff',
+        heroTitleHover: '#ffffff',
+        heroTagline: '#d7e4f7',
+        heroTaglineSub: '#aebfdc',
+        uiText: '#b7c8e6',
+        uiTextStrong: '#e2edff',
     },
 };
 
 const HELP_TEXT = {
     raijin: {
+        performance: {
+            renderScale: '内部レンダリング解像度です。下げると FPS は上がります。',
+        },
         motion: {
             speed: '時間進行の速度です。',
             pulseScale: '発光パルスの強さです。',
@@ -59,6 +75,14 @@ const HELP_TEXT = {
             waterA: '低密度側の色です。',
             waterB: '高密度側の色です。',
             glow: '発光色です。',
+        },
+        ui: {
+            heroTitle: 'ヒーロータイトルの色です。',
+            heroTitleHover: 'ヒーロータイトル hover 時の色です。',
+            heroTagline: '主タグラインの色です。',
+            heroTaglineSub: '補助タグラインの色です。',
+            uiText: '固定UIの標準文字色です。',
+            uiTextStrong: '固定UIの強調文字色です。',
         },
     },
     uzu: {
@@ -90,13 +114,23 @@ const HELP_TEXT = {
             pulseHot: 'パルスの高温色です。',
             pulseCool: 'パルスの低温色です。',
         },
+        ui: {
+            heroTitle: 'ヒーロータイトルの色です。',
+            heroTitleHover: 'ヒーロータイトル hover 時の色です。',
+            heroTagline: '主タグラインの色です。',
+            heroTaglineSub: '補助タグラインの色です。',
+            uiText: '固定UIの標準文字色です。',
+            uiTextStrong: '固定UIの強調文字色です。',
+        },
     },
 };
 
 const GROUP_HELP_JA = {
+    performance: '描画負荷に直結する項目です。',
     motion: '時間進行とパルスの立ち上がり方を調整します。',
     density: '密度と露光のバランスを調整します。',
     color: '主要色を調整します。',
+    ui: 'ヒーロー周辺と固定UIの文字色を調整します。',
     volume: '渦のスケールと密度を調整します。',
     pulse: '液体本体とパルスの出方を調整します。',
     bloom: 'ポストエフェクトの滲みを調整します。',
@@ -104,6 +138,13 @@ const GROUP_HELP_JA = {
 
 const GROUPS_BY_SCENE = {
     raijin: [
+        {
+            id: 'performance',
+            title: 'Performance',
+            fields: [
+                ['renderScale', 'Render Scale', 0.6, 1.0, 0.01],
+            ],
+        },
         {
             id: 'motion',
             title: 'Motion',
@@ -131,6 +172,18 @@ const GROUPS_BY_SCENE = {
                 { key: 'waterA', label: 'Water A', type: 'color' },
                 { key: 'waterB', label: 'Water B', type: 'color' },
                 { key: 'glow', label: 'Glow', type: 'color' },
+            ],
+        },
+        {
+            id: 'ui',
+            title: 'Hero UI',
+            fields: [
+                { key: 'heroTitle', label: 'Hero Title', type: 'color' },
+                { key: 'heroTitleHover', label: 'Hero Title Hover', type: 'color' },
+                { key: 'heroTagline', label: 'Hero Tagline', type: 'color' },
+                { key: 'heroTaglineSub', label: 'Hero Tagline Sub', type: 'color' },
+                { key: 'uiText', label: 'UI Text', type: 'color' },
+                { key: 'uiTextStrong', label: 'UI Text Strong', type: 'color' },
             ],
         },
     ],
@@ -177,6 +230,18 @@ const GROUPS_BY_SCENE = {
                 { key: 'bodyHot', label: 'Body Hot', type: 'color' },
                 { key: 'pulseHot', label: 'Pulse Hot', type: 'color' },
                 { key: 'pulseCool', label: 'Pulse Cool', type: 'color' },
+            ],
+        },
+        {
+            id: 'ui',
+            title: 'Hero UI',
+            fields: [
+                { key: 'heroTitle', label: 'Hero Title', type: 'color' },
+                { key: 'heroTitleHover', label: 'Hero Title Hover', type: 'color' },
+                { key: 'heroTagline', label: 'Hero Tagline', type: 'color' },
+                { key: 'heroTaglineSub', label: 'Hero Tagline Sub', type: 'color' },
+                { key: 'uiText', label: 'UI Text', type: 'color' },
+                { key: 'uiTextStrong', label: 'UI Text Strong', type: 'color' },
             ],
         },
     ],

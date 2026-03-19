@@ -2,7 +2,7 @@
 
 ## 役割分担
 
-- **Claude が主プロジェクト管理者**
+- **現在、Claude のプロジェクト管理対象は `awareness-space` のみ**
 - **`awareness-space` は Codex の担当リポジトリ**
 - Claude は親 Issue、優先順位、依存順、repo 横断判断を管理する
 - Codex は `awareness-space` 内の実装系 Issue を起票、更新、完了する

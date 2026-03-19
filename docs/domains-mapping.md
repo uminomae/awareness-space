@@ -26,4 +26,4 @@
 ## 4. 非採用
 
 現段階では、`awareness-space` で `domains = D01-D30` をそのまま採用しない。
-30領域 evidence は素材・参照系譜として扱い、主 domain とは分ける。
+30学問領域の調査は `creation-space` 側のスコープであり、`awareness-space` の管理対象には含めない。

@@ -15,9 +15,6 @@
 - M1 意識OS
 - Concept Notes
 
-加えて、D01-D30 の構造類似調査資産を、
-意識モデルを外部から照らす比較素材として参照する。
-
 ### source
 
 - `awareness-space/evidence/PROJECT.md`
@@ -65,8 +62,7 @@ guide / 調査内容 / report の三層を整備している。
 
 - 調査憲章: `awareness-space/evidence/PROJECT.md`
 - 素材インベントリ: `awareness-space/docs/material-inventory.md`
-- D01-D30 本体コピー元候補: `creation-space/evidence/`
-- 補助系譜: `kesson-driven-thinking/chatgpt/output/`
+- 中核 source map: `awareness-space/evidence/review/core-source-map.md`
 - 公開 guide / survey / report: `pjdhiro/assets/awareness/`
 
 ### source
@@ -80,23 +76,24 @@ guide / 調査内容 / report の三層を整備している。
 方法は大きく 3 段階に分かれる。
 
 1. `kesson-driven-thinking` の schema / M1 / concept notes を source として読む
-2. `creation-space/evidence/` と D01-D30 系譜を比較素材として参照する
+2. 神経現象学と心理学を中核参照として整理する
 3. guide / 調査内容 / report の3層に分離して公開向けに整形する
 
-これは `creation-space` の 30領域 survey をそのまま再実施するのではなく、
-既存の調査資産を awareness 用の探索に再編する方法である。
+これは `creation-space` の 30領域 survey を扱うのではなく、
+意識モデルの探索に必要な source を awareness 用に再編する方法である。
 
 ### source
 
 - `awareness-space/evidence/PROJECT.md`
 - `awareness-space/docs/material-inventory.md`
-- `awareness-space/evidence/d01-d30-intake-plan.md`
+- `awareness-space/evidence/review/research-design-baseline.md`
+- `awareness-space/evidence/review/core-source-map.md`
 - `creation-space/transform/survey/reader-rules/reader-rules-creation-survey.md`
 
 ## 最小読書セット
 
 1. `awareness-space/evidence/PROJECT.md`
 2. `awareness-space/docs/material-inventory.md`
-3. `awareness-space/evidence/d01-d30-intake-plan.md`
+3. `awareness-space/evidence/review/core-source-map.md`
 4. `creation-space/transform/survey/reader-rules/reader-rules-creation-survey.md`
 5. `kesson-driven-thinking#280` コメント群

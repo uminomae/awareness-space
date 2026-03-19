@@ -47,10 +47,10 @@ manifest を読み込み、
 - `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal で読める
 - `source_ready`: overview や移設済み素材には到達できるが、domain report 本文はまだない
 
-2026-03-17 時点では次の構成で運用している。
+2026-03-19 時点では次の構成で運用している。
 
-- `report_ready`: F-O軸、4層モデル、Withhold
-- `source_ready`: M1 意識OS、Concept Notes
+- `report_ready`: F-O軸、4層モデル、Withhold、M1 意識OS、Concept Notes
+- `source_ready`: なし（主要5本は report 入口あり）
 
 ## 4. 置き場の役割分担
 
@@ -68,11 +68,11 @@ manifest を読み込み、
 次の文書は report ではなく、設計・運用・取り込み方針として扱う。
 
 - `docs/material-inventory.md`
-- `evidence/d01-d30-intake-plan.md`
+- `evidence/review/core-source-map.md`
 - `docs/report-structure.md`
 
 ## 6. 次の拡張
 
-- M1 意識OSを `report_ready` に引き上げる
-- Concept Notes 系の domain report を追加する
+- report 間の相互参照を強める
+- Concept Notes を個別 report へどう分解するか決める
 - PDF 出力や bilingual report の扱いを必要に応じて追加する

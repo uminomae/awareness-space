@@ -1,6 +1,6 @@
 # docs/README.md
 
-**更新日**: 2026-03-17
+**更新日**: 2026-03-18
 
 ## 位置づけ
 
@@ -44,6 +44,7 @@ docs/ に置かないもの:
 | `docs/standing-approvals.md` | 継続承認メモ |
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
+| `evidence/review/core-source-map.md` | 中核参照地図の正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
 | `knowledge/m1-consciousness-os/part-1-introduction.md` | M1 意識OS 系列（Part1） |
@@ -88,13 +89,15 @@ docs/ に置かないもの:
 
 ## 6. 体制
 
-- **Claude が主プロジェクト管理者**
+- **現在、Claude のプロジェクト管理対象は `awareness-space` のみ**
 - **`awareness-space` は Codex の担当リポジトリ**
 
 ## 7. 現在フェーズ
 
-- Phase 1: bootstrap 後のコンテンツ構造整備
-- 親 Issue: `#6`, `#9`
+- Phase 1: bootstrap と UI parity は概ね完了
+- 現在の実装線: `#60` M1 report、`#61` Concept Notes report 入口
+- Phase 2 の初期統合フェーズは完了
+- 次は source_ready を report_ready へ引き上げる段階
 
 ## 8. ローカル作業領域
 

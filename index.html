@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script type="module">
+    import { initScrollCoordinator } from './src/scroll-coordinator.js';
+    initScrollCoordinator();
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>意識とは</title>
@@ -201,8 +205,10 @@
   </div>
 
   <footer id="tech-footer">
-    <div class="tech-footer-line">awareness-space / GitHub Pages / develop: localhost:3003</div>
-    <div class="footer-signature">same site language with creation-space</div>
+    <div class="tech-footer-line">GitHub Pages</div>
+    <div class="tech-footer-line">Vanilla JS · ES Modules</div>
+    <div class="tech-footer-line">Three.js · Bootstrap</div>
+    <div id="footer-signature" class="footer-signature">Project Designer: pjdhiro</div>
   </footer>
 
   <div class="offcanvas offcanvas-end offcanvas-kesson" tabindex="-1" id="siteOffcanvas" data-bs-backdrop="true">
