@@ -89,7 +89,7 @@ docs/ に置かないもの:
 
 ## 6. 体制
 
-- **Claude が主プロジェクト管理者**
+- **現在、Claude のプロジェクト管理対象は `awareness-space` のみ**
 - **`awareness-space` は Codex の担当リポジトリ**
 
 ## 7. 現在フェーズ

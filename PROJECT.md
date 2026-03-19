@@ -17,7 +17,7 @@
 
 ## 強い体制ルール
 
-- **Claude が主プロジェクト管理者**
+- **現在、Claude のプロジェクト管理対象は `awareness-space` のみ**
 - **`awareness-space` は Codex の担当リポジトリ**
 - Codex は repo 内実務: bootstrap、実装、構造化、日常作業を担う
 - Claude は repo 横断管理: 親 Issue、優先順位、依存関係、順序づけを担う
