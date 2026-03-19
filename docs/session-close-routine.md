@@ -51,10 +51,11 @@
 1. `git status --short` で worktree を確認する
 2. `git rev-parse --short HEAD` で最終 SHA を控える
 3. `gh issue list --state open` で残タスクを確認する
-4. Issue 作業がある場合は、各 Issue の comment / close / `REVIEW-*` / `DONE-*` を確認する
-5. `.cache/outbox/DONE-session-{YYYYMMDD}.md` を更新または作成する
-6. recurring な問題があれば本ファイルか `docs/standing-approvals.md` に昇格する
-7. worktree が clean、または dirty 理由が closeout に書かれていることを確認して終了する
+4. `bash scripts/check-issue-close-state.sh` を実行し、DONE と GitHub Issue 状態の不整合を洗い出す
+5. Issue 作業がある場合は、各 Issue の comment / close / `REVIEW-*` / `DONE-*` を確認する
+6. `.cache/outbox/DONE-session-{YYYYMMDD}.md` を更新または作成する
+7. recurring な問題があれば本ファイルか `docs/standing-approvals.md` に昇格する
+8. worktree が clean、または dirty 理由が closeout に書かれていることを確認して終了する
 
 ## この対話で顕在化した recurring 問題
 
@@ -82,7 +83,8 @@
 
 - manager 側で `git show` を確認
 - `REVIEW-*` と `DONE-*` を補完
-- Issue comment / close を実施する
+- `bash scripts/check-issue-close-state.sh` で終了状況を確認する
+- Issue comment / close / close 後確認を実施する
 
 ### 3. `gh issue comment --body` に backtick を含めると shell 展開で崩れる
 
