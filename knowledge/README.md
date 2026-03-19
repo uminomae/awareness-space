@@ -14,7 +14,8 @@
 | ディレクトリ | 役割 |
 |---|---|
 | `knowledge/` | 説明・解説向けの受け皿（運用中） |
-| `knowledge/guides/` | 読者別 guide の公開置き場 |
+| `knowledge/guides/` | 読者別 guide の公開置き場。summary 層 |
+| `knowledge/domains/` | reader-facing report の置き場。guide の論拠層 |
 | `knowledge/concepts/` | 概念ノート群（CN-001〜）を横断管理 |
 | `evidence/` | 調査原本（一次材料） |
 | `transform/` | 変換 workflow（再編集・再生成の入口） |
@@ -26,6 +27,14 @@
 - `domains/`: 領域別解説や読者向け report を置く場所。
 - `m1-consciousness-os/`: M1意識OSのパート文書を集約。
 - `*.md`（overview 群）: 全体像の入口として維持する要約文書。
+
+## summary と論拠
+
+- `knowledge/guides/`: summary。全体像を渡し、report / survey / design memo への導線を示す
+- `knowledge/domains/`: reader-facing report。summary の主要要点を支える公開本文
+- `evidence/review/`: design memo。未検証・調査中の論点を保持する
+
+guide に書く主要な要点は、原則として `domains/`, `survey`, `evidence/review/` のいずれかに対応先を持つ。
 
 ## 現在の収録文書
 

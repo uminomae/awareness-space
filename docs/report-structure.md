@@ -8,6 +8,9 @@
 `awareness-space` 側でも「一覧で見つける」「カードで入口を掴む」「詳細本文を読む」を
 同じ導線で扱えるようにする。
 
+同時に、REPORTS は guide を裏づける **論拠層** であり、
+guide を単独説明文にしないための対応先として機能する。
+
 ## 2. 現在の3層構造
 
 1. manifest
@@ -55,10 +58,12 @@ manifest を読み込み、
 ## 4. 置き場の役割分担
 
 - 調査原本: `evidence/`
+- summary: `knowledge/guides/`
 - report 本文: `knowledge/domains/`
 - source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/m1-consciousness-os/`
 - manifest 正本: `transform/domains/publish/domains/index.json`
 - UI 導線: `index.html`, `src/reports/`
+- design memo: `evidence/review/`
 
 `transform/reports/` は将来の拡張用に保持しているが、
 現在の REPORTS セクション実装は `transform/domains/` manifest を起点にしている。
@@ -74,5 +79,6 @@ manifest を読み込み、
 ## 6. 次の拡張
 
 - report 間の相互参照を強める
+- guide の主要要点と report の対応表を強める
 - Concept Notes を個別 report へどう分解するか決める
 - PDF 出力や bilingual report の扱いを必要に応じて追加する

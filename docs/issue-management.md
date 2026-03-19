@@ -19,6 +19,7 @@
 - F-O軸（生存と間主観性）は、この repo では仮説検証対象として扱う
 - `Withhold` を repo 全体の中心概念として先取りしない
 - 調査、reader-rules、公開文書、PDF workflow は上記原則に従って見直す
+- guide の要点に対になる report / survey / design memo がない場合は、Issue に分解する
 
 ## Issue 種別
 
@@ -34,6 +35,7 @@
 2. スコープ
 3. 完了条件
 4. 関連 Issue または関連素材
+5. guide / report / survey / design memo のどこに効くか（必要な場合）
 
 ## repo 横断ルール
 
@@ -92,3 +94,4 @@
 - Codex は `awareness-space` 内の Issue を起票・更新してよい
 - repo 横断の優先順位と順序づけは Claude を正本とする
 - GitHub Issues と矛盾する別のローカル backlog を育てない
+- guide の未対応要点を見つけたら、「説明を弱める」か「調査計画 issue を立てる」のどちらかを行う

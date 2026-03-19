@@ -12,21 +12,22 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 const STRINGS = {
     ja: {
         featureRead: 'ガイドを開く',
+        guideScopeNote: 'guide は summary です。主要な要点は REPORTS / 調査概要 / 設計メモと対にして読みます。未対応の内容は調査中または計画中として扱います。',
         features: {
             general: {
                 title: 'General',
                 modalTitle: '意識とは何か — 生存と間主観性を手がかりに',
-                description: '一般の読者向けの平易な guide。',
+                description: '一般読者向けの summary guide。詳細な論拠は REPORTS 側へ辿る。',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: '意識モデルを観察の道具として使う',
-                description: '教育者・支援者・チーム設計者向けの構造案内。',
+                description: '教育者・支援者・チーム設計者向けの summary guide。',
             },
             academic: {
                 title: 'Academic',
                 modalTitle: '意識モデルと神経現象学・発達心理の接続',
-                description: '神経現象学と発達心理を中心にした学術寄り guide。',
+                description: '学術寄りの summary guide。report と設計メモの入口を兼ねる。',
             },
         },
         tabDomains: '構成要素レポート',
@@ -53,21 +54,22 @@ const STRINGS = {
     },
     en: {
         featureRead: 'Open Guide',
+        guideScopeNote: 'Guides are summaries. Read them together with Reports, survey status, and design memos. Unpaired points should be treated as in-progress or planned.',
         features: {
             general: {
                 title: 'General',
                 modalTitle: 'What Is Awareness? — Survival and Intersubjectivity',
-                description: 'A plain-language guide for general readers.',
+                description: 'A plain-language summary guide for general readers.',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: 'Using the Awareness Model as an Observation Tool',
-                description: 'A structural guide for educators, supporters, and team designers.',
+                description: 'A structural summary guide for educators, supporters, and team designers.',
             },
             academic: {
                 title: 'Academic',
                 modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology',
-                description: 'An academically oriented guide centered on neurophenomenology and developmental psychology.',
+                description: 'An academically oriented summary guide tied to reports and design memos.',
             },
         },
         tabDomains: 'Component Reports',
@@ -152,6 +154,7 @@ export function createReportsRenderer({
 
     function cacheDom() {
         state.dom.featureCards = document.getElementById('model-guide-cards');
+        state.dom.guideScopeNote = document.getElementById('model-summary-note');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
         state.dom.domainsHeading = document.getElementById('reports-domains-heading');
@@ -496,6 +499,7 @@ export function createReportsRenderer({
 
     function applyStaticText() {
         const strings = getReportsStrings(state.lang);
+        if (state.dom.guideScopeNote) state.dom.guideScopeNote.textContent = strings.guideScopeNote;
         if (state.dom.domainsHeading) state.dom.domainsHeading.textContent = strings.tabDomains;
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);

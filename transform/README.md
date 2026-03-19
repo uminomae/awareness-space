@@ -9,6 +9,8 @@
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
 - **How**: workflow README から入口を選び、reader-rules → PDF build → manifest 更新の順で進む。
 
+**原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
+
 ## ワークフロー一覧
 
 | workflow | 役割 | 状態 |

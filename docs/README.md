@@ -13,6 +13,7 @@ docs/ に置くもの:
 - 管理体系のドキュメント
 - ルール、仕様、正本
 - 調査から抽出された整理済みの結論
+- summary と report の対応原則
 
 docs/ に置かないもの:
 - 調査原本（→ `evidence/`）
@@ -38,6 +39,7 @@ docs/ に置かないもの:
 | `docs/report-structure.md` | 調査報告の構造メモ |
 | `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
 | `docs/quality-management.md` | 品質基準 |
+| `docs/summary-report-pairing.md` | summary と report の対応原則 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート正本 |
 | `docs/session-close-routine.md` | セッション終了処理の正本 |

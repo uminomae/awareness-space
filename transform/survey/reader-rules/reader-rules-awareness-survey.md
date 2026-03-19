@@ -28,6 +28,7 @@
 4. 現在の主要素材
 5. guide / report / source への導線
 6. 限界と未解決のこと
+7. 何が report-backed で、何が design memo / plan 段階かの区別
 
 調査対象の重心は次に置く。
 
@@ -65,6 +66,7 @@ awareness では D01-D30 一覧ではなく、次の系統を整理する。
 - `awareness-space` は意識モデル単独の探索として説明する
 - D01-D30 は本体調査ではなく、比較素材・参照系譜として扱う
 - guide / 調査内容 / report の三層を混同しない
+- guide は summary、report は論拠、design memo は未検証・設計中の層として区別する
 - 神経現象学と心理学的知見の統合を中心に据える
 - F-O軸は「この repo の特徴的仮説」であり、是非の検証対象として扱う
 - `Withhold` は周辺仮説として扱い、調査の中心に置かない
@@ -107,6 +109,7 @@ generator_model: {model_name}
 
 - 調査目的と調査方法が 3 段落以内に出てくる
 - source / guide / report の役割分離が崩れていない
+- report-backed と plan-only の区別が読者に見える
 - D01-D30 の扱いが「比較素材」であると明記されている
 - 神経現象学 / 発達心理を含む心理学領域が調査重心として書かれている
 - F-O軸が仮説検証対象として記述されている
