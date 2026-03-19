@@ -24,6 +24,7 @@
 - `layer0-interoception-reading.md`: Layer 0 source reading メモ
 - `layer1-prediction-error-reading.md`: Layer 1 source reading メモ
 - `first-person-vs-third-person.md`: 1人称 / 3人称記述の区別メモ
+- `report-priority.md`: report 優先順位の判断メモ
 - `survey-5w1h-source-map.md`: survey 用の補助メモ
 
 ## 補足
