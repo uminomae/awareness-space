@@ -20,6 +20,7 @@
 - `developmental-psychology-design.md`: 発達心理学調査の設計正本
 - `neurophenomenology-design.md`: 神経現象学調査の設計正本
 - `attachment-safe-base-reading.md`: 愛着 / 安全基地の source reading メモ
+- `trust-and-intersubjectivity-reading.md`: 信頼 / 間主観性の source reading メモ
 - `layer0-interoception-reading.md`: Layer 0 source reading メモ
 - `layer1-prediction-error-reading.md`: Layer 1 source reading メモ
 - `first-person-vs-third-person.md`: 1人称 / 3人称記述の区別メモ
