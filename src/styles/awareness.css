@@ -1,4 +1,27 @@
 body.awareness-page {
+  --awareness-hero-title-rgb: 31, 51, 87;
+  --awareness-hero-title-hover-rgb: 38, 60, 100;
+  --awareness-hero-tagline-rgb: 53, 79, 121;
+  --awareness-hero-tagline-sub-rgb: 80, 105, 146;
+  --awareness-ui-text-rgb: 74, 102, 145;
+  --awareness-ui-text-strong-rgb: 43, 66, 108;
+  --kesson-topbar-divider-color: rgba(var(--awareness-ui-text-rgb), 0.34);
+  --kesson-topbar-title-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
+  --kesson-topbar-title-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 1);
+  --kesson-topbar-subtitle-color: rgba(var(--awareness-ui-text-rgb), 0.82);
+  --kesson-topbar-meta-color: rgba(var(--awareness-ui-text-rgb), 0.78);
+  --kesson-topbar-meta-author-color: rgba(var(--awareness-ui-text-rgb), 0.8);
+  --kesson-topbar-link-color: rgba(var(--awareness-ui-text-rgb), 0.86);
+  --kesson-topbar-link-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 0.98);
+  --kesson-topbar-link-hover-bg: rgba(var(--awareness-ui-text-rgb), 0.12);
+  --kesson-topbar-note-divider-color: rgba(var(--awareness-ui-text-rgb), 0.26);
+  --kesson-topbar-note-color: rgba(var(--awareness-ui-text-rgb), 0.82);
+  --kesson-topbar-lang-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
+  --kesson-topbar-lang-border: rgba(var(--awareness-ui-text-rgb), 0.32);
+  --kesson-topbar-lang-bg: rgba(var(--awareness-ui-text-rgb), 0.1);
+  --kesson-topbar-nav-border: rgba(var(--awareness-ui-text-rgb), 0.22);
+  --kesson-topbar-toggler-border: rgba(var(--awareness-ui-text-rgb), 0.55);
+  --kesson-topbar-toggler-focus: rgba(var(--awareness-ui-text-rgb), 0.28);
   background:
     radial-gradient(circle at 18% 18%, rgba(46, 72, 116, 0.18), transparent 38%),
     radial-gradient(circle at 78% 28%, rgba(74, 114, 179, 0.14), transparent 42%),

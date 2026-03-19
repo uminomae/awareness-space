@@ -7,6 +7,11 @@ import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
 import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
+import { breathValue } from './animation-utils.js';
+import { breathConfig } from './config.js';
+import { requestScroll } from './scroll-coordinator.js';
+import { getScrollProgress, initScrollUI, refreshGuideLang, updateScrollUI } from './scroll-ui.js';
+import { applyUiThemeState } from './ui-theme.js';
 
 installStartupErrorHandlers();
 
@@ -25,6 +30,7 @@ function initLanguageToggle() {
         toggle.textContent = lang === 'en' ? '日本語' : 'English';
         toggle.setAttribute('aria-label', lang === 'en' ? 'Switch language to Japanese' : '言語を英語に切り替え');
         setReportsLanguage(lang);
+        refreshGuideLang();
     }
 
     let current = 'ja';
@@ -35,25 +41,6 @@ function initLanguageToggle() {
     });
 }
 
-function initScrollHints() {
-    const hint = document.getElementById('scroll-hint');
-    const hintTop = document.getElementById('scroll-hint-top');
-    if (!hint || !hintTop) return;
-
-    const update = () => {
-        const y = window.scrollY || 0;
-        hint.classList.toggle('visible', y < 120);
-        hintTop.classList.toggle('visible', y >= 320);
-    };
-
-    hintTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-}
-
 function initHashLinks() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (event) => {
@@ -62,7 +49,10 @@ function initHashLinks() {
             const target = document.querySelector(href);
             if (!target) return;
             event.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            const topbar = document.getElementById('kesson-topbar');
+            const topbarOffset = topbar instanceof HTMLElement ? topbar.offsetHeight + 8 : 0;
+            const targetY = target.getBoundingClientRect().top + window.scrollY - topbarOffset;
+            requestScroll(targetY, `hash-link:${href}`, { behavior: 'smooth' });
         });
     });
 }
@@ -120,6 +110,26 @@ function createDevStatsTicker() {
     };
 }
 
+function startScrollUiLoop() {
+    let frameId = 0;
+    const startedAt = performance.now();
+
+    function frame() {
+        const elapsedSeconds = (performance.now() - startedAt) / 1000;
+        updateScrollUI(getScrollProgress(), breathValue(elapsedSeconds, breathConfig.period));
+        frameId = window.requestAnimationFrame(frame);
+    }
+
+    frame();
+
+    return () => {
+        if (frameId) {
+            window.cancelAnimationFrame(frameId);
+            frameId = 0;
+        }
+    };
+}
+
 function start() {
     const devMode = isDevMode();
     const devStatsTicker = createDevStatsTicker();
@@ -151,6 +161,10 @@ function start() {
         return merged;
     }
 
+    function applySceneUiTheme(sceneVariant) {
+        applyUiThemeState(getSceneState(sceneVariant));
+    }
+
     function postSceneState(backgroundController, sceneVariant) {
         const frameWindow = backgroundController?.getFrameWindow?.();
         if (!frameWindow) return;
@@ -171,8 +185,9 @@ function start() {
             sceneVariant,
             initialState: getSceneState(sceneVariant),
             onStateChanged: (nextState) => {
-                saveSceneState(sceneVariant, nextState);
+                const merged = saveSceneState(sceneVariant, nextState);
                 if (backgroundController?.getCurrentMode?.() === sceneVariant) {
+                    applyUiThemeState(merged);
                     postSceneState(backgroundController, sceneVariant);
                 }
             },
@@ -181,20 +196,28 @@ function start() {
 
     initFontSizeCtrl();
     initMobileNavAutoCollapse();
+    initScrollUI();
     applyDevChrome(devMode);
     const backgroundController = initBackgroundModeSwitcher({
         onModeChange: (sceneVariant) => {
+            applySceneUiTheme(sceneVariant);
             if (!devMode) return;
             mountDevPanel(backgroundController, sceneVariant);
             postSceneState(backgroundController, sceneVariant);
         },
         onFrameLoad: (sceneVariant) => {
+            if (backgroundController?.getCurrentMode?.() === sceneVariant) {
+                applySceneUiTheme(sceneVariant);
+            }
             if (!devMode) return;
             postSceneState(backgroundController, sceneVariant);
         },
     });
+    if (backgroundController?.getCurrentMode) {
+        applySceneUiTheme(backgroundController.getCurrentMode());
+    }
     initLanguageToggle();
-    initScrollHints();
+    startScrollUiLoop();
     initHashLinks();
     if (devMode) {
         devStatsTicker.start();
