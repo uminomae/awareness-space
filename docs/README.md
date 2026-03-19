@@ -95,9 +95,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の exploration 線: `#49` 発達心理学設計、`#50` 神経現象学設計
-- Phase 2 親: `#44` 意識モデル素材統合
-- Phase 2 の入口: 調査設計の主質問を固定し、その後に intake を分解
+- 現在の実装線: `#60` M1 report、`#61` Concept Notes report 入口
+- Phase 2 の初期統合フェーズは完了
+- 次は source_ready を report_ready へ引き上げる段階
 
 ## 8. ローカル作業領域
 
