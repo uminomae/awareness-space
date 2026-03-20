@@ -15,7 +15,7 @@
    - guide がモデル全体の解説であることを最初に明示する
    - 完成理論の宣言ではなく、探索中のモデルの見取り図を渡す文書であることを書く
    - report 一覧や source 紹介に閉じない
-   - 同時に、guide が summary であり、詳細な論拠は report / survey / design memo にあると明示する
+   - 詳しい検討は別の報告や調査概要に分かれていると、自然な日本語で補足する
 
 2. **モデルの中心仮説**
    - 生存-信頼軸を起点仮説として説明する
@@ -58,6 +58,8 @@
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
 - 過去素材を現在の正本・命名源・理論権威として扱わない
 - source の内部ラベルをそのまま出さない
+- `summary`, `reader-facing`, `design memo` など制作工程の語を本文の主役にしない
+- repo 内の相対パスや存在しない公開リンクを本文に出さない
 - 生存-信頼軸を採択済みの真理として扱わない
 - 調査進行中であることを曖昧にしない
 - 「わかっていること」と「まだ未解決」を混ぜない
@@ -70,7 +72,7 @@
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
-- `evidence/survey-status.md`
+- `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:
 

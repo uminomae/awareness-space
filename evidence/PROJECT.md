@@ -113,9 +113,9 @@
 
 ### 3.3 次のアクション
 
-- M1 report の本文を追加する
+- M1 report と 4層モデル report の相互参照を強める
 - Concepts の report 接続方針を決める
-- REPORTS manifest への接続を整理する
+- guide と report の対応表を強める
 
 ### 3.4 ブロッカー
 

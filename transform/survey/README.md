@@ -7,7 +7,7 @@
 - **Who**: survey 系の概要・索引を生成する CLI と review 担当者。
 - **When**: `survey-status.md` / `survey-domain-index.md` を生成・更新するとき。
 - **Where**: ルールは `reader-rules/`、公開先は `pjdhiro/assets/awareness/survey/`。
-- **How**: survey ルールを読み、JA 本文を先に整え、PDF build script で md/pdf を公開配置へ流す。
+- **How**: survey ルールを読み、JA 本文を先に整え、PDF build script で md/pdf を公開配置へ流し、`pjdhiro/main` へ公開する。
 
 ## 現在の状態
 

@@ -23,6 +23,7 @@ PJDHIRO_DIR="/Users/uminomae/dev/pjdhiro"
 GUIDES_BASE="$PJDHIRO_DIR/assets/awareness/guides"
 SURVEY_BASE="$PJDHIRO_DIR/assets/awareness/survey"
 MANIFESTS_DIR="$PJDHIRO_DIR/assets/awareness/manifests"
+PUBLISH_DOMAINS_SCRIPT="$AWARENESS_SPACE_ROOT/transform/scripts/publish-awareness-domains.sh"
 
 strip_frontmatter() {
     python3 -c "
@@ -65,13 +66,13 @@ get_guide_title() {
         case "$audience" in
             general)  echo "What Is Awareness? — Survival and Intersubjectivity" ;;
             designer) echo "Using the Awareness Model as an Observation Tool" ;;
-            academic) echo "Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology" ;;
+            academic) echo "Awareness Model in Dialogue with Neurophenomenology and Psychology" ;;
         esac
     else
         case "$audience" in
             general)  echo "意識とは何か — 生存と間主観性を手がかりに" ;;
             designer) echo "意識モデルを観察の道具として使う" ;;
-            academic) echo "意識モデルと神経現象学・発達心理の接続" ;;
+            academic) echo "意識モデルと神経現象学・心理学の接続" ;;
         esac
     fi
 }
@@ -87,9 +88,9 @@ get_guide_subtitle() {
         esac
     else
         case "$audience" in
-            general)  echo "一般の読者向けの意識モデル guide" ;;
-            designer) echo "教育者・支援者・チーム設計者向け guide" ;;
-            academic) echo "学際的探索者向け guide" ;;
+            general)  echo "一般向けの解説" ;;
+            designer) echo "教育・支援・チーム設計のための解説" ;;
+            academic) echo "学際的な検討のための解説" ;;
         esac
     fi
 }
@@ -330,6 +331,43 @@ print(json.dumps(manifest, indent=2, ensure_ascii=False))
     echo -e "  ${GREEN}✓${NC} guides.json 更新完了"
 }
 
+publish_domains() {
+    echo -e "${BLUE}🧩 domains 公開物更新${NC}"
+    bash "$PUBLISH_DOMAINS_SCRIPT"
+    echo -e "  ${GREEN}✓${NC} domains.json / domains markdown 更新完了"
+}
+
+push_pjdhiro_main() {
+    echo -e "${BLUE}🚀 pjdhiro/main へ公開${NC}"
+
+    local branch
+    branch="$(git -C "$PJDHIRO_DIR" branch --show-current)"
+    if [ "$branch" != "main" ]; then
+        echo -e "  ${RED}✗${NC} pjdhiro が main ではありません: ${branch}"
+        return 1
+    fi
+
+    local status_output
+    status_output="$(git -C "$PJDHIRO_DIR" status --short -- assets/awareness)"
+    if [ -z "$status_output" ]; then
+        echo -e "  ${YELLOW}スキップ${NC}: assets/awareness に変更がありません"
+        return 0
+    fi
+
+    git -C "$PJDHIRO_DIR" add assets/awareness
+
+    if git -C "$PJDHIRO_DIR" diff --cached --quiet; then
+        echo -e "  ${YELLOW}スキップ${NC}: commit 対象がありません"
+        return 0
+    fi
+
+    local date_str
+    date_str="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
+    git -C "$PJDHIRO_DIR" commit -m "publish awareness assets ${date_str}"
+    git -C "$PJDHIRO_DIR" push origin main
+    echo -e "  ${GREEN}✓${NC} pjdhiro/main push 完了"
+}
+
 main() {
     echo -e "${BLUE}══════════════════════════════════════${NC}"
     echo -e "${BLUE}  awareness-space — PDF生成 v0.1${NC}"
@@ -355,7 +393,7 @@ main() {
                 echo "  --kind {guides|survey|all}                       種別（デフォルト: guides）"
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
-                echo "  --push                                           ビルド後 manifest を更新"
+                echo "  --push                                           ビルド後に公開 assets を commit/push"
                 echo "  --setup                                          依存チェックのみ"
                 exit 0
                 ;;
@@ -418,6 +456,8 @@ main() {
 
     if $do_push; then
         update_manifests
+        publish_domains
+        push_pjdhiro_main
         echo ""
     fi
 

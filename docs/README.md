@@ -97,9 +97,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の実装線: `#60` M1 report、`#61` Concept Notes report 入口
+- 現在の実装線: `#60` M1 source report / 4層原著文書群、`#61` Concept Notes report 入口
 - Phase 2 の初期統合フェーズは完了
-- 次は source_ready を report_ready へ引き上げる段階
+- 次は report 間の境界と相互参照を強める段階
 
 ## 8. ローカル作業領域
 

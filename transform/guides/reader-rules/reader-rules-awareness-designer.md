@@ -15,7 +15,7 @@
    - 現場で人の反応を観察するためのモデル解説であることを明示する
    - 実践マニュアルや診断ラベルではないことを最初に置く
    - 完成理論ではなく、調査結果を踏まえた現時点の構造仮説だと明示する
-   - guide 自体は summary であり、詳細な論拠は report / survey / design memo にあることを明示する
+   - 詳しい検討は別の報告や調査概要に分かれていると、自然な日本語で補足する
 
 2. **モデルの中心仮説**
    - 4層モデルを観察フレームとして提示する
@@ -57,6 +57,8 @@
 - 「正しい反応」や「成熟した反応」を規定しない
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
 - 過去素材を現在の正本・命名源・理論権威として扱わない
+- `summary`, `reader-facing`, `design memo` など制作工程の語を本文の主役にしない
+- repo 内の相対パスや存在しない公開リンクを本文に出さない
 - 生存-信頼軸を確定診断軸として扱わない
 - 実践上の有用性と理論的確定を混同しない
 - report のない主張を、現場で使える確定知として書かない
@@ -68,7 +70,7 @@
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
-- `evidence/survey-status.md`
+- `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:
 

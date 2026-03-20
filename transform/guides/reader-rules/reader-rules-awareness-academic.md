@@ -15,7 +15,7 @@
    - guide がモデル全体の解説であり、探索的文書であることを最初に明示する
    - 完成理論の宣言ではなく、仮説・調査・現在地の整理であることを書く
    - 神経現象学と心理学を中心比較軸に置くことを宣言する
-   - guide 自体は summary であり、論拠は report / survey / design memo に分かれていると明示する
+   - 詳しい検討は別の報告や調査概要に分かれていると、自然な日本語で示す
 
 2. **モデルの中心仮説**
    - 生存-信頼軸を起点仮説として定義する
@@ -60,6 +60,8 @@
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
 - 過去素材を現在の正本・命名源・理論権威として扱わない
 - raw source の内部メモや Issue 文脈を本文へ出さない
+- `reader-facing`, `report-backed`, `design memo` など制作工程の語を本文の主役にしない
+- repo 内の相対パスや存在しない公開リンクを本文に出さない
 - 探索的であることと、根拠が薄いことを混同しない
 - report のない主張を、既知の結論として扱わない
 
@@ -70,7 +72,7 @@
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
-- `evidence/survey-status.md`
+- `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:
 

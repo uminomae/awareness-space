@@ -44,10 +44,12 @@
 ## 命名とファイル運用（暫定）
 
 - `domains` 単位の evidence は原則 `evidence/awareness-<slug>.md` を想定（将来 `evidence/domains/<slug>.md` へ統一可能）。
-- report は `knowledge/domains/<slug>/ja/report.md` を既定とする（英語は `en/report.md`）。
+- report 草案は `knowledge/domains/<slug>/ja/report.md`、公開配置は `pjdhiro/assets/awareness/domains/ja/md/<slug>.md` を既定とする。
 - `slug` は次を想定:
   - `survival-trust-axis`
   - `four-layers`
+  - `m1-consciousness-os`
+  - `concept-notes`
   - `cn-001` / `cn-007` など
 
 ## 参照先

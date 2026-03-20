@@ -14,7 +14,7 @@
 | ディレクトリ | 役割 |
 |---|---|
 | `knowledge/` | 説明・解説向けの受け皿（運用中） |
-| `knowledge/guides/` | 読者別 guide の公開置き場。summary 層 |
+| `knowledge/guides/` | 廃止予定。guide 公開正本は `pjdhiro/assets/awareness/guides/` |
 | `knowledge/domains/` | reader-facing report の置き場。guide の論拠層 |
 | `knowledge/concepts/` | 概念ノート群（CN-001〜）を横断管理 |
 | `evidence/` | 調査原本（一次材料） |
@@ -29,7 +29,7 @@
 
 ## summary と論拠
 
-- `knowledge/guides/`: summary。全体像を渡し、report / survey / design memo への導線を示す
+- `pjdhiro/assets/awareness/guides/`: summary。全体像を渡し、report / survey への導線を示す
 - `knowledge/domains/`: reader-facing report。summary の主要要点を支える公開本文
 - `evidence/review/`: design memo。未検証・調査中の論点を保持する
 
@@ -52,9 +52,6 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `schema/withhold-matching-v2.md`: Withhold マッチング表
 - `withhold-overview.md`: Withhold の入口解説
 - `concepts-overview.md`: Concept Notes の入口解説
-- `guides/awareness-general.md`: general guide
-- `guides/awareness-designer.md`: designer guide
-- `guides/awareness-academic.md`: academic guide
 - `concepts/index.md`: CN-001〜CN-007索引
 - `concepts/CN-001_internalized-relationship.md`: CN-001
 - `concepts/CN-002_f-axis-exposure.md`: CN-002
@@ -66,6 +63,7 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `reports-overview.md`: 調査報告セクションの総覧
 - `domains/survival-trust-axis/ja/report.md`: 生存-信頼軸 report
 - `domains/four-layers/ja/report.md`: 4層モデル report
+- `domains/m1-consciousness-os/ja/report.md`: M1 基盤文章群の source report
 - `domains/withhold/ja/report.md`: Withhold report
 
 ## 移行状態
@@ -73,7 +71,8 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `knowledge/concepts/` を新設し、CN-001〜CN-007 を追加
 - `knowledge/schema/` に `four-layers.md`、`four-modules.md`、`withhold-matching-v2.md` を追加
 - `knowledge/domains/` に 生存-信頼軸、4層モデル、Withhold の report を追加
+- `knowledge/domains/m1-consciousness-os/ja/report.md` を追加し、4層モデル原著文書群の source report を接続
 - 4層モデルの原著文書群は `knowledge/domains/four-layers/` 配下へ統合済み
 - Concept Notes は `source_ready` の入口文書として接続済み
 - overview 群は source とは分離して、公開向け explainer として整備する
-- `knowledge/guides/` に audience別 guide の初期ドラフトを追加
+- guide 公開正本は `pjdhiro/assets/awareness/guides/` へ移行

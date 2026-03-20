@@ -12,22 +12,22 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 const STRINGS = {
     ja: {
         featureRead: 'ガイドを開く',
-        guideScopeNote: 'guide は summary です。主要な要点は REPORTS / 調査概要 / 設計メモと対にして読みます。未対応の内容は調査中または計画中として扱います。',
+        guideScopeNote: 'guide は公開用の解説です。詳しい現在地は調査概要へ、構成要素ごとの本文は各レポートへ進みます。',
         features: {
             general: {
                 title: 'General',
                 modalTitle: '意識とは何か — 生存と間主観性を手がかりに',
-                description: '一般読者向けの summary guide。詳細な論拠は REPORTS 側へ辿る。',
+                description: '全体像を初めて読む人向けの解説。',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: '意識モデルを観察の道具として使う',
-                description: '教育者・支援者・チーム設計者向けの summary guide。',
+                description: '教育・支援・チーム設計に引きつけて読むための解説。',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: '意識モデルと神経現象学・発達心理の接続',
-                description: '学術寄りの summary guide。report と設計メモの入口を兼ねる。',
+                modalTitle: '意識モデルと神経現象学・心理学の接続',
+                description: '理論的な比較軸まで含めて検討するための解説。',
             },
         },
         tabDomains: '構成要素レポート',
@@ -41,7 +41,7 @@ const STRINGS = {
         levelLegendUnavailable: '進捗分類を読み込めませんでした。',
         levelLegendPrefix: '進捗分類',
         levelLegendSingle: '{count}件 / {label}',
-        scopeNote: '調査は進行中です。現在の5本は意識モデル構成要素ごとの公開ドラフトで、統合プレゼン段階ではありません。',
+        scopeNote: '調査は進行中です。現在の構成要素レポートは公開ドラフトであり、統合版ではありません。',
         empty: '表示できるレポートがありません。',
         error: '構成要素レポート manifest の読み込みに失敗しました。',
         modalTitleDefault: 'Markdown',
@@ -54,22 +54,22 @@ const STRINGS = {
     },
     en: {
         featureRead: 'Open Guide',
-        guideScopeNote: 'Guides are summaries. Read them together with Reports, survey status, and design memos. Unpaired points should be treated as in-progress or planned.',
+        guideScopeNote: 'Guides are public explainers. Use the survey for project status and the component reports for detailed text.',
         features: {
             general: {
                 title: 'General',
                 modalTitle: 'What Is Awareness? — Survival and Intersubjectivity',
-                description: 'A plain-language summary guide for general readers.',
+                description: 'An explainer for readers who want the overall picture first.',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: 'Using the Awareness Model as an Observation Tool',
-                description: 'A structural summary guide for educators, supporters, and team designers.',
+                description: 'An explainer for education, support, and team design contexts.',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology',
-                description: 'An academically oriented summary guide tied to reports and design memos.',
+                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Psychology',
+                description: 'An explainer for readers who want the theoretical comparison points.',
             },
         },
         tabDomains: 'Component Reports',
@@ -83,7 +83,7 @@ const STRINGS = {
         levelLegendUnavailable: 'Progress taxonomy unavailable.',
         levelLegendPrefix: 'Progress',
         levelLegendSingle: '{count} items / {label}',
-        scopeNote: 'Research is still in progress. The current five items are published drafts for model components, not an integrated presentation-ready synthesis.',
+        scopeNote: 'Research is still in progress. The current component reports are public drafts, not an integrated synthesis.',
         empty: 'No reports available.',
         error: 'Failed to load component reports manifest.',
         modalTitleDefault: 'Markdown',

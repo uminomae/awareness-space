@@ -7,7 +7,7 @@
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → PDF build → manifest 更新の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → PDF build → manifest 更新 → `pjdhiro/main` push の順で進む。
 
 **原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
 
@@ -41,10 +41,10 @@ bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
 # survey JA
 bash transform/scripts/build-pdf-guide.sh --kind survey --lang ja
 
-# guides + survey JA + manifest 更新
+# guides + survey JA + 公開 assets を commit/push
 bash transform/scripts/build-pdf-guide.sh --kind all --lang ja --push
 
-# guides 全3種 JA + manifest 更新
+# guides 全3種 JA + 公開 assets を commit/push
 bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
 
 # 依存チェックのみ
@@ -57,7 +57,8 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - guides PDF: `pjdhiro/assets/awareness/guides/{lang}/pdf/`
 - survey Markdown: `pjdhiro/assets/awareness/survey/{lang}/md/`
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
-- manifest: `pjdhiro/assets/awareness/manifests/guides.json`
+- domains Markdown: `pjdhiro/assets/awareness/domains/{lang}/md/`
+- manifests: `pjdhiro/assets/awareness/manifests/`
 
 ### 依存
 

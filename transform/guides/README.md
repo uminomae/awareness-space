@@ -7,7 +7,7 @@
 - **Who**: guide 系 Markdown を生成・更新する CLI と review 担当者。
 - **When**: general / designer / academic guide を生成・更新するとき。
 - **Where**: ルールは `reader-rules/` に置く。公開出力先は `pjdhiro/assets/awareness/guides/`。
-- **How**: audience 別 reader-rules を読み、`transform/scripts/build-pdf-guide.sh` で PDF / manifest へ進む。
+- **How**: audience 別 reader-rules を読み、`transform/scripts/build-pdf-guide.sh` で PDF 生成後に `pjdhiro/main` へ公開する。
 
 ## 現在の状態
 
@@ -33,6 +33,6 @@ bash transform/scripts/build-pdf-guide.sh
 # guides 全3種 JA
 bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja
 
-# guides.json 更新込み
+# guides.json 更新と pjdhiro/main push 込み
 bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
 ```

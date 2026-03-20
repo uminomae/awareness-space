@@ -70,6 +70,9 @@ awareness では D01-D30 一覧ではなく、次の系統を整理する。
 - 生存-信頼軸は「この repo の特徴的仮説」であり、是非の検証対象として扱う
 - `抱持` は独立概念として前提にせず、「すぐ反応しない」現象群を束ねていた仮ラベルとして扱う
 - 過去素材は歴史的 source としてのみ参照し、現在の正本・命名源・理論権威として扱わない
+- 公開版 front matter には `source`, `rules`, `generator_model` を出さない
+- repo 内の相対パスや公開で到達できないリンクを本文に出さない
+- `reader-facing`, `report-backed`, `design memo` など制作工程の語を本文の主役にしない
 
 ## 5. front matter
 
@@ -83,9 +86,6 @@ lang: ja
 audience: survey
 version: 0.1
 date: {YYYY-MM-DD}
-source: evidence/PROJECT.md, docs/material-inventory.md, evidence/d01-d30-intake-plan.md
-rules: reader-rules-awareness-survey.md v0.1
-generator_model: {model_name}
 ---
 ```
 
@@ -99,9 +99,6 @@ lang: ja
 audience: survey
 version: 0.1
 date: {YYYY-MM-DD}
-source: evidence/PROJECT.md, docs/material-inventory.md
-rules: reader-rules-awareness-survey.md v0.1
-generator_model: {model_name}
 ---
 ```
 
