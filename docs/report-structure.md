@@ -38,7 +38,6 @@ manifest を読み込み、
 
 - `knowledge/domains/survival-trust-axis/ja/report.md`
 - `knowledge/domains/four-layers/ja/report.md`
-- `knowledge/domains/concept-notes/ja/report.md`
 
 ここに置くものは、計画書ではなく読者向けの report 本文である。
 主題、中心的な見立て、未決論点、関連素材を最小単位として持つ。
@@ -52,7 +51,7 @@ manifest を読み込み、
 
 2026-03-20 時点では次の構成で運用している。
 
-- `report_ready`: 生存-信頼軸、4層モデル、Concept Notes
+- `report_ready`: 生存-信頼軸、4層モデル
 - `source_ready`: なし（主要4本は report 入口あり）
 - `internal_draft`: Withhold
 

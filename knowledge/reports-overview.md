@@ -16,8 +16,6 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 
 1. `knowledge/domains/survival-trust-axis/ja/report.md`
 2. `knowledge/domains/four-layers/ja/report.md`
-3. `knowledge/domains/concept-notes/ja/report.md`
-
 いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
 
 `knowledge/domains/withhold/ja/report.md` は repo 内に残るが、

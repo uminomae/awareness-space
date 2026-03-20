@@ -12,7 +12,6 @@ mkdir -p "$DOMAINS_MD_DIR" "$MANIFEST_DIR"
 
 rsync -a "$ROOT/knowledge/domains/survival-trust-axis/ja/report.md" "$DOMAINS_MD_DIR/survival-trust-axis.md"
 rsync -a "$ROOT/knowledge/domains/four-layers/ja/report.md" "$DOMAINS_MD_DIR/four-layers.md"
-rsync -a "$ROOT/knowledge/domains/concept-notes/ja/report.md" "$DOMAINS_MD_DIR/concept-notes.md"
 
 cat > "$MANIFEST_DIR/domains.json" <<EOF
 {
@@ -73,19 +72,6 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "summary_en": "A report on awareness as a processing chain from bodily state to response margin.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/four-layers.md"
-      }
-    },
-    {
-      "id": "A05",
-      "name_ja": "Concept Notes",
-      "name_en": "Concept Notes",
-      "slug": "concept-notes",
-      "progress_level": "report_ready",
-      "progress_note": "公開本文あり",
-      "summary_ja": "主軸の説明だけでは扱いきれない論点を保持する補助層の報告。",
-      "summary_en": "A report explaining how the concept notes set supports the main reports.",
-      "md": {
-        "ja": "${RAW_BASE}/domains/ja/md/concept-notes.md"
       }
     }
   ]
