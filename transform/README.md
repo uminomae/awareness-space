@@ -32,8 +32,8 @@
 # guides（デフォルト: general JA）
 bash transform/scripts/build-pdf-guide.sh
 
-# guides 全3種 JA
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all
+# guides 全3種 JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all
 
 # guides general JA+EN
 bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
@@ -44,8 +44,8 @@ bash transform/scripts/build-pdf-guide.sh --kind survey --lang ja
 # guides + survey JA + 公開 assets を commit/push
 bash transform/scripts/build-pdf-guide.sh --kind all --lang ja --push
 
-# guides 全3種 JA + 公開 assets を commit/push
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
+# guides 全3種 JA+EN + 公開 assets を commit/push
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push
 
 # 依存チェックのみ
 bash transform/scripts/build-pdf-guide.sh --setup

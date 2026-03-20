@@ -14,7 +14,7 @@
 - awareness-space では guide は 3 audience 構成で扱う。
 - `general`, `designer`, `academic` を `creation-space` と同じ枠組みで揃える。
 - `pjdhiro/assets/awareness/` を `creation-space` と同じ公開契約の正本とする。
-- JA guide は配置済み。EN / PDF は順次追加する。
+- JA / EN guide を公開正本として配置する。
 - guide は「読者向け入口文」ではなく、**仮説・調査・現在地を含むモデル解説**として扱う。
 
 ## 入口
@@ -30,9 +30,9 @@
 # guides general JA
 bash transform/scripts/build-pdf-guide.sh
 
-# guides 全3種 JA
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja
+# guides 全3種 JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all
 
-# guides.json 更新と pjdhiro/main push 込み
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
+# 公開時は JA+EN をまとめて反映
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push
 ```

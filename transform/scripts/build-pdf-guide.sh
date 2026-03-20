@@ -394,6 +394,7 @@ main() {
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
                 echo "  --push                                           ビルド後に公開 assets を commit/push"
+                echo "                                                   guides 公開時は --lang all を推奨"
                 echo "  --setup                                          依存チェックのみ"
                 exit 0
                 ;;
