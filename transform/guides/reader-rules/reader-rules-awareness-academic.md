@@ -18,10 +18,10 @@
    - guide 自体は summary であり、論拠は report / survey / design memo に分かれていると明示する
 
 2. **モデルの中心仮説**
-   - F-O軸を起点仮説として定義する
+   - 生存-信頼軸を起点仮説として定義する
    - 4層モデルを意識記述の構造枠として定義する
-   - M1 と Concept Notes の位置づけを書く
-   - `Withhold` は周辺仮説として限定的に位置づける
+   - 過去の source 束は歴史的素材であり、現在の正本ではないと書く
+   - `抱持` は周辺仮説ではなく、概念監査中の仮ラベルとして限定的に位置づける
 
 3. **調査設計**
    - なぜ神経現象学と心理学を中心参照に置くのかを書く
@@ -30,7 +30,7 @@
    - report 化済みの論点と、まだ design memo 段階の論点を区別して書く
 
 4. **現時点で何が見えているか**
-   - F-O軸、4層モデル、M1、Concept Notes から導ける既知を整理する
+   - 生存-信頼軸、4層モデル、Concept Notes と歴史的 source 束から導ける既知を整理する
    - 「有力な構造」「補助的な論点」「まだ仮説」を分けて書く
    - 一致、近接、相違、未整理を分ける
    - 主要な見立てごとに、支える report / survey / design memo が追えるように書く
@@ -41,9 +41,9 @@
    - 公開済み report は構成要素ごとの公開ドラフトであることを明示する
 
 6. **未解決の問い**
-   - F-O軸の境界
+   - 生存-信頼軸の境界
    - 4層モデルの最小単位としての妥当性
-   - `Withhold` の位置づけ
+   - `抱持` の位置づけ
    - 観測可能性
    - 神経現象学と発達心理学の統合条件
    を明確に列挙する
@@ -58,6 +58,7 @@
 - 優劣比較ではなく構造比較として書く
 - 断定しすぎない
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
+- 過去素材を現在の正本・命名源・理論権威として扱わない
 - raw source の内部メモや Issue 文脈を本文へ出さない
 - 探索的であることと、根拠が薄いことを混同しない
 - report のない主張を、既知の結論として扱わない
@@ -73,8 +74,8 @@
 
 補助:
 
-- `knowledge/fo-axis-overview.md`
+- `knowledge/survival-trust-axis-overview.md`
 - `knowledge/four-layers-overview.md`
-- `knowledge/m1-consciousness-os-overview.md`
+- `knowledge/four-layers-overview.md`
 - `knowledge/concepts-overview.md`
 - 神経現象学 / 発達心理 / trust / measurement 系 review 文書

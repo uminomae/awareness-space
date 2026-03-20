@@ -49,7 +49,7 @@ docs/ に置かないもの:
 | `evidence/review/core-source-map.md` | 中核参照地図の正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
-| `knowledge/m1-consciousness-os/part-1-introduction.md` | M1 意識OS 系列（Part1） |
+| `knowledge/domains/four-layers/part-1-introduction.md` | 4層モデルの原著文書群 系列（Part1） |
 | `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 | `transform/domains/README.md` | awareness-space 版 domains pipeline の入口 |
@@ -68,7 +68,7 @@ docs/ に置かないもの:
 | `docs/session-close-routine.md` | セッション終了時の手順 |
 | `docs/standing-approvals.md` | 継続承認の記録場所 |
 | `evidence/PROJECT.md` | 調査憲章の正本 |
-| `knowledge/fo-axis-starting-memo.md` | F-O軸 起点メモ |
+| `knowledge/survival-trust-axis-starting-memo.md` | 生存-信頼軸 起点メモ |
 
 ## 4. ブランチ / ローカルサーバー
 

@@ -1,7 +1,7 @@
 # 意識モデル構成要素調査 3軸品質基準 v0.2
 
 **用途**: `transform/domains` の report を採点するための最小基準  
-**対象**: `FO軸`, `4層モデル`, `Withhold`, `M1意識OS`, `concept notes` 系  
+**対象**: `生存-信頼軸`, `4層モデル`, `concept notes` 系  
 **更新日**: 2026-03-17
 
 ---

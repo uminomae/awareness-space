@@ -15,7 +15,7 @@
 - `awareness-space` は「意識とは何か」を探索する独立モジュール
 - `kesson-driven-thinking` の既存資料は素材であり、自動的な正本ではない
 - D1-D4 の正本は `~/dev/kesson-driven-thinking/base/schema/core-definitions.md`
-- 出発点の仮説は F-O軸: 生存と間主観性を基礎とする意識仮説
+- 出発点の仮説は 生存-信頼軸: 生存と間主観性を基礎とする意識仮説
 - コンテンツ構造は `creation-space` を模倣し、`意識モデル / 調査内容 / 調査報告` の3本柱で整備する
 
 ## Git 規約

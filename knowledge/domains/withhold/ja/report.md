@@ -1,12 +1,18 @@
 ---
-title: "Withhold"
+title: "抱持（監査中の仮ラベル）"
 lang: ja
 version: 0.2
 date: 2026-03-19
 generator_model: codex:gpt-5
 ---
 
-# Withhold に関する調査報告
+# 抱持（監査中の仮ラベル）に関する内部ドラフト
+
+この文書は repo 内に残しているが、
+`awareness-space#74` の概念監査では
+`抱持` を独立概念として維持するには粗すぎると判定された。
+したがって現時点では、reader-facing な公開 report ではなく、
+「すぐ反応しない」現象群を束ねていた仮ラベルの内部ドラフトとして扱う。
 
 ## 1. この report の問い
 
@@ -41,9 +47,9 @@ Withhold は、すでに立ち上がっている行動準備を即座に実行�
 
 ## 5. なぜ重要か
 
-Withhold がない場合、Layer 2 で方向づけられた行動準備はそのまま反応へ短絡しやすい。F軸の脅威読みが過剰なら防衛が、O軸の欠損読みが過剰ならしがみつきや断絶が起こりやすい。
+Withhold がない場合、Layer 2 で方向づけられた行動準備はそのまま反応へ短絡しやすい。生存軸の脅威読みが過剰なら防衛が、信頼軸の欠損読みが過剰ならしがみつきや断絶が起こりやすい。
 
-Withhold があると、いまの評価が妥当なのか、F/O の読み違いがないか、別の応答可能性があるかを見直せる。そのため Withhold は、衝動を弱める副次機能ではなく、欠損駆動思考を成立させる中心条件として扱われる。
+Withhold があると、いまの評価が妥当なのか、生存-信頼 の読み違いがないか、別の応答可能性があるかを見直せる。そのため Withhold は、衝動を弱める副次機能ではなく、欠損駆動思考を成立させる中心条件として扱われる。
 
 ## 6. 4層モデルの中での位置づけ
 
@@ -53,7 +59,7 @@ Withhold は Layer 3 として置かれているが、
 
 - Layer 0 の身体余裕
 - Layer 1 のズレの選別
-- Layer 2 の F/O 評価
+- Layer 2 の生存-信頼評価
 
 があってはじめて、Layer 3 の保持が成立する。
 
@@ -87,7 +93,7 @@ Withhold は、反応を止める技法ではなく、ズレを問いとして�
 
 - `../../../withhold-overview.md`
 - `../../../schema/withhold-matching-v2.md`
-- `../../../m1-consciousness-os/part-5-withhold.md`
+- `../../../domains/four-layers/part-5-withhold.md`
 - `../../../concepts/CN-003_boundary-casebook.md`
 - `../../../concepts/CN-004_collective-withhold.md`
 - `../../../concepts/CN-001_internalized-relationship.md`

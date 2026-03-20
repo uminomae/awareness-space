@@ -13,10 +13,8 @@
 
 `creation-space` の `domains` は D01-D30 の学術領域だが、`awareness-space` の `domains` は「意識モデルの構成要素」を扱う。
 
-- `FO軸`
+- `生存-信頼軸`
 - `4層モデル`
-- `Withhold`
-- `M1 意識OS`
 - `concept notes` 系（CN-001 系列）
 
 ## 現在の状態
@@ -48,10 +46,8 @@
 - `domains` 単位の evidence は原則 `evidence/awareness-<slug>.md` を想定（将来 `evidence/domains/<slug>.md` へ統一可能）。
 - report は `knowledge/domains/<slug>/ja/report.md` を既定とする（英語は `en/report.md`）。
 - `slug` は次を想定:
-  - `fo-axis`
+  - `survival-trust-axis`
   - `four-layers`
-  - `withhold`
-  - `m1-consciousness-os`
   - `cn-001` / `cn-007` など
 
 ## 参照先

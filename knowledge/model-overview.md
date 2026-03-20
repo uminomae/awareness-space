@@ -7,22 +7,21 @@
 意識モデルセクションは、意識をどう記述するかの基盤となる概念群を整理する。
 現時点では、次の4本を主要入口としている。
 
-1. F-O軸
+1. 生存-信頼軸
 2. 4層モデル
 3. Withhold
-4. M1 意識OS
-5. Concept Notes
+4. Concept Notes
 
-## 2. F-O軸
+## 2. 生存-信頼軸
 
-F-O軸は、意識経験を読むときに、
+生存-信頼軸は、意識経験を読むときに、
 何を守ろうとしているか、何とのつながりを保とうとしているかを見分けるための最小座標系である。
 
-- F軸: 生存、脅威、安全、保身
-- O軸: 関係、愛着、所属、信頼、間主観性
+- 生存軸: 生存、脅威、安全、保身
+- 信頼軸: 関係、愛着、所属、信頼、間主観性
 
 入口:
-- `fo-axis-overview.md`
+- `survival-trust-axis-overview.md`
 
 ## 3. 4層モデル
 
@@ -30,11 +29,18 @@ F-O軸は、意識経験を読むときに、
 
 - Layer 0: 内受容感覚
 - Layer 1: 予測-誤差ループ
-- Layer 2: F-O評価
+- Layer 2: 生存-信頼評価
 - Layer 3: Withhold
 
 入口:
 - `four-layers-overview.md`
+
+原著文書群:
+- `domains/four-layers/part-1-introduction.md`
+- `domains/four-layers/part-2-interoception.md`
+- `domains/four-layers/part-3-prediction-error.md`
+- `domains/four-layers/part-4-survival-trust-evaluation.md`
+- `domains/four-layers/part-5-withhold.md`
 
 ## 4. Withhold
 
@@ -43,14 +49,7 @@ Withhold は、評価済みの行動準備を即座に実行せず、問いと�
 入口:
 - `withhold-overview.md`
 
-## 5. M1 意識OS
-
-M1 意識OSは、意識の作動構造を整理した文書群であり、4層モデルや F-O軸 の土台になる。
-
-入口:
-- `m1-consciousness-os-overview.md`
-
-## 6. Concept Notes
+## 5. Concept Notes
 
 Concept Notes は、
 意識モデルを補助する概念や境界事例を集めたノート群である。
@@ -59,11 +58,11 @@ Concept Notes は、
 入口:
 - `concepts-overview.md`
 
-## 7. 今後の拡張
+## 6. 今後の拡張
 
 今後は、このセクションに以下を追加していく。
 
-- F-O軸の詳細解説
+- 生存-信頼軸の詳細解説
 - 4層モデルの各層の詳細
 - Withhold の成立条件やスペクトラム
-- M1 文書群の再構成
+- 4層モデル原著文書群の再構成

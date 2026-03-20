@@ -34,16 +34,16 @@
   "reports": [
     {
       "id": "A01",
-      "name_ja": "F-O軸",
-      "name_en": "F-O Axis",
-      "slug": "fo-axis",
+      "name_ja": "生存-信頼軸",
+      "name_en": "Survival-Trust Axis",
+      "slug": "survival-trust-axis",
       "progress_level": "report_ready",
       "progress_note": "読者向け draft あり",
       "generator_model": "codex:gpt-5",
       "summary_ja": "生存と間主観性の二軸で意識経験を読むための report。",
       "summary_en": "A reader-facing report on the two-axis model of survival and intersubjectivity.",
       "md": {
-        "ja": "./knowledge/domains/fo-axis/ja/report.md"
+        "ja": "./knowledge/domains/survival-trust-axis/ja/report.md"
       }
     },
     {
@@ -54,38 +54,10 @@
       "progress_level": "report_ready",
       "progress_note": "読者向け draft あり",
       "generator_model": "codex:gpt-5",
-      "summary_ja": "内受容感覚から Withhold までを処理連鎖として読む report。",
-      "summary_en": "A report on awareness as a processing chain from interoception to withhold.",
+      "summary_ja": "身体状態、差異の前景化、方向づけ、反応以前の余地を処理連鎖として読む report。",
+      "summary_en": "A report on awareness as a processing chain from bodily state to pre-reaction margin.",
       "md": {
         "ja": "./knowledge/domains/four-layers/ja/report.md"
-      }
-    },
-    {
-      "id": "A03",
-      "name_ja": "Withhold",
-      "name_en": "Withhold",
-      "slug": "withhold",
-      "progress_level": "report_ready",
-      "progress_note": "読者向け draft あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "反応抑制ではなく保持機能としての Withhold を説明する report。",
-      "summary_en": "A report on withhold as a holding function rather than mere inhibition.",
-      "md": {
-        "ja": "./knowledge/domains/withhold/ja/report.md"
-      }
-    },
-    {
-      "id": "A04",
-      "name_ja": "M1 意識OS",
-      "name_en": "M1 Consciousness OS",
-      "slug": "m1-consciousness-os",
-      "progress_level": "report_ready",
-      "progress_note": "読者向け draft あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "4層モデル、F-O軸、Withhold を束ねる基盤文章群の report。",
-      "summary_en": "A reader-facing report on the source document set that binds together the four layers, F-O axis, and withhold.",
-      "md": {
-        "ja": "./knowledge/domains/m1-consciousness-os/ja/report.md"
       }
     },
     {

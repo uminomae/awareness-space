@@ -62,9 +62,9 @@ summary の各要点には、対になる調査と reader-facing な report が�
 | summary の節 | 基本区分 | 現在の主な対応先 | 現状 |
 |---|---|---|---|
 | この guide が説明すること | summary の役割説明 | `knowledge/guides/awareness-general.md`, `evidence/survey-status.md` | summary として成立 |
-| モデルの中心仮説 | 起点仮説 + report-backed 整理 | `knowledge/domains/fo-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/withhold/ja/report.md` | 一部 report-backed |
+| モデルの中心仮説 | 起点仮説 + report-backed 整理 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/withhold/ja/report.md` | 一部 report-backed |
 | その仮説を確かめるために何を調査しているか | survey + design memo | `evidence/survey-status.md`, `evidence/review/core-source-map.md`, `evidence/review/neurophenomenology-design.md`, `evidence/review/developmental-psychology-design.md` | 調査中 / 設計段階を含む |
-| 現時点で何が見えているか | report-backed 整理 + 暫定統合 | `knowledge/domains/fo-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/m1-consciousness-os/ja/report.md`, `knowledge/domains/concept-notes/ja/report.md` | 一部は暫定統合 |
+| 現時点で何が見えているか | report-backed 整理 + 暫定統合 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/concept-notes/ja/report.md` | 一部は暫定統合 |
 | どこまで進んでいるか | survey | `evidence/survey-status.md`, `knowledge/reports-overview.md` | survey-backed |
 | 何がまだ未解決か | survey + design memo | `evidence/survey-status.md`, `evidence/review/*.md` | 調査中 / 設計段階を含む |
 | 次の入口 | UI / 読書導線 | `knowledge/reports-overview.md`, `evidence/survey-domain-index.md`, `knowledge/domains/` | 要強化 |

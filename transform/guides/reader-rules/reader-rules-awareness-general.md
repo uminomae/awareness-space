@@ -18,14 +18,14 @@
    - 同時に、guide が summary であり、詳細な論拠は report / survey / design memo にあると明示する
 
 2. **モデルの中心仮説**
-   - F-O軸を起点仮説として説明する
+   - 生存-信頼軸を起点仮説として説明する
    - 4層モデルを「意識を流れとして読む枠組み」として説明する
-   - `Withhold` は中心確定概念としてではなく、反応を見直す余地に関わる周辺仮説として短く扱う
+   - `抱持` は中心確定概念としてではなく、反応を見直す余地に関わる監査中の仮ラベルとして短く扱う
 
 3. **その仮説を確かめるために何を調査しているか**
    - 神経現象学と心理学が中核参照領域であることを書く
-   - 発達心理学を含む心理学的知見を、O軸や社会的形成の検証 source として扱っていることを書く
-   - M1 と Concept Notes が source 束として使われていることを書く
+   - 発達心理学を含む心理学的知見を、信頼軸や社会的形成の検証 source として扱っていることを書く
+   - 過去の source 束は歴史的素材として参照しているだけで、現在の正本ではないことを書く
    - 神経現象学 / 発達心理学に reader-facing report がまだ十分でない場合は、design memo と調査計画段階であることを明示する
 
 4. **現時点で何が見えているか**
@@ -40,7 +40,7 @@
    - guide / survey / report の3層で公開整理している途中だと説明する
 
 6. **何がまだ未解決か**
-   - F-O軸の妥当性
+   - 生存-信頼軸の妥当性
    - 神経現象学と心理学の接続設計
    - 用語境界
    - 観測・検証の仕方
@@ -56,8 +56,9 @@
 
 - 自己啓発調にしない
 - `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
+- 過去素材を現在の正本・命名源・理論権威として扱わない
 - source の内部ラベルをそのまま出さない
-- F-O軸を採択済みの真理として扱わない
+- 生存-信頼軸を採択済みの真理として扱わない
 - 調査進行中であることを曖昧にしない
 - 「わかっていること」と「まだ未解決」を混ぜない
 - report / survey / design memo のどれに支えられているか曖昧な主張を書かない
@@ -73,7 +74,7 @@
 
 補助:
 
-- `knowledge/fo-axis-overview.md`
+- `knowledge/survival-trust-axis-overview.md`
 - `knowledge/four-layers-overview.md`
-- `knowledge/m1-consciousness-os-overview.md`
+- `knowledge/four-layers-overview.md`
 - `knowledge/concepts-overview.md`

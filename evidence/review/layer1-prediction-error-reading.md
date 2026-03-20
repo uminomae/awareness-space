@@ -4,7 +4,7 @@
 
 対象:
 
-- `../kesson-driven-thinking/base/text/m1-consciousness-os/part-3-prediction-error.md`
+- `../kesson-driven-thinking/base/text/domains/four-layers/part-3-prediction-error.md`
 - `../kesson-driven-thinking/base/schema/core-definitions.md`
 - `../kesson-driven-thinking/chatgpt/reviews/REVIEW-006_chatgpt-deepresearch-summary.md`
 - `../kesson-driven-thinking/base/concepts/CN-005_trust-hypothesis-inventory.md`
@@ -72,13 +72,13 @@ Friston 系を「説明し尽くす理論」として採らず、
 
 Layer 1 で選別されたズレは、
 
-- Layer 2 へ送られて F/O 評価を受ける
+- Layer 2 へ送られて 生存-信頼 評価を受ける
 - 一部は Withhold による再評価の対象になる
 
 したがって Layer 1 は、
 身体性から情動評価と保持へ移るハブである。
 
-### 2-5. Layer 1 だけでは O軸や信頼は説明しきれない
+### 2-5. Layer 1 だけでは 信頼軸や信頼は説明しきれない
 
 CN-005 や REVIEW-006 が示しているのは、
 信頼や H08 の議論では Layer 1 だけでなく、
@@ -103,7 +103,7 @@ CN-005 や REVIEW-006 が示しているのは、
 
 ## 4. Layer 1 がまだ説明しないこと
 
-1. そのズレが F軸か O軸か
+1. そのズレが 生存軸か 信頼軸か
 2. そのズレをどう保持し直すか
 3. 信頼、関係安全性、間主観性の内容
 4. 欠損を創造や問いに変える条件全体

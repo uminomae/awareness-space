@@ -16,11 +16,11 @@
 
 ### M1 consciousness OS
 
-- `base/text/m1-consciousness-os/part-1-introduction.md`
-- `base/text/m1-consciousness-os/part-2-interoception.md`
-- `base/text/m1-consciousness-os/part-3-prediction-error.md`
-- `base/text/m1-consciousness-os/part-4-fo-evaluation.md`
-- `base/text/m1-consciousness-os/part-5-withhold.md`
+- `base/text/domains/four-layers/part-1-introduction.md`
+- `base/text/domains/four-layers/part-2-interoception.md`
+- `base/text/domains/four-layers/part-3-prediction-error.md`
+- `base/text/domains/four-layers/part-4-survival-trust-evaluation.md`
+- `base/text/domains/four-layers/part-5-withhold.md`
 
 ### concept notes
 
@@ -43,7 +43,7 @@
 
 削除前に最低限 grep する対象:
 
-- `m1-consciousness-os`
+- `domains/four-layers/part-`
 - `CN-001`〜`CN-007`
 - `four-layers.md`
 - `four-modules.md`

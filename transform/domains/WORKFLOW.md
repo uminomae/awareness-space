@@ -11,7 +11,7 @@
 ### Step 1: 入力準備
 
 ```bash
-ls evidence | rg "(fo-axis|four-layers|withhold|m1-consciousness-os|cn-)"
+ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
 ```
 
 以下を読む（この順序）:
@@ -61,11 +61,10 @@ A と同じだが、対象 evidence の差分確認が必須。
 
 暫定対象順:
 
-1. `fo-axis`
+1. `survival-trust-axis`
 2. `four-layers`
 3. `withhold`
-4. `m1-consciousness-os`
-5. `cn-001`〜`cn-007`
+4. `cn-001`〜`cn-007`
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
 FAIL が出た構成要素は分離して再生成する。
@@ -84,5 +83,5 @@ FAIL が出た構成要素は分離して再生成する。
 - `creation-space` = 30学術領域（D01-D30）
 - `awareness-space` = 意識モデル構成要素
 
-対象は `FO軸`, `4層モデル`, `Withhold`, `M1意識OS`, `concept notes` の順で進行する。  
+対象は `生存-信頼軸`, `4層モデル`, `concept notes` の順で進行する。  
 将来項目はこのファイル更新で拡張し、対象外項目は実行しない。

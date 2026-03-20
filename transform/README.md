@@ -70,4 +70,4 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - `guides/README.md`: audience別 guide workflow の入口
 - `survey/README.md`: 調査内容 workflow の入口
 - `reports/README.md`: 調査報告の変換 workflow 入口
-- `domains/README.md`: awareness-space 版 domains pipeline の入口（FO軸/4層モデル/Withhold/M1意識OS/CN 系）
+- `domains/README.md`: awareness-space 版 domains pipeline の入口（生存-信頼軸/4層モデル/CN 系）

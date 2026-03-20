@@ -36,7 +36,7 @@ manifest を読み込み、
 
 ### 詳細本文
 
-- `knowledge/domains/fo-axis/ja/report.md`
+- `knowledge/domains/survival-trust-axis/ja/report.md`
 - `knowledge/domains/four-layers/ja/report.md`
 - `knowledge/domains/withhold/ja/report.md`
 
@@ -52,15 +52,15 @@ manifest を読み込み、
 
 2026-03-19 時点では次の構成で運用している。
 
-- `report_ready`: F-O軸、4層モデル、Withhold、M1 意識OS、Concept Notes
-- `source_ready`: なし（主要5本は report 入口あり）
+- `report_ready`: 生存-信頼軸、4層モデル、Withhold、Concept Notes
+- `source_ready`: なし（主要4本は report 入口あり）
 
 ## 4. 置き場の役割分担
 
 - 調査原本: `evidence/`
 - summary: `knowledge/guides/`
 - report 本文: `knowledge/domains/`
-- source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/m1-consciousness-os/`
+- source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/domains/four-layers/`
 - manifest 正本: `transform/domains/publish/domains/index.json`
 - UI 導線: `index.html`, `src/reports/`
 - design memo: `evidence/review/`

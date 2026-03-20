@@ -25,7 +25,6 @@
 - `schema/`: ナレッジの骨格。意識モデルの定義・比較表などの原本群。
 - `concepts/`: 概念ノート群（CN-001〜CN-007）と運用ノートの保持場所。
 - `domains/`: 領域別解説や読者向け report を置く場所。
-- `m1-consciousness-os/`: M1意識OSのパート文書を集約。
 - `*.md`（overview 群）: 全体像の入口として維持する要約文書。
 
 ## summary と論拠
@@ -38,15 +37,15 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 
 ## 現在の収録文書
 
-- `fo-axis-overview.md`: F-O軸の入口解説
-- `fo-axis-starting-memo.md`: F-O軸起点メモ（source）
+- `survival-trust-axis-overview.md`: 生存-信頼軸の入口解説
+- `survival-trust-axis-starting-memo.md`: 生存-信頼軸起点メモ（source）
 - `model-overview.md`: 意識モデル全体の総覧
-- `m1-consciousness-os-overview.md`: M1 意識OS の入口解説
-- `m1-consciousness-os/part-1-introduction.md`: Part 1（4層モデルの導入）
-- `m1-consciousness-os/part-2-interoception.md`: Part 2（Layer 0）
-- `m1-consciousness-os/part-3-prediction-error.md`: Part 3（Layer 1）
-- `m1-consciousness-os/part-4-fo-evaluation.md`: Part 4（Layer 2）
-- `m1-consciousness-os/part-5-withhold.md`: Part 5（Layer 3）
+- `four-layers-overview.md`: 4層モデル入口解説
+- `domains/four-layers/part-1-introduction.md`: Part 1（4層モデルの導入）
+- `domains/four-layers/part-2-interoception.md`: Part 2（Layer 0）
+- `domains/four-layers/part-3-prediction-error.md`: Part 3（Layer 1）
+- `domains/four-layers/part-4-survival-trust-evaluation.md`: Part 4（Layer 2）
+- `domains/four-layers/part-5-withhold.md`: Part 5（Layer 3）
 - `four-layers-overview.md`: 4層モデル入口解説
 - `schema/four-layers.md`: 4層モデル骨格（定義）
 - `schema/four-modules.md`: 4モジュール構造
@@ -65,16 +64,16 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `concepts/CN-006_trust-analysis-axes.md`: CN-006
 - `concepts/CN-007_iss42-measurement-design-principles.md`: CN-007
 - `reports-overview.md`: 調査報告セクションの総覧
-- `domains/fo-axis/ja/report.md`: F-O軸 report
+- `domains/survival-trust-axis/ja/report.md`: 生存-信頼軸 report
 - `domains/four-layers/ja/report.md`: 4層モデル report
 - `domains/withhold/ja/report.md`: Withhold report
 
 ## 移行状態
 
-- `knowledge/m1-consciousness-os/` を新設し、M1 の Part 1〜5 を追加
 - `knowledge/concepts/` を新設し、CN-001〜CN-007 を追加
 - `knowledge/schema/` に `four-layers.md`、`four-modules.md`、`withhold-matching-v2.md` を追加
-- `knowledge/domains/` に F-O軸、4層モデル、Withhold の report を追加
-- M1 意識OSと Concept Notes は `source_ready` の入口文書として接続済み
+- `knowledge/domains/` に 生存-信頼軸、4層モデル、Withhold の report を追加
+- 4層モデルの原著文書群は `knowledge/domains/four-layers/` 配下へ統合済み
+- Concept Notes は `source_ready` の入口文書として接続済み
 - overview 群は source とは分離して、公開向け explainer として整備する
 - `knowledge/guides/` に audience別 guide の初期ドラフトを追加

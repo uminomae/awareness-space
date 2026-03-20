@@ -10,7 +10,7 @@
 
 ### T1-1: 対象が awareness の `domains` 定義と一致しているか
 
-- レポートが `FO軸 / 4層モデル / Withhold / M1意識OS / concept notes` のどれかに紐づいているか
+- レポートが `生存-信頼軸 / 4層モデル / concept notes` のどれかに紐づいているか
 
 ### T1-2: 調査問いが明示されているか
 

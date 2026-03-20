@@ -19,7 +19,7 @@
 をどう扱うべきかを整理することである。
 
 `awareness-space` では、神経現象学を確定理論として採用するのではなく、
-F-O軸、4層モデル、Withhold を一人称経験に接続するための中心参照として扱う。
+生存-信頼軸、4層モデル、Withhold を一人称経験に接続するための中心参照として扱う。
 
 ## 2. 主質問
 
@@ -111,14 +111,14 @@ F-O軸、4層モデル、Withhold を一人称経験に接続するための中�
 
 ## 6. 最初の読書セット
 
-1. `../kesson-driven-thinking/base/text/m1-consciousness-os/part-2-interoception.md`
-2. `../kesson-driven-thinking/base/text/m1-consciousness-os/part-3-prediction-error.md`
+1. `../kesson-driven-thinking/base/text/domains/four-layers/part-2-interoception.md`
+2. `../kesson-driven-thinking/base/text/domains/four-layers/part-3-prediction-error.md`
 3. `../kesson-driven-thinking/base/schema/core-definitions.md`
 4. `../kesson-driven-thinking/base/expression/core/E04.md`
 5. `../kesson-driven-thinking/base/concepts/CN-007_iss42-measurement-design-principles.md`
 6. `../kesson-driven-thinking/base/voice/pjdhiro-statements-db.md` の S10
 7. `knowledge/domains/four-layers/ja/report.md`
-8. `knowledge/domains/fo-axis/ja/report.md`
+8. `knowledge/domains/survival-trust-axis/ja/report.md`
 
 ## 7. この調査から次に分解される Issue
 

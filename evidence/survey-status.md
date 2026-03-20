@@ -21,7 +21,7 @@ generator_model: codex:gpt-5
 この探索では、神経現象学を中心にしながら、
 発達心理を含む心理学領域の知見を統合し、
 意識モデルの中核構造を組み立てようとしています。
-F-O軸は、その中で「生存と間主観性をコアに置く見方は妥当か」を確かめる仮説として扱います。
+生存-信頼軸は、その中で「生存と間主観性をコアに置く見方は妥当か」を確かめる仮説として扱います。
 
 ## 2. 何を調査しているか
 
@@ -30,15 +30,20 @@ F-O軸は、その中で「生存と間主観性をコアに置く見方は妥�
 1. 神経現象学に接続できる意識モデルの構造
 2. 発達心理を含む心理学的知見との接続
 3. 4層モデル
-4. F-O軸
-5. M1 意識OS と Concept Notes
+4. 生存-信頼軸
+5. 4層モデルの原著文書群 と Concept Notes
+6. 「すぐ反応しない」現象群の再調査
 
 これらを、guide、調査内容、report という3層に分けて公開できる形へ整えています。
 
 ## 3. どの素材を使っているか
 
-この調査は、`kesson-driven-thinking` にある schema、M1、concept notes を
-source として活用しながら進めています。
+この調査は、`kesson-driven-thinking` にある schema と過去の文章資産を
+歴史的素材として参照しながら進めています。
+
+ただし、それらを現在の正本や命名源として扱うことはしません。
+`awareness-space` は、その素材をいったん分解し、
+現象の抽出から問いを立て直す前提で調査を進めます。
 
 加えて、`awareness-space` は `creation-space` の 30領域調査を
 自分たちの調査対象としては扱いません。
@@ -48,7 +53,7 @@ source として活用しながら進めています。
 
 方法は大きく3段階に分かれます。
 
-第一に、schema、M1、concept notes から意識モデルの source を読むこと。
+第一に、過去素材を歴史的 source として読み直し、現象単位へ分解すること。
 第二に、神経現象学や発達心理に接続しうる観点を整理すること。
 第三に、それらを guide、調査内容、report の三層に分けて、
 読者が辿れる公開導線へ整形することです。
@@ -66,22 +71,25 @@ source と公開文書を分離し、
 - 素材インベントリ: `docs/material-inventory.md`
 - 中核 source map: `evidence/review/core-source-map.md`
 - guide: general / designer / academic
-- report: F-O軸、4層モデル、Withhold
+- report: 生存-信頼軸、4層モデル、Concept Notes
 
-ここでの `Withhold` は、repo 全体の中心主題ではなく、周辺仮説の1つとして扱います。
+`抱持` は現在、独立概念として確定したものではなく、
+「すぐ反応しない」現象群を暫定的に束ねていた仮ラベルとして監査中です。
 
 ## 6. 現在公開済みの論拠
 
 reader-facing な公開物として、現時点で次の report を読めます。
 
-- `knowledge/domains/fo-axis/ja/report.md`
+- `knowledge/domains/survival-trust-axis/ja/report.md`
 - `knowledge/domains/four-layers/ja/report.md`
-- `knowledge/domains/withhold/ja/report.md`
-- `knowledge/domains/m1-consciousness-os/ja/report.md`
 - `knowledge/domains/concept-notes/ja/report.md`
 
 これらは guide の要点を支える論拠層です。
 guide は summary として読み、詳細な論拠は report 側で追う前提にします。
+
+一方、`抱持` は概念監査の結果、
+独立 report としては早すぎると判定されました。
+関連文書は残っていますが、現時点では reader-facing な公開論拠ではなく内部ドラフトとして扱います。
 
 ## 7. 現在まだ設計メモ段階の領域
 
@@ -110,16 +118,17 @@ source の所在や優先順位を確認したいときは、素材インベン�
 
 1. 神経現象学を reader-facing に説明できる report 群を整備する
 2. 発達心理学を reader-facing に説明できる report 群を整備する
-3. guide の各要点を、対応する report / survey / design memo にさらに明示的に対応づける
-4. まだ report のない主張は、調査計画か設計メモとして位置づけ直す
+3. 「すぐ反応しない」現象群をラベル非依存で再抽出し、概念境界を引き直す
+4. guide の各要点を、対応する report / survey / design memo にさらに明示的に対応づける
+5. まだ report のない主張は、調査計画か設計メモとして位置づけ直す
 
-つまり、今後は「仮説を増やすこと」よりも、
-既存の仮説と調査を reader-facing に対応づけていくことが中心課題になります。
+つまり、今後は「既存ラベルを磨くこと」よりも、
+現象を再抽出し、確定したものだけを reader-facing に対応づけていくことが中心課題になります。
 
 ## 10. 限界と未解決
 
 この調査はまだ進行中です。
-用語の境界、F-O軸の精密化、
+用語の境界、生存-信頼軸の精密化、
 神経現象学と発達心理の知見をどこまで一つのモデルへ統合できるかは、
 今後さらに整理が必要です。
 

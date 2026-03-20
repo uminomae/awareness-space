@@ -40,10 +40,10 @@ generator_model: codex:gpt-5
 - Layer 2: その差が何に関わる問題として受け止められるか
 - Layer 3: 反応をそのまま固定せず、見直しうる余地
 
-Layer 2 を読むための仮説座標系として置いているのが F-O軸です。
+Layer 2 を読むための仮説座標系として置いているのが 生存-信頼軸です。
 
-- F軸: 生存、安全、防衛、保身
-- O軸: 関係、信頼、所属、間主観性
+- 生存軸: 生存、安全、防衛、保身
+- 信頼軸: 関係、信頼、所属、間主観性
 
 同じ出来事でも、
 安全の問題として受け止めるのか、
@@ -55,13 +55,16 @@ Layer 2 を読むための仮説座標系として置いているのが F-O軸�
 この guide の要点を支える reader-facing な公開物として、
 現時点では少なくとも次があります。
 
-- [F-O軸 report](./knowledge/domains/fo-axis/ja/report.md)
+- [生存-信頼軸 report](./knowledge/domains/survival-trust-axis/ja/report.md)
 - [4層モデル report](./knowledge/domains/four-layers/ja/report.md)
-- [Withhold report](./knowledge/domains/withhold/ja/report.md)
-- [M1 意識OS report](./knowledge/domains/m1-consciousness-os/ja/report.md)
+- [4層モデルの原著文書群 report](./knowledge/domains/four-layers/ja/report.md)
 - [Concept Notes report](./knowledge/domains/concept-notes/ja/report.md)
 - [調査報告 総覧](./knowledge/reports-overview.md)
 - [調査概要](./evidence/survey-status.md)
+
+`抱持` に関する文書は repo 内に残っていますが、
+現時点では独立概念としての公開論拠ではなく、
+概念監査中の内部ドラフトとして扱います。
 
 ## その仮説を確かめるために何を調査しているか
 
@@ -75,16 +78,19 @@ Layer 2 を読むための仮説座標系として置いているのが F-O軸�
 愛着、発達、間主観性、信頼のような問題を通じて、
 関係の側面をどこまで構造的に捉えられるかを確かめるために接続しています。
 
-加えて、既存の文章資産として M1 と Concept Notes を source 束として読み直し、
-仮説の補助線として使っています。
+加えて、既存の文章資産は歴史的 source 束として読み直し、
+現在の問いや命名をそこへ従属させない前提で補助線として使っています。
 
 ただし、ここには段階差があります。
-F-O軸、4層モデル、M1、Concept Notes、Withhold には
-すでに公開済み report があります。
+生存-信頼軸、4層モデル、Concept Notes には
+公開済み report があります。
 一方で、神経現象学と発達心理学は
 中核調査軸として重要ですが、
 現時点では reader-facing な専用 report よりも、
 設計メモの段階が先行しています。
+
+また、`抱持` は独立 report を維持するには粗すぎると判定され、
+現在は「すぐ反応しない」現象群を束ねていた仮ラベルとして再調査中です。
 
 - [神経現象学設計メモ](./evidence/review/neurophenomenology-design.md)
 - [発達心理学設計メモ](./evidence/review/developmental-psychology-design.md)
@@ -97,7 +103,7 @@ F-O軸、4層モデル、M1、Concept Notes、Withhold には
 かなり有力に見えています。
 
 この見立ては、
-特に F-O軸、4層モデル、M1、Concept Notes の公開 report と overview に支えられています。
+特に 生存-信頼軸、4層モデル、Concept Notes の公開 report と overview に支えられています。
 つまり、ここで述べていることの中心部分は完全な思いつきではありません。
 他方で、神経現象学と発達心理学との接続まで
 すでに reader-facing に検証し切ったという意味ではありません。
@@ -122,11 +128,11 @@ F-O軸、4層モデル、M1、Concept Notes、Withhold には
 現在は、少なくとも次の区別が必要です。
 
 - **公開済みの論拠**:
-  F-O軸、4層モデル、Withhold、M1、Concept Notes の report
+  生存-信頼軸、4層モデル、Concept Notes の report
 - **公開済みの現在地整理**:
   調査概要と調査索引
 - **まだ設計メモ段階の領域**:
-  神経現象学、発達心理学との接続設計
+  神経現象学、発達心理学との接続設計、`抱持` の概念監査
 
 したがって、いまの `awareness-space` は
 「何もない」状態ではありません。
@@ -138,7 +144,7 @@ F-O軸、4層モデル、M1、Concept Notes、Withhold には
 
 未解決の点もはっきりあります。
 
-- F軸と O軸の境界をどこまで明確にできるか
+- 生存軸と 信頼軸の境界をどこまで明確にできるか
 - 神経現象学と心理学を、どの役割分担で統合するのが妥当か
 - 4層モデルが意識の最小記述単位として十分か
 - 反応を見直す余地を、どこまで構造として記述できるか

@@ -42,19 +42,20 @@ guide、overview、report、source のどこから読むかで整理した索引
 
 構成要素ごとの入口文書。
 
-- `../knowledge/fo-axis-overview.md`
+- `../knowledge/survival-trust-axis-overview.md`
 - `../knowledge/four-layers-overview.md`
-- `../knowledge/withhold-overview.md`
-- `../knowledge/m1-consciousness-os-overview.md`
 - `../knowledge/concepts-overview.md`
 
 ## 3. Report
 
 読者向けに整理した report。
 
-- `../knowledge/domains/fo-axis/ja/report.md`
+- `../knowledge/domains/survival-trust-axis/ja/report.md`
 - `../knowledge/domains/four-layers/ja/report.md`
-- `../knowledge/domains/withhold/ja/report.md`
+
+`抱持` に関する文書は repo 内に残っていますが、
+現時点では概念監査中の内部ドラフトであり、
+公開済み report / overview 一覧には含めません。
 
 ## 4. Source / Charter
 

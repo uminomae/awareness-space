@@ -19,7 +19,7 @@
 |-------|------|------|----------------|
 | 0 | 内受容感覚 | 身体モニタリング | 島皮質 |
 | 1 | 予測-誤差ループ | ズレ検出、欠損生成（選別） | 皮質階層 |
-| 2 | F-O評価 | 価値判断（情動価の付与） | 扁桃体、vmPFC |
+| 2 | 生存-信頼評価 | 価値判断（情動価の付与） | 扁桃体、vmPFC |
 | 3 | Withhold | 行動制御（保持） | dlPFC、ACC |
 
 ---
@@ -33,7 +33,7 @@ Layer 0: 内受容感覚（身体の「今」を知る）
     ↓ 身体状態表象
 Layer 1: 予測-誤差ループ（ズレ（違和感）を検出）
     ↓ 選別を通過 → 「欠損」として立ち上がる
-Layer 2: F-O評価（情動価を与える）
+Layer 2: 生存-信頼評価（情動価を与える）
     ↓ 情動 + 行動準備
 
 ══════【意のゲート】══════
@@ -84,19 +84,19 @@ Layer 3: Withhold（「待つ・保持する」を可能にする）
 
 **参照**: Friston (2010); Clark (2013); Parr, Pezzulo, & Friston (2022); Allen & Friston (2018)
 
-### Layer 2: F-O評価
+### Layer 2: 生存-信頼評価
 
 **機能**: 価値判断（情動価の付与）  
-**参照枠（暫定）**: 扁桃体（F軸）、vmPFC（O軸）
+**参照枠（暫定）**: 扁桃体（生存軸）、vmPFC（信頼軸）
 
-欠損（または欠損へ至るズレ）をF軸（脅威）とO軸（愛着）で評価し、情動価を与える。これにより、行動準備が方向づけられる。
+欠損（または欠損へ至るズレ）を生存軸（脅威）と信頼軸（愛着）で評価し、情動価を与える。これにより、行動準備が方向づけられる。
 
 **関連概念**:
 - Barrett: 構成主義的情動理論
 - 五蘊の「行」
 - 万川集海「正心」
 
-**D4との関係**: 情動の構成（F-O評価）はここで行われる
+**D4との関係**: 情動の構成（生存-信頼評価）はここで行われる
 
 ### Layer 3: Withhold
 
@@ -143,7 +143,7 @@ Layer 2とLayer 3の間に位置する概念的境界。
 
 ## 参考文献
 
-- `content/m1-consciousness-os/part-1-introduction.md` 〜 `part-5-withhold.md`
+- `content/domains/four-layers/part-1-introduction.md` 〜 `part-5-withhold.md`
 - Friston, K. (2010). The free-energy principle.
 - Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science.
 - Feldman, H., & Friston, K. J. (2010). Attention, uncertainty, and free-energy.

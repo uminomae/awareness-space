@@ -27,5 +27,5 @@ Withhold は、評価済みの行動準備を即座に実行せず、
 ## 関連
 
 - `four-layers-overview.md`
-- `fo-axis-overview.md`
-- `m1-consciousness-os-overview.md`
+- `survival-trust-axis-overview.md`
+- `domains/four-layers/part-5-withhold.md`
