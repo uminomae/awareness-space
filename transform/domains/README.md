@@ -48,7 +48,6 @@
 - `slug` は次を想定:
   - `survival-trust-axis`
   - `four-layers`
-  - `m1-consciousness-os`
   - `concept-notes`
   - `cn-001` / `cn-007` など
 

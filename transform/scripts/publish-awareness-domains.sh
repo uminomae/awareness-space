@@ -12,7 +12,6 @@ mkdir -p "$DOMAINS_MD_DIR" "$MANIFEST_DIR"
 
 rsync -a "$ROOT/knowledge/domains/survival-trust-axis/ja/report.md" "$DOMAINS_MD_DIR/survival-trust-axis.md"
 rsync -a "$ROOT/knowledge/domains/four-layers/ja/report.md" "$DOMAINS_MD_DIR/four-layers.md"
-rsync -a "$ROOT/knowledge/domains/m1-consciousness-os/ja/report.md" "$DOMAINS_MD_DIR/m1-consciousness-os.md"
 rsync -a "$ROOT/knowledge/domains/concept-notes/ja/report.md" "$DOMAINS_MD_DIR/concept-notes.md"
 
 cat > "$MANIFEST_DIR/domains.json" <<EOF
@@ -74,19 +73,6 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "summary_en": "A report on awareness as a processing chain from bodily state to response margin.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/four-layers.md"
-      }
-    },
-    {
-      "id": "A03",
-      "name_ja": "M1 consciousness OS",
-      "name_en": "M1 Consciousness OS",
-      "slug": "m1-consciousness-os",
-      "progress_level": "report_ready",
-      "progress_note": "公開本文あり",
-      "summary_ja": "現在の意識モデルを支える基盤文章群の位置づけを説明する報告。",
-      "summary_en": "A report on the source text bundle behind the current four-layer model.",
-      "md": {
-        "ja": "${RAW_BASE}/domains/ja/md/m1-consciousness-os.md"
       }
     },
     {
