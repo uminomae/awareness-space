@@ -23,10 +23,10 @@
     },
     {
       "id": "report_ready",
-      "label_ja": "公開ドラフト",
-      "label_en": "Draft available",
-      "description_ja": "読者向け draft を modal で読める。理論統合の完了は未保証",
-      "description_en": "A reader-facing draft is available in modal view. Integrated synthesis is not yet guaranteed",
+      "label_ja": "公開中",
+      "label_en": "Published",
+      "description_ja": "読者向け report と PDF を参照できる。理論統合の完了は未保証",
+      "description_en": "A reader-facing report and PDF are available. Integrated synthesis is not yet guaranteed",
       "order": 30,
       "tone": "success"
     }
