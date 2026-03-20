@@ -48,13 +48,14 @@ export function createReportsModalController({
         return Boolean(state.dom.mdModal?.classList.contains('show'));
     }
 
-    function setModalPdfButton(pdfUrl) {
+    function setModalPdfButton(pdfUrl, { hideWhenUnavailable = false } = {}) {
         if (!state.dom.mdOpenPdf) return;
         const strings = getStrings(state.lang);
         if (pdfUrl) {
             state.dom.mdOpenPdf.href = pdfUrl;
             state.dom.mdOpenPdf.textContent = strings.modalOpenPdf;
             state.dom.mdOpenPdf.classList.remove('disabled');
+            state.dom.mdOpenPdf.classList.remove('d-none');
             state.dom.mdOpenPdf.setAttribute('aria-disabled', 'false');
             return;
         }
@@ -62,10 +63,11 @@ export function createReportsModalController({
         state.dom.mdOpenPdf.href = '#';
         state.dom.mdOpenPdf.textContent = strings.modalPdfPending;
         state.dom.mdOpenPdf.classList.add('disabled');
+        state.dom.mdOpenPdf.classList.toggle('d-none', hideWhenUnavailable);
         state.dom.mdOpenPdf.setAttribute('aria-disabled', 'true');
     }
 
-    function setMarkdownModalLoading({ title, pdfUrl = '' }) {
+    function setMarkdownModalLoading({ title, pdfUrl = '', hidePdfButton = false }) {
         const strings = getStrings(state.lang);
         if (state.dom.mdModalTitle) state.dom.mdModalTitle.textContent = title || strings.modalTitleDefault;
         if (state.dom.mdModalMeta) state.dom.mdModalMeta.textContent = '';
@@ -77,13 +79,14 @@ export function createReportsModalController({
                 </div>
             `;
         }
-        setModalPdfButton(pdfUrl);
+        setModalPdfButton(pdfUrl, { hideWhenUnavailable: hidePdfButton });
     }
 
     async function openMarkdownModal({ mdUrl, pdfUrl = '', title = '', sources = [], modalContext = null }) {
         const modalSources = normalizeModalSources({ mdUrl, pdfUrl, sources });
         if (!modalSources.length) return;
         const firstSource = modalSources[0];
+        const hasAnyPdfSource = modalSources.some((source) => hasText(source?.pdfUrl));
 
         if (modalContext?.type === 'domain') {
             setActiveDomainModalState(modalContext.domainId, modalContext.historyMode);
@@ -98,7 +101,7 @@ export function createReportsModalController({
         }
 
         const requestId = ++state.mdRequestId;
-        setMarkdownModalLoading({ title, pdfUrl: '' });
+        setMarkdownModalLoading({ title, pdfUrl: '', hidePdfButton: !hasAnyPdfSource });
         modal.show();
 
         try {
@@ -135,7 +138,7 @@ export function createReportsModalController({
 
             if (requestId !== state.mdRequestId) return;
 
-            setModalPdfButton(availablePdfUrl);
+            setModalPdfButton(availablePdfUrl, { hideWhenUnavailable: !hasAnyPdfSource });
             if (state.dom.mdModalContent) {
                 state.dom.mdModalContent.innerHTML = `
                     <div class="md-article">
@@ -169,7 +172,7 @@ export function createReportsModalController({
             if (state.dom.mdModalContent) {
                 state.dom.mdModalContent.innerHTML = `<p class="text-warning-emphasis mb-0">${strings.modalError}</p>`;
             }
-            setModalPdfButton('');
+            setModalPdfButton('', { hideWhenUnavailable: !hasAnyPdfSource });
         }
     }
 

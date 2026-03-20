@@ -49,8 +49,9 @@ FAIL が1件でもあれば生成に戻る。
 
 ### Step 5: 公開整形
 
-現時点では `knowledge/` 配下へ直接配置する。
-将来 `build/` へ PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
+現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/ja/md/` と manifest へ反映する。
+domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
+将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
 
 ## B. 1構成要素の再生成（既存 report 更新）
 

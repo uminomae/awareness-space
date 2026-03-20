@@ -25,8 +25,8 @@
       "id": "report_ready",
       "label_ja": "公開中",
       "label_en": "Published",
-      "description_ja": "読者向け report と PDF を参照できる。理論統合の完了は未保証",
-      "description_en": "A reader-facing report and PDF are available. Integrated synthesis is not yet guaranteed",
+      "description_ja": "読者向け report を参照できる。理論統合の完了は未保証",
+      "description_en": "A reader-facing report is available. Integrated synthesis is not yet guaranteed",
       "order": 30,
       "tone": "success"
     }

@@ -48,7 +48,7 @@ manifest を読み込み、
 
 `awareness-space` の REPORTS では、すべてのカードが同じ成熟度ではない。
 
-- `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal と PDF で参照できる
+- `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal で参照できる
 - `source_ready`: overview や移設済み素材には到達できるが、domain report 本文はまだない
 
 2026-03-20 時点では次の構成で運用している。
