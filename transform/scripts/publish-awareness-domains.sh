@@ -57,7 +57,7 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "slug": "survival-trust-axis",
       "progress_level": "report_ready",
       "progress_note": "公開本文あり",
-      "summary_ja": "生存と間主観性の二軸で意識経験を読むための報告。",
+      "summary_ja": "経験の向きを生存と信頼の二軸から捉えるための報告。",
       "summary_en": "A report on the two-axis model of survival and intersubjectivity.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/survival-trust-axis.md"
@@ -70,7 +70,7 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "slug": "four-layers",
       "progress_level": "report_ready",
       "progress_note": "公開本文あり",
-      "summary_ja": "身体状態から応答の余地までを処理連鎖として読む報告。",
+      "summary_ja": "意識を身体状態から見直しの余地までの流れとして捉える報告。",
       "summary_en": "A report on awareness as a processing chain from bodily state to response margin.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/four-layers.md"
@@ -83,7 +83,7 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "slug": "m1-consciousness-os",
       "progress_level": "report_ready",
       "progress_note": "公開本文あり",
-      "summary_ja": "4層モデルを支える基盤文章群の位置づけを説明する報告。",
+      "summary_ja": "現在の意識モデルを支える基盤文章群の位置づけを説明する報告。",
       "summary_en": "A report on the source text bundle behind the current four-layer model.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/m1-consciousness-os.md"
@@ -96,7 +96,7 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "slug": "concept-notes",
       "progress_level": "report_ready",
       "progress_note": "公開本文あり",
-      "summary_ja": "概念ノート群が主軸の報告をどう支えるかを説明する報告。",
+      "summary_ja": "主軸の説明だけでは扱いきれない論点を保持する補助層の報告。",
       "summary_en": "A report explaining how the concept notes set supports the main reports.",
       "md": {
         "ja": "${RAW_BASE}/domains/ja/md/concept-notes.md"
