@@ -9,8 +9,8 @@
 #   bash transform/scripts/build-pdf-guide.sh
 #   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all
 #   bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
-#   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
-#   bash transform/scripts/build-pdf-guide.sh --kind survey --lang ja
+#   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push
+#   bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
 #   bash transform/scripts/build-pdf-guide.sh --setup
 
 set -euo pipefail
@@ -394,13 +394,18 @@ main() {
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
                 echo "  --push                                           ビルド後に公開 assets を commit/push"
-                echo "                                                   guides 公開時は --lang all を推奨"
+                echo "                                                   公開時は --lang all を必須とする"
                 echo "  --setup                                          依存チェックのみ"
                 exit 0
                 ;;
             *) echo -e "${RED}不明なオプション: $1${NC}"; exit 1 ;;
         esac
     done
+
+    if [ "$do_push" = true ] && [ "$lang" != "all" ]; then
+        echo -e "${RED}公開時は --lang all を指定してください${NC}"
+        exit 1
+    fi
 
     check_deps
     echo ""

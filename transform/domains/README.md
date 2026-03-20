@@ -32,7 +32,7 @@
 | 1構成要素の新規生成 | WORKFLOW.md §A |
 | 1構成要素の再生成（更新） | WORKFLOW.md §B |
 | 構成要素全体の一括再生成 | WORKFLOW.md §C |
-| EN 版生成（将来） | WORKFLOW.md §D |
+| EN 版生成（公開必須） | WORKFLOW.md §D |
 
 ## 入口
 
@@ -44,7 +44,7 @@
 ## 命名とファイル運用（暫定）
 
 - `domains` 単位の evidence は原則 `evidence/awareness-<slug>.md` を想定（将来 `evidence/domains/<slug>.md` へ統一可能）。
-- report 草案は `knowledge/domains/<slug>/ja/report.md`、公開配置は `pjdhiro/assets/awareness/domains/ja/md/<slug>.md` を既定とする。
+- report 草案は `knowledge/domains/<slug>/{ja,en}/report.md`、公開配置は `pjdhiro/assets/awareness/domains/{ja,en}/md/<slug>.md` を既定とする。
 - `slug` は次を想定:
   - `survival-trust-axis`
   - `four-layers`

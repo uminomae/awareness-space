@@ -38,11 +38,11 @@ bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang al
 # guides general JA+EN
 bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
 
-# survey JA
-bash transform/scripts/build-pdf-guide.sh --kind survey --lang ja
+# survey JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
 
-# guides + survey JA + 公開 assets を commit/push
-bash transform/scripts/build-pdf-guide.sh --kind all --lang ja --push
+# guides + survey + domains JA+EN + 公開 assets を commit/push
+bash transform/scripts/build-pdf-guide.sh --kind all --lang all --push
 
 # guides 全3種 JA+EN + 公開 assets を commit/push
 bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push

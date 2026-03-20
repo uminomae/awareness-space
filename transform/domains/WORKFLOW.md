@@ -22,7 +22,7 @@ ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
 
 ### Step 2: MD 生成（暫定）
 
-`reader-rules-awareness-report.md` の構成で `knowledge/domains/<slug>/ja/report.md` を作成する。
+`reader-rules-awareness-report.md` の構成で `knowledge/domains/<slug>/{ja,en}/report.md` を作成する。
 
 必須:
 
@@ -49,7 +49,8 @@ FAIL が1件でもあれば生成に戻る。
 
 ### Step 5: 公開整形
 
-現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/ja/md/` と manifest へ反映する。
+現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` と manifest へ反映する。
+公開時は JA/EN を同時に更新する。
 domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
 将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
 
@@ -70,14 +71,14 @@ A と同じだが、対象 evidence の差分確認が必須。
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
 FAIL が出た構成要素は分離して再生成する。
 
-## D. EN版生成（将来）
+## D. EN版生成（公開必須）
 
-現時点での英語版配信は未整備。構築時は以下を追加実行:
+公開時は英語版を同時に整備する。追加実行:
 
 1. 日本語版を起点に EN 翻訳下書きを作成
 2. `knowledge/domains/<slug>/en/report.md` 作成
 3. `quality-test-awareness-report.md` を翻訳版にも適用
-4. 用語統一を確認して公開
+4. 用語統一を確認し、JA/EN を同時に公開
 
 ## 読み替えルール（運用固定）
 

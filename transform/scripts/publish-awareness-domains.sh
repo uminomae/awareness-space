@@ -3,15 +3,22 @@ set -euo pipefail
 
 ROOT="/Users/uminomae/dev/awareness-space"
 PJDHIRO="/Users/uminomae/dev/pjdhiro/assets/awareness"
-DOMAINS_MD_DIR="$PJDHIRO/domains/ja/md"
+DOMAINS_JA_MD_DIR="$PJDHIRO/domains/ja/md"
+DOMAINS_EN_MD_DIR="$PJDHIRO/domains/en/md"
 MANIFEST_DIR="$PJDHIRO/manifests"
 RAW_BASE="https://raw.githubusercontent.com/uminomae/pjdhiro/main/assets/awareness"
 DATE_STR="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
 
-mkdir -p "$DOMAINS_MD_DIR" "$MANIFEST_DIR"
+mkdir -p "$DOMAINS_JA_MD_DIR" "$DOMAINS_EN_MD_DIR" "$MANIFEST_DIR"
 
-rsync -a "$ROOT/knowledge/domains/survival-trust-axis/ja/report.md" "$DOMAINS_MD_DIR/survival-trust-axis.md"
-rsync -a "$ROOT/knowledge/domains/four-layers/ja/report.md" "$DOMAINS_MD_DIR/four-layers.md"
+publish_domain() {
+    local slug="$1"
+    rsync -a "$ROOT/knowledge/domains/${slug}/ja/report.md" "$DOMAINS_JA_MD_DIR/${slug}.md"
+    rsync -a "$ROOT/knowledge/domains/${slug}/en/report.md" "$DOMAINS_EN_MD_DIR/${slug}.md"
+}
+
+publish_domain "survival-trust-axis"
+publish_domain "four-layers"
 
 cat > "$MANIFEST_DIR/domains.json" <<EOF
 {
@@ -58,7 +65,8 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "summary_ja": "経験の向きを生存と信頼の二軸から捉えるための報告。",
       "summary_en": "A report on the two-axis model of survival and intersubjectivity.",
       "md": {
-        "ja": "${RAW_BASE}/domains/ja/md/survival-trust-axis.md"
+        "ja": "${RAW_BASE}/domains/ja/md/survival-trust-axis.md",
+        "en": "${RAW_BASE}/domains/en/md/survival-trust-axis.md"
       }
     },
     {
@@ -71,7 +79,8 @@ cat > "$MANIFEST_DIR/domains.json" <<EOF
       "summary_ja": "意識を身体状態から見直しの余地までの流れとして捉える報告。",
       "summary_en": "A report on awareness as a processing chain from bodily state to response margin.",
       "md": {
-        "ja": "${RAW_BASE}/domains/ja/md/four-layers.md"
+        "ja": "${RAW_BASE}/domains/ja/md/four-layers.md",
+        "en": "${RAW_BASE}/domains/en/md/four-layers.md"
       }
     }
   ]
