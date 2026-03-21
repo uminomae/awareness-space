@@ -19,6 +19,7 @@
 | `guides/` | audience別 guide を再生成し、公開配置へ流す | **初期実装済み** |
 | `survey/` | 調査内容の概要・索引を生成し、公開配置へ流す | **初期実装済み** |
 | `domains/` | 意識モデル構成要素の report を整備する | **初期整備済み** |
+| `image-cards/` | pjdhiro 配下の画像を解釈カードとして公開する | **初期実装** |
 | `reports/` | report UI / modal 周辺の補助 | **参考メモ段階** |
 
 ## PDF ビルド
@@ -77,5 +78,6 @@ bash transform/scripts/build-pdf-guide.sh --setup
 
 - `guides/README.md`: audience別 guide workflow の入口
 - `survey/README.md`: 調査内容 workflow の入口
+- `image-cards/README.md`: 画像解釈カード workflow の入口
 - `reports/README.md`: 調査報告の変換 workflow 入口
 - `domains/README.md`: awareness-space 版 domains pipeline の入口（生存-信頼軸/4層モデル/CN 系）

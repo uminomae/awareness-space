@@ -92,6 +92,20 @@ body.awareness-page {
   line-height: 1.8;
 }
 
+.awareness-image-card .card-img-top {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.awareness-image-card-comment {
+  color: rgba(var(--color-sub-text), 0.82);
+}
+
+.awareness-image-card-links {
+  margin-top: auto;
+}
+
 .awareness-card-link {
   color: rgba(var(--color-link), 0.88);
   text-decoration: none;

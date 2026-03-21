@@ -7,6 +7,7 @@ import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
 import { syncControlGuideVisibility } from './control-guide.js';
+import { initImageCards, setImageCardsLanguage } from './image-cards.js';
 import { detectLang } from './i18n.js';
 import { applyPageLanguage, initLanguageToggle } from './page-language.js';
 import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
@@ -201,10 +202,14 @@ function start() {
     const initialLang = detectLang();
     applyPageLanguage(initialLang);
     setReportsLanguage(initialLang);
+    initImageCards({ lang: initialLang }).catch((error) => {
+        console.error('[awareness-space] image cards bootstrap failed:', error);
+    });
     refreshGuideLang();
     initLanguageToggle(initialLang, (lang) => {
         applyPageLanguage(lang);
         setReportsLanguage(lang);
+        setImageCardsLanguage(lang);
         refreshGuideLang();
     });
     startScrollUiLoop();

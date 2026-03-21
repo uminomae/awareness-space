@@ -55,6 +55,7 @@ docs/ に置かないもの:
 | `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 | `transform/domains/README.md` | awareness-space 版 domains pipeline の入口 |
+| `transform/image-cards/README.md` | 画像解釈カード workflow の入口 |
 
 ## 3. ファイルカタログ
 
