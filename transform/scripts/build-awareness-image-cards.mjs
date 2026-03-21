@@ -2,9 +2,47 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 export const IMAGE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.gif']);
+export const AUTO_TITLE_PRESETS = {
+    intent: {
+        title_ja: '意',
+        title_en: 'Intent',
+        alt_ja: '意を示す画像',
+        alt_en: 'Image representing intent',
+    },
+};
 
 function isImageFile(filename) {
     return IMAGE_EXTENSIONS.has(path.extname(filename).toLowerCase());
+}
+
+export function slugToTitleCase(slug = '') {
+    return String(slug || '')
+        .split(/[-_]+/)
+        .filter(Boolean)
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(' ');
+}
+
+export function createAutoCardMeta(slug, { generatedAt = new Date().toISOString().slice(0, 10) } = {}) {
+    const preset = AUTO_TITLE_PRESETS[slug] || null;
+    const fallbackTitle = slugToTitleCase(slug) || slug;
+    const titleJa = preset?.title_ja || fallbackTitle;
+    const titleEn = preset?.title_en || fallbackTitle;
+    const altJa = preset?.alt_ja || titleJa;
+    const altEn = preset?.alt_en || titleEn;
+
+    return {
+        title_ja: titleJa,
+        title_en: titleEn,
+        comment_ja: `${titleJa} を追加画像として自動取り込みした初期カードです。解釈コメントは自動生成の初期文なので、必要に応じて後で調整してください。`,
+        comment_en: `This is an initial card created automatically when ${titleEn} was added to the image directory. The interpretation comment is a provisional auto-generated note and can be refined later if needed.`,
+        alt_ja: altJa,
+        alt_en: altEn,
+        source_url: '',
+        generated: generatedAt,
+        generator_model: 'codex:auto-ingest',
+        sort_order: Number.MAX_SAFE_INTEGER,
+    };
 }
 
 export function sortCards(cards = []) {
@@ -39,6 +77,15 @@ export function normalizeCardMeta(meta = {}) {
         generator_model: typeof meta.generator_model === 'string' && meta.generator_model.trim() ? meta.generator_model.trim() : 'not_applicable',
         sort_order: Number.isFinite(Number(meta.sort_order)) ? Number(meta.sort_order) : Number.MAX_SAFE_INTEGER,
     };
+}
+
+export async function findOrphanImages(itemsDir) {
+    const dirEntries = await fs.readdir(itemsDir, { withFileTypes: true });
+    return dirEntries
+        .filter((entry) => entry.isFile() && isImageFile(entry.name))
+        .filter((entry) => !dirEntries.some((candidate) => candidate.isFile() && candidate.name === `${path.basename(entry.name, path.extname(entry.name))}.json`))
+        .map((entry) => entry.name)
+        .sort((a, b) => a.localeCompare(b, 'en'));
 }
 
 export async function buildImageCardsManifest({

@@ -7,11 +7,11 @@
 - **Who**: 画像を追加する人、manifest を再生成する CLI、公開 UI を確認する人。
 - **When**: 新しい画像カードを追加・更新するとき。
 - **Where**: 画像と sidecar は `pjdhiro/assets/awareness/image-cards/items/`、manifest は `pjdhiro/assets/awareness/manifests/image-cards.json`。
-- **How**: 画像と同名 `.json` sidecar を置き、`node transform/scripts/build-awareness-image-cards.mjs` を実行して manifest を再生成する。
+- **How**: 画像を置いたら `node transform/scripts/ingest-awareness-image-cards.mjs` を実行し、missing sidecar を自動生成したうえで manifest を再生成する。
 
 ## 入力契約
 
-各カードは次の 2 ファイルを同じ basename で置く。
+完成形では各カードは次の 2 ファイルを同じ basename で持つ。
 
 - 画像: `{slug}.{png|jpg|jpeg|webp|gif}`
 - sidecar: `{slug}.json`
@@ -35,10 +35,11 @@ sidecar の最小例:
 ## 手順
 
 1. `pjdhiro/assets/awareness/image-cards/items/` に画像を置く
-2. 同じ basename の `.json` sidecar を作る
-3. `node transform/scripts/build-awareness-image-cards.mjs` を実行する
-4. `awareness-space` の UI と `pjdhiro/assets/awareness/manifests/image-cards.json` を確認する
-5. 必要なら `pjdhiro/main` を更新する
+2. `node transform/scripts/ingest-awareness-image-cards.mjs` を実行する
+3. missing sidecar があれば自動生成される
+4. `pjdhiro/assets/awareness/manifests/image-cards.json` が再生成される
+5. `awareness-space` の UI を確認する
+6. 必要なら `pjdhiro/main` を更新する
 
 ## 出力
 
@@ -47,6 +48,7 @@ sidecar の最小例:
 
 ## 注意
 
-- 画像だけ置いて sidecar がない場合、script は失敗する
+- 画像だけ置いた場合でも ingest script が初期 sidecar を自動生成する
 - `title_ja` と `comment_ja` は必須
 - `title_en` / `comment_en` / `alt_*` は省略可。未設定時は日本語または空文字へ fallback する
+- 自動生成された comment は暫定文なので、必要なら後で直接 sidecar を編集してよい

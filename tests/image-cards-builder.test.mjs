@@ -6,9 +6,12 @@ import path from 'node:path';
 
 import {
     buildImageCardsManifest,
+    createAutoCardMeta,
+    findOrphanImages,
     normalizeCardMeta,
     sortCards,
 } from '../transform/scripts/build-awareness-image-cards.mjs';
+import { ingestAwarenessImageCards } from '../transform/scripts/ingest-awareness-image-cards.mjs';
 
 test('normalizeCardMeta requires ja title and comment', () => {
     assert.throws(() => normalizeCardMeta({ comment_ja: 'x' }), /title_ja is required/);
@@ -56,4 +59,40 @@ test('buildImageCardsManifest scans image+json sidecars and emits manifest', asy
 
     const written = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
     assert.equal(written.cards[0].comment_ja, '日本語コメント');
+});
+
+test('createAutoCardMeta generates provisional sidecar text', () => {
+    const meta = createAutoCardMeta('intent', { generatedAt: '2026-03-21' });
+    assert.equal(meta.title_ja, '意');
+    assert.equal(meta.title_en, 'Intent');
+    assert.match(meta.comment_ja, /自動取り込み/);
+    assert.equal(meta.generator_model, 'codex:auto-ingest');
+});
+
+test('findOrphanImages finds image files without matching sidecars', async () => {
+    const tmpRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'awareness-image-orphans-'));
+    await fs.writeFile(path.join(tmpRoot, 'keep.png'), '');
+    await fs.writeFile(path.join(tmpRoot, 'keep.json'), '{}');
+    await fs.writeFile(path.join(tmpRoot, 'new.jpg'), '');
+
+    const orphans = await findOrphanImages(tmpRoot);
+    assert.deepEqual(orphans, ['new.jpg']);
+});
+
+test('ingestAwarenessImageCards creates sidecars for orphan images and rebuilds manifest', async () => {
+    const awarenessRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'awareness-image-ingest-'));
+    const itemsDir = path.join(awarenessRoot, 'image-cards', 'items');
+    await fs.mkdir(itemsDir, { recursive: true });
+    await fs.writeFile(path.join(itemsDir, 'intent.jpg'), '');
+
+    const result = await ingestAwarenessImageCards({
+        awarenessAssetsRoot: awarenessRoot,
+        generatedAt: '2026-03-21',
+    });
+
+    assert.deepEqual(result.created, ['intent.json']);
+    const sidecar = JSON.parse(await fs.readFile(path.join(itemsDir, 'intent.json'), 'utf8'));
+    assert.equal(sidecar.title_en, 'Intent');
+    assert.equal(result.payload.cards.length, 1);
+    assert.equal(result.payload.cards[0].slug, 'intent');
 });
