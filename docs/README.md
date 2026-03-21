@@ -13,6 +13,7 @@ docs/ に置くもの:
 - 管理体系のドキュメント
 - ルール、仕様、正本
 - 調査から抽出された整理済みの結論
+- summary と report の対応原則
 
 docs/ に置かないもの:
 - 調査原本（→ `evidence/`）
@@ -37,17 +38,20 @@ docs/ に置かないもの:
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `docs/report-structure.md` | 調査報告の構造メモ |
 | `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
+| `docs/evidence-metadata-awareness.md` | awareness 固有 metadata 契約の正本 |
 | `docs/quality-management.md` | 品質基準 |
+| `docs/summary-report-pairing.md` | summary と report の対応原則 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート正本 |
 | `docs/session-close-routine.md` | セッション終了処理の正本 |
 | `docs/standing-approvals.md` | 継続承認メモ |
+| `docs/evidence-metadata-awareness.md` | 公開 metadata 契約の正本 |
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `evidence/review/core-source-map.md` | 中核参照地図の正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
-| `knowledge/m1-consciousness-os/part-1-introduction.md` | M1 意識OS 系列（Part1） |
+| `knowledge/domains/four-layers/part-1-introduction.md` | 4層モデルの原著文書群 系列（Part1） |
 | `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 | `transform/domains/README.md` | awareness-space 版 domains pipeline の入口 |
@@ -66,7 +70,7 @@ docs/ に置かないもの:
 | `docs/session-close-routine.md` | セッション終了時の手順 |
 | `docs/standing-approvals.md` | 継続承認の記録場所 |
 | `evidence/PROJECT.md` | 調査憲章の正本 |
-| `knowledge/fo-axis-starting-memo.md` | F-O軸 起点メモ |
+| `knowledge/survival-trust-axis-starting-memo.md` | 生存-信頼軸 起点メモ |
 
 ## 4. ブランチ / ローカルサーバー
 
@@ -95,9 +99,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の実装線: `#60` M1 report、`#61` Concept Notes report 入口
+- 現在の open 実装線: `#69` 生存-信頼軸 rename 残差と M1 導線の整理、`#76` metadata/UI 契約の creation-space 整合
 - Phase 2 の初期統合フェーズは完了
-- 次は source_ready を report_ready へ引き上げる段階
+- 次は名称・metadata 契約の残差を詰め、report 間の境界と相互参照を強める段階
 
 ## 8. ローカル作業領域
 

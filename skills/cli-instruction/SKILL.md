@@ -13,7 +13,7 @@ agent: "DT"
 
 # CLI指示書作成スキル
 
-**バージョン**: 1.0
+**バージョン**: 1.1
 **作成日**: 2026-03-18
 **移植元**: `kesson-driven-thinking/skills/cli-instruction/SKILL.md`
 
@@ -61,7 +61,7 @@ CLI 指示書を作成する際に必ずロードするスキル。
 - **commit & push**
 - **コミット影響レビュー**
 - **Step 完了報告** - 最終出力末尾に `model` / `tokens used`
-- **Step 最終（完了処理）** - Issue コメント + DONE ファイル作成
+- **Step 最終（完了処理）** - Issue コメント + DONE ファイル作成 + Issue 状態確認 + close 判定 + close 結果確認
 
 ### Step 3: チェックリスト（§3）でセルフチェック
 
@@ -126,6 +126,7 @@ CLI 指示書を作成する際に必ずロードするスキル。
 - [ ] commit を含む指示書にコミット影響レビューが含まれているか
 - [ ] レビュー結果の報告先が明示されているか
 - [ ] DONE ファイルの出力先が明示されているか
+- [ ] `gh issue view --json state` による終了状況確認が書かれているか
 - [ ] Issue close 条件が書かれているか
 - [ ] 出力先ディレクトリの README を確認したか
 
@@ -162,4 +163,5 @@ CLI 指示書を作成する際に必ずロードするスキル。
 
 | 日付 | バージョン | 内容 |
 |---|---|---|
+| 2026-03-19 | 1.1 | Step 最終に Issue 状態確認と close 結果確認を追加。close workflow をテンプレ必須化 |
 | 2026-03-18 | 1.0 | `kesson-driven-thinking` から awareness-space へ移植 |

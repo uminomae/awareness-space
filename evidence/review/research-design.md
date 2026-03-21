@@ -13,7 +13,7 @@
 
 ここでいう再設計とは、
 既存 source をそのまま確定理論として移すことではなく、
-F-O軸、4層モデル、Withhold、M1、concept notes を素材として、
+生存-信頼軸、4層モデル、Withhold、M1、concept notes を素材として、
 意識モデルの中核構造をどこまで記述できるかを見直すことを指す。
 
 ## 2. 主質問
@@ -24,9 +24,9 @@ F-O軸、4層モデル、Withhold、M1、concept notes を素材として、
 
 この問いでは、少なくとも次の候補を比較する。
 
-- F-O軸
+- 生存-信頼軸
 - 4層モデル
-- F-O軸と4層モデルの組み合わせ
+- 生存-信頼軸と4層モデルの組み合わせ
 
 ### 主質問 B
 
@@ -43,7 +43,7 @@ F-O軸、4層モデル、Withhold、M1、concept notes を素材として、
 ### 主質問 C
 
 心理学、特に発達心理学は、
-F-O軸、Withhold、関係安全性のどこを検証できるか。
+生存-信頼軸、Withhold、関係安全性のどこを検証できるか。
 
 ここでは特に、
 
@@ -63,7 +63,7 @@ Withhold は、意識の中心構造なのか、
 
 今回の調査対象は次の 5 領域に限定する。
 
-1. F-O軸
+1. 生存-信頼軸
 2. 4層モデル
 3. Withhold
 4. 神経現象学
@@ -71,7 +71,7 @@ Withhold は、意識の中心構造なのか、
 
 補助 source として、以下を使う。
 
-- M1 意識OS
+- 4層モデルの原著文書群
 - concept notes
 - four-modules
 
@@ -103,7 +103,7 @@ Withhold は、意識の中心構造なのか、
 
 次に、
 
-- F-O軸が何を説明できるか
+- 生存-信頼軸が何を説明できるか
 - 4層モデルが何を説明できるか
 - Withhold がどこに位置づくか
 - 神経現象学と心理学がどこに接続するか
@@ -128,7 +128,7 @@ Withhold は、意識の中心構造なのか、
 
 1. 主質問 A-D に対して、扱う source と扱わない source が決まっている
 2. 神経現象学用の設計 Issue と、発達心理学用の設計 Issue に分解できる
-3. F-O軸 / 4層モデル / Withhold のうち、どれを中核 report として優先するか判断できる
+3. 生存-信頼軸 / 4層モデル / Withhold のうち、どれを中核 report として優先するか判断できる
 4. guide / survey / report に何を置くかの境界が保たれている
 
 ## 7. 最初の読書セット
@@ -137,13 +137,13 @@ Withhold は、意識の中心構造なのか、
 
 1. `evidence/review/core-source-map.md`
 2. `evidence/review/research-design-baseline.md`
-3. `knowledge/fo-axis-starting-memo.md`
-4. `knowledge/domains/fo-axis/ja/report.md`
+3. `knowledge/survival-trust-axis-starting-memo.md`
+4. `knowledge/domains/survival-trust-axis/ja/report.md`
 5. `knowledge/domains/four-layers/ja/report.md`
 6. `knowledge/domains/withhold/ja/report.md`
-7. `knowledge/m1-consciousness-os/part-1-introduction.md`
-8. `knowledge/m1-consciousness-os/part-4-fo-evaluation.md`
-9. `knowledge/m1-consciousness-os/part-5-withhold.md`
+7. `knowledge/domains/four-layers/part-1-introduction.md`
+8. `knowledge/domains/four-layers/part-4-survival-trust-evaluation.md`
+9. `knowledge/domains/four-layers/part-5-withhold.md`
 10. `knowledge/concepts/CN-002_f-axis-exposure.md`
 11. `knowledge/concepts/CN-003_boundary-casebook.md`
 12. `knowledge/concepts/CN-007_iss42-measurement-design-principles.md`
@@ -152,7 +152,7 @@ Withhold は、意識の中心構造なのか、
 
 1. 神経現象学で何を調べるかを定義する
 2. 発達心理学で何を調べるかを定義する
-3. F-O軸 / 4層モデル / Withhold の優先 report を決める
+3. 生存-信頼軸 / 4層モデル / Withhold の優先 report を決める
 
 ## 9. 正本関係
 

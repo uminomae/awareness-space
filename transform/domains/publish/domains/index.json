@@ -1,6 +1,6 @@
 {
-  "version": "0.2",
-  "generated_at": "2026-03-19",
+  "version": "0.3",
+  "generated_at": "2026-03-21",
   "note": "awareness-space reports manifest",
   "progress_taxonomy": [
     {
@@ -23,10 +23,10 @@
     },
     {
       "id": "report_ready",
-      "label_ja": "report 公開中",
-      "label_en": "Report ready",
-      "description_ja": "読者向け report を modal で読める",
-      "description_en": "Reader-facing report is available in modal view",
+      "label_ja": "公開中",
+      "label_en": "Published",
+      "description_ja": "読者向け report を参照できる",
+      "description_en": "A reader-facing report is available",
       "order": 30,
       "tone": "success"
     }
@@ -34,72 +34,46 @@
   "reports": [
     {
       "id": "A01",
-      "name_ja": "F-O軸",
-      "name_en": "F-O Axis",
-      "slug": "fo-axis",
+      "slug": "survival-trust-axis",
+      "name_ja": "生存-信頼軸",
+      "name_en": "Survival-Trust Axis",
       "progress_level": "report_ready",
-      "progress_note": "読者向け report あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "生存と間主観性の二軸で意識経験を読むための report。",
-      "summary_en": "A reader-facing report on the two-axis model of survival and intersubjectivity.",
+      "progress_note": "公開本文あり",
+      "summary_ja": "経験の向きを生存と信頼の二軸から捉えるための報告。",
+      "summary_en": "A report on the two-axis model of survival and intersubjectivity.",
+      "generator_model": {
+        "ja": "codex:gpt-5",
+        "en": "codex:gpt-5"
+      },
+      "generated": {
+        "ja": "2026-03-20",
+        "en": "2026-03-21"
+      },
       "md": {
-        "ja": "./knowledge/domains/fo-axis/ja/report.md"
+        "ja": "./knowledge/domains/survival-trust-axis/ja/report.md",
+        "en": "./knowledge/domains/survival-trust-axis/en/report.md"
       }
     },
     {
       "id": "A02",
+      "slug": "four-layers",
       "name_ja": "4層モデル",
       "name_en": "Four Layers",
-      "slug": "four-layers",
       "progress_level": "report_ready",
-      "progress_note": "読者向け report あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "内受容感覚から Withhold までを処理連鎖として読む report。",
-      "summary_en": "A report on awareness as a processing chain from interoception to withhold.",
+      "progress_note": "公開本文あり",
+      "summary_ja": "意識を身体状態から見直しの余地までの流れとして捉える報告。",
+      "summary_en": "A report on awareness as a processing chain from bodily state to response margin.",
+      "generator_model": {
+        "ja": "codex:gpt-5",
+        "en": "codex:gpt-5"
+      },
+      "generated": {
+        "ja": "2026-03-21",
+        "en": "2026-03-21"
+      },
       "md": {
-        "ja": "./knowledge/domains/four-layers/ja/report.md"
-      }
-    },
-    {
-      "id": "A03",
-      "name_ja": "Withhold",
-      "name_en": "Withhold",
-      "slug": "withhold",
-      "progress_level": "report_ready",
-      "progress_note": "読者向け report あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "反応抑制ではなく保持機能としての Withhold を説明する report。",
-      "summary_en": "A report on withhold as a holding function rather than mere inhibition.",
-      "md": {
-        "ja": "./knowledge/domains/withhold/ja/report.md"
-      }
-    },
-    {
-      "id": "A04",
-      "name_ja": "M1 意識OS",
-      "name_en": "M1 Consciousness OS",
-      "slug": "m1-consciousness-os",
-      "progress_level": "report_ready",
-      "progress_note": "読者向け report あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "4層モデル、F-O軸、Withhold を束ねる基盤文章群の report。",
-      "summary_en": "A reader-facing report on the source document set that binds together the four layers, F-O axis, and withhold.",
-      "md": {
-        "ja": "./knowledge/domains/m1-consciousness-os/ja/report.md"
-      }
-    },
-    {
-      "id": "A05",
-      "name_ja": "Concept Notes",
-      "name_en": "Concept Notes",
-      "slug": "concept-notes",
-      "progress_level": "report_ready",
-      "progress_note": "読者向け report あり",
-      "generator_model": "codex:gpt-5",
-      "summary_ja": "概念ノート群が主軸 report をどう支えるかを説明する入口 report。",
-      "summary_en": "An entry report explaining how the concept notes set supports the main reports.",
-      "md": {
-        "ja": "./knowledge/domains/concept-notes/ja/report.md"
+        "ja": "./knowledge/domains/four-layers/ja/report.md",
+        "en": "./knowledge/domains/four-layers/en/report.md"
       }
     }
   ]

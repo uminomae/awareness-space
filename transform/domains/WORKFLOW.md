@@ -11,7 +11,7 @@
 ### Step 1: 入力準備
 
 ```bash
-ls evidence | rg "(fo-axis|four-layers|withhold|m1-consciousness-os|cn-)"
+ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
 ```
 
 以下を読む（この順序）:
@@ -22,7 +22,7 @@ ls evidence | rg "(fo-axis|four-layers|withhold|m1-consciousness-os|cn-)"
 
 ### Step 2: MD 生成（暫定）
 
-`reader-rules-awareness-report.md` の構成で `knowledge/domains/<slug>/ja/report.md` を作成する。
+`reader-rules-awareness-report.md` の構成で `knowledge/domains/<slug>/{ja,en}/report.md` を作成する。
 
 必須:
 
@@ -31,7 +31,7 @@ ls evidence | rg "(fo-axis|four-layers|withhold|m1-consciousness-os|cn-)"
   - `generator_model`
   - `lang`
   - `version`
-  - `date`
+  - `generated`
 - `evidence` 参照の節を明記
 - 調査の問いに対して「分かったこと」「分からないこと」を分離
 
@@ -49,8 +49,20 @@ FAIL が1件でもあれば生成に戻る。
 
 ### Step 5: 公開整形
 
-現時点では `knowledge/` 配下へ直接配置する。
-将来 `build/` へ PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
+現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` と manifest へ反映する。
+公開時は JA/EN を同時に更新する。
+domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
+将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
+
+metadata の情報フロー:
+
+```text
+knowledge/domains/*/{ja,en}/report.md
+    ↓
+transform/domains/publish/domains/index.json
+    ↓
+pjdhiro/assets/awareness/manifests/domains.json
+```
 
 ## B. 1構成要素の再生成（既存 report 更新）
 
@@ -61,28 +73,27 @@ A と同じだが、対象 evidence の差分確認が必須。
 
 暫定対象順:
 
-1. `fo-axis`
+1. `survival-trust-axis`
 2. `four-layers`
 3. `withhold`
-4. `m1-consciousness-os`
-5. `cn-001`〜`cn-007`
+4. `cn-001`〜`cn-007`
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
 FAIL が出た構成要素は分離して再生成する。
 
-## D. EN版生成（将来）
+## D. EN版生成（公開必須）
 
-現時点での英語版配信は未整備。構築時は以下を追加実行:
+公開時は英語版を同時に整備する。追加実行:
 
 1. 日本語版を起点に EN 翻訳下書きを作成
 2. `knowledge/domains/<slug>/en/report.md` 作成
 3. `quality-test-awareness-report.md` を翻訳版にも適用
-4. 用語統一を確認して公開
+4. 用語統一を確認し、JA/EN を同時に公開
 
 ## 読み替えルール（運用固定）
 
 - `creation-space` = 30学術領域（D01-D30）
 - `awareness-space` = 意識モデル構成要素
 
-対象は `FO軸`, `4層モデル`, `Withhold`, `M1意識OS`, `concept notes` の順で進行する。  
+対象は `生存-信頼軸`, `4層モデル`, `concept notes` の順で進行する。  
 将来項目はこのファイル更新で拡張し、対象外項目は実行しない。

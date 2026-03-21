@@ -41,6 +41,7 @@ const state = {
         error: null,
         openStatusBtn: null,
         domainsHeading: null,
+        scopeNote: null,
         levelLegend: null,
         metrics: null,
         domainGrid: null,

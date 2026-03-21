@@ -12,83 +12,87 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 const STRINGS = {
     ja: {
         featureRead: 'ガイドを開く',
+        guideScopeNote: 'guide は公開用の解説です。詳しい現在地は調査概要へ、構成要素ごとの本文は各レポートへ進みます。',
         features: {
             general: {
                 title: 'General',
                 modalTitle: '意識とは何か — 生存と間主観性を手がかりに',
-                description: '一般の読者向けの平易な guide。',
+                description: '全体像を初めて読む人向けの解説。',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: '意識モデルを観察の道具として使う',
-                description: '教育者・支援者・チーム設計者向けの構造案内。',
+                description: '教育・支援・チーム設計に引きつけて読むための解説。',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: '意識モデルと神経現象学・発達心理の接続',
-                description: '神経現象学と発達心理を中心にした学術寄り guide。',
+                modalTitle: '意識モデルと神経現象学・心理学の接続',
+                description: '理論的な比較軸まで含めて検討するための解説。',
             },
         },
-        tabDomains: '領域別レポート',
-        openStatus: '調査内容',
-        statusReportTitle: '調査内容',
+        tabDomains: '構成要素レポート',
+        openStatus: '調査の現在地',
+        statusReportTitle: '調査の現在地',
         metricGenerated: 'manifest',
-        metricTotal: 'domains',
+        metricTotal: 'components',
         filterAll: 'すべて',
-        filterGroupAria: '領域別レポート絞り込み',
+        filterGroupAria: '構成要素レポート絞り込み',
         levelLegend: '進捗分類を読み込み中...',
         levelLegendUnavailable: '進捗分類を読み込めませんでした。',
         levelLegendPrefix: '進捗分類',
         levelLegendSingle: '{count}件 / {label}',
+        scopeNote: '調査は進行中です。現在の構成要素レポートは公開中ですが、統合版ではありません。',
         empty: '表示できるレポートがありません。',
-        error: '領域別レポート manifest の読み込みに失敗しました。',
+        error: '構成要素レポート manifest の読み込みに失敗しました。',
         modalTitleDefault: 'Markdown',
         modalLoading: '読み込み中...',
         modalError: 'Markdown を読み込めませんでした。',
         modalOpenPdf: 'PDFを開く',
-        modalPdfPending: 'PDF準備中',
-        modalModel: 'model',
-        modalGenerated: 'date',
+        modalPdfPending: 'PDF未提供',
+        modalModel: 'モデル',
+        modalGenerated: '生成日',
     },
     en: {
         featureRead: 'Open Guide',
+        guideScopeNote: 'Guides are public explainers. Use the survey for project status and the component reports for detailed text.',
         features: {
             general: {
                 title: 'General',
                 modalTitle: 'What Is Awareness? — Survival and Intersubjectivity',
-                description: 'A plain-language guide for general readers.',
+                description: 'An explainer for readers who want the overall picture first.',
             },
             designer: {
                 title: 'Designer',
                 modalTitle: 'Using the Awareness Model as an Observation Tool',
-                description: 'A structural guide for educators, supporters, and team designers.',
+                description: 'An explainer for education, support, and team design contexts.',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Developmental Psychology',
-                description: 'An academically oriented guide centered on neurophenomenology and developmental psychology.',
+                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Psychology',
+                description: 'An explainer for readers who want the theoretical comparison points.',
             },
         },
-        tabDomains: 'Domain Reports',
-        openStatus: 'Research',
-        statusReportTitle: 'Research Overview',
+        tabDomains: 'Component Reports',
+        openStatus: 'Research Status',
+        statusReportTitle: 'Research Status',
         metricGenerated: 'manifest',
-        metricTotal: 'domains',
+        metricTotal: 'components',
         filterAll: 'All',
-        filterGroupAria: 'Filter domain reports',
+        filterGroupAria: 'Filter component reports',
         levelLegend: 'Loading progress taxonomy...',
         levelLegendUnavailable: 'Progress taxonomy unavailable.',
         levelLegendPrefix: 'Progress',
         levelLegendSingle: '{count} items / {label}',
+        scopeNote: 'Research is still in progress. The current component reports are published, not an integrated synthesis.',
         empty: 'No reports available.',
-        error: 'Failed to load reports manifest.',
+        error: 'Failed to load component reports manifest.',
         modalTitleDefault: 'Markdown',
         modalLoading: 'Loading...',
         modalError: 'Failed to load markdown.',
         modalOpenPdf: 'Open PDF',
-        modalPdfPending: 'PDF pending',
-        modalModel: 'model',
-        modalGenerated: 'date',
+        modalPdfPending: 'PDF unavailable',
+        modalModel: 'Model',
+        modalGenerated: 'Generated',
     },
 };
 
@@ -150,9 +154,11 @@ export function createReportsRenderer({
 
     function cacheDom() {
         state.dom.featureCards = document.getElementById('model-guide-cards');
+        state.dom.guideScopeNote = document.getElementById('model-summary-note');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
         state.dom.domainsHeading = document.getElementById('reports-domains-heading');
+        state.dom.scopeNote = document.getElementById('reports-scope-note');
         state.dom.levelLegend = document.getElementById('reports-level-legend');
         state.dom.metrics = document.getElementById('reports-metrics');
         state.dom.domainGrid = document.getElementById('reports-domain-grid');
@@ -493,7 +499,9 @@ export function createReportsRenderer({
 
     function applyStaticText() {
         const strings = getReportsStrings(state.lang);
+        if (state.dom.guideScopeNote) state.dom.guideScopeNote.textContent = strings.guideScopeNote;
         if (state.dom.domainsHeading) state.dom.domainsHeading.textContent = strings.tabDomains;
+        if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);
         if (state.dom.openStatusBtn) state.dom.openStatusBtn.textContent = strings.openStatus;
         renderLevelLegend();

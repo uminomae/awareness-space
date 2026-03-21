@@ -484,7 +484,7 @@ html[lang="en"] #taglines {
 
 #scroll-hint-top {
   position: fixed;
-  top: calc(var(--kesson-topbar-height) + 6px);
+  top: calc(var(--kesson-topbar-actual-height, var(--kesson-topbar-height)) + 6px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
@@ -514,8 +514,8 @@ html[lang="en"] #taglines {
 
 #control-guide {
   position: fixed;
-  top: calc(var(--kesson-topbar-height) + 2.1rem);
-  right: 3%;
+  top: calc(var(--kesson-topbar-actual-height, var(--kesson-topbar-height)) + 0.7rem);
+  right: 1rem;
   z-index: 10;
   pointer-events: none;
   text-align: right;

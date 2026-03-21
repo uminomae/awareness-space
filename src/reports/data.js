@@ -5,28 +5,19 @@ const PJDHIRO_RAW_BASE = 'https://raw.githubusercontent.com/uminomae/pjdhiro/mai
 const AWARENESS_PATH = '/assets/awareness';
 const PJDHIRO_AWARENESS_PAGES = `${PJDHIRO_PAGES_BASE}${AWARENESS_PATH}`;
 const PJDHIRO_AWARENESS_RAW = `${PJDHIRO_RAW_BASE}${AWARENESS_PATH}`;
+const AWARENESS_DOMAINS_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/domains.json`;
 
-export const DEFAULT_REPORTS_DATA_URL = './transform/domains/publish/domains/index.json';
+export const DEFAULT_REPORTS_DATA_URL = AWARENESS_DOMAINS_MANIFEST_URL;
 export const DEFAULT_REPORTS_ASSET_BASE = DEFAULT_BASE_URL;
 
 export const STATUS_REPORT_LINKS = {
     ja: {
-        sources: [
-            {
-                mdUrl: `${PJDHIRO_AWARENESS_RAW}/survey/ja/md/survey-status.md`,
-                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/survey/ja/pdf/survey-status.pdf`,
-                generatorModel: 'codex:gpt-5',
-            },
-            {
-                mdUrl: './evidence/survey-status.md',
-                generatorModel: 'codex:gpt-5',
-            },
-        ],
+        mdUrl: `${PJDHIRO_AWARENESS_RAW}/survey/ja/md/survey-status.md`,
+        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/survey/ja/pdf/survey-status.pdf`,
     },
     en: {
         mdUrl: `${PJDHIRO_AWARENESS_RAW}/survey/en/md/survey-status.md`,
         pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/survey/en/pdf/survey-status.pdf`,
-        generatorModel: 'codex:gpt-5',
     },
 };
 
@@ -35,22 +26,12 @@ export const MODEL_GUIDE_LINKS = [
         key: 'general',
         links: {
             ja: {
-                sources: [
-                    {
-                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-general.md`,
-                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-general.pdf`,
-                        generatorModel: 'codex:gpt-5',
-                    },
-                    {
-                        mdUrl: './knowledge/guides/awareness-general.md',
-                        generatorModel: 'codex:gpt-5',
-                    },
-                ],
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-general.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-general.pdf`,
             },
             en: {
                 mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-general.md`,
                 pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-general.pdf`,
-                generatorModel: 'codex:gpt-5',
             },
         },
     },
@@ -58,22 +39,12 @@ export const MODEL_GUIDE_LINKS = [
         key: 'designer',
         links: {
             ja: {
-                sources: [
-                    {
-                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-designer.md`,
-                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-designer.pdf`,
-                        generatorModel: 'codex:gpt-5',
-                    },
-                    {
-                        mdUrl: './knowledge/guides/awareness-designer.md',
-                        generatorModel: 'codex:gpt-5',
-                    },
-                ],
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-designer.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-designer.pdf`,
             },
             en: {
                 mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-designer.md`,
                 pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-designer.pdf`,
-                generatorModel: 'codex:gpt-5',
             },
         },
     },
@@ -81,22 +52,12 @@ export const MODEL_GUIDE_LINKS = [
         key: 'academic',
         links: {
             ja: {
-                sources: [
-                    {
-                        mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-academic.md`,
-                        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-academic.pdf`,
-                        generatorModel: 'codex:gpt-5',
-                    },
-                    {
-                        mdUrl: './knowledge/guides/awareness-academic.md',
-                        generatorModel: 'codex:gpt-5',
-                    },
-                ],
+                mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/ja/md/awareness-academic.md`,
+                pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/ja/pdf/awareness-academic.pdf`,
             },
             en: {
                 mdUrl: `${PJDHIRO_AWARENESS_RAW}/guides/en/md/awareness-academic.md`,
                 pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/guides/en/pdf/awareness-academic.pdf`,
-                generatorModel: 'codex:gpt-5',
             },
         },
     },
@@ -123,10 +84,10 @@ export const DEFAULT_PROGRESS_TAXONOMY = [
     },
     {
         id: 'report_ready',
-        labelJa: 'report 公開中',
-        labelEn: 'Report ready',
-        descriptionJa: '読者向け report を modal で読める',
-        descriptionEn: 'Reader-facing report is available in modal view',
+        labelJa: '公開中',
+        labelEn: 'Published',
+        descriptionJa: '読者向け report を参照できる。理論統合の完了は未保証',
+        descriptionEn: 'A reader-facing report is available. Integrated synthesis is not yet guaranteed',
         tone: 'success',
         order: 30,
     },
@@ -199,6 +160,26 @@ export function normalizePdfBrowserUrl(rawUrl) {
     return safeUrl(rawUrl, '');
 }
 
+function normalizeLocalizedMetadata(value) {
+    if (hasText(value)) {
+        const trimmed = value.trim();
+        return { ja: trimmed, en: trimmed };
+    }
+    if (!value || typeof value !== 'object') {
+        return { ja: '', en: '' };
+    }
+    return {
+        ja: hasText(value?.ja) ? value.ja.trim() : '',
+        en: hasText(value?.en) ? value.en.trim() : '',
+    };
+}
+
+function resolveLocalizedMetadata(value, lang = 'ja') {
+    const normalized = normalizeLocalizedMetadata(value);
+    const normalizedLang = normalizeLang(lang);
+    return normalized[normalizedLang] || normalized.ja || normalized.en || '';
+}
+
 export function resolveLocalizedSources(links, lang = 'ja', assetBaseUrl = document.baseURI) {
     if (!links || typeof links !== 'object') return [];
     const localized = links[normalizeLang(lang)] || links.ja || links.en;
@@ -212,8 +193,8 @@ export function resolveLocalizedSources(links, lang = 'ja', assetBaseUrl = docum
     return normalizeModalSources({
         mdUrl: localized.mdUrl || localized.md || '',
         pdfUrl: localized.pdfUrl || localized.pdf || '',
-        generatorModel: localized.generatorModel || '',
-        generated: localized.generated || '',
+        generatorModel: resolveLocalizedMetadata(localized.generatorModel || localized.generator_model || '', lang),
+        generated: resolveLocalizedMetadata(localized.generated || '', lang),
         assetBaseUrl,
     });
 }
@@ -290,8 +271,8 @@ function normalizeReport(report, index, assetBaseUrl) {
         summaryEn: hasText(report?.summary_en) ? report.summary_en.trim() : '',
         progressLevel,
         progressNote: hasText(report?.progress_note) ? report.progress_note.trim() : '',
-        generatorModel: hasText(report?.generator_model) ? report.generator_model.trim() : '',
-        generated: hasText(report?.generated) ? report.generated.trim() : '',
+        generatorModel: normalizeLocalizedMetadata(report?.generator_model),
+        generated: normalizeLocalizedMetadata(report?.generated),
         md: {
             ja: safeUrl(md.ja || md.default || '', '', assetBaseUrl),
             en: safeUrl(md.en || md.ja || md.default || '', '', assetBaseUrl),
@@ -311,8 +292,8 @@ export function resolveDomainReportSources(report, { lang = 'ja' } = {}) {
     return normalizeModalSources({
         mdUrl,
         pdfUrl,
-        generatorModel: report.generatorModel,
-        generated: report.generated,
+        generatorModel: resolveLocalizedMetadata(report.generatorModel, normalizedLang),
+        generated: resolveLocalizedMetadata(report.generated, normalizedLang),
     });
 }
 

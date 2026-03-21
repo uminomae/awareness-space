@@ -7,7 +7,10 @@
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → PDF build → manifest 更新の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → PDF build → manifest 更新 → `pjdhiro/main` push の順で進む。
+
+**原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
+**metadata 正本**: `docs/evidence-metadata-awareness.md`
 
 ## ワークフロー一覧
 
@@ -30,20 +33,20 @@
 # guides（デフォルト: general JA）
 bash transform/scripts/build-pdf-guide.sh
 
-# guides 全3種 JA
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all
+# guides 全3種 JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all
 
 # guides general JA+EN
 bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
 
-# survey JA
-bash transform/scripts/build-pdf-guide.sh --kind survey --lang ja
+# survey JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
 
-# guides + survey JA + manifest 更新
-bash transform/scripts/build-pdf-guide.sh --kind all --lang ja --push
+# guides + survey + domains JA+EN + 公開 assets を commit/push
+bash transform/scripts/build-pdf-guide.sh --kind all --lang all --push
 
-# guides 全3種 JA + manifest 更新
-bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang ja --push
+# guides 全3種 JA+EN + 公開 assets を commit/push
+bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push
 
 # 依存チェックのみ
 bash transform/scripts/build-pdf-guide.sh --setup
@@ -55,7 +58,14 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - guides PDF: `pjdhiro/assets/awareness/guides/{lang}/pdf/`
 - survey Markdown: `pjdhiro/assets/awareness/survey/{lang}/md/`
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
-- manifest: `pjdhiro/assets/awareness/manifests/guides.json`
+- domains Markdown: `pjdhiro/assets/awareness/domains/{lang}/md/`
+- manifests: `pjdhiro/assets/awareness/manifests/`
+
+### metadata
+
+- source markdown front matter は `generator_model` / `generated` を持つ
+- manifest root は `generated_at` を持つ
+- details は `docs/evidence-metadata-awareness.md` を正本とする
 
 ### 依存
 
@@ -68,4 +78,4 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - `guides/README.md`: audience別 guide workflow の入口
 - `survey/README.md`: 調査内容 workflow の入口
 - `reports/README.md`: 調査報告の変換 workflow 入口
-- `domains/README.md`: awareness-space 版 domains pipeline の入口（FO軸/4層モデル/Withhold/M1意識OS/CN 系）
+- `domains/README.md`: awareness-space 版 domains pipeline の入口（生存-信頼軸/4層モデル/CN 系）

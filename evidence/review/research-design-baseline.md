@@ -19,13 +19,13 @@
 
 対象:
 
-- `knowledge/fo-axis-starting-memo.md`
-- `knowledge/domains/fo-axis/ja/report.md`
-- `knowledge/fo-axis-overview.md`
+- `knowledge/survival-trust-axis-starting-memo.md`
+- `knowledge/domains/survival-trust-axis/ja/report.md`
+- `knowledge/survival-trust-axis-overview.md`
 
 性質:
 
-- F-O軸を `awareness-space` の出発点に置くための仮説整理
+- 生存-信頼軸を `awareness-space` の出発点に置くための仮説整理
 - 「何を守ろうとしているか / 何とのつながりを保とうとしているか」を読む最小座標系の提案
 
 ### 2-2. 構造モデルの調査
@@ -40,7 +40,7 @@
 性質:
 
 - 意識を Layer 0-3 の処理連鎖として記述する枠組みの整理
-- 身体状態、ズレ検出、F/O評価、保持を 1 つの流れとして読む試み
+- 身体状態、ズレ検出、生存-信頼評価、保持を 1 つの流れとして読む試み
 
 ### 2-3. 保持機能の調査
 
@@ -61,16 +61,16 @@
 
 対象:
 
-- `knowledge/m1-consciousness-os/part-1-introduction.md`
-- `knowledge/m1-consciousness-os/part-2-interoception.md`
-- `knowledge/m1-consciousness-os/part-3-prediction-error.md`
-- `knowledge/m1-consciousness-os/part-4-fo-evaluation.md`
-- `knowledge/m1-consciousness-os/part-5-withhold.md`
+- `knowledge/domains/four-layers/part-1-introduction.md`
+- `knowledge/domains/four-layers/part-2-interoception.md`
+- `knowledge/domains/four-layers/part-3-prediction-error.md`
+- `knowledge/domains/four-layers/part-4-survival-trust-evaluation.md`
+- `knowledge/domains/four-layers/part-5-withhold.md`
 
 性質:
 
 - 既存理論資産を part ごとに読み直し、意識モデルの文章的土台として扱う作業
-- 4層モデル、F-O軸、Withhold の素材束
+- 4層モデル、生存-信頼軸、Withhold の素材束
 
 ### 2-5. 補助概念の調査
 
@@ -105,18 +105,18 @@
 
 ## 3. 何が分かっているか
 
-### 3-1. 起点仮説は F-O軸である
+### 3-1. 起点仮説は 生存-信頼軸である
 
-- `awareness-space` は F-O軸を確定理論ではなく、**探索の起点仮説**として置いている
-- F軸は生存 / 脅威 / 安全 / 防衛
-- O軸は関係 / 愛着 / 所属 / 信頼 / 間主観性
-- 同じズレでも F/O の読み方で情動と行動準備の向きが変わる
+- `awareness-space` は 生存-信頼軸を確定理論ではなく、**探索の起点仮説**として置いている
+- 生存軸は生存 / 脅威 / 安全 / 防衛
+- 信頼軸は関係 / 愛着 / 所属 / 信頼 / 間主観性
+- 同じズレでも 生存-信頼 の読み方で情動と行動準備の向きが変わる
 
 ### 3-2. 意識は 4層の処理連鎖として読める
 
 - Layer 0: 内受容感覚
 - Layer 1: 予測と現実のズレ検出
-- Layer 2: F/O の評価
+- Layer 2: 生存-信頼の評価
 - Layer 3: 保持と再評価
 
 少なくとも現時点の資料では、
@@ -126,18 +126,18 @@
 
 - Withhold は「止めること」ではなく「問いとして保持すること」
 - 抑制と区別されるべき機能として扱われている
-- F/O の読み違いを見直す再評価の余地として重要視されている
+- 生存-信頼 の読み違いを見直す再評価の余地として重要視されている
 
 ### 3-4. M1 と concept notes は source 束として有効である
 
-- M1 は 4層モデル、F-O軸、Withhold をつなぐ基盤文章群として使える
+- M1 は 4層モデル、生存-信頼軸、Withhold をつなぐ基盤文章群として使える
 - concept notes は境界事例、信頼、関係性、測定の補助論点を保持している
 - つまり「何もないところから調査を始める」必要はなく、既に source は厚い
 
 ### 3-5. ただし多くはまだ探索的である
 
 - 既存 report の多くは「確定理論」ではなく「有力な見立て」の段階
-- 特に F-O軸、Withhold、信頼、測定は仮説的な部分が多い
+- 特に 生存-信頼軸、Withhold、信頼、測定は仮説的な部分が多い
 - 既知の量は多いが、**整理の仕方**がまだ固まっていない
 
 ## 4. 何がまだ未解決か
@@ -146,7 +146,7 @@
 
 現状の資料は、
 
-- F-O軸をどう置くか
+- 生存-信頼軸をどう置くか
 - 4層モデルをどう読むか
 - Withhold をどう理解するか
 
@@ -161,9 +161,9 @@
 
 ### 4-3. 用語がまだ揺れている
 
-- O軸を「愛」「愛着」「所属」「信頼」「間主観性」のどれで呼ぶか
+- 信頼軸を「愛」「愛着」「所属」「信頼」「間主観性」のどれで呼ぶか
 - Withhold を単独層とみなすか、循環全体の再評価機構とみなすか
-- F軸に地位や資源まで含めるか
+- 生存軸に地位や資源まで含めるか
 
 ### 4-4. 観測・検証の仕方が未確定
 
@@ -188,7 +188,7 @@
 
 候補:
 
-- F-O軸
+- 生存-信頼軸
 - 4層モデル
 - その両方の組み合わせ
 
@@ -204,7 +204,7 @@
 
 ### 主質問 C
 
-心理学、特に発達心理学は、F-O軸や Withhold の何を検証できるのか。
+心理学、特に発達心理学は、生存-信頼軸や Withhold の何を検証できるのか。
 
 候補:
 
@@ -224,7 +224,7 @@ Withhold は意識の中核機能なのか、それとも探索を成立させ�
 1. 調査設計メモ本体を作る
 2. 神経現象学で何を調べるかを定義する
 3. 発達心理学で何を調べるかを定義する
-4. F-O軸 / 4層モデル / Withhold のうち、どれを中核 report とするか決める
+4. 生存-信頼軸 / 4層モデル / Withhold のうち、どれを中核 report とするか決める
 
 ## 8. 正本関係
 

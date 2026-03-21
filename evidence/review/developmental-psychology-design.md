@@ -10,14 +10,14 @@
 ## 1. 目的
 
 発達心理学調査の目的は、
-意識モデルの中で O軸、Withhold、関係調整が成立する条件を、
+意識モデルの中で 信頼軸、Withhold、関係調整が成立する条件を、
 発達的な観点から整理することである。
 
 `awareness-space` では、発達心理学を用いて、
 
 - 関係安全性がどのように形成されるか
 - 愛着や内的作業モデルがどのように探索可能性を支えるか
-- 社会的発達が O軸の記述に何を与えるか
+- 社会的発達が 信頼軸の記述に何を与えるか
 
 を考える。
 
@@ -37,7 +37,7 @@
 
 ### 主質問 B
 
-間主観性や関係安全性は、F-O軸の O軸をどこまで記述できるか。
+間主観性や関係安全性は、生存-信頼軸の 信頼軸をどこまで記述できるか。
 
 ここでは特に、
 
@@ -90,14 +90,14 @@
 
 発達心理学に期待する役割は次の 3 つである。
 
-### 5-1. O軸の中身を具体化する
+### 5-1. 信頼軸の中身を具体化する
 
 - 愛着
 - 信頼
 - 所属
 - 間主観性
 
-といった語のうち、どれが O軸の中核に近いかを整理する。
+といった語のうち、どれが 信頼軸の中核に近いかを整理する。
 
 ### 5-2. Withhold の成立条件を発達的に支える
 
@@ -122,9 +122,9 @@
 3. `knowledge/concepts/CN-005_trust-hypothesis-inventory.md`
 4. `knowledge/concepts/CN-006_trust-analysis-axes.md`
 5. `knowledge/concepts/CN-007_iss42-measurement-design-principles.md`
-6. `knowledge/fo-axis-starting-memo.md`
+6. `knowledge/survival-trust-axis-starting-memo.md`
 7. `knowledge/domains/withhold/ja/report.md`
-8. `knowledge/domains/fo-axis/ja/report.md`
+8. `knowledge/domains/survival-trust-axis/ja/report.md`
 
 ## 7. この調査から次に分解される Issue
 

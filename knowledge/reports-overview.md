@@ -5,6 +5,7 @@
 ## 1. このセクションは何を扱うか
 
 調査報告セクションは、調査結果を「読むための形」に整理するための層である。
+guide の summary を裏づける reader-facing な論拠層でもある。
 
 `creation-space` の REPORTS に対応する位置づけとして、
 `awareness-space` でも report を一覧、カード、詳細の3層で扱う。
@@ -13,13 +14,13 @@
 
 現時点では、次の domain report を公開している。
 
-1. `knowledge/domains/fo-axis/ja/report.md`
+1. `knowledge/domains/survival-trust-axis/ja/report.md`
 2. `knowledge/domains/four-layers/ja/report.md`
-3. `knowledge/domains/withhold/ja/report.md`
-4. `knowledge/domains/m1-consciousness-os/ja/report.md`
-5. `knowledge/domains/concept-notes/ja/report.md`
-
 いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
+
+`knowledge/domains/withhold/ja/report.md` は repo 内に残るが、
+現時点では概念監査中の内部ドラフトであり、
+公開済み report 一覧には含めない。
 
 ## 3. report の構造
 

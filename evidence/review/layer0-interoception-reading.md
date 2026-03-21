@@ -4,7 +4,7 @@
 
 対象:
 
-- `../kesson-driven-thinking/base/text/m1-consciousness-os/part-2-interoception.md`
+- `../kesson-driven-thinking/base/text/domains/four-layers/part-2-interoception.md`
 - `../kesson-driven-thinking/base/expression/core/E04.md`
 - `../kesson-driven-thinking/chatgpt/reviews/DISC-R4-1_L0-to-H08-pathway.md`
 
@@ -39,7 +39,7 @@ Part 2 の段階では、Layer 0 がするのは
 
 - ズレの評価
 - 欠けとしての意識化
-- F/O の方向づけ
+- 生存-信頼 の方向づけ
 
 は起きていない。
 
@@ -68,7 +68,7 @@ L0 が H08 のルーティングや信頼感の形成に影響する可能性が
 ここから読めるのは、
 
 - 関係安全性は純粋に認知的な判断だけではない
-- 身体ベースラインが F/O の読み分けに影響する
+- 身体ベースラインが 生存-信頼 の読み分けに影響する
 - 信頼感は L0 を抜きに整理しにくい
 
 という点である。
@@ -87,7 +87,7 @@ L0 が H08 のルーティングや信頼感の形成に影響する可能性が
 
 1. どのズレが欠損になるか
 2. 欠損がどのように意識化されるか
-3. F/O の方向づけ
+3. 生存-信頼 の方向づけ
 4. Withhold の成立そのもの
 
 これらは Layer 1 以降の論点である。

@@ -23,7 +23,7 @@
 ## 移行状態
 
 - 2026-03-17 時点で以下の report を配置済み
-- `fo-axis/ja/report.md`
+- `survival-trust-axis/ja/report.md`
 - `four-layers/ja/report.md`
 - `withhold/ja/report.md`
-- 将来、M1 意識OS や concept notes も domain report として追加する
+- 将来、concept notes 系の report を必要に応じて追加する

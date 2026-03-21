@@ -17,16 +17,16 @@
 - この調査が扱う主題は **意識のモデル** に限定する
 - 欠損駆動思考そのものの調査は別 repo の担当とする
 - 神経現象学を中心参照に据えつつ、発達心理を含む心理学領域の知見を統合する
-- F-O軸（生存と間主観性）は、この repo の中核仮説であり、**是非を含めた検証対象**として扱う
+- 生存-信頼軸（生存と間主観性）は、この repo の中核仮説であり、**是非を含めた検証対象**として扱う
 - `Withhold` は周辺仮説として扱い、repo 全体の中心主題として固定しない
 - D01-D30 の構造類似調査は `creation-space` 側の調査であり、この repo のスコープに含めない
 
 ### 0.2 出発点
 
-このプロジェクトの最初の中核仮説は **F-O軸** である。
+このプロジェクトの最初の中核仮説は **生存-信頼軸** である。
 
-- F軸: 生存、脅威、安全、保身
-- O軸: 関係、愛着、所属、信頼、間主観性
+- 生存軸: 生存、脅威、安全、保身
+- 信頼軸: 関係、愛着、所属、信頼、間主観性
 
 現段階では、この二軸を「意識が何を重要なものとして扱うか」を分ける最小座標系として扱う。
 
@@ -61,13 +61,13 @@
 
 最初の起点文書:
 
-- `knowledge/fo-axis-starting-memo.md`
+- `knowledge/survival-trust-axis-starting-memo.md`
 
 このメモでは、次を暫定的に採用している。
 
-- 意識経験はズレや欠損を F軸 / O軸 で評価する
+- 意識経験はズレや欠損を 生存軸 / 信頼軸 で評価する
 - 情動や行動準備は、この評価を通じて方向づけられる
-- O軸の問題を F軸で処理しようとする誤配が、人間の苦しさの重要な源泉である
+- 信頼軸の問題を 生存軸で処理しようとする誤配が、人間の苦しさの重要な源泉である
 
 ただし、これらは採択済みの正解ではなく、repo 全体で検証される仮説として扱う。
 
@@ -88,7 +88,7 @@
 - `docs/material-inventory.md`
 - `evidence/review/core-source-map.md`
 
-ここには schema、M1 consciousness OS、concept notes、
+ここには schema、4層モデルの原著文書群、concept notes、
 `creation-space-refs`、`m2-*` skills を整理してある。
 
 ## 3. プロジェクト状態
@@ -99,7 +99,8 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#60`, `#61`
+- `#60`, `#61` は完了済み
+- 現在の open Issue は `#69`, `#76`
 - source map の正本は `evidence/review/core-source-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
 - 調査設計メモ本体は `evidence/review/research-design.md`
@@ -108,18 +109,18 @@
 
 ### 3.2 現在の主作業
 
-- `#60` で M1 意識OS を report_ready へ引き上げる
-- `#61` で Concept Notes report の入口を整理する
+- `#69` で rename 残差と M1 導線を 4層モデルへ吸収する
+- `#76` で guides / survey / domains の metadata 契約と modal 表示を `creation-space` に揃える
 
 ### 3.3 次のアクション
 
-- M1 report の本文を追加する
-- Concepts の report 接続方針を決める
-- REPORTS manifest への接続を整理する
+- `#69` を閉じられる水準まで legacy 名称と stale 導線を掃除する
+- `#76` で `generator_model` / `generated_at` / `generated` の source of truth を正本化する
+- guide と report の対応表を強める
 
 ### 3.4 ブロッカー
 
-- source_ready を report_ready へ上げる手順がまだ未実装
+- awareness 固有の metadata 正本と survey manifest が未整備
 
 ## 4. ファイル構成
 
@@ -132,7 +133,7 @@
 | `evidence/deepdive/` | Level2 以降の深掘り探索（準備/プレースホルダ） |
 | `evidence/archive/` | Revise 前の evidence 退避を管理 |
 | `docs/material-inventory.md` | 初期素材インベントリ |
-| `knowledge/fo-axis-starting-memo.md` | F-O軸 起点メモ |
+| `knowledge/survival-trust-axis-starting-memo.md` | 生存-信頼軸 起点メモ |
 | `src/` | Web UI 本体 |
 | `src/backgrounds/` | 背景の tracked prototype |
 | `transform/` | 将来の公開用変換 workflow |
@@ -141,7 +142,7 @@
 
 ### 現時点で提供するもの
 
-- F-O軸を起点とする意識探索の入口
+- 生存-信頼軸を起点とする意識探索の入口
 - 意識モデル関連素材のインベントリ
 - `creation-space` 型のサイト shell とローカル確認環境
 

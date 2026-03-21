@@ -31,15 +31,15 @@
 
 ## 2. 初期探索の主要素材
 
-### 2-1. M1 意識OS
+### 2-1. 4層モデルの原著文書群
 
 | ファイル | パス |
 |---|---|
-| part-1 introduction | `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-1-introduction.md` |
-| part-2 interoception | `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-2-interoception.md` |
-| part-3 prediction error | `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-3-prediction-error.md` |
-| part-4 fo evaluation | `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-4-fo-evaluation.md` |
-| part-5 withhold | `~/dev/kesson-driven-thinking/base/text/m1-consciousness-os/part-5-withhold.md` |
+| part-1 introduction | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-1-introduction.md` |
+| part-2 interoception | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-2-interoception.md` |
+| part-3 prediction error | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-3-prediction-error.md` |
+| part-4 fo evaluation | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-4-survival-trust-evaluation.md` |
+| part-5 withhold | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-5-withhold.md` |
 
 ### 2-2. concept notes
 
@@ -76,7 +76,7 @@
 | m2-evidence design | `~/dev/kesson-driven-thinking/skills/m2-evidence/DESIGN.md` | 補助設計文書 |
 ## 3. 次の作業候補
 
-1. `awareness-space#2` で F-O軸の起点メモを作る
+1. `awareness-space#2` で 生存-信頼軸の起点メモを作る
 2. 神経現象学 intake map を作る
 3. 発達心理学 intake map を作る
 4. `kesson-driven-thinking#278` の再構築後に `creation-space-refs` の取り込み方を見直す

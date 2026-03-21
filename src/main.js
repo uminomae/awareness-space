@@ -6,6 +6,9 @@ import { initDevAuxTools, initDevPanelRuntime } from './dev-runtime.js';
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
+import { syncControlGuideVisibility } from './control-guide.js';
+import { detectLang } from './i18n.js';
+import { applyPageLanguage, initLanguageToggle } from './page-language.js';
 import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
 import { breathValue } from './animation-utils.js';
 import { breathConfig } from './config.js';
@@ -16,30 +19,6 @@ import { applyUiThemeState } from './ui-theme.js';
 installStartupErrorHandlers();
 
 const DEV_MESSAGE_SOURCE = 'awareness-space-dev-panel';
-
-function initLanguageToggle() {
-    const toggle = document.getElementById('lang-toggle');
-    const html = document.documentElement;
-    if (!toggle) return;
-
-    function applyLanguage(lang) {
-        html.lang = lang;
-        document.querySelectorAll('[data-ja][data-en]').forEach((node) => {
-            node.textContent = lang === 'en' ? node.dataset.en : node.dataset.ja;
-        });
-        toggle.textContent = lang === 'en' ? '日本語' : 'English';
-        toggle.setAttribute('aria-label', lang === 'en' ? 'Switch language to Japanese' : '言語を英語に切り替え');
-        setReportsLanguage(lang);
-        refreshGuideLang();
-    }
-
-    let current = 'ja';
-    applyLanguage(current);
-    toggle.addEventListener('click', () => {
-        current = current === 'ja' ? 'en' : 'ja';
-        applyLanguage(current);
-    });
-}
 
 function initHashLinks() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
@@ -200,12 +179,14 @@ function start() {
     applyDevChrome(devMode);
     const backgroundController = initBackgroundModeSwitcher({
         onModeChange: (sceneVariant) => {
+            syncControlGuideVisibility(sceneVariant);
             applySceneUiTheme(sceneVariant);
             if (!devMode) return;
             mountDevPanel(backgroundController, sceneVariant);
             postSceneState(backgroundController, sceneVariant);
         },
         onFrameLoad: (sceneVariant) => {
+            syncControlGuideVisibility(sceneVariant);
             if (backgroundController?.getCurrentMode?.() === sceneVariant) {
                 applySceneUiTheme(sceneVariant);
             }
@@ -215,8 +196,17 @@ function start() {
     });
     if (backgroundController?.getCurrentMode) {
         applySceneUiTheme(backgroundController.getCurrentMode());
+        syncControlGuideVisibility(backgroundController.getCurrentMode());
     }
-    initLanguageToggle();
+    const initialLang = detectLang();
+    applyPageLanguage(initialLang);
+    setReportsLanguage(initialLang);
+    refreshGuideLang();
+    initLanguageToggle(initialLang, (lang) => {
+        applyPageLanguage(lang);
+        setReportsLanguage(lang);
+        refreshGuideLang();
+    });
     startScrollUiLoop();
     initHashLinks();
     if (devMode) {

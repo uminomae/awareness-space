@@ -178,10 +178,21 @@
 #kesson-topbar .topbar-toggler {
   border-color: var(--kesson-topbar-toggler-border);
   padding: 0.18rem 0.44rem;
+  color: var(--kesson-topbar-link-color);
 }
 
 #kesson-topbar .topbar-toggler:focus {
   box-shadow: 0 0 0 0.14rem var(--kesson-topbar-toggler-focus);
+}
+
+#kesson-topbar .navbar-toggler-icon {
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: center 0.32rem, center center, center calc(100% - 0.32rem);
+  background-size: 1.15rem 2px, 1.15rem 2px, 1.15rem 2px;
 }
 
 #kessonTopbarNav {

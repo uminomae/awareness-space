@@ -79,7 +79,10 @@ git push origin {branch}
 
 1. Issue に変更概要 + SHA + 検証結果 + 気づき をコメント
 2. `.cache/outbox/DONE-{issue番号}-{YYYYMMDD}.md` を作成
-3. 完了条件を満たす場合のみ Issue を close
+3. `gh issue view {issue番号} --repo {owner/repo} --json state,url` で終了状況を確認
+4. 完了条件を満たす場合のみ Issue を close
+5. `gh issue view {issue番号} --repo {owner/repo} --json state,closedAt,url` で close 結果を確認
+6. close しない場合は、OPEN のまま残す理由を Issue コメントに明記する
 
 DONE ファイル形式:
 
@@ -95,10 +98,12 @@ DONE ファイル形式:
 - [ ] （作業固有の条件）
 - [ ] Issue コメントが投稿されている
 - [ ] `.cache/outbox/DONE-{issue番号}-{YYYYMMDD}.md` が作成されている
+- [ ] Issue の終了状況が `gh issue view --json state` で確認されている
+- [ ] close した場合は close 後の状態確認まで終わっている
 
 ### Issue close 条件
 
-（指示書ごとに具体条件を書く。なければ close しない）
+（指示書ごとに具体条件を書く。具体条件がない場合は close しない）
 ```
 
 ---
@@ -110,5 +115,6 @@ DONE ファイル形式:
 - [ ] 検証、commit & push、レビューがある
 - [ ] 完了報告フッターがある
 - [ ] DONE ファイル作成が書かれている
+- [ ] Step 最終に `gh issue view --json state` が書かれている
 - [ ] Issue close 条件が書かれている
 - [ ] 出力先 README を確認している

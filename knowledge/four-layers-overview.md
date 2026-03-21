@@ -2,13 +2,15 @@
 
 `awareness-space` における意識モデル解説の入口文書。
 
+旧称: M1 意識OS。現在は独立概念ではなく、4層モデルの原著文書群として同じ枠内で扱う。
+
 ## これは何か
 
 4層モデルは、意識の作動を次の4つの層で記述する枠組みである。
 
 1. Layer 0: 内受容感覚
 2. Layer 1: 予測-誤差ループ
-3. Layer 2: F-O評価
+3. Layer 2: 生存-信頼評価
 4. Layer 3: Withhold
 
 このモデルは、意識を「何かが分かったあとに説明するもの」ではなく、
@@ -40,7 +42,7 @@
 ### Layer 2
 
 ズレに情動価を与える層。
-F軸 / O軸で評価し、行動準備を方向づける。
+生存軸 / 信頼軸で評価し、行動準備を方向づける。
 
 ### Layer 3
 
@@ -48,7 +50,11 @@ F軸 / O軸で評価し、行動準備を方向づける。
 
 ## 関連
 
-- `fo-axis-starting-memo.md`
-- `fo-axis-overview.md`
+- `survival-trust-axis-starting-memo.md`
+- `survival-trust-axis-overview.md`
 - `withhold-overview.md`
-- `m1-consciousness-os-overview.md`
+- `domains/four-layers/part-1-introduction.md`
+- `domains/four-layers/part-2-interoception.md`
+- `domains/four-layers/part-3-prediction-error.md`
+- `domains/four-layers/part-4-survival-trust-evaluation.md`
+- `domains/four-layers/part-5-withhold.md`

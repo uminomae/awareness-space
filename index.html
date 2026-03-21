@@ -67,17 +67,6 @@
             <a id="topbar-dev-link" class="nav-link topbar-link" href="./?dev">DEV</a>
           </li>
           <li class="nav-item">
-            <button
-              id="topbar-articles-btn"
-              type="button"
-              class="nav-link topbar-link topbar-link-btn"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#siteOffcanvas"
-              aria-controls="siteOffcanvas">
-              SECTIONS
-            </button>
-          </li>
-          <li class="nav-item">
             <a id="topbar-reports-link" class="nav-link topbar-link" href="#reports-section">REPORTS</a>
           </li>
           <li class="nav-item">
@@ -103,8 +92,7 @@
 
   <nav id="graphic-switcher" role="group" aria-label="背景グラフィック切り替え">
     <span class="graphic-switcher-label">背景</span>
-    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="raijin">風神雷神</button>
-    <button type="button" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
+    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="Fujin-Raijin">風神雷神</button>
   </nav>
   <div id="dev-version-inline" class="dev-version-inline" aria-live="polite" hidden></div>
   <a id="dev-components-link" class="dev-components-link" href="./dev-components.html">Components</a>
@@ -114,13 +102,15 @@
       <div class="tagline" data-ja="生存と間主観性から、意識を捉え直す。" data-en="Rethinking awareness from survival and intersubjectivity.">
         生存と間主観性から、意識を捉え直す。
       </div>
-      <div class="tagline-en" data-ja="F-O軸を起点にした探索の入口。" data-en="An entry point for exploration from the F-O axis.">
-        F-O軸を起点にした探索の入口。
+      <div class="tagline-en" data-ja="生存-信頼軸を起点にした探索の入口。" data-en="An entry point for exploration from the survival-trust axis.">
+        生存-信頼軸を起点にした探索の入口。
       </div>
     </div>
     <h1 id="title-h1">意識とは</h1>
   </div>
 
+  <!-- control-guide は camera 操作がある背景用の説明枠。
+       現在の公開モードは風神雷神のみで camera 操作を使わないため、JS 側で非表示にする。 -->
   <div id="control-guide">
     <div class="guide-row guide-desktop">
       <span class="guide-key" data-ja="scroll" data-en="scroll">scroll</span>
@@ -142,12 +132,13 @@
   <div id="hero-spacer"></div>
 
   <section id="model-section" aria-labelledby="model-section-heading">
-    <div class="section-content-wrap">
-      <div class="container d-flex flex-column mt-1">
-        <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
-        <h2 class="section-heading">
-          <a id="model-section-heading" href="#model-section" class="section-heading-link">
-            意識モデル
+      <div class="section-content-wrap">
+        <div class="container d-flex flex-column mt-1">
+          <p id="reports-ai-notice" class="reports-ai-notice">AIが執筆しているため間違いがある場合があります。</p>
+          <p id="model-summary-note" class="reports-ai-notice mb-2">guide は summary です。主要な要点は REPORTS / 調査概要 / 設計メモと対にして読みます。</p>
+          <h2 class="section-heading">
+            <a id="model-section-heading" href="#model-section" class="section-heading-link">
+              意識モデル
           </a>
         </h2>
         <div class="reports-tab-content mb-3">
@@ -174,9 +165,10 @@
         </div>
         <div class="reports-tab-content reports-stack">
           <section class="reports-stack-section">
-            <h3 id="reports-domains-heading" class="reports-subheading">領域別レポート</h3>
+            <h3 id="reports-domains-heading" class="reports-subheading">構成要素レポート</h3>
+            <p id="reports-scope-note" class="reports-ai-notice mb-2">調査は進行中です。現在公開しているのは意識モデル構成要素ごとの個別レポートであり、統合版ではありません。</p>
             <p id="reports-level-legend" class="reports-level-legend mb-2">進捗分類を読み込み中...</p>
-            <div id="reports-table-filters" class="d-none flex-wrap gap-2 mb-2" role="group" aria-label="領域別レポート絞り込み"></div>
+            <div id="reports-table-filters" class="d-none flex-wrap gap-2 mb-2" role="group" aria-label="構成要素レポート絞り込み"></div>
             <div id="reports-domain-grid" class="reports-domain-grid row row-cols-2 row-cols-md-5 g-2" aria-live="polite">
               <div class="reports-domain-empty col-12 text-body-secondary">読み込み中...</div>
             </div>
@@ -213,13 +205,13 @@
 
   <div class="offcanvas offcanvas-end offcanvas-kesson" tabindex="-1" id="siteOffcanvas" data-bs-backdrop="true">
     <div class="offcanvas-header">
-      <h2 class="offcanvas-title">SECTIONS</h2>
+      <h2 id="offcanvas-sections-title" class="offcanvas-title">SECTIONS</h2>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group awareness-offcanvas-list">
-        <a class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
-        <a class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
+        <a id="offcanvas-model-link" class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
+        <a id="offcanvas-research-link" class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
       </div>
     </div>
   </div>

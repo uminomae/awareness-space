@@ -12,7 +12,6 @@
 - `awareness-space/evidence/d01-d30-intake-plan.md`
 - `awareness-space/evidence/review/survey-5w1h-source-map.md`
 - `creation-space/transform/survey/reader-rules/reader-rules-creation-survey.md`
-- `kesson-driven-thinking#280` コメント群
 
 ## 1. survey-status.md の役割
 
@@ -28,13 +27,14 @@
 4. 現在の主要素材
 5. guide / report / source への導線
 6. 限界と未解決のこと
+7. 何が report-backed で、何が design memo / plan 段階かの区別
 
 調査対象の重心は次に置く。
 
 - 意識のモデル
 - 神経現象学を中心とした知見
 - 発達心理を含む心理学領域の知見
-- F-O軸（生存と間主観性）がコア仮説として妥当かどうか
+- 生存-信頼軸（生存と間主観性）がコア仮説として妥当かどうか
 
 ## 2. survey-domain-index.md の役割
 
@@ -65,9 +65,15 @@ awareness では D01-D30 一覧ではなく、次の系統を整理する。
 - `awareness-space` は意識モデル単独の探索として説明する
 - D01-D30 は本体調査ではなく、比較素材・参照系譜として扱う
 - guide / 調査内容 / report の三層を混同しない
+- guide は summary、report は論拠、design memo は未検証・設計中の層として区別する
 - 神経現象学と心理学的知見の統合を中心に据える
-- F-O軸は「この repo の特徴的仮説」であり、是非の検証対象として扱う
-- `Withhold` は周辺仮説として扱い、調査の中心に置かない
+- 生存-信頼軸は「この repo の特徴的仮説」であり、是非の検証対象として扱う
+- `抱持` は独立概念として前提にせず、「すぐ反応しない」現象群を束ねていた仮ラベルとして扱う
+- 過去素材は歴史的 source としてのみ参照し、現在の正本・命名源・理論権威として扱わない
+- 公開版 front matter には `source`, `rules` を出さない
+- 公開版 front matter には `generator_model`, `generated` を出す
+- repo 内の相対パスや公開で到達できないリンクを本文に出さない
+- `reader-facing`, `report-backed`, `design memo` など制作工程の語を本文の主役にしない
 
 ## 5. front matter
 
@@ -80,10 +86,9 @@ title: "意識モデル探索: 調査概要"
 lang: ja
 audience: survey
 version: 0.1
+generated: {YYYY-MM-DD}
+generator_model: {tool:model}
 date: {YYYY-MM-DD}
-source: evidence/PROJECT.md, docs/material-inventory.md, evidence/d01-d30-intake-plan.md
-rules: reader-rules-awareness-survey.md v0.1
-generator_model: {model_name}
 ---
 ```
 
@@ -96,10 +101,9 @@ title: "意識モデル探索: 調査索引"
 lang: ja
 audience: survey
 version: 0.1
+generated: {YYYY-MM-DD}
+generator_model: {tool:model}
 date: {YYYY-MM-DD}
-source: evidence/PROJECT.md, docs/material-inventory.md
-rules: reader-rules-awareness-survey.md v0.1
-generator_model: {model_name}
 ---
 ```
 
@@ -107,8 +111,9 @@ generator_model: {model_name}
 
 - 調査目的と調査方法が 3 段落以内に出てくる
 - source / guide / report の役割分離が崩れていない
+- report-backed と plan-only の区別が読者に見える
 - D01-D30 の扱いが「比較素材」であると明記されている
 - 神経現象学 / 発達心理を含む心理学領域が調査重心として書かれている
-- F-O軸が仮説検証対象として記述されている
+- 生存-信頼軸が仮説検証対象として記述されている
 - 次に読むべき文書への導線がある
 - 内部 Issue 番号や phase 進捗の羅列になっていない
