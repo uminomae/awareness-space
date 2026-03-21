@@ -15,3 +15,8 @@ test('graphic switcher exposes only Fujin-Raijin in markup', () => {
 test('control-guide markup keeps an explanatory comment for hidden state', () => {
     assert.match(indexHtml, /control-guide は camera 操作がある背景用の説明枠/);
 });
+
+test('image cards section exists in model area', () => {
+    assert.match(indexHtml, /id="image-card-grid"/);
+    assert.match(indexHtml, /Interpretation Cards/);
+});

@@ -65,6 +65,7 @@ manifest 全体を再生成した日。manifest 単位の metadata。
 
 - guides: `pjdhiro/assets/awareness/manifests/guides.json`
 - survey: `pjdhiro/assets/awareness/manifests/survey.json`
+- image cards: `pjdhiro/assets/awareness/manifests/image-cards.json`
 - domains:
   - repo snapshot: `transform/domains/publish/domains/index.json`
   - public copy: `pjdhiro/assets/awareness/manifests/domains.json`
@@ -111,6 +112,20 @@ src/reports/modal.js
 ```
 
 guides / survey の modal 表示は front matter を一次参照とし、manifest は publish 契約と検査用の記録として使う。
+
+### 3.3 image cards
+
+```text
+pjdhiro/assets/awareness/image-cards/items/{slug}.(png|jpg|...)
+    +
+pjdhiro/assets/awareness/image-cards/items/{slug}.json
+    ↓
+pjdhiro/assets/awareness/manifests/image-cards.json
+    ↓
+awareness-space/src/image-cards.js
+```
+
+image cards は markdown modal を前提にせず、manifest の `title_*` / `comment_*` / `image` をそのままカード UI に使う。
 
 ## 4. 更新タイミング
 
