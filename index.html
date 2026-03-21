@@ -92,8 +92,7 @@
 
   <nav id="graphic-switcher" role="group" aria-label="背景グラフィック切り替え">
     <span class="graphic-switcher-label">背景</span>
-    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="raijin">風神雷神</button>
-    <button type="button" data-graphic-mode="uzu" aria-pressed="false" data-ja="渦" data-en="vortex">渦</button>
+    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="Fujin-Raijin">風神雷神</button>
   </nav>
   <div id="dev-version-inline" class="dev-version-inline" aria-live="polite" hidden></div>
   <a id="dev-components-link" class="dev-components-link" href="./dev-components.html">Components</a>
@@ -110,8 +109,8 @@
     <h1 id="title-h1">意識とは</h1>
   </div>
 
-  <!-- awareness-space ではカメラ回転/ズーム操作を提供していないため、
-       デバッグ時に誤解しないよう camera control guide は意図的に表示していない。 -->
+  <!-- control-guide は camera 操作がある背景用の説明枠。
+       現在の公開モードは風神雷神のみで camera 操作を使わないため、JS 側で非表示にする。 -->
   <div id="control-guide">
     <div class="guide-row guide-desktop">
       <span class="guide-key" data-ja="scroll" data-en="scroll">scroll</span>
@@ -206,13 +205,13 @@
 
   <div class="offcanvas offcanvas-end offcanvas-kesson" tabindex="-1" id="siteOffcanvas" data-bs-backdrop="true">
     <div class="offcanvas-header">
-      <h2 class="offcanvas-title">SECTIONS</h2>
+      <h2 id="offcanvas-sections-title" class="offcanvas-title">SECTIONS</h2>
       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <div class="list-group awareness-offcanvas-list">
-        <a class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
-        <a class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
+        <a id="offcanvas-model-link" class="list-group-item list-group-item-action" href="#model-section">MODEL / 意識モデル</a>
+        <a id="offcanvas-research-link" class="list-group-item list-group-item-action" href="#reports-section">RESEARCH / 調査内容と調査報告</a>
       </div>
     </div>
   </div>

@@ -64,7 +64,7 @@
 - `generator_model`
 - `lang`
 - `version`
-- `date`
+- `generated`
 
 ### T4-2: パス参照
 

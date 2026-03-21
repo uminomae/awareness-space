@@ -1,0 +1,38 @@
+export const dict = {
+    ja: {
+        page: {
+            documentTitle: '意識とは',
+            title: '意識とは',
+            topbarMainTitle: '意識とは',
+            topbarCollab: 'AIとの協働作業中',
+            graphicSwitcherAria: '背景グラフィック切り替え',
+            graphicSwitcherLabel: '背景',
+            graphicModeRaijin: '風神雷神',
+            reportsAiNotice: 'AIが執筆しているため間違いがある場合があります。',
+            modelSectionHeading: '意識モデル',
+            offcanvasSectionsTitle: 'SECTIONS',
+            offcanvasModelLink: 'MODEL / 意識モデル',
+            offcanvasResearchLink: 'RESEARCH / 調査内容と調査報告',
+            langToggleLabel: 'English',
+            langToggleAria: '言語を英語に切り替え',
+        },
+    },
+    en: {
+        page: {
+            documentTitle: 'What Is Awareness',
+            title: 'What Is Awareness',
+            topbarMainTitle: 'What Is Awareness',
+            topbarCollab: 'Working with AI collaboration',
+            graphicSwitcherAria: 'Switch background graphics',
+            graphicSwitcherLabel: 'Background',
+            graphicModeRaijin: 'Fujin-Raijin',
+            reportsAiNotice: 'This section is AI-authored and may contain mistakes.',
+            modelSectionHeading: 'Awareness Model',
+            offcanvasSectionsTitle: 'SECTIONS',
+            offcanvasModelLink: 'MODEL / Awareness Model',
+            offcanvasResearchLink: 'RESEARCH / Survey and Reports',
+            langToggleLabel: '日本語',
+            langToggleAria: 'Switch language to Japanese',
+        },
+    },
+};

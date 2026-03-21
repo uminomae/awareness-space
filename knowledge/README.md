@@ -63,7 +63,6 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `reports-overview.md`: 調査報告セクションの総覧
 - `domains/survival-trust-axis/ja/report.md`: 生存-信頼軸 report
 - `domains/four-layers/ja/report.md`: 4層モデル report
-- `domains/m1-consciousness-os/ja/report.md`: M1 基盤文章群の source report
 - `domains/withhold/ja/report.md`: Withhold report
 
 ## 移行状態
@@ -71,8 +70,7 @@ guide に書く主要な要点は、原則として `domains/`, `survey`, `evide
 - `knowledge/concepts/` を新設し、CN-001〜CN-007 を追加
 - `knowledge/schema/` に `four-layers.md`、`four-modules.md`、`withhold-matching-v2.md` を追加
 - `knowledge/domains/` に 生存-信頼軸、4層モデル、Withhold の report を追加
-- `knowledge/domains/m1-consciousness-os/ja/report.md` を追加し、4層モデル原著文書群の source report を接続
-- 4層モデルの原著文書群は `knowledge/domains/four-layers/` 配下へ統合済み
+- 4層モデルの原著文書群は `knowledge/domains/four-layers/` 配下と `four-layers-overview.md` へ統合済み
 - Concept Notes は `source_ready` の入口文書として接続済み
 - overview 群は source とは分離して、公開向け explainer として整備する
 - guide 公開正本は `pjdhiro/assets/awareness/guides/` へ移行

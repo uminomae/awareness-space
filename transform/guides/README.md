@@ -16,6 +16,8 @@
 - `pjdhiro/assets/awareness/` を `creation-space` と同じ公開契約の正本とする。
 - JA / EN guide を公開正本として配置する。
 - guide は「読者向け入口文」ではなく、**仮説・調査・現在地を含むモデル解説**として扱う。
+- front matter は `generator_model` / `generated` を持ち、`guides.json` に反映する。
+- metadata 契約の正本は `docs/evidence-metadata-awareness.md`。
 
 ## 入口
 

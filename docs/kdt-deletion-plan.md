@@ -14,7 +14,7 @@
 
 ## 2. 削除候補
 
-### M1 consciousness OS
+### 4層モデルの原著文書群
 
 - `base/text/domains/four-layers/part-1-introduction.md`
 - `base/text/domains/four-layers/part-2-interoception.md`

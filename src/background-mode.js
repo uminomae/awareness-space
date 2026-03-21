@@ -1,8 +1,9 @@
-const DEFAULT_MODE = 'raijin';
-const MODES = new Set(['raijin', 'uzu']);
+export const DEFAULT_MODE = 'raijin';
+export const AVAILABLE_BACKGROUND_MODES = ['raijin'];
+const MODES = new Set(AVAILABLE_BACKGROUND_MODES);
 
-function normalizeMode(mode) {
-    if (mode === 'flow') return 'raijin';
+export function normalizeMode(mode) {
+    if (mode === 'flow' || mode === 'uzu') return 'raijin';
     return MODES.has(mode) ? mode : DEFAULT_MODE;
 }
 
@@ -42,11 +43,9 @@ function createBackgroundFrame() {
 
 function resolveBackgroundSrc(mode) {
     const normalized = normalizeMode(mode);
-    const filename = normalized === 'uzu' ? 'uzu.html' : 'kitai.html';
+    const filename = 'kitai.html';
     const url = new URL(`./src/backgrounds/${filename}`, window.location.href);
-    if (normalized !== 'uzu') {
-        url.searchParams.set('variant', normalized);
-    }
+    url.searchParams.set('variant', normalized);
     return url.toString();
 }
 

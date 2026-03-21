@@ -7,9 +7,10 @@
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → PDF build → manifest 更新 → `pjdhiro/main` push の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → PDF build → manifest 更新 → `pjdhiro/main` push の順で進む。
 
 **原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
+**metadata 正本**: `docs/evidence-metadata-awareness.md`
 
 ## ワークフロー一覧
 
@@ -59,6 +60,12 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
 - domains Markdown: `pjdhiro/assets/awareness/domains/{lang}/md/`
 - manifests: `pjdhiro/assets/awareness/manifests/`
+
+### metadata
+
+- source markdown front matter は `generator_model` / `generated` を持つ
+- manifest root は `generated_at` を持つ
+- details は `docs/evidence-metadata-awareness.md` を正本とする
 
 ### 依存
 

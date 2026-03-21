@@ -297,13 +297,32 @@ update_manifests() {
     mkdir -p "$MANIFESTS_DIR"
 
     local date_str
-    date_str=$(date +%Y-%m-%d)
+    date_str=$(TZ=Asia/Tokyo date +%Y-%m-%d)
 
-    python3 -c "
-import json, os, sys
+    python3 - "$PJDHIRO_DIR/assets/awareness" "$date_str" <<'PY' > "$MANIFESTS_DIR/guides.json"
+import json
+import os
+import re
+import sys
 
 awareness_dir = sys.argv[1]
 date_str = sys.argv[2]
+
+def read_frontmatter(path):
+    if not os.path.isfile(path):
+        return {}
+    text = open(path, encoding='utf-8').read()
+    match = re.match(r'^---\n([\s\S]*?)\n---\n', text)
+    if not match:
+        return {}
+    meta = {}
+    for line in match.group(1).splitlines():
+        if ':' not in line:
+            continue
+        key, value = line.split(':', 1)
+        meta[key.strip()] = value.strip().strip('"').strip("'")
+    return meta
+
 audiences = [
     ('general', '一般向け', 'General'),
     ('designer', '設計者向け', 'Designer'),
@@ -311,24 +330,96 @@ audiences = [
 ]
 guides = []
 for aid, title_ja, title_en in audiences:
-    entry = {'id': aid, 'title_ja': title_ja, 'title_en': title_en, 'md': {}, 'pdf': {}}
+    entry = {
+        'id': aid,
+        'title_ja': title_ja,
+        'title_en': title_en,
+        'md': {},
+        'pdf': {},
+        'generator_model': {},
+        'generated': {},
+    }
     for lang in ('ja', 'en'):
         md_rel = f'guides/{lang}/md/awareness-{aid}.md'
         pdf_rel = f'guides/{lang}/pdf/awareness-{aid}.pdf'
-        entry['md'][lang] = md_rel if os.path.isfile(os.path.join(awareness_dir, md_rel)) else None
+        md_path = os.path.join(awareness_dir, md_rel)
+        meta = read_frontmatter(md_path)
+        entry['md'][lang] = md_rel if os.path.isfile(md_path) else None
         entry['pdf'][lang] = pdf_rel if os.path.isfile(os.path.join(awareness_dir, pdf_rel)) else None
+        entry['generator_model'][lang] = meta.get('generator_model', '')
+        entry['generated'][lang] = meta.get('generated') or meta.get('date', '')
     guides.append(entry)
 
 manifest = {
-    'version': '0.1',
+    'version': '0.2',
     'generated_at': date_str,
     'namespace': 'awareness',
     'guides': guides,
 }
 print(json.dumps(manifest, indent=2, ensure_ascii=False))
-" "$PJDHIRO_DIR/assets/awareness" "$date_str" > "$MANIFESTS_DIR/guides.json"
+PY
 
     echo -e "  ${GREEN}✓${NC} guides.json 更新完了"
+
+    python3 - "$PJDHIRO_DIR/assets/awareness" "$date_str" <<'PY' > "$MANIFESTS_DIR/survey.json"
+import json
+import os
+import re
+import sys
+
+awareness_dir = sys.argv[1]
+date_str = sys.argv[2]
+
+def read_frontmatter(path):
+    if not os.path.isfile(path):
+        return {}
+    text = open(path, encoding='utf-8').read()
+    match = re.match(r'^---\n([\s\S]*?)\n---\n', text)
+    if not match:
+        return {}
+    meta = {}
+    for line in match.group(1).splitlines():
+        if ':' not in line:
+            continue
+        key, value = line.split(':', 1)
+        meta[key.strip()] = value.strip().strip('"').strip("'")
+    return meta
+
+files = []
+for lang in ('ja', 'en'):
+    for stem in ('survey-domain-index', 'survey-status'):
+        md_rel = f'survey/{lang}/md/{stem}.md'
+        pdf_rel = f'survey/{lang}/pdf/{stem}.pdf'
+        md_path = os.path.join(awareness_dir, md_rel)
+        meta = read_frontmatter(md_path)
+        if os.path.isfile(md_path):
+            files.append({
+                'path': md_rel,
+                'lang': lang,
+                'format': 'md',
+                'generator_model': meta.get('generator_model', ''),
+                'generated': meta.get('generated') or meta.get('date', ''),
+            })
+        pdf_path = os.path.join(awareness_dir, pdf_rel)
+        if os.path.isfile(pdf_path):
+            files.append({
+                'path': pdf_rel,
+                'lang': lang,
+                'format': 'pdf',
+                'generator_model': meta.get('generator_model', ''),
+                'generated': meta.get('generated') or meta.get('date', ''),
+            })
+
+manifest = {
+    'version': '0.2',
+    'generated_at': date_str,
+    'namespace': 'awareness',
+    'files': files,
+}
+print(json.dumps(manifest, indent=2, ensure_ascii=False))
+PY
+
+    echo -e "  ${GREEN}✓${NC} survey.json 更新完了"
 }
 
 publish_domains() {
@@ -460,8 +551,9 @@ main() {
         esac
     done
 
+    update_manifests
+
     if $do_push; then
-        update_manifests
         publish_domains
         push_pjdhiro_main
         echo ""

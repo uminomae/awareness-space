@@ -49,8 +49,8 @@ const STRINGS = {
         modalError: 'Markdown を読み込めませんでした。',
         modalOpenPdf: 'PDFを開く',
         modalPdfPending: 'PDF未提供',
-        modalModel: 'model',
-        modalGenerated: 'date',
+        modalModel: 'モデル',
+        modalGenerated: '生成日',
     },
     en: {
         featureRead: 'Open Guide',
@@ -91,8 +91,8 @@ const STRINGS = {
         modalError: 'Failed to load markdown.',
         modalOpenPdf: 'Open PDF',
         modalPdfPending: 'PDF unavailable',
-        modalModel: 'model',
-        modalGenerated: 'date',
+        modalModel: 'Model',
+        modalGenerated: 'Generated',
     },
 };
 

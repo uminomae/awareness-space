@@ -160,7 +160,9 @@ export function createReportsModalController({
             const strings = getStrings(state.lang);
             const metaParts = [];
             const generatorModel = hasText(meta.generator_model) ? meta.generator_model.trim() : resolvedSource.generatorModel;
-            const generated = hasText(meta.date) ? meta.date.trim() : resolvedSource.generated;
+            const generated = hasText(meta.generated)
+                ? meta.generated.trim()
+                : (hasText(meta.date) ? meta.date.trim() : resolvedSource.generated);
             if (generatorModel) metaParts.push(`${strings.modalModel}: ${generatorModel}`);
             if (generated) metaParts.push(`${strings.modalGenerated}: ${formatDate(generated)}`);
             if (state.dom.mdModalMeta) state.dom.mdModalMeta.textContent = metaParts.join(' / ');

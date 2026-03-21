@@ -31,7 +31,7 @@ ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
   - `generator_model`
   - `lang`
   - `version`
-  - `date`
+  - `generated`
 - `evidence` 参照の節を明記
 - 調査の問いに対して「分かったこと」「分からないこと」を分離
 
@@ -53,6 +53,16 @@ FAIL が1件でもあれば生成に戻る。
 公開時は JA/EN を同時に更新する。
 domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
 将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
+
+metadata の情報フロー:
+
+```text
+knowledge/domains/*/{ja,en}/report.md
+    ↓
+transform/domains/publish/domains/index.json
+    ↓
+pjdhiro/assets/awareness/manifests/domains.json
+```
 
 ## B. 1構成要素の再生成（既存 report 更新）
 

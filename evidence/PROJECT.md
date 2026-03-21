@@ -88,7 +88,7 @@
 - `docs/material-inventory.md`
 - `evidence/review/core-source-map.md`
 
-ここには schema、M1 consciousness OS、concept notes、
+ここには schema、4層モデルの原著文書群、concept notes、
 `creation-space-refs`、`m2-*` skills を整理してある。
 
 ## 3. プロジェクト状態
@@ -99,7 +99,8 @@
 - `develop` は `http://localhost:3003/` で常時配信されている
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
-- 現在の open Issue は `#60`, `#61`
+- `#60`, `#61` は完了済み
+- 現在の open Issue は `#69`, `#76`
 - source map の正本は `evidence/review/core-source-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
 - 調査設計メモ本体は `evidence/review/research-design.md`
@@ -108,18 +109,18 @@
 
 ### 3.2 現在の主作業
 
-- `#60` で 4層モデルの原著文書群 を report_ready へ引き上げる
-- `#61` で Concept Notes report の入口を整理する
+- `#69` で rename 残差と M1 導線を 4層モデルへ吸収する
+- `#76` で guides / survey / domains の metadata 契約と modal 表示を `creation-space` に揃える
 
 ### 3.3 次のアクション
 
-- M1 report と 4層モデル report の相互参照を強める
-- Concepts の report 接続方針を決める
+- `#69` を閉じられる水準まで legacy 名称と stale 導線を掃除する
+- `#76` で `generator_model` / `generated_at` / `generated` の source of truth を正本化する
 - guide と report の対応表を強める
 
 ### 3.4 ブロッカー
 
-- source_ready を report_ready へ上げる手順がまだ未実装
+- awareness 固有の metadata 正本と survey manifest が未整備
 
 ## 4. ファイル構成
 

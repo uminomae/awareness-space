@@ -14,6 +14,8 @@
 - ルール正本: `reader-rules/reader-rules-awareness-survey.md`
 - source archaeology: `evidence/review/survey-5w1h-source-map.md`
 - 公開配置は `pjdhiro/assets/awareness/survey/`
+- front matter は `generator_model` / `generated` を持ち、`survey.json` に反映する
+- metadata 契約の正本は `docs/evidence-metadata-awareness.md`
 
 ## 入口
 
@@ -26,3 +28,4 @@
 
 - survey の公開は JA/EN を同時に更新する。
 - PDF 公開時は `--lang all` を使う。
+- `transform/scripts/build-pdf-guide.sh` 実行時に `survey.json` も更新する。

@@ -160,6 +160,26 @@ export function normalizePdfBrowserUrl(rawUrl) {
     return safeUrl(rawUrl, '');
 }
 
+function normalizeLocalizedMetadata(value) {
+    if (hasText(value)) {
+        const trimmed = value.trim();
+        return { ja: trimmed, en: trimmed };
+    }
+    if (!value || typeof value !== 'object') {
+        return { ja: '', en: '' };
+    }
+    return {
+        ja: hasText(value?.ja) ? value.ja.trim() : '',
+        en: hasText(value?.en) ? value.en.trim() : '',
+    };
+}
+
+function resolveLocalizedMetadata(value, lang = 'ja') {
+    const normalized = normalizeLocalizedMetadata(value);
+    const normalizedLang = normalizeLang(lang);
+    return normalized[normalizedLang] || normalized.ja || normalized.en || '';
+}
+
 export function resolveLocalizedSources(links, lang = 'ja', assetBaseUrl = document.baseURI) {
     if (!links || typeof links !== 'object') return [];
     const localized = links[normalizeLang(lang)] || links.ja || links.en;
@@ -173,8 +193,8 @@ export function resolveLocalizedSources(links, lang = 'ja', assetBaseUrl = docum
     return normalizeModalSources({
         mdUrl: localized.mdUrl || localized.md || '',
         pdfUrl: localized.pdfUrl || localized.pdf || '',
-        generatorModel: localized.generatorModel || '',
-        generated: localized.generated || '',
+        generatorModel: resolveLocalizedMetadata(localized.generatorModel || localized.generator_model || '', lang),
+        generated: resolveLocalizedMetadata(localized.generated || '', lang),
         assetBaseUrl,
     });
 }
@@ -251,8 +271,8 @@ function normalizeReport(report, index, assetBaseUrl) {
         summaryEn: hasText(report?.summary_en) ? report.summary_en.trim() : '',
         progressLevel,
         progressNote: hasText(report?.progress_note) ? report.progress_note.trim() : '',
-        generatorModel: hasText(report?.generator_model) ? report.generator_model.trim() : '',
-        generated: hasText(report?.generated) ? report.generated.trim() : '',
+        generatorModel: normalizeLocalizedMetadata(report?.generator_model),
+        generated: normalizeLocalizedMetadata(report?.generated),
         md: {
             ja: safeUrl(md.ja || md.default || '', '', assetBaseUrl),
             en: safeUrl(md.en || md.ja || md.default || '', '', assetBaseUrl),
@@ -272,8 +292,8 @@ export function resolveDomainReportSources(report, { lang = 'ja' } = {}) {
     return normalizeModalSources({
         mdUrl,
         pdfUrl,
-        generatorModel: report.generatorModel,
-        generated: report.generated,
+        generatorModel: resolveLocalizedMetadata(report.generatorModel, normalizedLang),
+        generated: resolveLocalizedMetadata(report.generated, normalizedLang),
     });
 }
 

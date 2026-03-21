@@ -29,7 +29,7 @@
 
 ここには、
 - schema
-- M1 consciousness OS
+- 4層モデルの原著文書群
 - concept notes
 - `creation-space-refs`
 - `m2-*` skills

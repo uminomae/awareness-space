@@ -38,12 +38,14 @@ docs/ に置かないもの:
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `docs/report-structure.md` | 調査報告の構造メモ |
 | `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
+| `docs/evidence-metadata-awareness.md` | awareness 固有 metadata 契約の正本 |
 | `docs/quality-management.md` | 品質基準 |
 | `docs/summary-report-pairing.md` | summary と report の対応原則 |
 | `docs/guardian-matrix.md` | 最低限の守護者マトリクス |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート正本 |
 | `docs/session-close-routine.md` | セッション終了処理の正本 |
 | `docs/standing-approvals.md` | 継続承認メモ |
+| `docs/evidence-metadata-awareness.md` | 公開 metadata 契約の正本 |
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `evidence/review/core-source-map.md` | 中核参照地図の正本 |
@@ -97,9 +99,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の実装線: `#60` M1 source report / 4層原著文書群、`#61` Concept Notes report 入口
+- 現在の open 実装線: `#69` 生存-信頼軸 rename 残差と M1 導線の整理、`#76` metadata/UI 契約の creation-space 整合
 - Phase 2 の初期統合フェーズは完了
-- 次は report 間の境界と相互参照を強める段階
+- 次は名称・metadata 契約の残差を詰め、report 間の境界と相互参照を強める段階
 
 ## 8. ローカル作業領域
 

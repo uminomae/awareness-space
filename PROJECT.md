@@ -23,6 +23,20 @@
 - Claude は repo 横断管理: 親 Issue、優先順位、依存関係、順序づけを担う
 - この体制変更は pjdhiro の明示指示がある場合のみ
 
+## 対話開始ルーチン
+
+`awareness-space` で新しい対話や再開を始めるときは、まずこの `PROJECT.md` を読む。
+その上で、実作業に入る前に次を順に確認する。
+
+1. `git branch --show-current`
+2. `git status --short --branch`
+3. 再開作業なら、最新の `.cache/outbox/DONE-session-*.md` を読み、必要に応じて関連する `DONE-*.md` と `REVIEW-*.md` も確認する
+4. `docs/README.md` と `evidence/PROJECT.md` を読む
+5. 対象タスクの Issue と関連ファイルを読む
+6. UI 確認が必要なら `bash server.sh 3003` でローカル確認する
+
+開始時点でタスクが曖昧なら、まず `DONE-session` と open Issue を起点に現在地を復元してから進める。
+
 ## 現在のスコープ
 
 Phase 1:
@@ -47,7 +61,7 @@ Phase 2:
 ## 初期素材バケット
 
 - schema 候補
-- M1 consciousness OS テキスト
+- 4層モデルの原著文書群
 - concept note CN-001 〜 CN-007
 - `creation-space-refs`
 - `m2-exploration` と `m2-evidence` skills

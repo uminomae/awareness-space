@@ -37,7 +37,7 @@
 
 ## 3. source / attribution（原則）
 
-- front matter の `title`, `generator_model`, `lang`, `version`, `date` は必須。
+- front matter の `title`, `generator_model`, `lang`, `version`, `generated` は必須。
 - 根拠のある断定には evidence 由来の根拠節を付与。
 - 一人称（私/思う/気づいた）は原則避ける。
 
