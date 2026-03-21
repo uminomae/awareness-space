@@ -34,8 +34,8 @@ export function createAutoCardMeta(slug, { generatedAt = new Date().toISOString(
     return {
         title_ja: titleJa,
         title_en: titleEn,
-        comment_ja: `${titleJa} を追加画像として自動取り込みした初期カードです。解釈コメントは自動生成の初期文なので、必要に応じて後で調整してください。`,
-        comment_en: `This is an initial card created automatically when ${titleEn} was added to the image directory. The interpretation comment is a provisional auto-generated note and can be refined later if needed.`,
+        comment_ja: `${titleJa} をテーマにした追加画像です。画像カードとして自動取り込みしています。`,
+        comment_en: `An additional image card centered on ${titleEn}. It was imported automatically into the image-card collection.`,
         alt_ja: altJa,
         alt_en: altEn,
         source_url: '',
