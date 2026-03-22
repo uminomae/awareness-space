@@ -41,7 +41,7 @@ const STRINGS = {
         levelLegendUnavailable: '進捗分類を読み込めませんでした。',
         levelLegendPrefix: '進捗分類',
         levelLegendSingle: '{count}件 / {label}',
-        scopeNote: '調査は進行中です。現在の構成要素レポートは公開中ですが、統合版ではありません。',
+        scopeNote: '調査は進行中です。現在は意識モデル構成要素ごとの個別レポートを掲載しています。',
         empty: '表示できるレポートがありません。',
         error: '構成要素レポート manifest の読み込みに失敗しました。',
         modalTitleDefault: 'Markdown',
@@ -83,7 +83,7 @@ const STRINGS = {
         levelLegendUnavailable: 'Progress taxonomy unavailable.',
         levelLegendPrefix: 'Progress',
         levelLegendSingle: '{count} items / {label}',
-        scopeNote: 'Research is still in progress. The current component reports are published, not an integrated synthesis.',
+        scopeNote: 'Research is still in progress. The current section lists individual reports for the awareness model components.',
         empty: 'No reports available.',
         error: 'Failed to load component reports manifest.',
         modalTitleDefault: 'Markdown',
@@ -103,8 +103,7 @@ export function getReportsStrings(lang = 'ja') {
 export function getDomainReportTitle(report, lang = 'ja') {
     if (!report) return '';
     const useJapanese = normalizeLang(lang) === 'ja';
-    const label = useJapanese ? (report.nameJa || report.nameEn) : (report.nameEn || report.nameJa);
-    return `${report.id} ${label}`.trim();
+    return useJapanese ? (report.nameJa || report.nameEn || '') : (report.nameEn || report.nameJa || '');
 }
 
 export function createReportsRenderer({
@@ -183,52 +182,8 @@ export function createReportsRenderer({
 
     function renderLevelLegend() {
         if (!state.dom.levelLegend) return;
-        const strings = getReportsStrings(state.lang);
-        const presentTaxonomy = getPresentProgressTaxonomy();
-        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
-
-        if (!presentTaxonomy.length) {
-            state.dom.levelLegend.textContent = state.loadError ? strings.levelLegendUnavailable : strings.levelLegend;
-            return;
-        }
-
-        if (presentTaxonomy.length === 1) {
-            const level = presentTaxonomy[0].id;
-            const count = state.progressLevelCounts[level] || 0;
-            state.dom.levelLegend.textContent = strings.levelLegendSingle
-                .replace('{count}', String(count))
-                .replace('{label}', getProgressLevelLabel(level));
-            return;
-        }
-
-        const fragment = document.createDocumentFragment();
-        const prefixNode = document.createElement('span');
-        prefixNode.className = 'reports-level-legend-prefix d-block mb-1';
-        prefixNode.textContent = `${strings.levelLegendPrefix}:`;
-        fragment.appendChild(prefixNode);
-
-        presentTaxonomy.forEach((entry) => {
-            const lineNode = document.createElement('span');
-            lineNode.className = 'reports-level-legend-line d-flex align-items-start gap-2 mt-1';
-
-            const labelNode = document.createElement('span');
-            labelNode.className = `badge rounded-pill reports-progress-chip reports-level-legend-label ${getProgressPaletteClass(entry.id, paletteMap)}`;
-            labelNode.textContent = getProgressLevelLabel(entry.id);
-            lineNode.appendChild(labelNode);
-
-            const description = getProgressLevelDescription(entry.id);
-            if (description) {
-                const descriptionNode = document.createElement('span');
-                descriptionNode.className = 'reports-level-legend-description';
-                descriptionNode.textContent = ` ${description}`;
-                lineNode.appendChild(descriptionNode);
-            }
-
-            fragment.appendChild(lineNode);
-        });
-
-        state.dom.levelLegend.innerHTML = '';
-        state.dom.levelLegend.appendChild(fragment);
+        state.dom.levelLegend.textContent = '';
+        state.dom.levelLegend.classList.add('d-none');
     }
 
     function createFilterButton({ filterKey, label, isActive, paletteClass = '' }) {
@@ -250,43 +205,10 @@ export function createReportsRenderer({
 
     function updateFilterButtons() {
         if (!state.dom.filterGroup) return;
-
-        const strings = getReportsStrings(state.lang);
-        const presentTaxonomy = getPresentProgressTaxonomy();
-        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
-
-        if (presentTaxonomy.length <= 1) {
-            state.tableFilter = 'all';
-            state.dom.filterGroup.innerHTML = '';
-            state.dom.filterGroup.classList.remove('d-flex');
-            state.dom.filterGroup.classList.add('d-none');
-            return;
-        }
-
-        if (!getAvailableFilterKeys().has(state.tableFilter)) {
-            state.tableFilter = 'all';
-        }
-
-        const fragment = document.createDocumentFragment();
-        fragment.appendChild(createFilterButton({
-            filterKey: 'all',
-            label: strings.filterAll,
-            isActive: state.tableFilter === 'all',
-        }));
-
-        presentTaxonomy.forEach((entry) => {
-            fragment.appendChild(createFilterButton({
-                filterKey: entry.id,
-                label: getProgressLevelLabel(entry.id),
-                isActive: state.tableFilter === entry.id,
-                paletteClass: getProgressPaletteClass(entry.id, paletteMap),
-            }));
-        });
-
+        state.tableFilter = 'all';
         state.dom.filterGroup.innerHTML = '';
-        state.dom.filterGroup.appendChild(fragment);
-        state.dom.filterGroup.classList.remove('d-none');
-        state.dom.filterGroup.classList.add('d-flex');
+        state.dom.filterGroup.classList.remove('d-flex');
+        state.dom.filterGroup.classList.add('d-none');
     }
 
     function createMetricCard(label, value, { paletteClass = '' } = {}) {
@@ -378,21 +300,11 @@ export function createReportsRenderer({
         const strings = getReportsStrings(state.lang);
         const total = state.reports.length;
         const generatedValue = state.generatedAt ? state.generatedAt.slice(0, 10) : '-';
-        const presentTaxonomy = getPresentProgressTaxonomy();
-        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
 
         state.dom.metrics.innerHTML = '';
         const fragment = document.createDocumentFragment();
         fragment.appendChild(createMetricCard(strings.metricGenerated, generatedValue));
         fragment.appendChild(createMetricCard(strings.metricTotal, String(total)));
-
-        presentTaxonomy.forEach((entry) => {
-            fragment.appendChild(createMetricCard(
-                getProgressLevelLabel(entry.id),
-                String(state.progressLevelCounts[entry.id] || 0),
-                { paletteClass: getProgressPaletteClass(entry.id, paletteMap) },
-            ));
-        });
 
         state.dom.metrics.appendChild(fragment);
     }
@@ -403,8 +315,6 @@ export function createReportsRenderer({
         const summary = useJapanese ? (report.summaryJa || report.summaryEn) : (report.summaryEn || report.summaryJa);
         const level = normalizeProgressLevelId(report.progressLevel) || 'planned';
         const paletteClass = getProgressPaletteClass(level, paletteMap);
-        const statusText = getProgressLevelLabel(level);
-        const statusDescription = getProgressLevelDescription(level);
         const sources = getReportSources(report);
         const clickable = sources.length > 0 && !muted;
         const col = document.createElement('div');
@@ -441,9 +351,9 @@ export function createReportsRenderer({
             muted ? 'is-filter-muted' : '',
         ].join(' ').trim();
         tile.setAttribute('data-report-level', level);
-        tile.setAttribute('aria-label', `${reportTitle} ${statusText}`);
+        tile.setAttribute('aria-label', reportTitle);
 
-        const hoverHint = [statusDescription, report.progressNote, summary]
+        const hoverHint = [report.progressNote, summary]
             .filter((part) => hasText(part))
             .join('\n');
         if (hoverHint) tile.setAttribute('title', hoverHint);
@@ -452,24 +362,12 @@ export function createReportsRenderer({
         const body = document.createElement('div');
         body.className = 'card-body p-2 d-flex flex-column gap-1 h-100 reports-domain-item-body';
 
-        const head = document.createElement('div');
-        head.className = 'd-flex flex-wrap align-items-start justify-content-between gap-2 reports-domain-item-head';
-
-        const idNode = document.createElement('span');
-        idNode.className = 'reports-domain-item-id';
-        idNode.textContent = report.id;
-
-        const statusNode = document.createElement('span');
-        statusNode.className = `badge rounded-pill reports-progress-chip reports-domain-item-status ${paletteClass}`;
-        statusNode.textContent = statusText;
-
         const nameNode = document.createElement('div');
         nameNode.className = 'reports-domain-item-name';
         nameNode.title = domainLabel;
         nameNode.textContent = domainLabel;
 
-        head.append(idNode, statusNode);
-        body.append(head, nameNode);
+        body.append(nameNode);
         tile.appendChild(body);
         col.appendChild(tile);
         return col;
