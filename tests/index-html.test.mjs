@@ -23,6 +23,12 @@ test('image cards section exists in model area', () => {
     assert.match(indexHtml, /意識モデルについて思考した際のメモや図解です。/);
 });
 
+test('topbar includes creation-space navigation link', () => {
+    assert.match(indexHtml, /id="topbar-creation-link"/);
+    assert.match(indexHtml, /href="\.\.\/creation-space\/"/);
+    assert.match(indexHtml, />creation-space<\/a>/);
+});
+
 test('reports scope note avoids published and integrated wording', () => {
     assert.match(indexHtml, /現在は意識モデル構成要素ごとの個別レポートを掲載しています。/);
     assert.doesNotMatch(indexHtml, /公開中ですが、統合版ではありません/);
