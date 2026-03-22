@@ -1,4 +1,4 @@
-# awareness academic — 生成ルール v1.1
+# awareness academic — 生成ルール v1.2
 
 **タイトル**: 意識モデルと神経現象学・心理学の接続  
 **読者**: 神経現象学・認知科学・発達心理・臨床心理に関心を持つ学際的探索者  
@@ -27,7 +27,8 @@
 
 4. **調査の前提と参照領域**
    - なぜ神経現象学と心理学を中心参照に置くのかを書く
-   - どの問いを神経現象学に求め、どの問いを心理学に求めるかを分けて書く
+   - 神経現象学は「身体性 / 差異の前景化 / 一人称記述単位 / 前反省的気づき」の束として書く
+   - 心理学は「愛着と安全基地 / 内的作業モデル / 信頼と間主観性 / 修復可能性と関係調整」の束として書く
    - 既存 source と今後の intake の関係を書く
 
 5. **現時点の見解**
@@ -65,6 +66,8 @@
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
+- `evidence/review/neurophenomenology-intake-map.md`
+- `evidence/review/developmental-psychology-intake-map.md`
 - `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:

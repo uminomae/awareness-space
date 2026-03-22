@@ -1,4 +1,4 @@
-# awareness general — 生成ルール v1.1
+# awareness general — 生成ルール v1.2
 
 **タイトル**: 意識とは何か — 生存と間主観性を手がかりに  
 **読者**: 意識のしくみに関心がある一般の読者  
@@ -27,7 +27,9 @@ IR やコンサル報告書のように、目的、要旨、前提、示唆、�
 
 4. **調査の前提と参照領域**
    - 神経現象学と心理学が中核参照領域であることを書く
+   - 神経現象学は「身体性 / 差異の前景化 / 一人称記述単位 / 前反省的気づき」の束として説明する
    - 発達心理学を含む心理学的知見を、信頼軸や社会的形成の検証 source として扱っていることを書く
+   - 発達心理学は「愛着と安全基地 / 内的作業モデル / 信頼と間主観性 / 修復可能性と関係調整」の束として説明する
    - 過去の source 束は歴史的素材として参照しているだけで、現在の正本ではないことを書く
 
 5. **現時点の見解**
@@ -65,6 +67,8 @@ IR やコンサル報告書のように、目的、要旨、前提、示唆、�
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
+- `evidence/review/neurophenomenology-intake-map.md`
+- `evidence/review/developmental-psychology-intake-map.md`
 - `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:

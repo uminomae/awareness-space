@@ -1,4 +1,4 @@
-# awareness designer — 生成ルール v1.1
+# awareness designer — 生成ルール v1.2
 
 **タイトル**: 意識モデルを観察の道具として使う  
 **読者**: 教育者・対人支援者・チーム設計者  
@@ -26,7 +26,8 @@
 
 4. **調査の前提と参照領域**
    - 神経現象学と心理学を中心参照にしていること
-   - 発達心理学、愛着、間主観性、信頼が信頼軸側の主要調査論点であること
+   - 神経現象学は「身体性 / 差異の前景化 / 一人称記述単位 / 前反省的気づき」の束として扱う
+   - 発達心理学は「愛着と安全基地 / 内的作業モデル / 信頼と間主観性 / 修復可能性と関係調整」の束として扱う
    - 過去の source 束は歴史的素材として参照されているだけで、現在の正本ではないこと
 
 5. **現時点の見解**
@@ -63,6 +64,8 @@
 - `evidence/PROJECT.md`
 - `evidence/review/research-design-baseline.md`
 - `evidence/review/core-source-map.md`
+- `evidence/review/neurophenomenology-intake-map.md`
+- `evidence/review/developmental-psychology-intake-map.md`
 - `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 
 補助:

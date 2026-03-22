@@ -104,7 +104,8 @@
 - `#87` は完了済み
 - `#85` は完了済み
 - `#90` は完了済み
-- 現在の open Issue は `#88`, `#89`
+- `#89` は完了済み
+- 現在の open Issue は `#88`
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -116,13 +117,11 @@
 
 ### 3.2 現在の主作業
 
-- `#89` で intake map を guide 公開物へ反映する
 - `#88` で intake map を report overview と導線へ反映する
 
 ### 3.3 次のアクション
 
-- `#89` を最優先で進め、3 本の guide と reader-rules を intake map に揃える
-- `#88` で report overview と導線の役割分担を intake map 後の状態に合わせる
+- `#88` を最優先で進め、report overview と導線の役割分担を intake map 後の状態に合わせる
 
 ### 3.4 ブロッカー
 
