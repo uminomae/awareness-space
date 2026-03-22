@@ -7,11 +7,11 @@
 - **Who**: 画像を追加する人、manifest を再生成する CLI、公開 UI を確認する人。
 - **When**: 新しい画像カードを追加・更新するとき。
 - **Where**: 画像と sidecar は `pjdhiro/assets/awareness/image-cards/items/`、manifest は `pjdhiro/assets/awareness/manifests/image-cards.json`。
-- **How**: 画像と同名 `.json` sidecar を置き、`node transform/scripts/build-awareness-image-cards.mjs` を実行して manifest を再生成する。
+- **How**: 画像を置いたら `node transform/scripts/ingest-awareness-image-cards.mjs` を実行し、missing sidecar を draft として自動生成する。解説は「何が描かれているか / どう読むか / 何を主張しているか」を 1-2 文で書き、`review_status: "ready"` にしてから manifest を再生成する。
 
 ## 入力契約
 
-各カードは次の 2 ファイルを同じ basename で置く。
+完成形では各カードは次の 2 ファイルを同じ basename で持つ。
 
 - 画像: `{slug}.{png|jpg|jpeg|webp|gif}`
 - sidecar: `{slug}.json`
@@ -28,6 +28,7 @@ sidecar の最小例:
   "alt_en": "Sotatsu Tawaraya's Fujin-Raijin folding screen",
   "generated": "2026-03-21",
   "generator_model": "not_applicable",
+  "review_status": "ready",
   "sort_order": 10
 }
 ```
@@ -35,18 +36,39 @@ sidecar の最小例:
 ## 手順
 
 1. `pjdhiro/assets/awareness/image-cards/items/` に画像を置く
-2. 同じ basename の `.json` sidecar を作る
-3. `node transform/scripts/build-awareness-image-cards.mjs` を実行する
-4. `awareness-space` の UI と `pjdhiro/assets/awareness/manifests/image-cards.json` を確認する
-5. 必要なら `pjdhiro/main` を更新する
+2. `node transform/scripts/ingest-awareness-image-cards.mjs` を実行する
+3. missing sidecar があれば `draft` sidecar が自動生成される
+4. sidecar の `title_*` / `comment_*` / `alt_*` を人手で記述し、`review_status` を `"ready"` にする
+5. 再度 `node transform/scripts/ingest-awareness-image-cards.mjs` を実行して `pjdhiro/assets/awareness/manifests/image-cards.json` を再生成する
+6. `awareness-space` の UI を確認する
+7. 必要なら `pjdhiro/main` を更新する
+
+## 解説生成ルール
+
+- `comment_*` は、`この図が何を表現しているか` がざっくり分かる短い要約を 1 文、必要でも 2 文までで書く
+- title を手がかりにして、図の主題を先に述べる
+- 冒頭で可視要素を列挙しない。細部は title だけでは意味が伝わらないときだけ補う
+- `図として読める` `図解として読める` `〜を考えるためのメモ` のようなメタな言い回しは避ける
+- `alt_*` は解釈ではなく、見えている内容を簡潔に記述する
+- internal slug や asset 名が title に残っているなら、公開前に図の主題を示す見出しへ直す
+- `画像カードとして自動取り込みしています` のような運用文を入れない
+
+## NG / OK
+
+- NG: `Intent Gorilla をテーマにした追加画像です。画像カードとして自動取り込みしています。`
+- NG: `ゴリラとバナナ、検索バー、AI などの語を矢印でつなぎ、直観から検証までの往復を並べた発散ノートです。人が対象を強く掴んだ瞬間の衝動が、言語化・探索・批判を通って組み替わる流れを考える図として読めます。`
+- OK: `対象に飛びつく衝動が、検索・反証・構築を経て検証へ組み替わっていく流れを示す図。`
 
 ## 出力
 
 - manifest: `pjdhiro/assets/awareness/manifests/image-cards.json`
-- UI: `awareness-space` の MODEL セクション内 `Interpretation Cards`
+- UI: `awareness-space` の MODEL セクション内 `発散思考時note`
 
 ## 注意
 
-- 画像だけ置いて sidecar がない場合、script は失敗する
+- 画像だけ置いた場合でも ingest script が初期 sidecar を自動生成するが、これは draft であり公開されない
 - `title_ja` と `comment_ja` は必須
 - `title_en` / `comment_en` / `alt_*` は省略可。未設定時は日本語または空文字へ fallback する
+- `review_status: "draft"` の sidecar と、旧来の generic 自動コメントは manifest から除外される
+- `review_status: "ready"` のカードでも、theme-only / auto-ingest 型の weak commentary は builder が reject する
+- 自動生成された comment は公開用ではない。必ず手で書き換えてから `review_status: "ready"` にする

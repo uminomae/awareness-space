@@ -35,9 +35,10 @@
 1. `git branch --show-current`
 2. `git status --short --branch`
 3. 再開作業なら、最新の `.cache/outbox/DONE-session-*.md` を読み、必要に応じて関連する `DONE-*.md` と `REVIEW-*.md` も確認する
-4. `docs/README.md` と `evidence/PROJECT.md` を読む
-5. 対象タスクの Issue と関連ファイルを読む
-6. UI 確認が必要なら `bash server.sh 3003` でローカル確認する
+4. `node transform/scripts/ingest-awareness-image-cards.mjs` を実行し、新規画像カードの draft sidecar と公開 manifest を同期する
+5. `docs/README.md` と `evidence/PROJECT.md` を読む
+6. 対象タスクの Issue と関連ファイルを読む
+7. UI 確認が必要なら `bash server.sh 3003` でローカル確認する
 
 ## セッション終了時
 

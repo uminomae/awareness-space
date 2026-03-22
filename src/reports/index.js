@@ -80,6 +80,12 @@ historyController = createReportsHistoryController({
     openDomainModalById: (...args) => openDomainModalByIdImpl(...args),
 });
 
+function ensureReportsDomCached() {
+    if (!state.dom.mdModal) {
+        renderer.cacheDom();
+    }
+}
+
 function findReportById(domainId) {
     const normalizedId = normalizeDomainId(domainId);
     if (!normalizedId) return null;
@@ -147,7 +153,7 @@ export async function initReports({
     dataUrl = DEFAULT_REPORTS_DATA_URL,
     assetBaseUrl = DEFAULT_REPORTS_ASSET_BASE,
 } = {}) {
-    renderer.cacheDom();
+    ensureReportsDomCached();
     renderer.bindUiEvents();
     historyController.bindHistorySyncEvents();
 
@@ -198,6 +204,17 @@ export async function initReports({
 export function setReportsLanguage(lang) {
     state.lang = normalizeLang(lang);
     renderer.renderReports();
+}
+
+export function openReportsHtmlModal({ title = '', html = '', metaParts = [], pdfUrl = '', hidePdfButton = true } = {}) {
+    ensureReportsDomCached();
+    return modalController.renderModalHtml({
+        title,
+        html,
+        metaParts,
+        pdfUrl,
+        hidePdfButton,
+    });
 }
 
 function getDatasetTitle(node, lang = 'ja') {

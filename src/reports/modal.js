@@ -82,6 +82,44 @@ export function createReportsModalController({
         setModalPdfButton(pdfUrl, { hideWhenUnavailable: hidePdfButton });
     }
 
+    function renderModalHtml({ title = '', html = '', metaParts = [], pdfUrl = '', hidePdfButton = true } = {}) {
+        const modal = ensureMdModalInstance();
+        if (!modal) return false;
+
+        setActiveDomainModalState('', '');
+        const requestId = ++state.mdRequestId;
+        setMarkdownModalLoading({ title, pdfUrl, hidePdfButton });
+        modal.show();
+
+        const safeHtml = DOMPurify.sanitize(html);
+        if (requestId !== state.mdRequestId) return true;
+
+        if (state.dom.mdModalContent) {
+            state.dom.mdModalContent.innerHTML = `
+                <div class="md-article">
+                    <div class="md-body">${safeHtml}</div>
+                </div>
+            `;
+
+            if (!state.dom.mdModalContent.dataset.boundClicks) {
+                state.dom.mdModalContent.addEventListener('click', (event) => {
+                    const link = event.target.closest('.md-body a');
+                    if (!(link instanceof HTMLAnchorElement)) return;
+                    event.preventDefault();
+                    window.open(link.href, '_blank', 'noopener');
+                });
+                state.dom.mdModalContent.dataset.boundClicks = '1';
+            }
+        }
+
+        if (state.dom.mdModalMeta) {
+            state.dom.mdModalMeta.textContent = metaParts.filter(Boolean).join(' / ');
+        }
+
+        setModalPdfButton(pdfUrl, { hideWhenUnavailable: hidePdfButton });
+        return true;
+    }
+
     async function openMarkdownModal({ mdUrl, pdfUrl = '', title = '', sources = [], modalContext = null }) {
         const modalSources = normalizeModalSources({ mdUrl, pdfUrl, sources });
         if (!modalSources.length) return;
@@ -181,6 +219,7 @@ export function createReportsModalController({
     return {
         ensureMdModalInstance,
         isMdModalVisible,
+        renderModalHtml,
         openMarkdownModal,
     };
 }
