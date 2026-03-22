@@ -6,6 +6,7 @@ const AWARENESS_PATH = '/assets/awareness';
 const PJDHIRO_AWARENESS_PAGES = `${PJDHIRO_PAGES_BASE}${AWARENESS_PATH}`;
 const PJDHIRO_AWARENESS_RAW = `${PJDHIRO_RAW_BASE}${AWARENESS_PATH}`;
 const AWARENESS_DOMAINS_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/domains.json`;
+const AWARENESS_SURVEY_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/survey.json`;
 
 export const DEFAULT_REPORTS_DATA_URL = AWARENESS_DOMAINS_MANIFEST_URL;
 export const DEFAULT_REPORTS_ASSET_BASE = DEFAULT_BASE_URL;
@@ -345,18 +346,32 @@ export async function loadReportsData({
     assetBaseUrl = DEFAULT_REPORTS_ASSET_BASE,
 } = {}) {
     const resolvedAssetBaseUrl = normalizeAssetBaseUrl(assetBaseUrl);
-    const response = await fetch(safeUrl(dataUrl, dataUrl, document.baseURI), { cache: 'no-store' });
-    if (!response.ok) {
-        throw new Error(`reports manifest load failed: ${response.status}`);
+    const [reportsResponse, surveyResponse] = await Promise.all([
+        fetch(safeUrl(dataUrl, dataUrl, document.baseURI), { cache: 'no-store' }),
+        fetch(AWARENESS_SURVEY_MANIFEST_URL, { cache: 'no-store' }).catch(() => null),
+    ]);
+
+    if (!reportsResponse.ok) {
+        throw new Error(`reports manifest load failed: ${reportsResponse.status}`);
     }
 
-    const payload = await response.json();
+    const payload = await reportsResponse.json();
+    let surveyPayload = null;
+    if (surveyResponse?.ok) {
+        try {
+            surveyPayload = await surveyResponse.json();
+        } catch {
+            surveyPayload = null;
+        }
+    }
     const rawReports = Array.isArray(payload?.reports) ? payload.reports : [];
     const reports = rawReports.map((report, index) => normalizeReport(report, index, resolvedAssetBaseUrl));
     const progressTaxonomy = normalizeProgressTaxonomy(getManifestProgressTaxonomy(payload), reports);
 
     return {
-        generatedAt: hasText(payload?.generated_at) ? payload.generated_at.trim() : '',
+        generatedAt: hasText(surveyPayload?.generated_at)
+            ? surveyPayload.generated_at.trim()
+            : (hasText(payload?.generated_at) ? payload.generated_at.trim() : ''),
         reports,
         progressTaxonomy,
         progressLevelCounts: countReportsByProgressLevel(reports),
