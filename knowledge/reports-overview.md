@@ -18,9 +18,12 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 2. `knowledge/domains/four-layers/ja/report.md`
 いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
 
-`knowledge/domains/withhold/ja/report.md` は repo 内に残るが、
-現時点では概念監査中の内部ドラフトであり、
-公開済み report 一覧には含めない。
+一方で、
+`evidence/review/neurophenomenology-intake-map.md` と
+`evidence/review/developmental-psychology-intake-map.md` は、
+現時点では独立 report ではない。
+これらは survey と design を支える intake 正本であり、
+今後どの論点を report 層へ返せるかを見極めるための中間整理として扱う。
 
 ## 3. report の構造
 
@@ -43,6 +46,9 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 
 - `../docs/material-inventory.md`
 - `../evidence/review/research-design-baseline.md`
+- `../evidence/review/neurophenomenology-intake-map.md`
+- `../evidence/review/developmental-psychology-intake-map.md`
+- `../../pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
 - `../docs/report-structure.md`
 
 これらは「何をどう進めるか」を定める文書であり、「何が見えてきたか」を読むための report とは分ける。
@@ -50,3 +56,5 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 ## 5. 次の拡張
 
 - report 間の相互参照と横断 index の整備
+- survey / intake map から report へ返せる論点の見極め
+- 神経現象学接続と発達心理学接続を、どの report にどう分配して返すかの整理
