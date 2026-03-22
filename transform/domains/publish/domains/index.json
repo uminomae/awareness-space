@@ -1,6 +1,6 @@
 {
   "version": "0.3",
-  "generated_at": "2026-03-21",
+  "generated_at": "2026-03-23",
   "note": "awareness-space reports manifest",
   "progress_taxonomy": [
     {
@@ -68,8 +68,8 @@
         "en": "codex:gpt-5"
       },
       "generated": {
-        "ja": "2026-03-21",
-        "en": "2026-03-21"
+        "ja": "2026-03-23",
+        "en": "2026-03-23"
       },
       "md": {
         "ja": "./knowledge/domains/four-layers/ja/report.md",

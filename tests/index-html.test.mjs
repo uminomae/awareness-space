@@ -26,7 +26,7 @@ test('image cards section exists in model area', () => {
 test('topbar includes creation-space navigation link', () => {
     assert.match(indexHtml, /id="topbar-creation-link"/);
     assert.match(indexHtml, /href="\.\.\/creation-space\/"/);
-    assert.match(indexHtml, />creation-space<\/a>/);
+    assert.match(indexHtml, />creation<\/a>/);
 });
 
 test('reports scope note avoids published and integrated wording', () => {

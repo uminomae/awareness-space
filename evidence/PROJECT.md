@@ -106,7 +106,8 @@
 - `#90` は完了済み
 - `#89` は完了済み
 - `#88` は完了済み
-- 現在の open Issue はない
+- `#91`, `#93` は完了済み
+- 現在の open Issue は `#92`
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -118,12 +119,12 @@
 
 ### 3.2 現在の主作業
 
-- survey / guide / report の current scope を維持しながら次の調査 task を切る
+- `#92` で生存-信頼軸 report に発達心理学 intake を反映する
 
 ### 3.3 次のアクション
 
+- `#92` を最優先で進め、信頼軸の発達基盤と関係安全性の論点を report に返す
 - survey / guide / report に返した内容の整合を見直す
-- 神経現象学接続と発達心理学接続を、どこまで report 層へ返せるかの次 task を切る
 
 ### 3.4 ブロッカー
 
