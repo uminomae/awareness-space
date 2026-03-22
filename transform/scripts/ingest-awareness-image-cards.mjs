@@ -5,11 +5,12 @@ import {
     buildImageCardsManifest,
     createAutoCardMeta,
     findOrphanImages,
+    formatLocalDate,
 } from './build-awareness-image-cards.mjs';
 
 export async function ingestAwarenessImageCards({
     awarenessAssetsRoot = '/Users/uminomae/dev/pjdhiro/assets/awareness',
-    generatedAt = new Date().toISOString().slice(0, 10),
+    generatedAt = formatLocalDate(),
 } = {}) {
     const itemsDir = path.join(awarenessAssetsRoot, 'image-cards/items');
     const manifestPath = path.join(awarenessAssetsRoot, 'manifests/image-cards.json');
@@ -24,7 +25,7 @@ export async function ingestAwarenessImageCards({
         created.push(path.basename(metaPath));
     }
 
-    const payload = await buildImageCardsManifest({
+    const { payload, skippedDrafts } = await buildImageCardsManifest({
         itemsDir,
         manifestPath,
         generatedAt,
@@ -33,14 +34,18 @@ export async function ingestAwarenessImageCards({
     return {
         created,
         payload,
+        skippedDrafts,
     };
 }
 
 async function main() {
     const result = await ingestAwarenessImageCards();
-    console.log(`image cards ingest complete: ${result.payload.cards.length} cards / created ${result.created.length} sidecars`);
+    console.log(`image cards ingest complete: ${result.payload.cards.length} cards / created ${result.created.length} draft sidecars / skipped ${result.skippedDrafts.length} drafts`);
     for (const filename of result.created) {
-        console.log(`created: ${filename}`);
+        console.log(`created draft sidecar: ${filename}`);
+    }
+    for (const draft of result.skippedDrafts) {
+        console.log(`draft not published: ${draft.slug}`);
     }
 }
 

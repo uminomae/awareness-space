@@ -19,5 +19,6 @@ test('control-guide markup keeps an explanatory comment for hidden state', () =>
 test('image cards section exists in model area', () => {
     assert.match(indexHtml, /id="image-card-grid"/);
     assert.match(indexHtml, /id="image-card-grid" class="row row-cols-1 row-cols-md-3 g-3 awareness-card-grid"/);
-    assert.match(indexHtml, /Interpretation Cards/);
+    assert.match(indexHtml, /Divergent Thinking Notes/);
+    assert.match(indexHtml, /意識モデルについて思考した際のメモや図解です。/);
 });

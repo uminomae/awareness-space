@@ -4,6 +4,9 @@ import assert from 'node:assert/strict';
 import {
     buildImageCardModalHtml,
     localizeImageCard,
+    resolveImageCardsAssetBaseUrl,
+    resolveImageCardsManifestUrl,
+    shouldUseLocalAwarenessAssets,
     sortImageCards,
 } from '../src/image-cards.js';
 
@@ -31,6 +34,24 @@ test('sortImageCards orders by sort_order then slug', () => {
     ]);
 
     assert.deepEqual(sorted.map((card) => card.slug), ['c', 'a', 'b']);
+});
+
+test('local preview switches image-card assets to local pjdhiro path', () => {
+    const locationLike = {
+        origin: 'http://127.0.0.1:3003',
+        hostname: '127.0.0.1',
+        search: '',
+    };
+
+    assert.equal(shouldUseLocalAwarenessAssets(locationLike), true);
+    assert.equal(
+        resolveImageCardsManifestUrl(locationLike),
+        'http://127.0.0.1:3003/__pjdhiro/assets/awareness/manifests/image-cards.json',
+    );
+    assert.equal(
+        resolveImageCardsAssetBaseUrl(locationLike),
+        'http://127.0.0.1:3003/__pjdhiro/assets/awareness',
+    );
 });
 
 test('buildImageCardModalHtml includes image, comment, and links', () => {

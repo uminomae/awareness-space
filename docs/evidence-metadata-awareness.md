@@ -126,6 +126,8 @@ awareness-space/src/image-cards.js
 ```
 
 image cards は markdown modal を前提にせず、manifest の `title_*` / `comment_*` / `image` をそのままカード UI に使う。
+`review_status: "draft"` の sidecar と、旧来の generic 自動コメントは manifest に載せない。
+公開用 `comment_*` は、図が何を表現しているかを短く要約する。可視要素の列挙や「図として読める」というメタ説明は避ける。
 
 ## 4. 更新タイミング
 
@@ -141,4 +143,6 @@ image cards は markdown modal を前提にせず、manifest の `title_*` / `co
 - front matter に `generator_model` / `generated` があること
 - manifest root に `generated_at` があること
 - manifest entry / file の metadata が source markdown と矛盾しないこと
+- image cards は公開対象のみが manifest に載り、draft sidecar が混入していないこと
+- image cards の `comment_*` が theme-only / auto-ingest / 図として読める型の文になっていないこと
 - UI 表示が `モデル` / `生成日` の文言で揃っていること

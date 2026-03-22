@@ -5,6 +5,7 @@ import { getReportsStrings } from './reports/render.js';
 const PJDHIRO_PAGES_BASE = 'https://uminomae.github.io/pjdhiro';
 const PJDHIRO_RAW_BASE = 'https://raw.githubusercontent.com/uminomae/pjdhiro/main';
 const AWARENESS_PATH = '/assets/awareness';
+const LOCAL_AWARENESS_PATH = '/__pjdhiro/assets/awareness';
 const PJDHIRO_AWARENESS_PAGES = `${PJDHIRO_PAGES_BASE}${AWARENESS_PATH}`;
 const PJDHIRO_AWARENESS_RAW = `${PJDHIRO_RAW_BASE}${AWARENESS_PATH}`;
 const IMAGE_CARDS_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/image-cards.json`;
@@ -39,6 +40,42 @@ const state = {
 
 function getStrings(lang = 'ja') {
     return STRINGS[normalizeLang(lang)] || STRINGS.ja;
+}
+
+function getCurrentLocation() {
+    return typeof window !== 'undefined' ? window.location : null;
+}
+
+export function shouldUseLocalAwarenessAssets(locationLike = getCurrentLocation()) {
+    if (!locationLike) return false;
+    const params = new URLSearchParams(locationLike.search || '');
+    const override = (params.get('assets') || '').trim().toLowerCase();
+    if (override === 'local') return true;
+    if (override === 'remote') return false;
+    return locationLike.hostname === 'localhost' || locationLike.hostname === '127.0.0.1';
+}
+
+function getLocationOrigin(locationLike = getCurrentLocation()) {
+    if (!locationLike) return '';
+    if (typeof locationLike.origin === 'string' && locationLike.origin) return locationLike.origin;
+    if (typeof locationLike.protocol === 'string' && typeof locationLike.host === 'string') {
+        return `${locationLike.protocol}//${locationLike.host}`;
+    }
+    return '';
+}
+
+export function resolveImageCardsManifestUrl(locationLike = getCurrentLocation()) {
+    if (shouldUseLocalAwarenessAssets(locationLike)) {
+        return `${getLocationOrigin(locationLike)}${LOCAL_AWARENESS_PATH}/manifests/image-cards.json`;
+    }
+    return IMAGE_CARDS_MANIFEST_URL;
+}
+
+export function resolveImageCardsAssetBaseUrl(locationLike = getCurrentLocation()) {
+    if (shouldUseLocalAwarenessAssets(locationLike)) {
+        return `${getLocationOrigin(locationLike)}${LOCAL_AWARENESS_PATH}`;
+    }
+    return PJDHIRO_AWARENESS_PAGES;
 }
 
 export function localizeImageCard(card, lang = 'ja') {
@@ -92,7 +129,7 @@ export function buildImageCardModalHtml(card, lang = 'ja') {
 
 function resolvePublishedAssetUrl(relativePath = '') {
     if (!relativePath) return '';
-    return `${PJDHIRO_AWARENESS_PAGES}/${relativePath.replace(/^\/+/, '')}`;
+    return `${resolveImageCardsAssetBaseUrl()}/${relativePath.replace(/^\/+/, '')}`;
 }
 
 function cacheDom() {
@@ -213,7 +250,7 @@ function renderImageCards() {
     state.dom.grid.appendChild(fragment);
 }
 
-export async function initImageCards({ lang = 'ja', dataUrl = IMAGE_CARDS_MANIFEST_URL } = {}) {
+export async function initImageCards({ lang = 'ja', dataUrl = resolveImageCardsManifestUrl() } = {}) {
     cacheDom();
     state.lang = normalizeLang(lang);
     state.generatedAt = '';
