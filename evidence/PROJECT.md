@@ -2,7 +2,7 @@
 
 **状態**: 進行中
 **開始**: 2026-03
-**更新**: 2026-03-18
+**更新**: 2026-03-22
 
 ## 0. 戦略
 
@@ -100,27 +100,32 @@
 - 背景試作は `src/backgrounds/` に昇格済み
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
 - `#60`, `#61` は完了済み
-- 現在の open Issue は `#69`, `#76`
+- `#69`, `#76`, `#78`, `#81`, `#83`, `#84` は完了済み
+- 現在の open Issue は `#85`, `#86`, `#87`
 - source map の正本は `evidence/review/core-source-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
 - 調査設計メモ本体は `evidence/review/research-design.md`
 - 発達心理学設計の正本は `evidence/review/developmental-psychology-design.md`
 - 神経現象学設計の正本は `evidence/review/neurophenomenology-design.md`
+- `survey-status.md` が示す未整備論点は、神経現象学接続、発達心理学接続、「すぐ反応しない」現象群の再記述へ絞られている
 
 ### 3.2 現在の主作業
 
-- `#69` で rename 残差と M1 導線を 4層モデルへ吸収する
-- `#76` で guides / survey / domains の metadata 契約と modal 表示を `creation-space` に揃える
+- `#87` で神経現象学 intake map を正本化する
+- `#85` で発達心理学 intake map を正本化する
+- `#86` で「すぐ反応しない」現象群を再抽出し、`Withhold` 候補を再判定する
 
 ### 3.3 次のアクション
 
-- `#69` を閉じられる水準まで legacy 名称と stale 導線を掃除する
-- `#76` で `generator_model` / `generated_at` / `generated` の source of truth を正本化する
-- guide と report の対応表を強める
+- `#87` を最優先で進め、神経現象学 source を一人称記述単位の観点で束ねる
+- `#85` で愛着 / 安全基地 / 関係安全性 / 修復可能性の source 束を正本化する
+- `#86` で `P-xxx` 台帳を v1 に更新し、`Withhold` の扱いを維持 / 分解 / 保留で再判定する
+- intake map の結果を受けて guide / survey / report へ返す優先順を再計画する
 
 ### 3.4 ブロッカー
 
-- awareness 固有の metadata 正本と survey manifest が未整備
+- intake map の正本がまだなく、神経現象学・発達心理学の source 束が survey / report に返し切れていない
+- `Withhold` を reader-facing にどこまで独立概念として見せるかの判断がまだ揺れている
 
 ## 4. ファイル構成
 
