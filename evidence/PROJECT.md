@@ -101,8 +101,10 @@
 - Phase 1 の親 Issue `#6`, `#9`, `#21` は完了済み
 - `#60`, `#61` は完了済み
 - `#69`, `#76`, `#78`, `#81`, `#83`, `#84` は完了済み
-- 現在の open Issue は `#85`, `#87`
+- `#87` は完了済み
+- 現在の open Issue は `#85`
 - source map の正本は `evidence/review/core-source-map.md`
+- 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
 - 調査設計メモ本体は `evidence/review/research-design.md`
 - 発達心理学設計の正本は `evidence/review/developmental-psychology-design.md`
@@ -111,13 +113,12 @@
 
 ### 3.2 現在の主作業
 
-- `#87` で神経現象学 intake map を正本化する
 - `#85` で発達心理学 intake map を正本化する
 
 ### 3.3 次のアクション
 
-- `#87` を最優先で進め、神経現象学 source を一人称記述単位の観点で束ねる
-- `#85` で愛着 / 安全基地 / 関係安全性 / 修復可能性の source 束を正本化する
+- `#85` を最優先で進め、愛着 / 安全基地 / 関係安全性 / 修復可能性の source 束を正本化する
+- `#87` の intake map を受けて、神経現象学接続を survey / guide / report にどう返すかを詰める
 - intake map の結果を受けて guide / survey / report へ返す優先順を再計画する
 
 ### 3.4 ブロッカー

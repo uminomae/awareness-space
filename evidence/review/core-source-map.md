@@ -56,7 +56,6 @@
 | `knowledge/domains/four-layers/` | 生存-信頼軸と意識記述の初期構造 | 主要 source |
 | `knowledge/concepts/CN-*.md` | 仮説補助、概念の枝分かれ | 主要 source |
 | `knowledge/schema/four-modules.md` | 構成整理の補助 | 支持 source |
-| `knowledge/schema/withhold-matching-v2.md` | 周辺仮説の参照 | 周辺 source |
 
 ### 3-3. Layer C: 周辺の補助 source
 
@@ -103,12 +102,6 @@
 - **位置づけ**: 主要 source
 - **使い方**: 主要 report の補助線、論点分解、将来の exploration
 
-### 4-7. Withhold
-
-- **役割**: 周辺仮説
-- **位置づけ**: 中核ではない
-- **使い方**: 必要な場面で限定的に参照する
-
 ## 5. 今後の intake / report 優先順
 
 ### 優先度 A
@@ -126,8 +119,7 @@
 
 ### 優先度 C
 
-1. Withhold
-2. creation-space-refs 再構築後の取り込み
+1. creation-space-refs 再構築後の取り込み
 
 ## 6. `#44` 配下の次の実装候補
 

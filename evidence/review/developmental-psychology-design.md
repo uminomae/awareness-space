@@ -10,7 +10,7 @@
 ## 1. 目的
 
 発達心理学調査の目的は、
-意識モデルの中で 信頼軸、Withhold、関係調整が成立する条件を、
+意識モデルの中で 信頼軸と関係調整が成立する条件を、
 発達的な観点から整理することである。
 
 `awareness-space` では、発達心理学を用いて、
@@ -25,7 +25,7 @@
 
 ### 主質問 A
 
-愛着は、Withhold の発達基盤としてどこまで扱えるか。
+愛着は、信頼軸の発達基盤としてどこまで扱えるか。
 
 ここでは特に、
 
@@ -99,7 +99,7 @@
 
 といった語のうち、どれが 信頼軸の中核に近いかを整理する。
 
-### 5-2. Withhold の成立条件を発達的に支える
+### 5-2. 関係安全性の成立条件を発達的に支える
 
 - 安定した関係
 - 安全基地
@@ -123,14 +123,13 @@
 4. `knowledge/concepts/CN-006_trust-analysis-axes.md`
 5. `knowledge/concepts/CN-007_iss42-measurement-design-principles.md`
 6. `knowledge/survival-trust-axis-starting-memo.md`
-7. `knowledge/domains/withhold/ja/report.md`
-8. `knowledge/domains/survival-trust-axis/ja/report.md`
+7. `knowledge/domains/survival-trust-axis/ja/report.md`
 
 ## 7. この調査から次に分解される Issue
 
 1. 愛着 / 安全基地 / 内的作業モデルの source reading
 2. 信頼 / 間主観性 / 関係安全性の source reading
-3. Withhold の発達基盤を整理するメモ
+3. 関係安全性の発達基盤を整理するメモ
 
 ## 8. 完了条件
 
