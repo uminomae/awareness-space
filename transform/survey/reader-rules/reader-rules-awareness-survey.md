@@ -1,4 +1,4 @@
-# 変換ルール: awareness survey版 v0.2
+# 変換ルール: awareness survey版 v0.3
 
 **対象コンテンツ**: awareness-space の調査目的、方法、素材、導線  
 **対象読者**: `awareness-space` の「調査内容」ボタンから到達する読者  
@@ -9,7 +9,8 @@
 
 - `awareness-space/evidence/PROJECT.md`
 - `awareness-space/docs/material-inventory.md`
-- `awareness-space/evidence/d01-d30-intake-plan.md`
+- `awareness-space/evidence/review/neurophenomenology-intake-map.md`
+- `awareness-space/evidence/review/developmental-psychology-intake-map.md`
 - `awareness-space/evidence/review/survey-5w1h-source-map.md`
 - `creation-space/transform/survey/reader-rules/reader-rules-creation-survey.md`
 
@@ -68,7 +69,6 @@ awareness では D01-D30 一覧ではなく、次の系統を整理する。
 - guide は summary、report は論拠、design memo は未検証・設計中の層として区別する
 - 神経現象学と心理学的知見の統合を中心に据える
 - 生存-信頼軸は「この repo の特徴的仮説」であり、是非の検証対象として扱う
-- `抱持` は独立概念として前提にせず、「すぐ反応しない」現象群を束ねていた仮ラベルとして扱う
 - 過去素材は歴史的 source としてのみ参照し、現在の正本・命名源・理論権威として扱わない
 - 公開版 front matter には `source`, `rules` を出さない
 - 公開版 front matter には `generator_model`, `generated` を出す
@@ -114,6 +114,7 @@ date: {YYYY-MM-DD}
 - report-backed と plan-only の区別が読者に見える
 - D01-D30 の扱いが「比較素材」であると明記されている
 - 神経現象学 / 発達心理を含む心理学領域が調査重心として書かれている
+- 神経現象学と発達心理学の主要論点が intake map に整合している
 - 生存-信頼軸が仮説検証対象として記述されている
 - 次に読むべき文書への導線がある
 - 内部 Issue 番号や phase 進捗の羅列になっていない
