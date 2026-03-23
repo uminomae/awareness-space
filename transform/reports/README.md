@@ -18,3 +18,11 @@
 
 まだ report 出力自体は未整備。
 まずはトップページの調査報告セクションと接続する入口として使う。
+
+## 入口
+
+- UI 入口: `index.html` の `#reports-section`
+- 初期化: `src/reports/index.js`
+- 描画: `src/reports/render.js`
+- データ解決: `src/reports/data.js`
+- modal / 履歴同期: `src/reports/modal.js`, `src/reports/history.js`
