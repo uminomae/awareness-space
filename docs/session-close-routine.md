@@ -21,6 +21,7 @@
 - 閉じた Issue / 残った Issue
 - 次セッションの自然な着手先
 - **この対話で起きた問題**
+- **この対話で得た知見**
 
 ### 2. 再利用するルール
 
@@ -54,6 +55,7 @@
 4. `bash scripts/check-issue-close-state.sh` を実行し、DONE と GitHub Issue 状態の不整合を洗い出す
 5. Issue 作業がある場合は、各 Issue の comment / close / `REVIEW-*` / `DONE-*` を確認する
 6. `.cache/outbox/DONE-session-{YYYYMMDD}.md` を更新または作成する
+   - 「今回の要点」「問題」「知見」を分けて残す
 7. recurring な問題があれば本ファイルか `docs/standing-approvals.md` に昇格する
 8. worktree が clean、または dirty 理由が closeout に書かれていることを確認して終了する
 

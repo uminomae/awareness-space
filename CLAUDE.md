@@ -48,6 +48,7 @@
 4. `develop` 作業なら `git pull --rebase origin develop` の後に `git push origin develop`
 5. `bash scripts/check-issue-close-state.sh` で DONE と Issue 状態の整合を確認する
 6. `.cache/outbox/` に review / DONE を残す運用を優先する
+7. `DONE-session` には問題だけでなく、その対話で得た知見も残す
 
 ## 指示書 / 完了報告
 
