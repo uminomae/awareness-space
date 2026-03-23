@@ -102,9 +102,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の open 実装線: `#69` 生存-信頼軸 rename 残差と M1 導線の整理、`#76` metadata/UI 契約の creation-space 整合
+- 現在の open 実装線: `#92` 生存-信頼軸 report に発達心理学 intake を反映する、`#94` creation-space parity map と模倣実装バックログを整備する
 - Phase 2 の初期統合フェーズは完了
-- 次は名称・metadata 契約の残差を詰め、report 間の境界と相互参照を強める段階
+- 次は `#92` の closeout と、`#94` に沿った parity / workflow / shell 残差の逐次整備を進める段階
 
 ## 8. ローカル作業領域
 
