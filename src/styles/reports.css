@@ -154,6 +154,15 @@
   margin: 0 0 0.85rem;
 }
 
+.reports-level-legend-prefix {
+  color: rgba(var(--color-heading), 0.56);
+  letter-spacing: 0.08em;
+}
+
+.reports-level-legend-description {
+  color: rgba(var(--color-sub-text), 0.72);
+}
+
 .reports-progress-chip {
   border: 1px solid rgba(var(--reports-palette-rgb), 0.42);
   background: linear-gradient(180deg, rgba(var(--reports-palette-rgb), 0.22), rgba(var(--reports-palette-rgb), 0.14));

@@ -182,8 +182,74 @@ export function createReportsRenderer({
 
     function renderLevelLegend() {
         if (!state.dom.levelLegend) return;
-        state.dom.levelLegend.textContent = '';
-        state.dom.levelLegend.classList.add('d-none');
+
+        const strings = getReportsStrings(state.lang);
+        const legendNode = state.dom.levelLegend;
+        const presentTaxonomy = getPresentProgressTaxonomy();
+        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
+
+        legendNode.classList.remove('d-none');
+
+        if (!presentTaxonomy.length) {
+            legendNode.textContent = state.loadError ? strings.levelLegendUnavailable : strings.levelLegend;
+            return;
+        }
+
+        if (presentTaxonomy.length === 1) {
+            const level = presentTaxonomy[0].id;
+            const count = state.progressLevelCounts[level] || 0;
+            const label = getProgressLevelLabel(level);
+            const description = getProgressLevelDescription(level);
+            const summaryText = strings.levelLegendSingle
+                .replace('{count}', String(count))
+                .replace('{label}', label);
+
+            legendNode.innerHTML = '';
+
+            const summaryNode = document.createElement('span');
+            summaryNode.className = 'd-block';
+            summaryNode.textContent = summaryText;
+            legendNode.appendChild(summaryNode);
+
+            if (description) {
+                const descNode = document.createElement('span');
+                descNode.className = 'reports-level-legend-description d-block mt-1';
+                descNode.textContent = `${label}: ${description}`;
+                legendNode.appendChild(descNode);
+            }
+            return;
+        }
+
+        legendNode.innerHTML = '';
+
+        const fragment = document.createDocumentFragment();
+        const prefixNode = document.createElement('span');
+        prefixNode.className = 'reports-level-legend-prefix d-block mb-1';
+        prefixNode.textContent = `${strings.levelLegendPrefix}:`;
+        fragment.appendChild(prefixNode);
+
+        presentTaxonomy.forEach((entry) => {
+            const paletteClass = getProgressPaletteClass(entry.id, paletteMap);
+            const lineNode = document.createElement('span');
+            lineNode.className = 'reports-level-legend-line d-flex align-items-start gap-2 mt-1';
+
+            const labelNode = document.createElement('span');
+            labelNode.className = `badge rounded-pill reports-progress-chip reports-level-legend-label ${paletteClass}`;
+            labelNode.textContent = getProgressLevelLabel(entry.id);
+            lineNode.appendChild(labelNode);
+
+            const description = getProgressLevelDescription(entry.id);
+            if (description) {
+                const descriptionNode = document.createElement('span');
+                descriptionNode.className = 'reports-level-legend-description';
+                descriptionNode.textContent = description;
+                lineNode.appendChild(descriptionNode);
+            }
+
+            fragment.appendChild(lineNode);
+        });
+
+        legendNode.appendChild(fragment);
     }
 
     function createFilterButton({ filterKey, label, isActive, paletteClass = '' }) {
@@ -205,10 +271,44 @@ export function createReportsRenderer({
 
     function updateFilterButtons() {
         if (!state.dom.filterGroup) return;
-        state.tableFilter = 'all';
+
+        const strings = getReportsStrings(state.lang);
+        const presentTaxonomy = getPresentProgressTaxonomy();
+        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
+
+        if (presentTaxonomy.length <= 1) {
+            state.tableFilter = 'all';
+            state.dom.filterGroup.innerHTML = '';
+            state.dom.filterGroup.classList.remove('d-flex');
+            state.dom.filterGroup.classList.add('d-none');
+            return;
+        }
+
+        state.dom.filterGroup.classList.remove('d-none');
+        state.dom.filterGroup.classList.add('d-flex');
+
+        if (!getAvailableFilterKeys().has(state.tableFilter)) {
+            state.tableFilter = 'all';
+        }
+
+        const fragment = document.createDocumentFragment();
+        fragment.appendChild(createFilterButton({
+            filterKey: 'all',
+            label: strings.filterAll,
+            isActive: state.tableFilter === 'all',
+        }));
+
+        presentTaxonomy.forEach((entry) => {
+            fragment.appendChild(createFilterButton({
+                filterKey: entry.id,
+                label: getProgressLevelLabel(entry.id),
+                isActive: state.tableFilter === entry.id,
+                paletteClass: getProgressPaletteClass(entry.id, paletteMap),
+            }));
+        });
+
         state.dom.filterGroup.innerHTML = '';
-        state.dom.filterGroup.classList.remove('d-flex');
-        state.dom.filterGroup.classList.add('d-none');
+        state.dom.filterGroup.appendChild(fragment);
     }
 
     function createMetricCard(label, value, { paletteClass = '' } = {}) {
