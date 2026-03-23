@@ -39,7 +39,7 @@
 | domains workflow | `transform/domains/`, `transform/scripts/build-pdf-guide.sh` | `transform/domains/`, `transform/scripts/build-pdf-guide.sh` | 概ね整備済み | 追加実装時は `transform/domains/WORKFLOW.md` との差分検査を先に行う。2026-03-24 に `transform/domains/README.md` へ既存公開物の配置先を明記済み |
 | guides / survey workflow | `transform/guides/`, `transform/survey/` | `transform/guides/`, `transform/survey/` | 進行中 | reader-rules と publish 契約の parity を継続監視する。2026-03-24 に `guides/README.md` へ audience 別正本、`survey/README.md` へ domains 導線を追記済み。`creation-space` にある `guides/WORKFLOW.md` に対応して awareness 側にも end-to-end 手順書を追加済み |
 | image-cards workflow | `transform/image-cards/README.md`, `transform/scripts/ingest-awareness-image-cards.mjs` | direct 対応なし | awareness 固有 | 2026-03-24 に `transform/image-cards/README.md` へ creation-space に direct 対応がない awareness 固有 workflow だと明記済み |
-| dev / runtime 補助 | `src/main.js`, `src/dev-*`, `src/background-mode.js` | `src/main.js`, `src/dev-*`, `src/background-mode.js` | 進行中 | shell chrome を追加するときは dev mode 表示と競合させない |
+| dev / runtime 補助 | `src/main.js`, `src/main-runtime-context.js`, `src/main-dev-runtime.js`, `src/dev-*`, `src/background-mode.js` | `src/main.js`, `src/main-runtime-context.js`, `src/main-dev-runtime.js`, `src/dev-*`, `src/background-mode.js` | 進行中 | shell chrome を追加するときは dev mode 表示と競合させない。2026-03-24 に runtime context と dev chrome 補助を `main.js` から切り出し、creation-space に近い責務分離へ寄せ始めた |
 
 ## 実装優先順
 

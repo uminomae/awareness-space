@@ -1,8 +1,9 @@
 import { DEV_VERSION, DEV_VERSION_DATE } from './version.js';
 import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-error-overlay.js';
-import { applySceneState, getDefaultSceneState, getScenePresetVersion } from './dev-panel-data.js';
-import { createSceneStateStore } from './dev-scene-state.js';
+import { applySceneState, getDefaultSceneState } from './dev-panel-data.js';
 import { initDevAuxTools, initDevPanelRuntime } from './dev-runtime.js';
+import { applyMainDevChrome, createMainDevStatsTicker } from './main-dev-runtime.js';
+import { createMainRuntimeContext } from './main-runtime-context.js';
 import { initFontSizeCtrl } from './font-size-ctrl.js';
 import { initMobileNavAutoCollapse } from './topbar-nav.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
@@ -36,60 +37,6 @@ function initHashLinks() {
         });
     });
 }
-
-function isDevMode() {
-    return new URL(window.location.href).searchParams.has('dev');
-}
-
-function formatDevVersionLabel(version) {
-    return typeof version === 'string' && version
-        ? version.replace(/\.\d+$/, '')
-        : '';
-}
-
-function applyDevChrome(devMode) {
-    const versionNode = document.getElementById('dev-version-inline');
-    const componentsLink = document.getElementById('dev-components-link');
-
-    if (versionNode) {
-        if (devMode) {
-            versionNode.hidden = false;
-            versionNode.textContent = formatDevVersionLabel(DEV_VERSION);
-            versionNode.title = `${DEV_VERSION} / ${DEV_VERSION_DATE}`;
-        } else {
-            versionNode.hidden = true;
-            versionNode.textContent = '';
-        }
-    }
-
-    if (componentsLink) {
-        componentsLink.classList.toggle('is-visible', devMode);
-    }
-}
-
-function createDevStatsTicker() {
-    let begin = () => {};
-    let end = () => {};
-    let rafId = 0;
-
-    function tick() {
-        begin();
-        end();
-        rafId = window.requestAnimationFrame(tick);
-    }
-
-    return {
-        setHandlers(nextBegin, nextEnd) {
-            begin = typeof nextBegin === 'function' ? nextBegin : (() => {});
-            end = typeof nextEnd === 'function' ? nextEnd : (() => {});
-        },
-        start() {
-            if (rafId) return;
-            rafId = window.requestAnimationFrame(tick);
-        },
-    };
-}
-
 function startScrollUiLoop() {
     let frameId = 0;
     const startedAt = performance.now();
@@ -111,12 +58,9 @@ function startScrollUiLoop() {
 }
 
 function start() {
-    const devMode = isDevMode();
-    const devStatsTicker = createDevStatsTicker();
-    const sceneStateStore = createSceneStateStore({
-        enabled: devMode,
-        getPresetVersion: getScenePresetVersion,
-    });
+    const runtimeContext = createMainRuntimeContext();
+    const { devMode, sceneStateStore } = runtimeContext;
+    const devStatsTicker = createMainDevStatsTicker();
     const sceneStateCache = new Map();
     let activeDevPanel = null;
 
@@ -177,7 +121,11 @@ function start() {
     initFontSizeCtrl();
     initMobileNavAutoCollapse();
     initScrollUI();
-    applyDevChrome(devMode);
+    applyMainDevChrome({
+        devMode,
+        devVersion: DEV_VERSION,
+        devDate: DEV_VERSION_DATE,
+    });
     const backgroundController = initBackgroundModeSwitcher({
         onModeChange: (sceneVariant) => {
             syncControlGuideVisibility(sceneVariant);
