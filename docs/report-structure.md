@@ -1,6 +1,6 @@
 # 調査報告の構造メモ
 
-`awareness-space` の REPORTS を、どのファイルが何を担うかで整理した現状メモ。
+`awareness-space` の RESEARCH セクションに載る report 群を、どのファイルが何を担うかで整理した現状メモ。
 
 ## 1. 目的
 
@@ -8,7 +8,7 @@
 `awareness-space` 側でも「一覧で見つける」「カードで入口を掴む」「詳細本文を読む」を
 同じ導線で扱えるようにする。
 
-同時に、REPORTS は guide を裏づける **論拠層** であり、
+同時に、report 群は guide を裏づける **論拠層** であり、
 guide を単独説明文にしないための対応先として機能する。
 
 ## 2. 現在の3層構造
@@ -21,7 +21,7 @@ guide を単独説明文にしないための対応先として機能する。
 
 `transform/domains/publish/domains/index.json`
 
-- REPORTS セクションの正本データ
+- RESEARCH セクションに載る report 一覧の正本データ
 - 各 report の ID、名前、進捗、summary、Markdown / PDF 参照先を持つ
 - `creation-space` の domains manifest を、`awareness-space` の domain 単位へ読み替えたもの
 
@@ -44,7 +44,7 @@ manifest を読み込み、
 
 ## 3. report と source_ready の違い
 
-`awareness-space` の REPORTS では、すべてのカードが同じ成熟度ではない。
+`awareness-space` の RESEARCH セクションでは、すべてのカードが同じ成熟度ではない。
 
 - `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal で参照できる
 - `source_ready`: overview や移設済み素材には到達できるが、domain report 本文はまだない
@@ -66,7 +66,7 @@ manifest を読み込み、
 - design memo: `evidence/review/`
 
 `transform/reports/` は将来の拡張用に保持しているが、
-現在の REPORTS セクション実装は `transform/domains/` manifest を起点にしている。
+現在の RESEARCH セクション実装は `transform/domains/` manifest を起点にしている。
 
 ## 5. 計画書として扱うもの
 

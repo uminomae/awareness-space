@@ -24,7 +24,7 @@
 
 - `creation-space` と同じサイトの別ページに見えること
 - topbar / offcanvas / section 導線が 3本柱と一致すること
-- guide が summary であり、REPORTS / survey が論拠と現在地であることを読者が判別できること
+- guide が summary であり、RESEARCH / survey が論拠と現在地であることを読者が判別できること
 - 背景試作は `.cache` と `src/backgrounds/` を混同しないこと
 
 ## 4. 変更時チェック

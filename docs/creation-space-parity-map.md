@@ -45,19 +45,21 @@
 
 ### P1. shell parity の残差を埋める
 
-- footer / 下端 UI の parity 強化
-- 言語切替と連動する chrome 文言の整理
+- topbar / offcanvas / footer の細部差分を潰す
+- 言語切替と連動する chrome 文言 / aria の残差を整理する
 - `creation-space` の shell で学べる要素が `awareness-space` に未反映なら task 化する
 
 ### P2. workflow parity の点検を定期化する
 
 - `transform/` 配下の README / WORKFLOW / scripts を対応表で確認する
 - `creation-space` に追加された公開契約が awareness 側へ未反映なら ops/task を切る
+- `transform/reports/README.md` のような独自 workflow 入口も、UI 実装先が README から辿れる状態にする
 
 ### P3. awareness 固有分岐を明文化する
 
 - 同じ見た目でも主題差分で分岐した箇所は「意図的差分」として残す
 - 調査対象や terminology が違う箇所は parity から除外する理由を書く
+- `image-cards` のように direct 対応がない workflow は awareness 固有と明記する
 
 ## 直近の着手候補
 
@@ -70,3 +72,8 @@
 
 - `transform/` 配下の README を `creation-space` と1ファイルずつ照合する
 - 正本 / 公開配置 / 周辺 workflow への導線が弱い箇所を小さく追記する
+
+### 3. issue #94 のスコープを current state に追従させる
+
+- 初期案に残っている stale な実装項目を削る
+- 実際に進めている shell / workflow / reports 導線の整備へ説明を寄せる
