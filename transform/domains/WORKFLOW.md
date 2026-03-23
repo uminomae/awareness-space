@@ -49,16 +49,77 @@ FAIL が1件でもあれば生成に戻る。
 
 ### Step 5: 公開整形
 
-現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` と manifest へ反映する。
+`knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` へ反映する。
 公開時は JA/EN を同時に更新する。
 公開本文は外部向けの一般的なトーンを守り、repo 相対パス・内部運用語・アンカータグを含む生HTMLを含めない。
-domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
-将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
+
+### Step 6: PDF 生成 + manifest 更新
+
+`creation-space` と同じく、
+domains でも **同じ公開用 MD を単一正本** として PDF を生成する。
+
+```bash
+cd /Users/uminomae/dev/awareness-space
+bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
+```
+
+このコマンドで次を行う。
+
+1. `pjdhiro/assets/awareness/domains/{lang}/md/*.md` を入力に PDF を生成
+2. `pjdhiro/assets/awareness/domains/{lang}/pdf/*.pdf` を更新
+3. `transform/domains/publish/domains/index.json` を更新
+4. `pjdhiro/assets/awareness/manifests/domains.json` を更新
+
+出力確認:
+
+```text
+pjdhiro/assets/awareness/domains/ja/pdf/<slug>.pdf
+pjdhiro/assets/awareness/domains/en/pdf/<slug>.pdf
+```
+
+### Step 7: pjdhiro 側 commit & push
+
+`creation-space` と同じく、
+公開 assets は `pjdhiro/main` に commit / push する。
+
+```bash
+cd /Users/uminomae/dev/pjdhiro
+git add assets/awareness/domains/ assets/awareness/manifests/domains.json
+git diff --stat
+git commit -m "publish awareness assets YYYY-MM-DD"
+git push origin main
+```
+
+### Step 8: awareness-space 側 commit & push
+
+```bash
+cd /Users/uminomae/dev/awareness-space
+git add -A
+git commit -m "docs: regenerate awareness domain reports"
+git push origin develop
+```
+
+### Step 9: awareness-space develop → main マージ
+
+`creation-space` と同じく、
+source repo 側でも develop を main へ反映して公開作業を閉じる。
+
+```bash
+cd /Users/uminomae/dev/awareness-space
+git switch main
+git merge develop
+git push origin main
+git switch develop
+```
 
 metadata の情報フロー:
 
 ```text
 knowledge/domains/*/{ja,en}/report.md
+    ↓
+pjdhiro/assets/awareness/domains/{ja,en}/md/*.md
+    ↓
+pjdhiro/assets/awareness/domains/{ja,en}/pdf/*.pdf
     ↓
 transform/domains/publish/domains/index.json
     ↓
@@ -89,7 +150,8 @@ FAIL が出た構成要素は分離して再生成する。
 1. 日本語版を起点に EN 翻訳下書きを作成
 2. `knowledge/domains/<slug>/en/report.md` 作成
 3. `quality-test-awareness-report.md` を翻訳版にも適用
-4. 用語統一を確認し、JA/EN を同時に公開
+4. `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all`
+5. 用語統一を確認し、JA/EN を同時に公開
 
 ## 読み替えルール（運用固定）
 

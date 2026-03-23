@@ -2,12 +2,12 @@
 
 ## 5W1H
 
-- **What**: guide / survey は公開用 Markdown / PDF、domains report は現状 Markdown 正本として扱う workflow 群。
+- **What**: guide / survey / domains report を、公開用 Markdown と必要な PDF に変換する workflow 群。
 - **Why**: `pjdhiro/assets/awareness/` を公開正本として育てるため。
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → 必要な出力（guides/survey は PDF、domains は Markdown 正本） → manifest 更新 → `pjdhiro/main` push の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → 公開用 MD を正本として必要な PDF を生成 → manifest 更新 → `pjdhiro/main` push の順で進む。
 
 **原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
 **共通原則**: [PRINCIPLES.md](PRINCIPLES.md)
@@ -27,7 +27,7 @@
 
 ### スクリプト
 
-`transform/scripts/build-pdf-guide.sh` — awareness guides / survey の PDF 生成スクリプト。
+`transform/scripts/build-pdf-guide.sh` — awareness guides / survey / domains の PDF 生成スクリプト。
 
 ### 使い方
 
@@ -43,6 +43,9 @@ bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
 
 # survey JA+EN
 bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
+
+# domains JA+EN
+bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
 
 # guides + survey + domains JA+EN + 公開 assets を commit/push
 bash transform/scripts/build-pdf-guide.sh --kind all --lang all --push
@@ -61,6 +64,7 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - survey Markdown: `pjdhiro/assets/awareness/survey/{lang}/md/`
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
 - domains Markdown: `pjdhiro/assets/awareness/domains/{lang}/md/`
+- domains PDF: `pjdhiro/assets/awareness/domains/{lang}/pdf/`
 - manifests: `pjdhiro/assets/awareness/manifests/`
 
 ### metadata

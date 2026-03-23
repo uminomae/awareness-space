@@ -134,7 +134,7 @@ image cards は markdown modal を前提にせず、manifest の `title_*` / `co
 - guide / survey 更新時:
   `transform/scripts/build-pdf-guide.sh` で PDF と manifests を更新する
 - domain report 更新時:
-  `transform/scripts/publish-awareness-domains.sh` で repo snapshot と public manifest を更新する
+  `transform/scripts/build-pdf-guide.sh --kind domains --lang all` で PDF を生成し、`transform/scripts/publish-awareness-domains.sh` で repo snapshot と public manifest を更新する
 - modal 表示変更時:
   `src/reports/modal.js`, `src/reports/data.js`, `src/reports/render.js` を同時確認する
 

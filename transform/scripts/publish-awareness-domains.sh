@@ -5,12 +5,15 @@ ROOT="/Users/uminomae/dev/awareness-space"
 PJDHIRO="/Users/uminomae/dev/pjdhiro/assets/awareness"
 DOMAINS_JA_MD_DIR="$PJDHIRO/domains/ja/md"
 DOMAINS_EN_MD_DIR="$PJDHIRO/domains/en/md"
+DOMAINS_JA_PDF_DIR="$PJDHIRO/domains/ja/pdf"
+DOMAINS_EN_PDF_DIR="$PJDHIRO/domains/en/pdf"
 MANIFEST_DIR="$PJDHIRO/manifests"
 LOCAL_MANIFEST="$ROOT/transform/domains/publish/domains/index.json"
 RAW_BASE="https://raw.githubusercontent.com/uminomae/pjdhiro/main/assets/awareness"
+PAGES_BASE="https://uminomae.github.io/pjdhiro/assets/awareness"
 DATE_STR="$(TZ=Asia/Tokyo date +%Y-%m-%d)"
 
-mkdir -p "$DOMAINS_JA_MD_DIR" "$DOMAINS_EN_MD_DIR" "$MANIFEST_DIR" "$(dirname "$LOCAL_MANIFEST")"
+mkdir -p "$DOMAINS_JA_MD_DIR" "$DOMAINS_EN_MD_DIR" "$DOMAINS_JA_PDF_DIR" "$DOMAINS_EN_PDF_DIR" "$MANIFEST_DIR" "$(dirname "$LOCAL_MANIFEST")"
 
 publish_domain() {
     local slug="$1"
@@ -21,13 +24,13 @@ publish_domain() {
 publish_domain "survival-trust-axis"
 publish_domain "four-layers"
 
-python3 - "$ROOT" "$RAW_BASE" "$DATE_STR" "$LOCAL_MANIFEST" "$MANIFEST_DIR/domains.json" <<'PY'
+python3 - "$ROOT" "$PJDHIRO" "$RAW_BASE" "$PAGES_BASE" "$DATE_STR" "$LOCAL_MANIFEST" "$MANIFEST_DIR/domains.json" <<'PY'
 import json
 import os
 import re
 import sys
 
-root, raw_base, date_str, local_manifest, public_manifest = sys.argv[1:]
+root, awareness_assets, raw_base, pages_base, date_str, local_manifest, public_manifest = sys.argv[1:]
 
 def read_frontmatter(path):
     if not os.path.isfile(path):
@@ -97,7 +100,7 @@ report_specs = [
     },
 ]
 
-def build_reports(md_builder):
+def build_reports(md_builder, pdf_builder):
     reports = []
     for spec in report_specs:
         slug = spec['slug']
@@ -107,11 +110,16 @@ def build_reports(md_builder):
             meta = read_frontmatter(os.path.join(root, 'knowledge', 'domains', slug, lang, 'report.md'))
             generator_model[lang] = meta.get('generator_model', '')
             generated[lang] = meta.get('generated') or meta.get('date', '')
+        pdf = {}
+        for lang in ('ja', 'en'):
+            pdf_path = os.path.join(awareness_assets, 'domains', lang, 'pdf', f'{slug}.pdf')
+            pdf[lang] = pdf_builder(slug, lang) if os.path.isfile(pdf_path) else None
         reports.append({
             **spec,
             'generator_model': generator_model,
             'generated': generated,
             'md': md_builder(slug),
+            'pdf': pdf,
         })
     return reports
 
@@ -123,7 +131,7 @@ local_payload = {
     'reports': build_reports(lambda slug: {
         'ja': f'./knowledge/domains/{slug}/ja/report.md',
         'en': f'./knowledge/domains/{slug}/en/report.md',
-    }),
+    }, lambda slug, lang: f'{pages_base}/domains/{lang}/pdf/{slug}.pdf'),
 }
 
 public_payload = {
@@ -134,7 +142,7 @@ public_payload = {
     'reports': build_reports(lambda slug: {
         'ja': f'{raw_base}/domains/ja/md/{slug}.md',
         'en': f'{raw_base}/domains/en/md/{slug}.md',
-    }),
+    }, lambda slug, lang: f'{pages_base}/domains/{lang}/pdf/{slug}.pdf'),
 }
 
 for path, payload in ((local_manifest, local_payload), (public_manifest, public_payload)):

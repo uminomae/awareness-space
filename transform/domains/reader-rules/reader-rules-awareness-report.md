@@ -60,11 +60,13 @@ repo 内運用、生成工程、内部整理の都合を本文へ露出しない
 ## 4. 公開契約
 
 - `domains` report の公開正本は `pjdhiro/assets/awareness/domains/{lang}/md/` に置く Markdown である。
-- 現時点の `domains` は **Markdown + manifest 更新** が公開契約であり、PDF はまだ正式契約に入っていない。
-- 将来 PDF を追加する場合も、公開用 MD を単一の正本として使い、別原稿を起こさない。
+- `domains` の公開契約は **Markdown + PDF + manifest 更新** である。
+- PDF は同じ公開用 MD を単一の正本として生成し、別原稿を起こさない。
 - JA / EN は公開時に同時整備を原則とする。
 - front matter には公開契約上必要な `title`, `lang`, `version`, `generated`, `generator_model`, `date` を入れる。
 - 公開版 front matter に `source`, `rules`, ローカルパス、内部メモを出さない。
+- 公開 assets は `pjdhiro/main` に push する。
+- source repo 側は `develop` で作業し、公開作業の完了時に `main` へ反映する。
 
 ## 5. 一人称 / 三人称の書き分け
 
@@ -159,7 +161,7 @@ repo 内運用、生成工程、内部整理の都合を本文へ露出しない
 - 一人称 / 三人称の区別が崩れていないこと
 - intake の返却範囲を越えていないこと
 - repo 相対パスやアンカータグを含む生HTMLが本文に露出していないこと
-- 公開契約が Markdown 正本である前提を崩していないこと
+- 公開契約が Markdown 正本 + PDF 生成である前提を崩していないこと
 
 ## 12. 再利用前提
 

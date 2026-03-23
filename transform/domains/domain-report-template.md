@@ -96,7 +96,7 @@
 ### E. public contract
 
 - 公開正本は Markdown である
-- 将来 PDF を作る場合も同じ公開用 MD を単一正本にする
+- PDF は同じ公開用 MD から生成する
 - JA / EN は公開時に同時整備する
 - front matter は公開用の最小項目だけを置き、内部メタデータを出さない
 

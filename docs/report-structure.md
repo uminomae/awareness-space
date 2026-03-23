@@ -22,7 +22,7 @@ guide を単独説明文にしないための対応先として機能する。
 `transform/domains/publish/domains/index.json`
 
 - REPORTS セクションの正本データ
-- 各 report の ID、名前、進捗、summary、Markdown 参照先を持つ
+- 各 report の ID、名前、進捗、summary、Markdown / PDF 参照先を持つ
 - `creation-space` の domains manifest を、`awareness-space` の domain 単位へ読み替えたもの
 
 ### カード/UI
@@ -81,4 +81,4 @@ manifest を読み込み、
 - report 間の相互参照を強める
 - guide の主要要点と report の対応表を強める
 - Concept Notes を個別 report へどう分解するか決める
-- PDF 出力や bilingual report の扱いを必要に応じて追加する
+- PDF と bilingual report を同じ公開用 MD から整備する

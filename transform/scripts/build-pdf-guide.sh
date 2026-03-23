@@ -22,6 +22,7 @@ AWARENESS_SPACE_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PJDHIRO_DIR="/Users/uminomae/dev/pjdhiro"
 GUIDES_BASE="$PJDHIRO_DIR/assets/awareness/guides"
 SURVEY_BASE="$PJDHIRO_DIR/assets/awareness/survey"
+DOMAINS_BASE="$PJDHIRO_DIR/assets/awareness/domains"
 MANIFESTS_DIR="$PJDHIRO_DIR/assets/awareness/manifests"
 PUBLISH_DOMAINS_SCRIPT="$AWARENESS_SPACE_ROOT/transform/scripts/publish-awareness-domains.sh"
 
@@ -292,6 +293,66 @@ build_survey() {
     return 0
 }
 
+build_domains() {
+    local lang="${1:-ja}"
+    local md_dir="$DOMAINS_BASE/${lang}/md"
+    local pdf_dir="$DOMAINS_BASE/${lang}/pdf"
+
+    local lang_label="JA"
+    [ "$lang" = "en" ] && lang_label="EN"
+    echo -e "${BLUE}📄 domains [${lang_label}] ビルド中...${NC}"
+
+    if [ ! -d "$md_dir" ] || [ -z "$(ls "$md_dir"/*.md 2>/dev/null)" ]; then
+        echo -e "  ${YELLOW}スキップ${NC}: $md_dir に .md がありません"
+        return 0
+    fi
+
+    mkdir -p "$pdf_dir"
+    mkdir -p "$AWARENESS_SPACE_ROOT/.build-tmp"
+
+    local success=0 fail=0
+    for md_file in "$md_dir"/*.md; do
+        [ -e "$md_file" ] || continue
+        local base
+        base="$(basename "$md_file" .md)"
+        local out="$pdf_dir/${base}.pdf"
+        local tmp="$AWARENESS_SPACE_ROOT/.build-tmp/_domain_${base}_${lang}.md"
+        local title
+        title="$(get_markdown_title "$md_file")"
+
+        echo -e "  ${BLUE}→${NC} ${base} [${lang_label}]"
+
+        if [ "$lang" = "en" ]; then
+            make_header_en "$title" "" > "$tmp"
+        else
+            make_header_ja "$title" "" > "$tmp"
+        fi
+
+        cat "$md_file" | strip_frontmatter >> "$tmp"
+
+        if pandoc "$tmp" \
+            -o "$out" \
+            --pdf-engine=lualatex \
+            --resource-path="$PJDHIRO_DIR/assets/awareness:$md_dir" \
+            --wrap=none \
+            2>&1 | sed 's/^/      /'; then
+            local size
+            size=$(du -k "$out" 2>/dev/null | cut -f1)
+            echo -e "    ${GREEN}✅${NC} ${base}.pdf (${size:-?} KB)"
+            success=$((success + 1))
+        else
+            echo -e "    ${RED}✗${NC} ビルド失敗: ${base}.pdf"
+            fail=$((fail + 1))
+        fi
+
+        rm -f "$tmp"
+    done
+
+    echo -e "  domains [${lang_label}]: ${success}成功 / ${fail}失敗"
+    [ "$fail" -gt 0 ] && return 1
+    return 0
+}
+
 update_manifests() {
     echo -e "${BLUE}📋 manifests 更新${NC}"
     mkdir -p "$MANIFESTS_DIR"
@@ -425,7 +486,7 @@ PY
 publish_domains() {
     echo -e "${BLUE}🧩 domains 公開物更新${NC}"
     bash "$PUBLISH_DOMAINS_SCRIPT"
-    echo -e "  ${GREEN}✓${NC} domains.json / domains markdown 更新完了"
+    echo -e "  ${GREEN}✓${NC} domains.json / domains markdown / domains pdf 更新完了"
 }
 
 push_pjdhiro_main() {
@@ -481,7 +542,7 @@ main() {
                 echo "使い方: bash transform/scripts/build-pdf-guide.sh [オプション]"
                 echo ""
                 echo "オプション:"
-                echo "  --kind {guides|survey|all}                       種別（デフォルト: guides）"
+                echo "  --kind {guides|survey|domains|all}               種別（デフォルト: guides）"
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
                 echo "  --push                                           ビルド後に公開 assets を commit/push"
@@ -510,10 +571,23 @@ main() {
 
     local kinds=()
     case "$kind" in
-        all) kinds=(guides survey) ;;
-        guides|survey) kinds=("$kind") ;;
+        all) kinds=(guides survey domains) ;;
+        guides|survey|domains) kinds=("$kind") ;;
         *) echo -e "${RED}不明なkind: $kind${NC}"; exit 1 ;;
     esac
+
+    local has_domains=false
+    for _k in "${kinds[@]}"; do
+        if [ "$_k" = "domains" ]; then
+            has_domains=true
+            break
+        fi
+    done
+
+    if $has_domains; then
+        publish_domains
+        echo ""
+    fi
 
     local success=0 fail=0
 
@@ -546,6 +620,16 @@ main() {
                         fail=$((fail + 1))
                     fi
                     echo ""
+                    done
+                ;;
+            domains)
+                for l in "${langs[@]}"; do
+                    if build_domains "$l"; then
+                        success=$((success + 1))
+                    else
+                        fail=$((fail + 1))
+                    fi
+                    echo ""
                 done
                 ;;
         esac
@@ -553,8 +637,11 @@ main() {
 
     update_manifests
 
-    if $do_push; then
+    if $has_domains || $do_push; then
         publish_domains
+    fi
+
+    if $do_push; then
         push_pjdhiro_main
         echo ""
     fi
