@@ -23,7 +23,7 @@
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/domains/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
 - 公開契約は現在 Markdown 正本 + manifest 更新であり、domains PDF は未確定。
-- 公開本文は外部向けトーンを守り、repo 内パスや `<a href>` のような生HTMLを出さない。
+- 公開本文は外部向けトーンを守り、repo 内パスやアンカータグを含む生HTMLを出さない。
 
 ## ワークフロー
 

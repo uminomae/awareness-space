@@ -51,7 +51,7 @@ FAIL が1件でもあれば生成に戻る。
 
 現時点では `knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` と manifest へ反映する。
 公開時は JA/EN を同時に更新する。
-公開本文は外部向けの一般的なトーンを守り、repo 相対パス・内部運用語・`<a href>` などの生HTMLを含めない。
+公開本文は外部向けの一般的なトーンを守り、repo 相対パス・内部運用語・アンカータグを含む生HTMLを含めない。
 domain report の PDF は、含める要素と公開ルールが未確定のため生成しない。
 将来 PDF/双方向リンク化する場合は `kind` 単位の整形手順を別 issue で追加する。
 
