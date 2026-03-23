@@ -22,10 +22,13 @@
 - 骨格は作成済み。現時点では実レポートと検証データは段階的に整備中。
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/domains/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
+- 公開契約は現在 Markdown 正本 + manifest 更新であり、domains PDF は未確定。
+- 公開本文は外部向けトーンを守り、repo 内パスや `<a href>` のような生HTMLを出さない。
 
 ## ワークフロー
 
 **End-to-End 手順書**: [WORKFLOW.md](WORKFLOW.md)
+共通前提: まず [../PRINCIPLES.md](../PRINCIPLES.md) を読む。
 
 | やりたいこと | 参照先 |
 |---|---|
@@ -36,7 +39,9 @@
 
 ## 入口
 
+- 共通原則: [../PRINCIPLES.md](../PRINCIPLES.md)
 - 生成ルール: [reader-rules/reader-rules-awareness-report.md](reader-rules/reader-rules-awareness-report.md)
+- 統一テンプレート: [domain-report-template.md](domain-report-template.md)
 - 品質基準: [quality-test/quality-test-awareness-report.md](quality-test/quality-test-awareness-report.md)
 - 3軸基準: [quality-criteria.md](quality-criteria.md)
 - 共通規約: [reader-rules/README.md](reader-rules/README.md)

@@ -9,6 +9,8 @@
 - **Where**: ルールは `reader-rules/`、公開先は `pjdhiro/assets/awareness/survey/`。
 - **How**: survey ルールを読み、JA/EN 本文を揃え、PDF build script で md/pdf を公開配置へ流し、`pjdhiro/main` へ公開する。
 
+共通前提: まず [../PRINCIPLES.md](../PRINCIPLES.md) を読む。
+
 ## 現在の状態
 
 - ルール正本: `reader-rules/reader-rules-awareness-survey.md`
@@ -19,6 +21,7 @@
 
 ## 入口
 
+- [../PRINCIPLES.md](../PRINCIPLES.md)
 - [reader-rules/reader-rules-awareness-survey.md](reader-rules/reader-rules-awareness-survey.md)
 - [../../evidence/review/survey-5w1h-source-map.md](../../evidence/review/survey-5w1h-source-map.md)
 - [../guides/README.md](../guides/README.md)

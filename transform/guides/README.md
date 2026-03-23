@@ -9,6 +9,8 @@
 - **Where**: ルールは `reader-rules/` に置く。公開出力先は `pjdhiro/assets/awareness/guides/`。
 - **How**: audience 別 reader-rules を読み、`transform/scripts/build-pdf-guide.sh` で PDF 生成後に `pjdhiro/main` へ公開する。
 
+共通前提: まず [../PRINCIPLES.md](../PRINCIPLES.md) を読む。
+
 ## 現在の状態
 
 - awareness-space では guide は 3 audience 構成で扱う。
@@ -21,6 +23,7 @@
 
 ## 入口
 
+- [../PRINCIPLES.md](../PRINCIPLES.md)
 - [guide-rebuild-plan.md](guide-rebuild-plan.md)
 - [reader-rules/reader-rules-awareness-general.md](reader-rules/reader-rules-awareness-general.md)
 - [reader-rules/reader-rules-awareness-designer.md](reader-rules/reader-rules-awareness-designer.md)

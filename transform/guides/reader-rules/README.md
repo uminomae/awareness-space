@@ -13,11 +13,12 @@ guide は単なる入口文ではなく、**調査結果を踏まえた意識モ
 
 ## 使用順序
 
-1. `../guide-rebuild-plan.md` を読む
-2. audience に対応する reader-rules を読む
-3. `evidence/PROJECT.md` / `evidence/review/research-design-baseline.md` / `evidence/review/core-source-map.md` / `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md` を読む
-4. 関連する overview / report を読む
-5. `knowledge/guides/` 向け guide を生成する
+1. `../../PRINCIPLES.md` を読む
+2. `../guide-rebuild-plan.md` を読む
+3. audience に対応する reader-rules を読む
+4. `evidence/PROJECT.md` / `evidence/review/research-design-baseline.md` / `evidence/review/core-source-map.md` / `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md` を読む
+5. 関連する overview / report を読む
+6. `knowledge/guides/` 向け guide を生成する
 
 ## 前提
 

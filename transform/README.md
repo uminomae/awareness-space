@@ -2,14 +2,15 @@
 
 ## 5W1H
 
-- **What**: guide / report を公開用の Markdown / PDF 出力へ変換する workflow 群。
+- **What**: guide / survey は公開用 Markdown / PDF、domains report は現状 Markdown 正本として扱う workflow 群。
 - **Why**: `pjdhiro/assets/awareness/` を公開正本として育てるため。
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → PDF build → manifest 更新 → `pjdhiro/main` push の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → 必要な出力（guides/survey は PDF、domains は Markdown 正本） → manifest 更新 → `pjdhiro/main` push の順で進む。
 
 **原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
+**共通原則**: [PRINCIPLES.md](PRINCIPLES.md)
 **metadata 正本**: `docs/evidence-metadata-awareness.md`
 
 ## ワークフロー一覧
@@ -76,6 +77,7 @@ bash transform/scripts/build-pdf-guide.sh --setup
 
 ## 入口
 
+- `PRINCIPLES.md`: transform 配下の共通原則
 - `guides/README.md`: audience別 guide workflow の入口
 - `survey/README.md`: 調査内容 workflow の入口
 - `image-cards/README.md`: 画像解釈カード workflow の入口
