@@ -83,6 +83,7 @@ bash transform/scripts/build-pdf-guide.sh --setup
 
 - `PRINCIPLES.md`: transform 配下の共通原則
 - `guides/README.md`: audience別 guide workflow の入口
+- `guides/WORKFLOW.md`: guides の end-to-end 手順書
 - `survey/README.md`: 調査内容 workflow の入口
 - `image-cards/README.md`: 画像解釈カード workflow の入口
 - `reports/README.md`: 調査報告の変換 workflow 入口

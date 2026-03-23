@@ -27,6 +27,7 @@
 ## 入口
 
 - [../PRINCIPLES.md](../PRINCIPLES.md)
+- [WORKFLOW.md](WORKFLOW.md)
 - [guide-rebuild-plan.md](guide-rebuild-plan.md)
 - [reader-rules/reader-rules-awareness-general.md](reader-rules/reader-rules-awareness-general.md)
 - [reader-rules/reader-rules-awareness-designer.md](reader-rules/reader-rules-awareness-designer.md)

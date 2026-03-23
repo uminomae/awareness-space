@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-# build-pdf-guide.sh — awareness-space PDF 生成 v0.1
+# build-pdf-guide.sh — awareness-space PDF / manifest builder v0.2
 #
 # 概要:
-#   creation-space の build-pdf-guide.sh を模倣し、
-#   awareness guides / survey の Markdown → PDF → manifest 更新を行う。
+#   creation-space の build-pdf-guide.sh を模倣しつつ、
+#   awareness guides / survey / domains の public Markdown から
+#   PDF 生成・manifest 更新・必要時の公開 push を行う。
 #
 # 使い方:
 #   bash transform/scripts/build-pdf-guide.sh
-#   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all
-#   bash transform/scripts/build-pdf-guide.sh --kind guides --lang all
-#   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all --push
+#   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all
 #   bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
+#   bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
+#   bash transform/scripts/build-pdf-guide.sh --kind all --lang all --push
 #   bash transform/scripts/build-pdf-guide.sh --setup
 
 set -euo pipefail
