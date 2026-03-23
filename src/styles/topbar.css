@@ -51,15 +51,6 @@
   color: var(--kesson-topbar-title-hover-color);
 }
 
-#kesson-topbar .topbar-status-badge {
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-topbar-credit-size);
-  letter-spacing: 0.08em;
-  padding: 0.2rem 0.5rem;
-  line-height: 1.1;
-  transform: translateY(-1px);
-}
-
 #kesson-topbar .topbar-subtitle {
   font-size: var(--kesson-topbar-subtitle-size);
   color: var(--kesson-topbar-subtitle-color);
@@ -252,8 +243,4 @@
     max-width: min(40vw, 9.8rem);
   }
 
-  #kesson-topbar .topbar-status-badge {
-    font-size: 0.80rem;
-    padding: 0.16rem 0.42rem;
-  }
 }

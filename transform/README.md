@@ -87,3 +87,10 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - `image-cards/README.md`: 画像解釈カード workflow の入口
 - `reports/README.md`: 調査報告の変換 workflow 入口
 - `domains/README.md`: awareness-space 版 domains pipeline の入口（生存-信頼軸/4層モデル/CN 系）
+
+## 参照先
+
+- 戦略方針の正本: `evidence/PROJECT.md`
+- 共通原則の正本: `transform/PRINCIPLES.md`
+- metadata 契約の正本: `docs/evidence-metadata-awareness.md`
+- 現在の公開配置: `pjdhiro/assets/awareness/`

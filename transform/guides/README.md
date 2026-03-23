@@ -15,6 +15,9 @@
 
 - awareness-space では guide は 3 audience 構成で扱う。
 - `general`, `designer`, `academic` を `creation-space` と同じ枠組みで揃える。
+- general: `reader-rules/reader-rules-awareness-general.md`
+- designer: `reader-rules/reader-rules-awareness-designer.md`
+- academic: `reader-rules/reader-rules-awareness-academic.md`
 - `pjdhiro/assets/awareness/` を `creation-space` と同じ公開契約の正本とする。
 - JA / EN guide を公開正本として配置する。
 - guide は「読者向け入口文」ではなく、**仮説・調査・現在地を含むモデル解説**として扱う。

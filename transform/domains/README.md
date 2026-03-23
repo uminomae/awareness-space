@@ -20,6 +20,7 @@
 ## 現在の状態
 
 - 骨格は作成済み。現時点では実レポートと検証データは段階的に整備中。
+- 既存公開物は `pjdhiro/assets/awareness/domains/` と `pjdhiro/assets/awareness/manifests/domains.json` にある。
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/domains/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
 - 公開契約は Markdown 正本 + domains PDF + manifest 更新である。

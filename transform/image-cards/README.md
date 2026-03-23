@@ -9,6 +9,11 @@
 - **Where**: 画像と sidecar は `pjdhiro/assets/awareness/image-cards/items/`、manifest は `pjdhiro/assets/awareness/manifests/image-cards.json`。
 - **How**: 画像を置いたら `node transform/scripts/ingest-awareness-image-cards.mjs` を実行し、missing sidecar を draft として自動生成する。解説は「何が描かれているか / どう読むか / 何を主張しているか」を 1-2 文で書き、`review_status: "ready"` にしてから manifest を再生成する。
 
+## 位置づけ
+
+- この workflow は awareness-space 固有であり、`creation-space` に direct 対応する `transform/image-cards/` はない。
+- `creation-space` 模倣の対象というより、awareness 固有の MODEL セクション運用として扱う。
+
 ## 入力契約
 
 完成形では各カードは次の 2 ファイルを同じ basename で持つ。
