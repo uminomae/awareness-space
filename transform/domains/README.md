@@ -1,17 +1,17 @@
-# transform/domains — 意識モデル構成要素向け report パイプライン
+# transform/domains — 調査トピック向け report パイプライン
 
 ## 5W1H
 
-- **What**: `evidence` から意識モデル構成要素の報告文書を再生成する workflow。
-- **Why**: レポートの粒度を統一し、`knowledge/` の領域別公開を再生成可能にするため。
+- **What**: `evidence` から調査トピック単位の報告文書を再生成する workflow。
+- **Why**: 統合的な全体調査報告を支えるトピック report を、再生成可能な形で揃えるため。
 - **Who**: Awareness 側の調査報告を更新する Claude Code CLI とレビュー担当者。
-- **When**: 構成要素の evidence が更新されたとき、既存 report を再生成するとき。
+- **When**: 調査トピックの evidence が更新されたとき、既存 report を再生成するとき。
 - **Where**: 入力は `evidence/`、規約は `reader-rules/`、品質基準は `quality-test/`、公開草案は `knowledge/domains/`。
 - **How**: `reader-rules` で構成し、`quality-test` で自己点検し、レビューを通したうえで公開形に整える。
 
 ## 読み替え前提（重要）
 
-`creation-space` の `domains` は D01-D30 の学術領域だが、`awareness-space` の `domains` は「意識モデルの構成要素」を扱う。
+`creation-space` の `domains` は D01-D30 の学術領域だが、`awareness-space` の `domains` は統合的な全体調査報告を組むための**調査トピック束**を legacy 名で扱っている。
 
 - `生存-信頼軸`
 - `4層モデル`
@@ -33,9 +33,9 @@
 
 | やりたいこと | 参照先 |
 |---|---|
-| 1構成要素の新規生成 | WORKFLOW.md §A |
-| 1構成要素の再生成（更新） | WORKFLOW.md §B |
-| 構成要素全体の一括再生成 | WORKFLOW.md §C |
+| 1調査トピックの新規生成 | WORKFLOW.md §A |
+| 1調査トピックの再生成（更新） | WORKFLOW.md §B |
+| 調査トピック全体の一括再生成 | WORKFLOW.md §C |
 | EN 版生成（公開必須） | WORKFLOW.md §D |
 
 ## 入口

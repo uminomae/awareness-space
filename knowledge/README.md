@@ -15,7 +15,7 @@
 |---|---|
 | `knowledge/` | 説明・解説向けの受け皿（運用中） |
 | `knowledge/guides/` | 廃止予定。guide 公開正本は `pjdhiro/assets/awareness/guides/` |
-| `knowledge/domains/` | reader-facing report の置き場。guide の論拠層 |
+| `knowledge/domains/` | reader-facing な調査トピック report の置き場。guide の論拠層 |
 | `knowledge/concepts/` | 概念ノート群（CN-001〜）を横断管理 |
 | `evidence/` | 調査原本（一次材料） |
 | `transform/` | 変換 workflow（再編集・再生成の入口） |
@@ -24,7 +24,7 @@
 
 - `schema/`: ナレッジの骨格。意識モデルの定義・比較表などの原本群。
 - `concepts/`: 概念ノート群（CN-001〜CN-007）と運用ノートの保持場所。
-- `domains/`: 領域別解説や読者向け report を置く場所。
+- `domains/`: legacy path 名。調査トピックごとの読者向け report を置く場所。
 - `*.md`（overview 群）: 全体像の入口として維持する要約文書。
 
 ## summary と論拠
@@ -33,7 +33,7 @@
 - `knowledge/domains/`: reader-facing report。summary の主要要点を支える公開本文
 - `evidence/review/`: design memo。未検証・調査中の論点を保持する
 
-guide に書く主要な要点は、原則として `domains/`, `survey`, `evidence/review/` のいずれかに対応先を持つ。
+guide に書く主要な要点は、原則として `domains/`（調査トピック report）, `survey`, `evidence/review/` のいずれかに対応先を持つ。
 
 ## 現在の収録文書
 

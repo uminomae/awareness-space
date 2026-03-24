@@ -1,6 +1,6 @@
 # 調査報告の構造メモ
 
-`awareness-space` の RESEARCH セクションに載る report 群を、どのファイルが何を担うかで整理した現状メモ。
+`awareness-space` の RESEARCH セクションに載る調査トピック report 群を、どのファイルが何を担うかで整理した現状メモ。
 
 ## 1. 目的
 
@@ -23,7 +23,7 @@ guide を単独説明文にしないための対応先として機能する。
 
 - RESEARCH セクションに載る report 一覧の正本データ
 - 各 report の ID、名前、進捗、summary、Markdown / PDF 参照先を持つ
-- `creation-space` の domains manifest を、`awareness-space` の domain 単位へ読み替えたもの
+- `creation-space` の domains manifest を、`awareness-space` の調査トピック単位へ読み替えたもの
 
 ### カード/UI
 
@@ -47,7 +47,7 @@ manifest を読み込み、
 `awareness-space` の RESEARCH セクションでは、すべてのカードが同じ成熟度ではない。
 
 - `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal で参照できる
-- `source_ready`: overview や移設済み素材には到達できるが、domain report 本文はまだない
+- `source_ready`: overview や移設済み素材には到達できるが、調査トピック report 本文はまだない
 
 2026-03-20 時点では次の構成で運用している。
 

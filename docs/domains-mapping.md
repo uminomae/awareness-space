@@ -5,22 +5,22 @@
 ## 1. 前提
 
 `creation-space` では domain が D01-D30 の各学問領域を指す。
-`awareness-space` では同じ単位をそのまま使わず、**意識モデルの構成要素**を domain として扱う。
+`awareness-space` では同じ単位をそのまま使わず、**統合的な全体調査報告を組むための調査トピック束**を legacy 名として `domain` と呼んでいる。
 
 ## 2. 当面の domains 候補
 
 | awareness-space domain | 内容 |
 |---|---|
-| 生存-信頼軸 | 生存と間主観性の評価軸 |
-| 4層モデル | Layer 0-3 |
-| Withhold | 保持機能 |
-| 4層モデルの原著文書群 | 基盤文書群 |
-| concept notes | CN 系の補助概念 |
+| 生存-信頼軸 | 中核仮説トピック |
+| 4層モデル | 説明モデルの中核トピック |
+| Withhold | 暫定ラベルを含む検討トピック |
+| 4層モデルの原著文書群 | 基盤文書トピック |
+| concept notes | 補助概念トピック |
 
 ## 3. 運用ルール
 
 - `transform/domains/` では、この読み替えを前提に report 単位を扱う
-- `knowledge/domains/` はこの domain 単位の受け皿とする
+- `knowledge/domains/` はこの調査トピック束の受け皿とする
 - RESEARCH UI の manifest 正本は `transform/domains/publish/domains/index.json` とする
 
 ## 4. 非採用

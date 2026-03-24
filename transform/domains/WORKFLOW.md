@@ -1,12 +1,12 @@
-# 意識モデル構成要素レポート End-to-End ワークフロー v0.3
+# 調査トピックレポート End-to-End ワークフロー v0.4
 
-**用途**: `domains` 構成要素の report を `evidence` → `transform` → `knowledge` で再生成する。
-**前提**: 対象構成要素の evidence が `evidence/` に存在すること。
+**用途**: `domains` 配下の調査トピック report を `evidence` → `transform` → `knowledge` で再生成する。
+**前提**: 対象トピックの evidence が `evidence/` に存在すること。
 **参照**: `transform/PRINCIPLES.md`, `transform/domains/README.md`, `docs/evidence-metadata-awareness.md`
 
 ---
 
-## A. 1構成要素の新規生成（最小パス）
+## A. 1調査トピックの新規生成（最小パス）
 
 ### Step 1: 入力準備
 
@@ -116,13 +116,13 @@ transform/domains/publish/domains/index.json
 pjdhiro/assets/awareness/manifests/domains.json
 ```
 
-## B. 1構成要素の再生成（既存 report 更新）
+## B. 1調査トピックの再生成（既存 report 更新）
 
 A と同じだが、対象 evidence の差分確認が必須。  
 再生成後、`knowledge/domains/<slug>/ja/report.md` の差分比較を取り、レビュー結果を更新する。  
 公開 assets を更新した場合は Step 7-8 まで進める。
 
-## C. 全構成要素一括生成
+## C. 全調査トピック一括生成
 
 暫定対象順:
 
@@ -132,7 +132,7 @@ A と同じだが、対象 evidence の差分確認が必須。
 4. `cn-001`〜`cn-007`
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
-FAIL が出た構成要素は分離して再生成する。  
+FAIL が出たトピックは分離して再生成する。  
 公開時は `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all --push` を優先する。
 
 ## D. EN版生成（公開必須）
@@ -148,7 +148,7 @@ FAIL が出た構成要素は分離して再生成する。
 ## 読み替えルール（運用固定）
 
 - `creation-space` = 30学術領域（D01-D30）
-- `awareness-space` = 意識モデル構成要素
+- `awareness-space` = 統合的な全体調査報告を組むための調査トピック束
 
 対象は `生存-信頼軸`, `4層モデル`, `concept notes` の順で進行する。  
 将来項目はこのファイル更新で拡張し、対象外項目は実行しない。
