@@ -12,7 +12,7 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 
 ## 2. 現在公開している report
 
-現時点では、次の domain report を公開している。
+現時点では、次の調査トピック report を公開している。
 
 1. `knowledge/domains/survival-trust-axis/ja/report.md`
 2. `knowledge/domains/four-layers/ja/report.md`

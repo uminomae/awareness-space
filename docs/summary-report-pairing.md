@@ -27,7 +27,7 @@ summary の各要点には、対になる調査と reader-facing な report が�
 | 層 | 主な置き場 | 役割 |
 |---|---|---|
 | summary | `pjdhiro/assets/awareness/guides/ja/md/` | 読者に全体像を渡す。論拠の入口を示す |
-| report | `knowledge/domains/` | reader-facing な論拠。summary の各要点に対応する公開本文 |
+| report | `knowledge/domains/` | reader-facing な論拠。summary の各要点に対応する調査トピック本文 |
 | survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `pjdhiro/assets/awareness/survey/ja/md/survey-domain-index.md` | 調査の現在地、進行状況、入口整理 |
 | design memo | `evidence/review/*.md` | 未検証・設計中の論点、今後の調査計画 |
 
@@ -47,7 +47,7 @@ summary の各要点には、対になる調査と reader-facing な report が�
 ## UI 原則
 
 - guide は summary として表示する
-- summary から REPORTS / survey / design memo へ辿れる導線を持たせる
+- summary から RESEARCH / survey / design memo へ辿れる導線を持たせる
 - 読者が「仮説」「公開済み report」「調査中」「計画中」を見分けられること
 
 ## 運用原則
@@ -62,9 +62,9 @@ summary の各要点には、対になる調査と reader-facing な report が�
 | summary の節 | 基本区分 | 現在の主な対応先 | 現状 |
 |---|---|---|---|
 | この guide が説明すること | summary の役割説明 | `pjdhiro/assets/awareness/guides/ja/md/awareness-general.md`, `pjdhiro/assets/awareness/survey/ja/md/survey-status.md` | summary として成立 |
-| モデルの中心仮説 | 起点仮説 + report-backed 整理 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/withhold/ja/report.md` | 一部 report-backed |
+| モデルの中心仮説 | 起点仮説 + topic-report-backed 整理 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/withhold/ja/report.md` | 一部 report-backed |
 | その仮説を確かめるために何を調査しているか | survey + design memo | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `evidence/review/core-source-map.md`, `evidence/review/neurophenomenology-design.md`, `evidence/review/developmental-psychology-design.md` | 調査中 / 設計段階を含む |
-| 現時点で何が見えているか | report-backed 整理 + 暫定統合 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/concept-notes/ja/report.md` | 一部は暫定統合 |
+| 現時点で何が見えているか | topic-report-backed 整理 + 暫定統合 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/concept-notes/ja/report.md` | 一部は暫定統合 |
 | どこまで進んでいるか | survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `knowledge/reports-overview.md` | survey-backed |
 | 何がまだ未解決か | survey + design memo | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `evidence/review/*.md` | 調査中 / 設計段階を含む |
 | 次の入口 | UI / 読書導線 | `pjdhiro/assets/awareness/survey/ja/md/survey-domain-index.md`, `pjdhiro/assets/awareness/domains/ja/md/`, `knowledge/domains/` | 要強化 |

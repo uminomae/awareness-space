@@ -26,7 +26,7 @@
 2. 調査対象
 3. 調査方法
 4. 現在の主要素材
-5. guide / report / source への導線
+5. guide / 調査トピック report / source への導線
 6. 限界と未解決のこと
 7. 何が report-backed で、何が design memo / plan 段階かの区別
 
@@ -46,7 +46,7 @@ awareness では D01-D30 一覧ではなく、次の系統を整理する。
 
 - guide
 - overview
-- report
+- topic report
 - source
 - 比較素材（D01-D30）
 

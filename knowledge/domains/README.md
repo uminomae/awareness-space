@@ -17,7 +17,7 @@ path 名は `domains/` のままだが、意味としては `awareness-space` �
 ## 収載方針
 
 - `docs/domains-mapping.md` の読み替えルールに従い、調査トピック束を legacy 名 `domain` として扱う
-- 各 domain には `ja/report.md` を最小単位として置き、必要に応じて `en/` や補助資料を追加する
+- 各 topic には `ja/report.md` を最小単位として置き、必要に応じて `en/` や補助資料を追加する
 - 計画書や運用メモはここに置かず、`docs/` または `evidence/` に残す
 
 ## 移行状態
