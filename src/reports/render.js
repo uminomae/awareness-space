@@ -103,7 +103,8 @@ export function getReportsStrings(lang = 'ja') {
 export function getDomainReportTitle(report, lang = 'ja') {
     if (!report) return '';
     const useJapanese = normalizeLang(lang) === 'ja';
-    return useJapanese ? (report.nameJa || report.nameEn || '') : (report.nameEn || report.nameJa || '');
+    const domainLabel = useJapanese ? (report.nameJa || report.nameEn || '') : (report.nameEn || report.nameJa || '');
+    return `${report.id || ''} ${domainLabel}`.trim();
 }
 
 export function createReportsRenderer({
@@ -400,11 +401,21 @@ export function createReportsRenderer({
         const strings = getReportsStrings(state.lang);
         const total = state.reports.length;
         const generatedValue = state.generatedAt ? state.generatedAt.slice(0, 10) : '-';
+        const presentTaxonomy = getPresentProgressTaxonomy();
+        const paletteMap = buildProgressPaletteMap(presentTaxonomy);
 
         state.dom.metrics.innerHTML = '';
         const fragment = document.createDocumentFragment();
         fragment.appendChild(createMetricCard(strings.metricGenerated, generatedValue));
         fragment.appendChild(createMetricCard(strings.metricTotal, String(total)));
+
+        presentTaxonomy.forEach((entry) => {
+            fragment.appendChild(createMetricCard(
+                getProgressLevelLabel(entry.id),
+                String(state.progressLevelCounts[entry.id] || 0),
+                { paletteClass: getProgressPaletteClass(entry.id, paletteMap) },
+            ));
+        });
 
         state.dom.metrics.appendChild(fragment);
     }
@@ -415,6 +426,8 @@ export function createReportsRenderer({
         const summary = useJapanese ? (report.summaryJa || report.summaryEn) : (report.summaryEn || report.summaryJa);
         const level = normalizeProgressLevelId(report.progressLevel) || 'planned';
         const paletteClass = getProgressPaletteClass(level, paletteMap);
+        const statusText = getProgressLevelLabel(level);
+        const statusDescription = getProgressLevelDescription(level);
         const sources = getReportSources(report);
         const clickable = sources.length > 0 && !muted;
         const col = document.createElement('div');
@@ -453,7 +466,7 @@ export function createReportsRenderer({
         tile.setAttribute('data-report-level', level);
         tile.setAttribute('aria-label', reportTitle);
 
-        const hoverHint = [report.progressNote, summary]
+        const hoverHint = [statusDescription, report.progressNote, summary]
             .filter((part) => hasText(part))
             .join('\n');
         if (hoverHint) tile.setAttribute('title', hoverHint);
@@ -462,12 +475,27 @@ export function createReportsRenderer({
         const body = document.createElement('div');
         body.className = 'card-body p-2 d-flex flex-column gap-1 h-100 reports-domain-item-body';
 
+        const head = document.createElement('div');
+        head.className = 'd-flex align-items-center justify-content-between gap-2';
+
+        const idNode = document.createElement('span');
+        idNode.className = 'reports-domain-item-id';
+        idNode.textContent = report.id;
+
+        const statusNode = document.createElement('span');
+        statusNode.className = `badge rounded-pill reports-progress-chip reports-domain-item-status ${paletteClass}`;
+        statusNode.textContent = statusText;
+        if (hoverHint) {
+            statusNode.setAttribute('title', hoverHint);
+        }
+
         const nameNode = document.createElement('div');
         nameNode.className = 'reports-domain-item-name';
         nameNode.title = domainLabel;
         nameNode.textContent = domainLabel;
 
-        body.append(nameNode);
+        head.append(idNode, statusNode);
+        body.append(head, nameNode);
         tile.appendChild(body);
         col.appendChild(tile);
         return col;
