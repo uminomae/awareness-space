@@ -77,3 +77,9 @@
 
 - 初期案に残っている stale な実装項目を削る
 - 実際に進めている shell / workflow / reports 導線の整備へ説明を寄せる
+
+### 4. `domains` という語の再定義を別 issue で扱う（`#95`）
+
+- 実態としては「統合的な全体調査報告を組むための調査トピック束」である可能性を検討する
+- `components` / `topics` / 別カテゴリ名の候補を、survey / report / manifest への波及込みで分析する
+- rename は即実施せず、分析 → 計画 → 実装の順で別 issue に分離する
