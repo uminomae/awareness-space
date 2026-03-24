@@ -1,8 +1,8 @@
-# 意識モデル構成要素レポート End-to-End ワークフロー v0.2
+# 意識モデル構成要素レポート End-to-End ワークフロー v0.3
 
 **用途**: `domains` 構成要素の report を `evidence` → `transform` → `knowledge` で再生成する。
 **前提**: 対象構成要素の evidence が `evidence/` に存在すること。
-**参照**: Issue #21, #22, #26
+**参照**: `transform/PRINCIPLES.md`, `transform/domains/README.md`, `docs/evidence-metadata-awareness.md`
 
 ---
 
@@ -16,9 +16,11 @@ ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
 
 以下を読む（この順序）:
 
-1. `transform/domains/reader-rules/reader-rules-awareness-report.md`
-2. `transform/domains/quality-test/quality-test-awareness-report.md`
-3. 対象の evidence（暫定: `evidence/awareness-<slug>.md`）
+1. `transform/PRINCIPLES.md`
+2. `transform/domains/README.md`
+3. `transform/domains/reader-rules/reader-rules-awareness-report.md`
+4. `transform/domains/quality-test/quality-test-awareness-report.md`
+5. 対象の evidence（暫定: `evidence/awareness-<slug>.md`）
 
 ### Step 2: MD 生成（暫定）
 
@@ -96,20 +98,8 @@ git push origin main
 cd /Users/uminomae/dev/awareness-space
 git add -A
 git commit -m "docs: regenerate awareness domain reports"
+git pull --rebase origin develop
 git push origin develop
-```
-
-### Step 9: awareness-space develop → main マージ
-
-`creation-space` と同じく、
-source repo 側でも develop を main へ反映して公開作業を閉じる。
-
-```bash
-cd /Users/uminomae/dev/awareness-space
-git switch main
-git merge develop
-git push origin main
-git switch develop
 ```
 
 metadata の情報フロー:
@@ -129,7 +119,8 @@ pjdhiro/assets/awareness/manifests/domains.json
 ## B. 1構成要素の再生成（既存 report 更新）
 
 A と同じだが、対象 evidence の差分確認が必須。  
-再生成後、`knowledge/domains/<slug>/ja/report.md` の差分比較を取り、レビュー結果を更新する。
+再生成後、`knowledge/domains/<slug>/ja/report.md` の差分比較を取り、レビュー結果を更新する。  
+公開 assets を更新した場合は Step 7-8 まで進める。
 
 ## C. 全構成要素一括生成
 
@@ -141,7 +132,8 @@ A と同じだが、対象 evidence の差分確認が必須。
 4. `cn-001`〜`cn-007`
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
-FAIL が出た構成要素は分離して再生成する。
+FAIL が出た構成要素は分離して再生成する。  
+公開時は `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all --push` を優先する。
 
 ## D. EN版生成（公開必須）
 
@@ -160,3 +152,9 @@ FAIL が出た構成要素は分離して再生成する。
 
 対象は `生存-信頼軸`, `4層モデル`, `concept notes` の順で進行する。  
 将来項目はこのファイル更新で拡張し、対象外項目は実行しない。
+
+## awareness-space 固有メモ
+
+- `awareness-space` は通常作業ブランチを `develop` とし、`main` への直接 push は行わない。
+- 公開 assets の push は `pjdhiro/main` 側で行い、source repo 側は `develop` を維持する。
+- 現行 publish script は `survival-trust-axis` と `four-layers` を既定対象としている。対象追加時は `transform/scripts/publish-awareness-domains.sh` も更新する。
