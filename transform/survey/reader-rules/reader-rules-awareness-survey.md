@@ -37,10 +37,11 @@
 - 発達心理を含む心理学領域の知見
 - 生存-信頼軸（生存と間主観性）がコア仮説として妥当かどうか
 
-## 2. survey-domain-index.md の役割
+## 2. survey-domain-index.md の役割（調査トピック索引）
 
 `survey-domain-index.md` は、
 読者が「次にどこを読むか」を決めるための索引である。
+reader-facing には **調査トピック索引** として機能する。
 
 awareness では D01-D30 一覧ではなく、次の系統を整理する。
 
@@ -97,7 +98,7 @@ date: {YYYY-MM-DD}
 ```md
 ---
 id: survey-domain-index
-title: "意識モデル探索: 調査索引"
+title: "意識モデル探索: 調査トピック索引"
 lang: ja
 audience: survey
 version: 0.1
