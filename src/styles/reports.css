@@ -134,7 +134,7 @@
 
 .reports-subheading {
   margin: 0 0 0.65rem;
-  color: rgba(var(--color-heading), 0.82);
+  color: var(--kesson-topbar-link-color);
   font-size: clamp(calc(0.75rem + var(--reports-font-step)), calc(2.2vmin + var(--reports-font-step)), calc(0.9rem + var(--reports-font-step)));
   letter-spacing: 0.04em;
   font-family: var(--kesson-font-serif-display);
@@ -143,7 +143,7 @@
 
 .reports-ai-notice,
 .reports-level-legend {
-  color: rgba(var(--color-sub-text), 0.78);
+  color: var(--kesson-topbar-link-color);
   font-size: calc(0.8rem + var(--reports-font-step));
   letter-spacing: var(--kesson-letter-ui-tight);
   line-height: 1.45;

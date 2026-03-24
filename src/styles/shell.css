@@ -626,7 +626,7 @@ html[lang="en"] #taglines {
 .section-heading {
   font-size: var(--kesson-section-heading, 0.80rem);
   font-weight: 400;
-  color: rgba(var(--color-sub-text), 0.5);
+  color: var(--kesson-topbar-link-color);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
@@ -654,7 +654,7 @@ html[lang="en"] #taglines {
 }
 
 .section-heading-link:hover {
-  color: rgba(200, 220, 250, 0.72);
+  color: var(--kesson-topbar-link-hover-color);
 }
 
 .section-heading-link:focus-visible {
