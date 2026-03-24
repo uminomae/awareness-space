@@ -67,6 +67,9 @@
 - 依存順序
 - backwards compatibility が必要な箇所
 
+参照:
+- `evidence/review/domains-terminology-impact-inventory.md`
+
 ### Phase 3. 命名判断
 
 候補:
