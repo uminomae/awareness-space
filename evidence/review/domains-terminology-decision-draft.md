@@ -69,11 +69,11 @@
 
 ## この案で残る課題
 
-### 1. `survey-domain-index.md` が legacy 名のまま残る
+### 1. `survey-domain-index.md` が legacy alias として残る
 
 対応:
-- reader-facing では `調査トピック索引` として扱う
-- file rename は後段へ送る
+- reader-facing では `survey-topic-index` / `調査トピック索引` を使う
+- `survey-domain-index` は互換用 alias として当面残す
 
 ### 2. `knowledge/domains/` が意味と path でズレる
 
@@ -104,7 +104,7 @@
 
 ### Option B. 段階 rename
 
-- `survey-domain-index.md` だけを先に rename 候補として検討
+- `survey-topic-index` を preferred 名として先行導入し、legacy alias を段階的に外す
 - manifest / path は据え置く
 
 ### Option C. full migration
@@ -118,4 +118,4 @@
 
 - 今は `#95` を close しない
 - ただし「reader-facing は調査トピック、internal contract は domains」の暫定判断は採択する
-- 次は `survey-domain-index.md` を rename する価値が本当にあるかを、単独 issue で判断する
+- 次は `survey-topic-index` 導入後に、legacy alias をどこまで維持するかを判断する

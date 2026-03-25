@@ -28,7 +28,7 @@ summary の各要点には、対になる調査と reader-facing な report が�
 |---|---|---|
 | summary | `pjdhiro/assets/awareness/guides/ja/md/` | 読者に全体像を渡す。論拠の入口を示す |
 | report | `knowledge/domains/` | reader-facing な論拠。summary の各要点に対応する調査トピック本文 |
-| survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `pjdhiro/assets/awareness/survey/ja/md/survey-domain-index.md` | 調査の現在地、進行状況、入口整理 |
+| survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `pjdhiro/assets/awareness/survey/ja/md/survey-topic-index.md` | 調査の現在地、進行状況、入口整理 |
 | design memo | `evidence/review/*.md` | 未検証・設計中の論点、今後の調査計画 |
 
 ## summary に書いてよいこと
@@ -67,7 +67,7 @@ summary の各要点には、対になる調査と reader-facing な report が�
 | 現時点で何が見えているか | topic-report-backed 整理 + 暫定統合 | `knowledge/domains/survival-trust-axis/ja/report.md`, `knowledge/domains/four-layers/ja/report.md`, `knowledge/domains/concept-notes/ja/report.md` | 一部は暫定統合 |
 | どこまで進んでいるか | survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `knowledge/reports-overview.md` | survey-backed |
 | 何がまだ未解決か | survey + design memo | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `evidence/review/*.md` | 調査中 / 設計段階を含む |
-| 次の入口 | UI / 読書導線 | `pjdhiro/assets/awareness/survey/ja/md/survey-domain-index.md`, `pjdhiro/assets/awareness/domains/ja/md/`, `knowledge/domains/` | 要強化 |
+| 次の入口 | UI / 読書導線 | `pjdhiro/assets/awareness/survey/ja/md/survey-topic-index.md`, `pjdhiro/assets/awareness/domains/ja/md/`, `knowledge/domains/` | 要強化 |
 
 ## 完了基準
 

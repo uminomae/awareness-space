@@ -47,6 +47,7 @@
 
 状態:
 - 進行中
+- `survey-domain-index` の reader-facing 名は `survey-topic-index` へ寄せ始めた
 
 ### Phase 2. internal contract の棚卸し
 
@@ -59,7 +60,7 @@
 - `transform/scripts/publish-awareness-domains.sh`
 - `transform/scripts/build-pdf-guide.sh`
 - `src/reports/data.js`
-- `survey-domain-index.md`
+- `survey-domain-index.md`（legacy alias）
 - `knowledge/domains/` path
 
 成果物:

@@ -448,24 +448,46 @@ def read_frontmatter(path):
     return meta
 
 files = []
+survey_specs = [
+    ('survey-status', ['survey-status']),
+    ('survey-topic-index', ['survey-topic-index', 'survey-domain-index']),
+]
 for lang in ('ja', 'en'):
-    for stem in ('survey-domain-index', 'survey-status'):
-        md_rel = f'survey/{lang}/md/{stem}.md'
-        pdf_rel = f'survey/{lang}/pdf/{stem}.pdf'
-        md_path = os.path.join(awareness_dir, md_rel)
-        meta = read_frontmatter(md_path)
+    for canonical_stem, candidate_stems in survey_specs:
+        selected_stem = ''
+        md_rel = ''
+        pdf_rel = ''
+        md_path = ''
+        pdf_path = ''
+        meta = {}
+        for stem in candidate_stems:
+            next_md_rel = f'survey/{lang}/md/{stem}.md'
+            next_pdf_rel = f'survey/{lang}/pdf/{stem}.pdf'
+            next_md_path = os.path.join(awareness_dir, next_md_rel)
+            next_pdf_path = os.path.join(awareness_dir, next_pdf_rel)
+            if os.path.isfile(next_md_path) or os.path.isfile(next_pdf_path):
+                selected_stem = stem
+                md_rel = next_md_rel
+                pdf_rel = next_pdf_rel
+                md_path = next_md_path
+                pdf_path = next_pdf_path
+                meta = read_frontmatter(next_md_path)
+                break
+        if not selected_stem:
+            continue
         if os.path.isfile(md_path):
             files.append({
                 'path': md_rel,
+                'logical_id': canonical_stem,
                 'lang': lang,
                 'format': 'md',
                 'generator_model': meta.get('generator_model', ''),
                 'generated': meta.get('generated') or meta.get('date', ''),
             })
-        pdf_path = os.path.join(awareness_dir, pdf_rel)
         if os.path.isfile(pdf_path):
             files.append({
                 'path': pdf_rel,
+                'logical_id': canonical_stem,
                 'lang': lang,
                 'format': 'pdf',
                 'generator_model': meta.get('generator_model', ''),

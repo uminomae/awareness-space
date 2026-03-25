@@ -119,7 +119,8 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 
 ### 主要対象
 
-- `survey-domain-index.md`
+- `survey-topic-index.md`（preferred）
+- `survey-domain-index.md`（legacy alias）
 - `transform/survey/reader-rules/reader-rules-awareness-survey.md`
 - `evidence/research-overview.md`
 - `docs/summary-report-pairing.md`
@@ -134,7 +135,7 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 - rename 候補:
   - `survey-topic-index.md`
   - `survey-report-index.md`
-- ただちに rename せず、reader-facing 表示だけ先に topic へ寄せる方が安全
+- 現在は `survey-topic-index` を preferred 名、`survey-domain-index` を legacy alias として扱う
 
 ## 推奨移行順
 

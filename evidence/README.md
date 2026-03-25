@@ -7,7 +7,7 @@
 - `PROJECT.md`: 調査憲章。目的、起点仮説、現在地の正本
 - `research-overview.md`: 調査内容セクションの総覧
 - `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`: 調査内容の読者向け概要
-- `pjdhiro/assets/awareness/survey/ja/md/survey-domain-index.md`: 調査索引
+- `pjdhiro/assets/awareness/survey/ja/md/survey-topic-index.md`: 調査トピック索引
 - `review/core-source-map.md`: 中核 source map
 
 ## 役割
