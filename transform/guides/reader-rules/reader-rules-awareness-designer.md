@@ -70,7 +70,8 @@
 
 補助:
 
-- `knowledge/four-layers-overview.md`
-- `knowledge/survival-trust-axis-overview.md`
-- `knowledge/concepts-overview.md`
+- `knowledge/survival-trust-axis-starting-memo.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
+- `knowledge/concepts/index.md`
 - 発達心理 / 間主観性 / 信頼系の review 文書

@@ -20,14 +20,11 @@
 - `base/text/domains/four-layers/part-2-interoception.md`
 - `base/text/domains/four-layers/part-3-prediction-error.md`
 - `base/text/domains/four-layers/part-4-survival-trust-evaluation.md`
-- `base/text/domains/four-layers/part-5-withhold.md`
 
 ### concept notes
 
 - `base/concepts/CN-001_internalized-relationship.md`
 - `base/concepts/CN-002_f-axis-exposure.md`
-- `base/concepts/CN-003_boundary-casebook.md`
-- `base/concepts/CN-004_collective-withhold.md`
 - `base/concepts/CN-005_trust-hypothesis-inventory.md`
 - `base/concepts/CN-006_trust-analysis-axes.md`
 - `base/concepts/CN-007_iss42-measurement-design-principles.md`
@@ -37,7 +34,6 @@
 
 - `base/schema/four-layers.md`
 - `base/schema/four-modules.md`
-- `base/schema/withhold-matching-v2.md`
 
 ## 3. 参照確認項目
 
@@ -47,7 +43,6 @@
 - `CN-001`〜`CN-007`
 - `four-layers.md`
 - `four-modules.md`
-- `withhold-matching-v2.md`
 
 特に注意すべき既知参照:
 

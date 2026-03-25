@@ -50,9 +50,8 @@ docs/ に置かないもの:
 | `docs/kdt-deletion-plan.md` | kesson-driven-thinking 側削除計画 |
 | `knowledge/README.md` | 解説向けナレッジの受け皿 |
 | `evidence/review/core-source-map.md` | 中核参照地図の正本 |
+| `evidence/review/intake-return-map.md` | 神経現象学 / 発達心理学 intake の返し先正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
-| `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
-| `knowledge/topics/four-layers/part-1-introduction.md` | 4層モデルの原著文書群 系列（Part1） |
 | `knowledge/topics/README.md` | 調査トピックレポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
 | `transform/topics/README.md` | awareness-space 版 topics pipeline の入口 |
@@ -102,9 +101,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の open 実装線: なし（必要に応じて新規 Issue を分解して進める）
 - Phase 2 の初期統合フェーズは完了
-- 次は topics 契約を前提に、必要な実装線を個別 Issue へ分解して進める段階
+- 現在の open 実装線: なし（必要に応じて新規 Issue を分解して進める）
+- topics 契約を前提に、必要な実装線を個別 Issue へ分解して進める段階
 
 ## 8. ローカル作業領域
 

@@ -72,8 +72,8 @@
 
 補助:
 
-- `knowledge/survival-trust-axis-overview.md`
-- `knowledge/four-layers-overview.md`
-- `knowledge/four-layers-overview.md`
-- `knowledge/concepts-overview.md`
+- `knowledge/survival-trust-axis-starting-memo.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
+- `knowledge/concepts/index.md`
 - 神経現象学 / 発達心理 / trust / measurement 系 review 文書

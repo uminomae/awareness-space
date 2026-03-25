@@ -1,6 +1,6 @@
 # 調査トピックレポート End-to-End ワークフロー v0.4
 
-**用途**: `domains` 配下の調査トピック report を `evidence` → `transform` → `knowledge` で再生成する。
+**用途**: 調査トピック report を `evidence` → `transform` → `knowledge` で再生成する。
 **前提**: 対象トピックの evidence が `evidence/` に存在すること。
 **参照**: `transform/PRINCIPLES.md`, `transform/topics/README.md`, `docs/evidence-metadata-awareness.md`
 
@@ -11,7 +11,7 @@
 ### Step 1: 入力準備
 
 ```bash
-ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
+ls evidence | rg "(survival-trust-axis|four-layers)"
 ```
 
 以下を読む（この順序）:
@@ -58,7 +58,7 @@ FAIL が1件でもあれば生成に戻る。
 ### Step 6: PDF 生成 + manifest 更新
 
 `creation-space` と同じく、
-domains でも **同じ公開用 MD を単一正本** として PDF を生成する。
+topics でも **同じ公開用 MD を単一正本** として PDF を生成する。
 
 ```bash
 cd /Users/uminomae/dev/awareness-space
@@ -97,7 +97,7 @@ git push origin main
 ```bash
 cd /Users/uminomae/dev/awareness-space
 git add -A
-git commit -m "docs: regenerate awareness domain reports"
+git commit -m "docs: regenerate awareness topic reports"
 git pull --rebase origin develop
 git push origin develop
 ```
@@ -128,8 +128,6 @@ A と同じだが、対象 evidence の差分確認が必須。
 
 1. `survival-trust-axis`
 2. `four-layers`
-3. `withhold`
-4. `cn-001`〜`cn-007`
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
 FAIL が出たトピックは分離して再生成する。  
@@ -150,7 +148,9 @@ FAIL が出たトピックは分離して再生成する。
 - `creation-space` = 30学術領域（D01-D30）
 - `awareness-space` = 統合的な全体調査報告を組むための調査トピック束
 
-対象は `生存-信頼軸`, `4層モデル`, `concept notes` の順で進行する。  
+対象は `生存-信頼軸`, `4層モデル` の順で進行する。  
+`抱持` / `Withhold` は現時点では独立 topic に含めず、調査で独立現象として見えた場合のみ再検討する。  
+`concept notes` は source bundle として `knowledge/concepts/` 側で扱い、独立 topic report へは先に固定しない。  
 将来項目はこのファイル更新で拡張し、対象外項目は実行しない。
 
 ## awareness-space 固有メモ

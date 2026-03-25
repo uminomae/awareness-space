@@ -16,8 +16,9 @@
 
 ## 現在の状態
 
-まだ report 出力自体は未整備。
-まずはトップページの調査報告セクションと接続する入口として使う。
+- RESEARCH UI の一覧・カード・詳細導線はすでに動作している。
+- 現在の report 正本と manifest は主に `transform/topics/` を起点に更新する。
+- `transform/reports/` 自体は、横断レポートや将来の report workflow を整理する補助入口として扱う。
 
 ## 入口
 
@@ -26,3 +27,4 @@
 - 描画: `src/reports/render.js`
 - データ解決: `src/reports/data.js`
 - modal / 履歴同期: `src/reports/modal.js`, `src/reports/history.js`
+- 現行 manifest 正本: `transform/topics/publish/topics/index.json`

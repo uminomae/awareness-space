@@ -79,7 +79,6 @@
 - `~/dev/kesson-driven-thinking/base/schema/five-stages.md`
 - `~/dev/kesson-driven-thinking/base/schema/four-layers.md`
 - `~/dev/kesson-driven-thinking/base/schema/four-modules.md`
-- `~/dev/kesson-driven-thinking/base/schema/withhold-matching-v2.md`
 
 ### 2.3 素材インベントリ
 
@@ -111,6 +110,7 @@
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
+- intake の返し先正本は `evidence/review/intake-return-map.md`
 - 調査設計の起点は `evidence/review/research-design-baseline.md`
 - 調査設計メモ本体は `evidence/review/research-design.md`
 - 発達心理学設計の正本は `evidence/review/developmental-psychology-design.md`
@@ -123,12 +123,12 @@
 
 ### 3.3 次のアクション
 
-- topics 契約への移行後に残る実装課題を個別 Issue 化する
+- `intake-return-map.md` を起点に、必要な再反映作業があれば個別 Issue 化する
 - survey / guide / report に返した内容の整合を見直す
 
 ### 3.4 ブロッカー
 
-- intake map の正本がまだなく、神経現象学・発達心理学の source 束が survey / report に返し切れていない
+- intake の返し先は整理したが、guide / survey / report への再反映はまだ進行中
 
 ## 4. ファイル構成
 

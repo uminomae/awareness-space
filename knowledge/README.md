@@ -22,10 +22,9 @@
 
 ## 知識構造
 
-- `schema/`: ナレッジの骨格。意識モデルの定義・比較表などの原本群。
-- `concepts/`: 概念ノート群（CN-001〜CN-007）と運用ノートの保持場所。
-- `topics/`: legacy path 名。調査トピックごとの読者向け report を置く場所。
-- `*.md`（overview 群）: 全体像の入口として維持する要約文書。
+- `concepts/`: 概念ノート群（CN-001〜）と運用ノートの保持場所。
+- `topics/`: 調査トピックごとの読者向け report を置く場所。
+- `survival-trust-axis-starting-memo.md`: 起点仮説のメモ。
 
 ## summary と論拠
 
@@ -37,40 +36,21 @@ guide に書く主要な要点は、原則として `topics/`（調査トピッ�
 
 ## 現在の収録文書
 
-- `survival-trust-axis-overview.md`: 生存-信頼軸の入口解説
 - `survival-trust-axis-starting-memo.md`: 生存-信頼軸起点メモ（source）
-- `model-overview.md`: 意識モデル全体の総覧
-- `four-layers-overview.md`: 4層モデル入口解説
-- `topics/four-layers/part-1-introduction.md`: Part 1（4層モデルの導入）
-- `topics/four-layers/part-2-interoception.md`: Part 2（Layer 0）
-- `topics/four-layers/part-3-prediction-error.md`: Part 3（Layer 1）
-- `topics/four-layers/part-4-survival-trust-evaluation.md`: Part 4（Layer 2）
-- `topics/four-layers/part-5-withhold.md`: Part 5（Layer 3）
-- `four-layers-overview.md`: 4層モデル入口解説
-- `schema/four-layers.md`: 4層モデル骨格（定義）
-- `schema/four-modules.md`: 4モジュール構造
-- `schema/withhold-matching-v2.md`: Withhold マッチング表
-- `withhold-overview.md`: Withhold の入口解説
-- `concepts-overview.md`: Concept Notes の入口解説
 - `concepts/index.md`: CN-001〜CN-007索引
 - `concepts/CN-001_internalized-relationship.md`: CN-001
 - `concepts/CN-002_f-axis-exposure.md`: CN-002
-- `concepts/CN-003_boundary-casebook.md`: CN-003
-- `concepts/CN-004_collective-withhold.md`: CN-004
 - `concepts/CN-005_trust-hypothesis-inventory.md`: CN-005
 - `concepts/CN-006_trust-analysis-axes.md`: CN-006
 - `concepts/CN-007_iss42-measurement-design-principles.md`: CN-007
-- `reports-overview.md`: 調査報告セクションの総覧
 - `topics/survival-trust-axis/ja/report.md`: 生存-信頼軸 report
 - `topics/four-layers/ja/report.md`: 4層モデル report
-- `topics/withhold/ja/report.md`: Withhold report
 
 ## 移行状態
 
 - `knowledge/concepts/` を新設し、CN-001〜CN-007 を追加
-- `knowledge/schema/` に `four-layers.md`、`four-modules.md`、`withhold-matching-v2.md` を追加
-- `knowledge/topics/` に 生存-信頼軸、4層モデル、Withhold の report を追加
-- 4層モデルの原著文書群は `knowledge/topics/four-layers/` 配下と `four-layers-overview.md` へ統合済み
+- `knowledge/topics/` に 生存-信頼軸、4層モデル の report を追加
 - Concept Notes は `source_ready` の入口文書として接続済み
-- overview 群は source とは分離して、公開向け explainer として整備する
+- `抱持` / `Withhold` の専用ファイルは削除し、必要な履歴は監査メモ側へ残す
+- LLM 再生成しやすい overview / schema / draft は削除し、重要な research と current report source を優先して残す
 - guide 公開正本は `pjdhiro/assets/awareness/guides/` へ移行

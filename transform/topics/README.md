@@ -11,11 +11,11 @@
 
 ## 読み替え前提（重要）
 
-`creation-space` の `domains` は D01-D30 の学術領域だが、`awareness-space` の `domains` は統合的な全体調査報告を組むための**調査トピック束**を legacy 名で扱っている。
+`creation-space` の `domains` は D01-D30 の学術領域だが、`awareness-space` では reader-facing / public contract を **topics** に統一して扱う。
+一部の内部ファイル名や template 名に `domain` が残っていても、意味上は調査トピックを指す legacy 名として読む。
 
 - `生存-信頼軸`
 - `4層モデル`
-- `concept notes` 系（CN-001 系列）
 
 ## 現在の状態
 
@@ -23,7 +23,7 @@
 - 既存公開物は `pjdhiro/assets/awareness/topics/` と `pjdhiro/assets/awareness/manifests/topics.json` にある。
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/topics/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
-- 公開契約は Markdown 正本 + domains PDF + manifest 更新である。
+- 公開契約は Markdown 正本 + topics PDF + manifest 更新である。
 - 公開本文は外部向けトーンを守り、repo 内パスやアンカータグを含む生HTMLを出さない。
 
 ## ワークフロー
@@ -49,14 +49,14 @@
 
 ## 命名とファイル運用（暫定）
 
-- `domains` 単位の evidence は原則 `evidence/awareness-<slug>.md` を想定（将来 `evidence/domains/<slug>.md` へ統一可能）。
+- 調査トピック単位の evidence は原則 `evidence/awareness-<slug>.md` を想定する。
 - report 草案は `knowledge/topics/<slug>/{ja,en}/report.md`、公開配置は `pjdhiro/assets/awareness/topics/{ja,en}/md/<slug>.md` を既定とする。
 - PDF は同じ公開用 MD から `pjdhiro/assets/awareness/topics/{lang}/pdf/<slug>.pdf` を生成する。
 - `slug` は次を想定:
   - `survival-trust-axis`
   - `four-layers`
-  - `concept-notes`
-  - `cn-001` / `cn-007` など
+
+`concept notes` は現時点では `knowledge/concepts/` 側の source bundle として扱い、`transform/topics/` の公開対象には含めない。
 
 ## 参照先
 

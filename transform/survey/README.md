@@ -15,7 +15,7 @@
 
 - ルール正本: `reader-rules/reader-rules-awareness-survey.md`
 - source archaeology: `evidence/review/survey-5w1h-source-map.md`
-- publish / domains への導線は `transform/topics/README.md` を参照する
+- publish / topics への導線は `transform/topics/README.md` を参照する
 - 公開配置は `pjdhiro/assets/awareness/survey/`
 - front matter は `generator_model` / `generated` を持ち、`survey.json` に反映する
 - metadata 契約の正本は `docs/evidence-metadata-awareness.md`
@@ -26,7 +26,7 @@
 - [reader-rules/reader-rules-awareness-survey.md](reader-rules/reader-rules-awareness-survey.md)
 - [../../evidence/review/survey-5w1h-source-map.md](../../evidence/review/survey-5w1h-source-map.md)
 - [../guides/README.md](../guides/README.md)
-- [../domains/README.md](../domains/README.md)
+- [../topics/README.md](../topics/README.md)
 
 ## 公開時の原則
 

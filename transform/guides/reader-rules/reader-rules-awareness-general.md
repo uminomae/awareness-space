@@ -73,7 +73,7 @@ IR やコンサル報告書のように、目的、要旨、前提、示唆、�
 
 補助:
 
-- `knowledge/survival-trust-axis-overview.md`
-- `knowledge/four-layers-overview.md`
-- `knowledge/four-layers-overview.md`
-- `knowledge/concepts-overview.md`
+- `knowledge/survival-trust-axis-starting-memo.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
+- `knowledge/concepts/index.md`

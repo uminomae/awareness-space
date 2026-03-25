@@ -49,11 +49,11 @@ manifest を読み込み、
 - `report_ready`: `knowledge/topics/*/ja/report.md` の本文があり、modal で参照できる
 - `source_ready`: overview や移設済み素材には到達できるが、調査トピック report 本文はまだない
 
-2026-03-20 時点では次の構成で運用している。
+2026-03-25 時点では次の構成で運用している。
 
 - `report_ready`: 生存-信頼軸、4層モデル
-- `source_ready`: なし（主要4本は report 入口あり）
-- `internal_draft`: Withhold
+- `source_ready`: なし（現在の公開 topics は 2 本）
+- `topics 対象外`: 抱持 / Withhold（調査観測待ちの候補語）
 
 ## 4. 置き場の役割分担
 
@@ -80,5 +80,5 @@ manifest を読み込み、
 
 - report 間の相互参照を強める
 - guide の主要要点と report の対応表を強める
-- Concept Notes を個別 report へどう分解するか決める
+- Concept Notes を source bundle としてどう参照させるか整える
 - PDF と bilingual report を同じ公開用 MD から整備する

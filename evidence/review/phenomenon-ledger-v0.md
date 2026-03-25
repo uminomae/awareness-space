@@ -46,7 +46,7 @@
 - 反例 / 境界:
   - 身体を感じていない主観報告があっても、背景層としては停止していない可能性
 - source:
-  - `knowledge/topics/four-layers/part-2-interoception.md`
+  - 旧 `knowledge/topics/four-layers/part-2-interoception.md`（削除済み）
   - `evidence/review/neurophenomenology-design.md`
 
 ### P-002 差異が「違和感 / 欠け」として前景化する
@@ -68,7 +68,7 @@
 - 反例 / 境界:
   - 全ての差異が一人称的な「欠け」になるわけではない
 - source:
-  - `knowledge/topics/four-layers/part-3-prediction-error.md`
+  - 旧 `knowledge/topics/four-layers/part-3-prediction-error.md`（削除済み）
   - `evidence/review/neurophenomenology-design.md`
 
 ### P-003 差異が即時反応へ短絡する
@@ -90,8 +90,8 @@
 - 反例 / 境界:
   - 行動が速いこと自体は P-003 ではない。再評価の余地が残るなら別
 - source:
-  - `knowledge/topics/four-layers/part-5-withhold.md`
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
+  - 旧 `knowledge/topics/four-layers/part-5-withhold.md`（削除済み）
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
 
 ### P-004 行動は止まるが、問いは開かれない
 
@@ -113,8 +113,8 @@
 - 反例 / 境界:
   - 外見上静かでも、内部で問いが保持されているなら P-004 ではない
 - source:
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
-  - `knowledge/topics/withhold/ja/report.md`
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
+  - 旧 `knowledge/topics/withhold/ja/report.md`（削除済み）
 
 ### P-005 問いを保持したまま閉じない
 
@@ -136,9 +136,9 @@
 - 反例 / 境界:
   - 「待っている」ようでも、問いがなく単に回避しているだけなら別
 - source:
-  - `knowledge/topics/withhold/ja/report.md`
-  - `knowledge/topics/four-layers/part-5-withhold.md`
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
+  - 旧 `knowledge/topics/withhold/ja/report.md`（削除済み）
+  - 旧 `knowledge/topics/four-layers/part-5-withhold.md`（削除済み）
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
 
 ### P-006 内在化された関係が保留可能性を支える
 
@@ -160,7 +160,7 @@
 - source:
   - `knowledge/concepts/CN-001_internalized-relationship.md`
   - `evidence/review/developmental-psychology-design.md`
-  - `knowledge/topics/withhold/ja/report.md`
+  - 旧 `knowledge/topics/withhold/ja/report.md`（削除済み）
 
 ### P-007 外部化が保持と差分追跡の足場になる
 
@@ -181,9 +181,9 @@
 - 反例 / 境界:
   - 共有物があるだけで保持になるわけではない。差分と再評価が必要
 - source:
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
-  - `knowledge/concepts/CN-004_collective-withhold.md`
-  - `knowledge/topics/four-layers/part-5-withhold.md`
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
+  - 旧 `knowledge/concepts/CN-004_collective-withhold.md`（削除済み）
+  - 旧 `knowledge/topics/four-layers/part-5-withhold.md`（削除済み）
 
 ### P-008 支援者依存でのみ成立する保留
 
@@ -202,8 +202,8 @@
 - 反例 / 境界:
   - 他者支援があること自体は問題ではない。支援不在時の急落が境界
 - source:
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
-  - `knowledge/topics/four-layers/part-5-withhold.md`
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
+  - 旧 `knowledge/topics/four-layers/part-5-withhold.md`（削除済み）
 
 ### P-009 場が保留コストを分散する
 
@@ -224,8 +224,8 @@
 - 反例 / 境界:
   - 手順が多いだけで更新がない場合は P-009 ではなく、P-004 の集団版に近い
 - source:
-  - `knowledge/concepts/CN-004_collective-withhold.md`
-  - `knowledge/concepts/CN-003_boundary-casebook.md`
+  - 旧 `knowledge/concepts/CN-004_collective-withhold.md`（削除済み）
+  - 旧 `knowledge/concepts/CN-003_boundary-casebook.md`（削除済み）
 
 ## 3. 初回の分離結果
 

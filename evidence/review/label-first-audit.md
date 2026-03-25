@@ -32,7 +32,7 @@ repo 内方針では周辺仮説とされている一方で、
 
 対象:
 
-- `knowledge/topics/withhold/ja/report.md`
+- 旧 `knowledge/topics/withhold/ja/report.md`（削除済み）
 - `transform/topics/publish/topics/index.json`
 - `knowledge/guides/awareness-general.md`
 
@@ -123,7 +123,7 @@ repo 内方針では周辺仮説とされている一方で、
 
 ### A. 即時に弱めるべきもの
 
-- `knowledge/topics/withhold/ja/report.md`
+- 旧 `knowledge/topics/withhold/ja/report.md`（削除済み）
 - `knowledge/guides/awareness-general.md`
 - `evidence/survey-status.md`
 - `transform/topics/publish/topics/index.json`
@@ -138,7 +138,7 @@ repo 内方針では周辺仮説とされている一方で、
 
 - `knowledge/topics/survival-trust-axis/ja/report.md`
 - `knowledge/topics/four-layers/ja/report.md`
-- `knowledge/four-layers-overview.md`
+- `knowledge/topics/four-layers/ja/report.md`
 
 措置:
 
@@ -147,11 +147,11 @@ repo 内方針では周辺仮説とされている一方で、
 
 ### C. source 束として維持し、公開概念単位から切り離すもの
 
-- `knowledge/topics/four-layers/part-1-introduction.md`
-- `knowledge/topics/four-layers/part-2-interoception.md`
-- `knowledge/topics/four-layers/part-3-prediction-error.md`
-- `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`
-- `knowledge/topics/four-layers/part-5-withhold.md`
+- 旧 `knowledge/topics/four-layers/part-1-introduction.md`（削除済み）
+- 旧 `knowledge/topics/four-layers/part-2-interoception.md`（削除済み）
+- 旧 `knowledge/topics/four-layers/part-3-prediction-error.md`（削除済み）
+- 旧 `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`（削除済み）
+- 旧 `knowledge/topics/four-layers/part-5-withhold.md`（削除済み）
 - `knowledge/concepts/CN-*.md`
 
 措置:

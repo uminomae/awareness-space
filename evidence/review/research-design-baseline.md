@@ -6,6 +6,9 @@
 この文書は「新しい理論を足す」ためのものではなく、
 既存資料をいったん棚卸しして、**次に何を調べるべきかを決めるための正本**である。
 
+> [!NOTE]
+> この文書には、`抱持` / `Withhold` を意識モデル候補として扱っていた時点の棚卸しが含まれる。現時点の `awareness-space` では `抱持` / `Withhold` を意識モデルの構成要素や検証仮説として採用しない。
+
 ## 1. この文書の役割
 
 - 既存資料を調査種別ごとに分類する
@@ -21,7 +24,6 @@
 
 - `knowledge/survival-trust-axis-starting-memo.md`
 - `knowledge/topics/survival-trust-axis/ja/report.md`
-- `knowledge/survival-trust-axis-overview.md`
 
 性質:
 
@@ -32,45 +34,40 @@
 
 対象:
 
-- `knowledge/four-layers-overview.md`
 - `knowledge/topics/four-layers/ja/report.md`
-- `knowledge/schema/four-layers.md`
-- `knowledge/schema/four-modules.md`
+- `evidence/review/research-design.md`
 
 性質:
 
 - 意識を Layer 0-3 の処理連鎖として記述する枠組みの整理
 - 身体状態、ズレ検出、生存-信頼評価、保持を 1 つの流れとして読む試み
 
-### 2-3. 保持機能の調査
+### 2-3. 抱持 / Withhold 旧調査
 
 対象:
 
-- `knowledge/withhold-overview.md`
-- `knowledge/topics/withhold/ja/report.md`
-- `knowledge/schema/withhold-matching-v2.md`
-- `knowledge/concepts/CN-003_boundary-casebook.md`
-- `knowledge/concepts/CN-004_collective-withhold.md`
+- `evidence/review/concept-audit-v0.md`
+- `evidence/review/label-first-audit.md`
+- `evidence/review/phenomenon-ledger-v0.md`
 
 性質:
 
-- Withhold を「抑制」ではなく「問いとして保持する機能」として扱う整理
-- 個人内だけでなく集団的 Withhold まで視野に入れた仮説群
+- `抱持` / `Withhold` を「抑制」ではなく「問いとして保持する機能」として扱っていた旧整理
+- 個人内だけでなく集団的 `Withhold` まで視野に入れた旧仮説群
+- 専用ファイルは削除済みで、現在は監査ログと設計判断だけを履歴として残す
 
 ### 2-4. 基盤文章群の調査
 
 対象:
 
-- `knowledge/topics/four-layers/part-1-introduction.md`
-- `knowledge/topics/four-layers/part-2-interoception.md`
-- `knowledge/topics/four-layers/part-3-prediction-error.md`
-- `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`
-- `knowledge/topics/four-layers/part-5-withhold.md`
+- `~/dev/kesson-driven-thinking/base/text/domains/four-layers/`
+- `~/dev/kesson-driven-thinking/base/schema/four-layers.md`
+- `~/dev/kesson-driven-thinking/base/schema/four-modules.md`
 
 性質:
 
-- 既存理論資産を part ごとに読み直し、意識モデルの文章的土台として扱う作業
-- 4層モデル、生存-信頼軸、Withhold の素材束
+- 既存理論資産を repo 外 source として読み直し、意識モデルの文章的土台を確認する作業
+- 4層モデル、生存-信頼軸を含む旧素材束
 
 ### 2-5. 補助概念の調査
 
@@ -122,22 +119,22 @@
 少なくとも現時点の資料では、
 意識を静的な内容の集積ではなく、処理の連鎖として読む枠組みが有力である。
 
-### 3-3. Withhold は中心機能候補である
+### 3-3. 抱持 / Withhold は旧探索ラベルとして残っている
 
-- Withhold は「止めること」ではなく「問いとして保持すること」
-- 抑制と区別されるべき機能として扱われている
-- 生存-信頼 の読み違いを見直す再評価の余地として重要視されている
+- 旧資料では `Withhold` を「止めること」ではなく「問いとして保持すること」として扱っていた
+- 抑制と区別されるべき機能として読まれていた
+- ただし現時点の `awareness-space` では、意識モデルの構成要素や検証仮説としては採用しない
 
 ### 3-4. M1 と concept notes は source 束として有効である
 
-- M1 は 4層モデル、生存-信頼軸、Withhold をつなぐ基盤文章群として使える
+- M1 は 4層モデル、生存-信頼軸、`抱持` / `Withhold` を含む旧論点まで見渡せる基盤文章群として使える
 - concept notes は境界事例、信頼、関係性、測定の補助論点を保持している
 - つまり「何もないところから調査を始める」必要はなく、既に source は厚い
 
 ### 3-5. ただし多くはまだ探索的である
 
 - 既存 report の多くは「確定理論」ではなく「有力な見立て」の段階
-- 特に 生存-信頼軸、Withhold、信頼、測定は仮説的な部分が多い
+- 特に 生存-信頼軸、信頼、測定は仮説的な部分が多く、`抱持` / `Withhold` は現行採用の手前で止まっている
 - 既知の量は多いが、**整理の仕方**がまだ固まっていない
 
 ## 4. 何がまだ未解決か
@@ -148,7 +145,7 @@
 
 - 生存-信頼軸をどう置くか
 - 4層モデルをどう読むか
-- Withhold をどう理解するか
+- `抱持` / `Withhold` を旧素材としてどう扱うか
 
 を個別には扱っているが、
 `awareness-space` 全体として「最終的に何を明らかにしたいのか」がまだ粗い。
@@ -162,7 +159,6 @@
 ### 4-3. 用語がまだ揺れている
 
 - 信頼軸を「愛」「愛着」「所属」「信頼」「間主観性」のどれで呼ぶか
-- Withhold を単独層とみなすか、循環全体の再評価機構とみなすか
 - 生存軸に地位や資源まで含めるか
 
 ### 4-4. 観測・検証の仕方が未確定
@@ -204,7 +200,7 @@
 
 ### 主質問 C
 
-心理学、特に発達心理学は、生存-信頼軸や Withhold の何を検証できるのか。
+心理学、特に発達心理学は、生存-信頼軸や関係安全性の何を検証できるのか。
 
 候補:
 
@@ -215,7 +211,7 @@
 
 ### 主質問 D
 
-Withhold は意識の中核機能なのか、それとも探索を成立させる条件なのか。
+旧資料に残る `抱持` / `Withhold` を、現行モデルへ持ち込まずにどう source として扱うか。
 
 ## 7. 次の実装候補
 
@@ -224,7 +220,7 @@ Withhold は意識の中核機能なのか、それとも探索を成立させ�
 1. 調査設計メモ本体を作る
 2. 神経現象学で何を調べるかを定義する
 3. 発達心理学で何を調べるかを定義する
-4. 生存-信頼軸 / 4層モデル / Withhold のうち、どれを中核 report とするか決める
+4. `抱持` / `Withhold` を旧素材としてどこまで残すか整理する
 
 ## 8. 正本関係
 

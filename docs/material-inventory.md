@@ -24,7 +24,6 @@
 | 5段階モデル | `~/dev/kesson-driven-thinking/base/schema/five-stages.md` | 素材候補。参照優先 |
 | 4層モデル | `~/dev/kesson-driven-thinking/base/schema/four-layers.md` | 素材候補 |
 | 4モジュール | `~/dev/kesson-driven-thinking/base/schema/four-modules.md` | 素材候補 |
-| Withhold マッチング | `~/dev/kesson-driven-thinking/base/schema/withhold-matching-v2.md` | 素材候補 |
 | 用語集 | `~/dev/kesson-driven-thinking/base/schema/glossary.md` | 素材候補 |
 | evidence metadata | `~/dev/kesson-driven-thinking/base/schema/evidence-metadata.md` | evidence 取り込み時の参照素材 |
 | container mapping | `~/dev/kesson-driven-thinking/base/schema/container-mapping.md` | 周辺素材 |
@@ -39,7 +38,6 @@
 | part-2 interoception | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-2-interoception.md` |
 | part-3 prediction error | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-3-prediction-error.md` |
 | part-4 fo evaluation | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-4-survival-trust-evaluation.md` |
-| part-5 withhold | `~/dev/kesson-driven-thinking/base/text/domains/four-layers/part-5-withhold.md` |
 
 ### 2-2. concept notes
 
@@ -47,8 +45,6 @@
 |---|---|
 | CN-001 internalized relationship | `~/dev/kesson-driven-thinking/base/concepts/CN-001_internalized-relationship.md` |
 | CN-002 f-axis exposure | `~/dev/kesson-driven-thinking/base/concepts/CN-002_f-axis-exposure.md` |
-| CN-003 boundary casebook | `~/dev/kesson-driven-thinking/base/concepts/CN-003_boundary-casebook.md` |
-| CN-004 collective withhold | `~/dev/kesson-driven-thinking/base/concepts/CN-004_collective-withhold.md` |
 | CN-005 trust hypothesis inventory | `~/dev/kesson-driven-thinking/base/concepts/CN-005_trust-hypothesis-inventory.md` |
 | CN-006 trust analysis axes | `~/dev/kesson-driven-thinking/base/concepts/CN-006_trust-analysis-axes.md` |
 | CN-007 iss42 measurement design principles | `~/dev/kesson-driven-thinking/base/concepts/CN-007_iss42-measurement-design-principles.md` |
