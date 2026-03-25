@@ -51,7 +51,7 @@ FAIL が1件でもあれば生成に戻る。
 
 ### Step 5: 公開整形
 
-`knowledge/` 配下の本文を `pjdhiro/assets/awareness/domains/{ja,en}/md/` へ反映する。
+`knowledge/` 配下の本文を `pjdhiro/assets/awareness/topics/{ja,en}/md/` へ反映する。
 公開時は JA/EN を同時に更新する。
 公開本文は外部向けの一般的なトーンを守り、repo 相対パス・内部運用語・アンカータグを含む生HTMLを含めない。
 
@@ -62,21 +62,21 @@ domains でも **同じ公開用 MD を単一正本** として PDF を生成す
 
 ```bash
 cd /Users/uminomae/dev/awareness-space
-bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
+bash transform/scripts/build-pdf-guide.sh --kind topics --lang all
 ```
 
 このコマンドで次を行う。
 
-1. `pjdhiro/assets/awareness/domains/{lang}/md/*.md` を入力に PDF を生成
-2. `pjdhiro/assets/awareness/domains/{lang}/pdf/*.pdf` を更新
+1. `pjdhiro/assets/awareness/topics/{lang}/md/*.md` を入力に PDF を生成
+2. `pjdhiro/assets/awareness/topics/{lang}/pdf/*.pdf` を更新
 3. `transform/topics/publish/topics/index.json` を更新
-4. `pjdhiro/assets/awareness/manifests/domains.json` を更新
+4. `pjdhiro/assets/awareness/manifests/topics.json` を更新
 
 出力確認:
 
 ```text
-pjdhiro/assets/awareness/domains/ja/pdf/<slug>.pdf
-pjdhiro/assets/awareness/domains/en/pdf/<slug>.pdf
+pjdhiro/assets/awareness/topics/ja/pdf/<slug>.pdf
+pjdhiro/assets/awareness/topics/en/pdf/<slug>.pdf
 ```
 
 ### Step 7: pjdhiro 側 commit & push
@@ -86,7 +86,7 @@ pjdhiro/assets/awareness/domains/en/pdf/<slug>.pdf
 
 ```bash
 cd /Users/uminomae/dev/pjdhiro
-git add assets/awareness/domains/ assets/awareness/manifests/domains.json
+git add assets/awareness/topics/ assets/awareness/manifests/topics.json
 git diff --stat
 git commit -m "publish awareness assets YYYY-MM-DD"
 git push origin main
@@ -107,13 +107,13 @@ metadata の情報フロー:
 ```text
 knowledge/topics/*/{ja,en}/report.md
     ↓
-pjdhiro/assets/awareness/domains/{ja,en}/md/*.md
+pjdhiro/assets/awareness/topics/{ja,en}/md/*.md
     ↓
-pjdhiro/assets/awareness/domains/{ja,en}/pdf/*.pdf
+pjdhiro/assets/awareness/topics/{ja,en}/pdf/*.pdf
     ↓
 transform/topics/publish/topics/index.json
     ↓
-pjdhiro/assets/awareness/manifests/domains.json
+pjdhiro/assets/awareness/manifests/topics.json
 ```
 
 ## B. 1調査トピックの再生成（既存 report 更新）
@@ -133,7 +133,7 @@ A と同じだが、対象 evidence の差分確認が必須。
 
 上記を順次実行し、`quality-test` はバッチ前提で記録する。  
 FAIL が出たトピックは分離して再生成する。  
-公開時は `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all --push` を優先する。
+公開時は `bash transform/scripts/build-pdf-guide.sh --kind topics --lang all --push` を優先する。
 
 ## D. EN版生成（公開必須）
 
@@ -142,7 +142,7 @@ FAIL が出たトピックは分離して再生成する。
 1. 日本語版を起点に EN 翻訳下書きを作成
 2. `knowledge/topics/<slug>/en/report.md` 作成
 3. `quality-test-awareness-report.md` を翻訳版にも適用
-4. `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all`
+4. `bash transform/scripts/build-pdf-guide.sh --kind topics --lang all`
 5. 用語統一を確認し、JA/EN を同時に公開
 
 ## 読み替えルール（運用固定）

@@ -56,7 +56,7 @@
 
 確認対象:
 - `transform/topics/publish/topics/index.json`
-- `pjdhiro/assets/awareness/manifests/domains.json`
+- `pjdhiro/assets/awareness/manifests/topics.json`
 - `transform/scripts/publish-awareness-topics.sh`
 - `transform/scripts/build-pdf-guide.sh`
 - `src/reports/data.js`

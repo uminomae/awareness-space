@@ -5,7 +5,7 @@ const PJDHIRO_RAW_BASE = 'https://raw.githubusercontent.com/uminomae/pjdhiro/mai
 const AWARENESS_PATH = '/assets/awareness';
 const PJDHIRO_AWARENESS_PAGES = `${PJDHIRO_PAGES_BASE}${AWARENESS_PATH}`;
 const PJDHIRO_AWARENESS_RAW = `${PJDHIRO_RAW_BASE}${AWARENESS_PATH}`;
-const AWARENESS_TOPICS_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/domains.json`;
+const AWARENESS_TOPICS_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/topics.json`;
 const AWARENESS_SURVEY_MANIFEST_URL = `${PJDHIRO_AWARENESS_RAW}/manifests/survey.json`;
 
 export const DEFAULT_REPORTS_DATA_URL = AWARENESS_TOPICS_MANIFEST_URL;
@@ -69,8 +69,8 @@ export const DEFAULT_PROGRESS_TAXONOMY = [
         id: 'planned',
         labelJa: '設計中',
         labelEn: 'Planned',
-        descriptionJa: 'domain 定義のみ。読者向け report は未配置',
-        descriptionEn: 'Domain defined, but no reader-facing report yet',
+        descriptionJa: 'topic 定義のみ。読者向け report は未配置',
+        descriptionEn: 'Topic defined, but no reader-facing report yet',
         tone: 'secondary',
         order: 10,
     },

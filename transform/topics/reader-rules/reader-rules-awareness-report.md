@@ -59,7 +59,7 @@ repo 内運用、生成工程、内部整理の都合を本文へ露出しない
 
 ## 4. 公開契約
 
-- `domains` report の公開正本は `pjdhiro/assets/awareness/domains/{lang}/md/` に置く Markdown である。
+- `domains` report の公開正本は `pjdhiro/assets/awareness/topics/{lang}/md/` に置く Markdown である。
 - `domains` の公開契約は **Markdown + PDF + manifest 更新** である。
 - PDF は同じ公開用 MD を単一の正本として生成し、別原稿を起こさない。
 - JA / EN は公開時に同時整備を原則とする。

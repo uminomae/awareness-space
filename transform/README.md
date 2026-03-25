@@ -63,8 +63,8 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - guides PDF: `pjdhiro/assets/awareness/guides/{lang}/pdf/`
 - survey Markdown: `pjdhiro/assets/awareness/survey/{lang}/md/`
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
-- topics Markdown: `pjdhiro/assets/awareness/domains/{lang}/md/`
-- topics PDF: `pjdhiro/assets/awareness/domains/{lang}/pdf/`
+- topics Markdown: `pjdhiro/assets/awareness/topics/{lang}/md/`
+- topics PDF: `pjdhiro/assets/awareness/topics/{lang}/pdf/`
 - manifests: `pjdhiro/assets/awareness/manifests/`
 
 ### metadata

@@ -37,7 +37,7 @@
 
 理由:
 - `transform/topics/publish/topics/index.json`
-- `pjdhiro/assets/awareness/manifests/domains.json`
+- `pjdhiro/assets/awareness/manifests/topics.json`
 - `transform/scripts/publish-awareness-topics.sh`
 - `src/reports/data.js`
 - `knowledge/topics/`

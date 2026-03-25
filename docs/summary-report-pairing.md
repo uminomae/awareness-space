@@ -67,7 +67,7 @@ summary の各要点には、対になる調査と reader-facing な report が�
 | 現時点で何が見えているか | topic-report-backed 整理 + 暫定統合 | `knowledge/topics/survival-trust-axis/ja/report.md`, `knowledge/topics/four-layers/ja/report.md`, `knowledge/topics/concept-notes/ja/report.md` | 一部は暫定統合 |
 | どこまで進んでいるか | survey | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `knowledge/reports-overview.md` | survey-backed |
 | 何がまだ未解決か | survey + design memo | `pjdhiro/assets/awareness/survey/ja/md/survey-status.md`, `evidence/review/*.md` | 調査中 / 設計段階を含む |
-| 次の入口 | UI / 読書導線 | `pjdhiro/assets/awareness/survey/ja/md/survey-topic-index.md`, `pjdhiro/assets/awareness/domains/ja/md/`, `knowledge/topics/` | 要強化 |
+| 次の入口 | UI / 読書導線 | `pjdhiro/assets/awareness/survey/ja/md/survey-topic-index.md`, `pjdhiro/assets/awareness/topics/ja/md/`, `knowledge/topics/` | 要強化 |
 
 ## 完了基準
 

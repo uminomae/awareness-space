@@ -23,7 +23,7 @@ AWARENESS_SPACE_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PJDHIRO_DIR="/Users/uminomae/dev/pjdhiro"
 GUIDES_BASE="$PJDHIRO_DIR/assets/awareness/guides"
 SURVEY_BASE="$PJDHIRO_DIR/assets/awareness/survey"
-TOPICS_BASE="$PJDHIRO_DIR/assets/awareness/domains"
+TOPICS_BASE="$PJDHIRO_DIR/assets/awareness/topics"
 MANIFESTS_DIR="$PJDHIRO_DIR/assets/awareness/manifests"
 PUBLISH_TOPICS_SCRIPT="$AWARENESS_SPACE_ROOT/transform/scripts/publish-awareness-topics.sh"
 
@@ -509,7 +509,7 @@ PY
 publish_topics() {
     echo -e "${BLUE}🧩 topics 公開物更新${NC}"
     bash "$PUBLISH_TOPICS_SCRIPT"
-    echo -e "  ${GREEN}✓${NC} topics snapshot / domains.json / domains markdown / domains pdf 更新完了"
+    echo -e "  ${GREEN}✓${NC} topics snapshot / topics.json / topics markdown / topics pdf 更新完了"
 }
 
 push_pjdhiro_main() {
@@ -565,7 +565,7 @@ main() {
                 echo "使い方: bash transform/scripts/build-pdf-guide.sh [オプション]"
                 echo ""
                 echo "オプション:"
-                echo "  --kind {guides|survey|topics|domains|all}        種別（デフォルト: guides。domains は legacy alias）"
+                echo "  --kind {guides|survey|topics|domains|all}        種別（デフォルト: guides。topics を推奨、domains は legacy alias）"
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
                 echo "  --push                                           ビルド後に公開 assets を commit/push"

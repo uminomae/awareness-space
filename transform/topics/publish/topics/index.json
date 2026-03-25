@@ -1,14 +1,14 @@
 {
   "version": "0.3",
-  "generated_at": "2026-03-23",
+  "generated_at": "2026-03-25",
   "note": "awareness-space reports manifest",
   "progress_taxonomy": [
     {
       "id": "planned",
       "label_ja": "設計中",
       "label_en": "Planned",
-      "description_ja": "domain 定義のみ。読者向け report は未配置",
-      "description_en": "Domain defined, but no reader-facing report yet",
+      "description_ja": "topic 定義のみ。読者向け report は未配置",
+      "description_en": "Topic defined, but no reader-facing report yet",
       "order": 10,
       "tone": "secondary"
     },
@@ -54,8 +54,8 @@
         "en": "./knowledge/topics/survival-trust-axis/en/report.md"
       },
       "pdf": {
-        "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/ja/pdf/survival-trust-axis.pdf",
-        "en": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/en/pdf/survival-trust-axis.pdf"
+        "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/topics/ja/pdf/survival-trust-axis.pdf",
+        "en": "https://uminomae.github.io/pjdhiro/assets/awareness/topics/en/pdf/survival-trust-axis.pdf"
       }
     },
     {
@@ -80,8 +80,8 @@
         "en": "./knowledge/topics/four-layers/en/report.md"
       },
       "pdf": {
-        "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/ja/pdf/four-layers.pdf",
-        "en": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/en/pdf/four-layers.pdf"
+        "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/topics/ja/pdf/four-layers.pdf",
+        "en": "https://uminomae.github.io/pjdhiro/assets/awareness/topics/en/pdf/four-layers.pdf"
       }
     }
   ]

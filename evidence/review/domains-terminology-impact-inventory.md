@@ -91,7 +91,7 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 ### manifest
 
 - `transform/topics/publish/topics/index.json`
-- `pjdhiro/assets/awareness/manifests/domains.json`
+- `pjdhiro/assets/awareness/manifests/topics.json`
 
 ### scripts
 
@@ -154,7 +154,7 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 判断対象:
 
 - `transform/topics/publish/topics/index.json`
-- `pjdhiro/assets/awareness/manifests/domains.json`
+- `pjdhiro/assets/awareness/manifests/topics.json`
 - `survey-domain-index.md`
 - `knowledge/topics/`
 

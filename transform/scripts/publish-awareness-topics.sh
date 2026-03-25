@@ -3,10 +3,10 @@ set -euo pipefail
 
 ROOT="/Users/uminomae/dev/awareness-space"
 PJDHIRO="/Users/uminomae/dev/pjdhiro/assets/awareness"
-TOPICS_JA_MD_DIR="$PJDHIRO/domains/ja/md"
-TOPICS_EN_MD_DIR="$PJDHIRO/domains/en/md"
-TOPICS_JA_PDF_DIR="$PJDHIRO/domains/ja/pdf"
-TOPICS_EN_PDF_DIR="$PJDHIRO/domains/en/pdf"
+TOPICS_JA_MD_DIR="$PJDHIRO/topics/ja/md"
+TOPICS_EN_MD_DIR="$PJDHIRO/topics/en/md"
+TOPICS_JA_PDF_DIR="$PJDHIRO/topics/ja/pdf"
+TOPICS_EN_PDF_DIR="$PJDHIRO/topics/en/pdf"
 MANIFEST_DIR="$PJDHIRO/manifests"
 LOCAL_MANIFEST="$ROOT/transform/topics/publish/topics/index.json"
 RAW_BASE="https://raw.githubusercontent.com/uminomae/pjdhiro/main/assets/awareness"
@@ -24,7 +24,7 @@ publish_topic() {
 publish_topic "survival-trust-axis"
 publish_topic "four-layers"
 
-python3 - "$ROOT" "$PJDHIRO" "$RAW_BASE" "$PAGES_BASE" "$DATE_STR" "$LOCAL_MANIFEST" "$MANIFEST_DIR/domains.json" <<'PY'
+python3 - "$ROOT" "$PJDHIRO" "$RAW_BASE" "$PAGES_BASE" "$DATE_STR" "$LOCAL_MANIFEST" "$MANIFEST_DIR/topics.json" <<'PY'
 import json
 import os
 import re
@@ -53,7 +53,7 @@ progress_taxonomy = [
         'label_ja': '設計中',
         'label_en': 'Planned',
         'description_ja': 'topic 定義のみ。読者向け report は未配置',
-        'description_en': 'Domain defined, but no reader-facing report yet',
+        'description_en': 'Topic defined, but no reader-facing report yet',
         'order': 10,
         'tone': 'secondary',
     },
@@ -112,7 +112,7 @@ def build_reports(md_builder, pdf_builder):
             generated[lang] = meta.get('generated') or meta.get('date', '')
         pdf = {}
         for lang in ('ja', 'en'):
-            pdf_path = os.path.join(awareness_assets, 'domains', lang, 'pdf', f'{slug}.pdf')
+            pdf_path = os.path.join(awareness_assets, 'topics', lang, 'pdf', f'{slug}.pdf')
             pdf[lang] = pdf_builder(slug, lang) if os.path.isfile(pdf_path) else None
         reports.append({
             **spec,
@@ -131,7 +131,7 @@ local_payload = {
     'reports': build_reports(lambda slug: {
         'ja': f'./knowledge/topics/{slug}/ja/report.md',
         'en': f'./knowledge/topics/{slug}/en/report.md',
-    }, lambda slug, lang: f'{pages_base}/domains/{lang}/pdf/{slug}.pdf'),
+    }, lambda slug, lang: f'{pages_base}/topics/{lang}/pdf/{slug}.pdf'),
 }
 
 public_payload = {
@@ -140,9 +140,9 @@ public_payload = {
     'namespace': 'awareness',
     'progress_taxonomy': progress_taxonomy,
     'reports': build_reports(lambda slug: {
-        'ja': f'{raw_base}/domains/ja/md/{slug}.md',
-        'en': f'{raw_base}/domains/en/md/{slug}.md',
-    }, lambda slug, lang: f'{pages_base}/domains/{lang}/pdf/{slug}.pdf'),
+        'ja': f'{raw_base}/topics/ja/md/{slug}.md',
+        'en': f'{raw_base}/topics/en/md/{slug}.md',
+    }, lambda slug, lang: f'{pages_base}/topics/{lang}/pdf/{slug}.pdf'),
 }
 
 for path, payload in ((local_manifest, local_payload), (public_manifest, public_payload)):

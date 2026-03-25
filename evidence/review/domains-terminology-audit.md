@@ -102,7 +102,7 @@ reader-facing には分かりやすいが、
 - `transform/topics/README.md`
 - `transform/topics/reader-rules/reader-rules-awareness-report.md`
 - `transform/topics/publish/topics/index.json`
-- `pjdhiro/assets/awareness/manifests/domains.json`
+- `pjdhiro/assets/awareness/manifests/topics.json`
 - `transform/survey/reader-rules/reader-rules-awareness-survey.md`
 
 ## 次の判断課題
