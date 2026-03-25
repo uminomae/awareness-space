@@ -40,7 +40,7 @@ const state = {
         featureCards: null,
         error: null,
         openStatusBtn: null,
-        domainsHeading: null,
+        topicsHeading: null,
         scopeNote: null,
         levelLegend: null,
         metrics: null,

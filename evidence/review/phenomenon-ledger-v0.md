@@ -46,7 +46,7 @@
 - 反例 / 境界:
   - 身体を感じていない主観報告があっても、背景層としては停止していない可能性
 - source:
-  - `knowledge/domains/four-layers/part-2-interoception.md`
+  - `knowledge/topics/four-layers/part-2-interoception.md`
   - `evidence/review/neurophenomenology-design.md`
 
 ### P-002 差異が「違和感 / 欠け」として前景化する
@@ -68,7 +68,7 @@
 - 反例 / 境界:
   - 全ての差異が一人称的な「欠け」になるわけではない
 - source:
-  - `knowledge/domains/four-layers/part-3-prediction-error.md`
+  - `knowledge/topics/four-layers/part-3-prediction-error.md`
   - `evidence/review/neurophenomenology-design.md`
 
 ### P-003 差異が即時反応へ短絡する
@@ -90,7 +90,7 @@
 - 反例 / 境界:
   - 行動が速いこと自体は P-003 ではない。再評価の余地が残るなら別
 - source:
-  - `knowledge/domains/four-layers/part-5-withhold.md`
+  - `knowledge/topics/four-layers/part-5-withhold.md`
   - `knowledge/concepts/CN-003_boundary-casebook.md`
 
 ### P-004 行動は止まるが、問いは開かれない
@@ -114,7 +114,7 @@
   - 外見上静かでも、内部で問いが保持されているなら P-004 ではない
 - source:
   - `knowledge/concepts/CN-003_boundary-casebook.md`
-  - `knowledge/domains/withhold/ja/report.md`
+  - `knowledge/topics/withhold/ja/report.md`
 
 ### P-005 問いを保持したまま閉じない
 
@@ -136,8 +136,8 @@
 - 反例 / 境界:
   - 「待っている」ようでも、問いがなく単に回避しているだけなら別
 - source:
-  - `knowledge/domains/withhold/ja/report.md`
-  - `knowledge/domains/four-layers/part-5-withhold.md`
+  - `knowledge/topics/withhold/ja/report.md`
+  - `knowledge/topics/four-layers/part-5-withhold.md`
   - `knowledge/concepts/CN-003_boundary-casebook.md`
 
 ### P-006 内在化された関係が保留可能性を支える
@@ -160,7 +160,7 @@
 - source:
   - `knowledge/concepts/CN-001_internalized-relationship.md`
   - `evidence/review/developmental-psychology-design.md`
-  - `knowledge/domains/withhold/ja/report.md`
+  - `knowledge/topics/withhold/ja/report.md`
 
 ### P-007 外部化が保持と差分追跡の足場になる
 
@@ -183,7 +183,7 @@
 - source:
   - `knowledge/concepts/CN-003_boundary-casebook.md`
   - `knowledge/concepts/CN-004_collective-withhold.md`
-  - `knowledge/domains/four-layers/part-5-withhold.md`
+  - `knowledge/topics/four-layers/part-5-withhold.md`
 
 ### P-008 支援者依存でのみ成立する保留
 
@@ -203,7 +203,7 @@
   - 他者支援があること自体は問題ではない。支援不在時の急落が境界
 - source:
   - `knowledge/concepts/CN-003_boundary-casebook.md`
-  - `knowledge/domains/four-layers/part-5-withhold.md`
+  - `knowledge/topics/four-layers/part-5-withhold.md`
 
 ### P-009 場が保留コストを分散する
 

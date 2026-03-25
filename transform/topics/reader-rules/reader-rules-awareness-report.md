@@ -14,8 +14,8 @@
 2. 本ファイル（ルール）
 3. `docs/summary-report-pairing.md`
 4. `evidence/review/first-person-vs-third-person.md`
-5. `transform/domains/domain-report-template.md`
-6. `transform/domains/quality-test/quality-test-awareness-report.md`
+5. `transform/topics/domain-report-template.md`
+6. `transform/topics/quality-test/quality-test-awareness-report.md`
 7. 該当 evidence / intake / review
 
 ## 重要: `domains` の意味を固定する
@@ -167,4 +167,4 @@ repo 内運用、生成工程、内部整理の都合を本文へ露出しない
 
 公開時の bilingual 生成や manifest 更新は本 file を下敷きに行う。  
 現時点では JA/EN の本文を揃えたうえで手作業整形（構造のみ）で進める。
-統一構造が必要な場合は `transform/domains/domain-report-template.md` を併用する。
+統一構造が必要な場合は `transform/topics/domain-report-template.md` を併用する。

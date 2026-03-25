@@ -1,6 +1,6 @@
 # ルール評価基準: awareness 報告書 v0.2
 
-**用途**: `transform/domains` の生成物が `awareness` 定義の `domains` を満たすかを判定する  
+**用途**: `transform/topics` の生成物が `awareness` 定義の `topics` を満たすかを判定する  
 **判定**: PASS / WARN / FAIL  
 **再生成基準**: FAIL が1件でもあれば再生成、WARN 3件以上で再生成検討
 
@@ -8,7 +8,7 @@
 
 ## A. 主題の正確性
 
-### T1-1: 対象が awareness の `domains` 定義と一致しているか
+### T1-1: 対象が awareness の `topics` 定義と一致しているか
 
 - レポートが `生存-信頼軸 / 4層モデル / concept notes` のどれかに紐づいているか
 
@@ -100,8 +100,8 @@
 ## 付録: 実行時コマンド（任意）
 
 ```bash
-rg -n "d01|d02|d03|academic|領域|領域別" transform/domains/* evidence/* knowledge/*
-rg -n "私は|と思う|私の見解" knowledge/domains/*/*.md knowledge/domains/*/*/*.md
+rg -n "d01|d02|d03|academic|領域|領域別" transform/topics/* evidence/* knowledge/*
+rg -n "私は|と思う|私の見解" knowledge/topics/*/*.md knowledge/topics/*/*/*.md
 ```
 
 ※ これは参考。evidence の性質により誤検出があるため、目視で補正すること。

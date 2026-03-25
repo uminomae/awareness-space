@@ -45,7 +45,7 @@ manifest 全体を再生成した日。manifest 単位の metadata。
 
 対象:
 
-- `knowledge/domains/*/{ja,en}/report.md`
+- `knowledge/topics/*/{ja,en}/report.md`
 - `pjdhiro/assets/awareness/guides/{ja,en}/md/*.md`
 - `pjdhiro/assets/awareness/survey/{ja,en}/md/*.md`
 
@@ -67,7 +67,7 @@ manifest 全体を再生成した日。manifest 単位の metadata。
 - survey: `pjdhiro/assets/awareness/manifests/survey.json`
 - image cards: `pjdhiro/assets/awareness/manifests/image-cards.json`
 - domains:
-  - repo snapshot: `transform/domains/publish/domains/index.json`
+  - repo snapshot: `transform/topics/publish/topics/index.json`
   - public copy: `pjdhiro/assets/awareness/manifests/domains.json`
 
 契約:
@@ -90,9 +90,9 @@ manifest 全体を再生成した日。manifest 単位の metadata。
 ```text
 docs/evidence-metadata-awareness.md
     ↓
-knowledge/domains/*/{ja,en}/report.md
+knowledge/topics/*/{ja,en}/report.md
     ↓
-transform/domains/publish/domains/index.json
+transform/topics/publish/topics/index.json
     ↓
 pjdhiro/assets/awareness/manifests/domains.json
     ↓
@@ -134,7 +134,7 @@ image cards は markdown modal を前提にせず、manifest の `title_*` / `co
 - guide / survey 更新時:
   `transform/scripts/build-pdf-guide.sh` で PDF と manifests を更新する
 - domain report 更新時:
-  `transform/scripts/build-pdf-guide.sh --kind domains --lang all` で PDF を生成し、`transform/scripts/publish-awareness-domains.sh` で repo snapshot と public manifest を更新する
+  `transform/scripts/build-pdf-guide.sh --kind domains --lang all` で PDF を生成し、`transform/scripts/publish-awareness-topics.sh` で repo snapshot と public manifest を更新する
 - modal 表示変更時:
   `src/reports/modal.js`, `src/reports/data.js`, `src/reports/render.js` を同時確認する
 

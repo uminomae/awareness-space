@@ -93,7 +93,7 @@ Withhold は、反応を止める技法ではなく、ズレを問いとして�
 
 - `../../../withhold-overview.md`
 - `../../../schema/withhold-matching-v2.md`
-- `../../../domains/four-layers/part-5-withhold.md`
+- `../../../topics/four-layers/part-5-withhold.md`
 - `../../../concepts/CN-003_boundary-casebook.md`
 - `../../../concepts/CN-004_collective-withhold.md`
 - `../../../concepts/CN-001_internalized-relationship.md`

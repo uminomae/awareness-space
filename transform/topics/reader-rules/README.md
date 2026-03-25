@@ -2,7 +2,7 @@
 
 ## 役割
 
-このディレクトリは `transform/domains` の入力変換ルールを固定化する場所。
+このディレクトリは `transform/topics` の入力変換ルールを固定化する場所。
 
 - `reader-rules-awareness-report.md`: awareness の report 生成時に使う主要ルール
 - `../domain-report-template.md`: report の統一テンプレート

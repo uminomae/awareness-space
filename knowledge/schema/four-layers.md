@@ -143,7 +143,7 @@ Layer 2とLayer 3の間に位置する概念的境界。
 
 ## 参考文献
 
-- `content/domains/four-layers/part-1-introduction.md` 〜 `part-5-withhold.md`
+- `content/topics/four-layers/part-1-introduction.md` 〜 `part-5-withhold.md`
 - Friston, K. (2010). The free-energy principle.
 - Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science.
 - Feldman, H., & Friston, K. J. (2010). Attention, uncertainty, and free-energy.

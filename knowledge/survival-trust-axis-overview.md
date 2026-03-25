@@ -44,7 +44,7 @@
 ## 関連入口
 
 - `four-layers-overview.md`
-- `domains/four-layers/part-4-survival-trust-evaluation.md`
+- `topics/four-layers/part-4-survival-trust-evaluation.md`
 - `withhold-overview.md`
 
 ## まだ決めていないこと

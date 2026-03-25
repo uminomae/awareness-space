@@ -53,7 +53,7 @@
 
 | source | 役割 | 現在の扱い |
 |---|---|---|
-| `knowledge/domains/four-layers/` | 生存-信頼軸と意識記述の初期構造 | 主要 source |
+| `knowledge/topics/four-layers/` | 生存-信頼軸と意識記述の初期構造 | 主要 source |
 | `knowledge/concepts/CN-*.md` | 仮説補助、概念の枝分かれ | 主要 source |
 | `knowledge/schema/four-modules.md` | 構成整理の補助 | 支持 source |
 

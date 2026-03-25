@@ -1,4 +1,4 @@
-# transform/domains — 調査トピック向け report パイプライン
+# transform/topics — 調査トピック向け report パイプライン
 
 ## 5W1H
 
@@ -6,7 +6,7 @@
 - **Why**: 統合的な全体調査報告を支えるトピック report を、再生成可能な形で揃えるため。
 - **Who**: Awareness 側の調査報告を更新する Claude Code CLI とレビュー担当者。
 - **When**: 調査トピックの evidence が更新されたとき、既存 report を再生成するとき。
-- **Where**: 入力は `evidence/`、規約は `reader-rules/`、品質基準は `quality-test/`、公開草案は `knowledge/domains/`。
+- **Where**: 入力は `evidence/`、規約は `reader-rules/`、品質基準は `quality-test/`、公開草案は `knowledge/topics/`。
 - **How**: `reader-rules` で構成し、`quality-test` で自己点検し、レビューを通したうえで公開形に整える。
 
 ## 読み替え前提（重要）
@@ -22,7 +22,7 @@
 - 骨格は作成済み。現時点では実レポートと検証データは段階的に整備中。
 - 既存公開物は `pjdhiro/assets/awareness/domains/` と `pjdhiro/assets/awareness/manifests/domains.json` にある。
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
-- `knowledge/domains/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
+- `knowledge/topics/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
 - 公開契約は Markdown 正本 + domains PDF + manifest 更新である。
 - 公開本文は外部向けトーンを守り、repo 内パスやアンカータグを含む生HTMLを出さない。
 
@@ -50,7 +50,7 @@
 ## 命名とファイル運用（暫定）
 
 - `domains` 単位の evidence は原則 `evidence/awareness-<slug>.md` を想定（将来 `evidence/domains/<slug>.md` へ統一可能）。
-- report 草案は `knowledge/domains/<slug>/{ja,en}/report.md`、公開配置は `pjdhiro/assets/awareness/domains/{ja,en}/md/<slug>.md` を既定とする。
+- report 草案は `knowledge/topics/<slug>/{ja,en}/report.md`、公開配置は `pjdhiro/assets/awareness/domains/{ja,en}/md/<slug>.md` を既定とする。
 - PDF は同じ公開用 MD から `pjdhiro/assets/awareness/domains/{lang}/pdf/<slug>.pdf` を生成する。
 - `slug` は次を想定:
   - `survival-trust-axis`

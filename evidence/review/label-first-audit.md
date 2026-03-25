@@ -32,8 +32,8 @@ repo 内方針では周辺仮説とされている一方で、
 
 対象:
 
-- `knowledge/domains/withhold/ja/report.md`
-- `transform/domains/publish/domains/index.json`
+- `knowledge/topics/withhold/ja/report.md`
+- `transform/topics/publish/topics/index.json`
 - `knowledge/guides/awareness-general.md`
 
 問題:
@@ -87,8 +87,8 @@ repo 内方針では周辺仮説とされている一方で、
 
 対象:
 
-- `transform/domains/reader-rules/reader-rules-awareness-report.md`
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/reader-rules/reader-rules-awareness-report.md`
+- `transform/topics/publish/topics/index.json`
 
 問題:
 
@@ -123,10 +123,10 @@ repo 内方針では周辺仮説とされている一方で、
 
 ### A. 即時に弱めるべきもの
 
-- `knowledge/domains/withhold/ja/report.md`
+- `knowledge/topics/withhold/ja/report.md`
 - `knowledge/guides/awareness-general.md`
 - `evidence/survey-status.md`
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/publish/topics/index.json`
 
 措置:
 
@@ -136,8 +136,8 @@ repo 内方針では周辺仮説とされている一方で、
 
 ### B. 仮説として維持できるが、確立概念としては扱わないもの
 
-- `knowledge/domains/survival-trust-axis/ja/report.md`
-- `knowledge/domains/four-layers/ja/report.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
 - `knowledge/four-layers-overview.md`
 
 措置:
@@ -147,11 +147,11 @@ repo 内方針では周辺仮説とされている一方で、
 
 ### C. source 束として維持し、公開概念単位から切り離すもの
 
-- `knowledge/domains/four-layers/part-1-introduction.md`
-- `knowledge/domains/four-layers/part-2-interoception.md`
-- `knowledge/domains/four-layers/part-3-prediction-error.md`
-- `knowledge/domains/four-layers/part-4-survival-trust-evaluation.md`
-- `knowledge/domains/four-layers/part-5-withhold.md`
+- `knowledge/topics/four-layers/part-1-introduction.md`
+- `knowledge/topics/four-layers/part-2-interoception.md`
+- `knowledge/topics/four-layers/part-3-prediction-error.md`
+- `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`
+- `knowledge/topics/four-layers/part-5-withhold.md`
 - `knowledge/concepts/CN-*.md`
 
 措置:

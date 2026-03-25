@@ -19,7 +19,7 @@ guide を単独説明文にしないための対応先として機能する。
 
 ### manifest
 
-`transform/domains/publish/domains/index.json`
+`transform/topics/publish/topics/index.json`
 
 - RESEARCH セクションに載る report 一覧の正本データ
 - 各 report の ID、名前、進捗、summary、Markdown / PDF 参照先を持つ
@@ -36,8 +36,8 @@ manifest を読み込み、
 
 ### 詳細本文
 
-- `knowledge/domains/survival-trust-axis/ja/report.md`
-- `knowledge/domains/four-layers/ja/report.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
 
 ここに置くものは、計画書ではなく読者向けの report 本文である。
 主題、中心的な見立て、未決論点、関連素材を最小単位として持つ。
@@ -46,7 +46,7 @@ manifest を読み込み、
 
 `awareness-space` の RESEARCH セクションでは、すべてのカードが同じ成熟度ではない。
 
-- `report_ready`: `knowledge/domains/*/ja/report.md` の本文があり、modal で参照できる
+- `report_ready`: `knowledge/topics/*/ja/report.md` の本文があり、modal で参照できる
 - `source_ready`: overview や移設済み素材には到達できるが、調査トピック report 本文はまだない
 
 2026-03-20 時点では次の構成で運用している。
@@ -59,14 +59,14 @@ manifest を読み込み、
 
 - 調査原本: `evidence/`
 - summary: `knowledge/guides/`
-- report 本文: `knowledge/domains/`
-- source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/domains/four-layers/`
-- manifest 正本: `transform/domains/publish/domains/index.json`
+- report 本文: `knowledge/topics/`
+- source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/topics/four-layers/`
+- manifest 正本: `transform/topics/publish/topics/index.json`
 - UI 導線: `index.html`, `src/reports/`
 - design memo: `evidence/review/`
 
 `transform/reports/` は将来の拡張用に保持しているが、
-現在の RESEARCH セクション実装は `transform/domains/` manifest を起点にしている。
+現在の RESEARCH セクション実装は `transform/topics/` manifest を起点にしている。
 
 ## 5. 計画書として扱うもの
 

@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-# build-pdf-guide.sh — awareness-space PDF / manifest builder v0.2
+# build-pdf-guide.sh — awareness-space PDF / manifest builder v0.3
 #
 # 概要:
 #   creation-space の build-pdf-guide.sh を模倣しつつ、
-#   awareness guides / survey / domains の public Markdown から
+#   awareness guides / survey / topics の public Markdown から
 #   PDF 生成・manifest 更新・必要時の公開 push を行う。
 #
 # 使い方:
 #   bash transform/scripts/build-pdf-guide.sh
 #   bash transform/scripts/build-pdf-guide.sh --kind guides --audience all --lang all
 #   bash transform/scripts/build-pdf-guide.sh --kind survey --lang all
-#   bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
+#   bash transform/scripts/build-pdf-guide.sh --kind topics --lang all
 #   bash transform/scripts/build-pdf-guide.sh --kind all --lang all --push
 #   bash transform/scripts/build-pdf-guide.sh --setup
 
@@ -23,9 +23,9 @@ AWARENESS_SPACE_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 PJDHIRO_DIR="/Users/uminomae/dev/pjdhiro"
 GUIDES_BASE="$PJDHIRO_DIR/assets/awareness/guides"
 SURVEY_BASE="$PJDHIRO_DIR/assets/awareness/survey"
-DOMAINS_BASE="$PJDHIRO_DIR/assets/awareness/domains"
+TOPICS_BASE="$PJDHIRO_DIR/assets/awareness/domains"
 MANIFESTS_DIR="$PJDHIRO_DIR/assets/awareness/manifests"
-PUBLISH_DOMAINS_SCRIPT="$AWARENESS_SPACE_ROOT/transform/scripts/publish-awareness-domains.sh"
+PUBLISH_TOPICS_SCRIPT="$AWARENESS_SPACE_ROOT/transform/scripts/publish-awareness-topics.sh"
 
 strip_frontmatter() {
     python3 -c "
@@ -294,14 +294,14 @@ build_survey() {
     return 0
 }
 
-build_domains() {
+build_topics() {
     local lang="${1:-ja}"
-    local md_dir="$DOMAINS_BASE/${lang}/md"
-    local pdf_dir="$DOMAINS_BASE/${lang}/pdf"
+    local md_dir="$TOPICS_BASE/${lang}/md"
+    local pdf_dir="$TOPICS_BASE/${lang}/pdf"
 
     local lang_label="JA"
     [ "$lang" = "en" ] && lang_label="EN"
-    echo -e "${BLUE}📄 domains [${lang_label}] ビルド中...${NC}"
+    echo -e "${BLUE}📄 topics [${lang_label}] ビルド中...${NC}"
 
     if [ ! -d "$md_dir" ] || [ -z "$(ls "$md_dir"/*.md 2>/dev/null)" ]; then
         echo -e "  ${YELLOW}スキップ${NC}: $md_dir に .md がありません"
@@ -349,7 +349,7 @@ build_domains() {
         rm -f "$tmp"
     done
 
-    echo -e "  domains [${lang_label}]: ${success}成功 / ${fail}失敗"
+    echo -e "  topics [${lang_label}]: ${success}成功 / ${fail}失敗"
     [ "$fail" -gt 0 ] && return 1
     return 0
 }
@@ -506,10 +506,10 @@ PY
     echo -e "  ${GREEN}✓${NC} survey.json 更新完了"
 }
 
-publish_domains() {
-    echo -e "${BLUE}🧩 domains 公開物更新${NC}"
-    bash "$PUBLISH_DOMAINS_SCRIPT"
-    echo -e "  ${GREEN}✓${NC} domains.json / domains markdown / domains pdf 更新完了"
+publish_topics() {
+    echo -e "${BLUE}🧩 topics 公開物更新${NC}"
+    bash "$PUBLISH_TOPICS_SCRIPT"
+    echo -e "  ${GREEN}✓${NC} topics snapshot / domains.json / domains markdown / domains pdf 更新完了"
 }
 
 push_pjdhiro_main() {
@@ -565,7 +565,7 @@ main() {
                 echo "使い方: bash transform/scripts/build-pdf-guide.sh [オプション]"
                 echo ""
                 echo "オプション:"
-                echo "  --kind {guides|survey|domains|all}               種別（デフォルト: guides）"
+                echo "  --kind {guides|survey|topics|domains|all}        種別（デフォルト: guides。domains は legacy alias）"
                 echo "  --audience {general|designer|academic|all}       対象（guides時のみ。デフォルト: general）"
                 echo "  --lang {ja|en|all}                               言語（デフォルト: ja）"
                 echo "  --push                                           ビルド後に公開 assets を commit/push"
@@ -594,21 +594,21 @@ main() {
 
     local kinds=()
     case "$kind" in
-        all) kinds=(guides survey domains) ;;
-        guides|survey|domains) kinds=("$kind") ;;
+        all) kinds=(guides survey topics) ;;
+        guides|survey|topics|domains) kinds=("$kind") ;;
         *) echo -e "${RED}不明なkind: $kind${NC}"; exit 1 ;;
     esac
 
-    local has_domains=false
+    local has_topics=false
     for _k in "${kinds[@]}"; do
-        if [ "$_k" = "domains" ]; then
-            has_domains=true
+        if [ "$_k" = "domains" ] || [ "$_k" = "topics" ]; then
+            has_topics=true
             break
         fi
     done
 
-    if $has_domains; then
-        publish_domains
+    if $has_topics; then
+        publish_topics
         echo ""
     fi
 
@@ -645,9 +645,9 @@ main() {
                     echo ""
                     done
                 ;;
-            domains)
+            topics|domains)
                 for l in "${langs[@]}"; do
-                    if build_domains "$l"; then
+                    if build_topics "$l"; then
                         success=$((success + 1))
                     else
                         fail=$((fail + 1))
@@ -660,8 +660,8 @@ main() {
 
     update_manifests
 
-    if $has_domains || $do_push; then
-        publish_domains
+    if $has_topics || $do_push; then
+        publish_topics
     fi
 
     if $do_push; then

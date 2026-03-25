@@ -31,7 +31,7 @@
 
 ### 2. ただし中身は同質な構成要素ではない
 
-現在の `knowledge/domains/` には次が混在する。
+現在の `knowledge/topics/` には次が混在する。
 
 - 生存-信頼軸
 - 4層モデル
@@ -54,9 +54,9 @@
 
 ### 4. docs 側でも毎回「読み替え」を要求している
 
-- `docs/domains-mapping.md`
-- `transform/domains/README.md`
-- `transform/domains/reader-rules/reader-rules-awareness-report.md`
+- `docs/topics-mapping.md`
+- `transform/topics/README.md`
+- `transform/topics/reader-rules/reader-rules-awareness-report.md`
 
 いずれも
 「`creation-space` の domains とは違う」
@@ -97,11 +97,11 @@ reader-facing には分かりやすいが、
 
 ## 次に見るべき場所
 
-- `docs/domains-mapping.md`
+- `docs/topics-mapping.md`
 - `docs/report-structure.md`
-- `transform/domains/README.md`
-- `transform/domains/reader-rules/reader-rules-awareness-report.md`
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/README.md`
+- `transform/topics/reader-rules/reader-rules-awareness-report.md`
+- `transform/topics/publish/topics/index.json`
 - `pjdhiro/assets/awareness/manifests/domains.json`
 - `transform/survey/reader-rules/reader-rules-awareness-survey.md`
 

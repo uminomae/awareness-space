@@ -40,7 +40,7 @@
 
 ### 3-2. 4層モデル原著文書群との接続
 
-`domains/four-layers/part-4-survival-trust-evaluation.md` では、Layer 2 の役割が次のように記述されている。
+`topics/four-layers/part-4-survival-trust-evaluation.md` では、Layer 2 の役割が次のように記述されている。
 
 - Layer 1 から送られたズレを、生存軸（生存・脅威）と 信頼軸（愛着・所属）で評価する
 - その評価が情動価を与え、行動準備として Layer 3 に送られる

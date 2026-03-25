@@ -131,10 +131,10 @@
 1. `evidence/review/core-source-map.md`
 2. `evidence/review/research-design-baseline.md`
 3. `knowledge/survival-trust-axis-starting-memo.md`
-4. `knowledge/domains/survival-trust-axis/ja/report.md`
-5. `knowledge/domains/four-layers/ja/report.md`
-6. `knowledge/domains/four-layers/part-1-introduction.md`
-7. `knowledge/domains/four-layers/part-4-survival-trust-evaluation.md`
+4. `knowledge/topics/survival-trust-axis/ja/report.md`
+5. `knowledge/topics/four-layers/ja/report.md`
+6. `knowledge/topics/four-layers/part-1-introduction.md`
+7. `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`
 8. `knowledge/concepts/CN-002_f-axis-exposure.md`
 9. `knowledge/concepts/CN-007_iss42-measurement-design-principles.md`
 

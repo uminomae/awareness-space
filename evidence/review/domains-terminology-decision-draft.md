@@ -36,11 +36,11 @@
 は、現時点では legacy internal contract として維持する。
 
 理由:
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/publish/topics/index.json`
 - `pjdhiro/assets/awareness/manifests/domains.json`
-- `transform/scripts/publish-awareness-domains.sh`
+- `transform/scripts/publish-awareness-topics.sh`
 - `src/reports/data.js`
-- `knowledge/domains/`
+- `knowledge/topics/`
 
 に広く波及し、
 公開経路まで壊す可能性があるため。
@@ -57,8 +57,8 @@
 
 - `survey-domain-index.md` の file 名
 - `domains.json` の file 名
-- `knowledge/domains/` path
-- `transform/domains/` path
+- `knowledge/topics/` path
+- `transform/topics/` path
 - script 名と JS 定数名
 
 ## この案で避けられること
@@ -75,7 +75,7 @@
 - reader-facing では `survey-topic-index` / `調査トピック索引` を使う
 - `survey-domain-index` は互換用 alias として当面残す
 
-### 2. `knowledge/domains/` が意味と path でズレる
+### 2. `knowledge/topics/` が意味と path でズレる
 
 対応:
 - docs で legacy path であることを明記する

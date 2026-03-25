@@ -36,11 +36,11 @@
 - `four-layers-overview.md`
 
 原著文書群:
-- `domains/four-layers/part-1-introduction.md`
-- `domains/four-layers/part-2-interoception.md`
-- `domains/four-layers/part-3-prediction-error.md`
-- `domains/four-layers/part-4-survival-trust-evaluation.md`
-- `domains/four-layers/part-5-withhold.md`
+- `topics/four-layers/part-1-introduction.md`
+- `topics/four-layers/part-2-interoception.md`
+- `topics/four-layers/part-3-prediction-error.md`
+- `topics/four-layers/part-4-survival-trust-evaluation.md`
+- `topics/four-layers/part-5-withhold.md`
 
 ## 4. Withhold
 

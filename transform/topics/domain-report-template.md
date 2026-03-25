@@ -2,7 +2,7 @@
 
 **用途**: `awareness-space` の `domains` report を同じ責務と粒度で再生成する  
 **根拠**: `PROJECT.md`, `docs/summary-report-pairing.md`, `evidence/review/first-person-vs-third-person.md`, `reader-rules-awareness-report.md`  
-**参照元**: `creation-space/transform/domains/domain-report-template.md` を awareness 向けに読み替え  
+**参照元**: `creation-space/transform/topics/domain-report-template.md` を awareness 向けに読み替え  
 **更新日**: 2026-03-23
 
 ---

@@ -55,13 +55,13 @@
 - rename 時に壊れる contract を明示する
 
 確認対象:
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/publish/topics/index.json`
 - `pjdhiro/assets/awareness/manifests/domains.json`
-- `transform/scripts/publish-awareness-domains.sh`
+- `transform/scripts/publish-awareness-topics.sh`
 - `transform/scripts/build-pdf-guide.sh`
 - `src/reports/data.js`
 - `survey-domain-index.md`（legacy alias）
-- `knowledge/domains/` path
+- `knowledge/topics/` path
 
 成果物:
 - 変更対象一覧
@@ -105,7 +105,7 @@ reader-facing 日本語候補:
 
 ## 非目標
 
-- ただちに `knowledge/domains/` を rename すること
+- ただちに `knowledge/topics/` を rename すること
 - ただちに `survey-domain-index.md` を rename すること
 - `creation-space` と同じ `domains` 概念へ揃えること
 

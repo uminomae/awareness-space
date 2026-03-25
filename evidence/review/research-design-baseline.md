@@ -20,7 +20,7 @@
 対象:
 
 - `knowledge/survival-trust-axis-starting-memo.md`
-- `knowledge/domains/survival-trust-axis/ja/report.md`
+- `knowledge/topics/survival-trust-axis/ja/report.md`
 - `knowledge/survival-trust-axis-overview.md`
 
 性質:
@@ -33,7 +33,7 @@
 対象:
 
 - `knowledge/four-layers-overview.md`
-- `knowledge/domains/four-layers/ja/report.md`
+- `knowledge/topics/four-layers/ja/report.md`
 - `knowledge/schema/four-layers.md`
 - `knowledge/schema/four-modules.md`
 
@@ -47,7 +47,7 @@
 対象:
 
 - `knowledge/withhold-overview.md`
-- `knowledge/domains/withhold/ja/report.md`
+- `knowledge/topics/withhold/ja/report.md`
 - `knowledge/schema/withhold-matching-v2.md`
 - `knowledge/concepts/CN-003_boundary-casebook.md`
 - `knowledge/concepts/CN-004_collective-withhold.md`
@@ -61,11 +61,11 @@
 
 対象:
 
-- `knowledge/domains/four-layers/part-1-introduction.md`
-- `knowledge/domains/four-layers/part-2-interoception.md`
-- `knowledge/domains/four-layers/part-3-prediction-error.md`
-- `knowledge/domains/four-layers/part-4-survival-trust-evaluation.md`
-- `knowledge/domains/four-layers/part-5-withhold.md`
+- `knowledge/topics/four-layers/part-1-introduction.md`
+- `knowledge/topics/four-layers/part-2-interoception.md`
+- `knowledge/topics/four-layers/part-3-prediction-error.md`
+- `knowledge/topics/four-layers/part-4-survival-trust-evaluation.md`
+- `knowledge/topics/four-layers/part-5-withhold.md`
 
 性質:
 

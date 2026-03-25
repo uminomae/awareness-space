@@ -16,7 +16,7 @@
 2. `transform/guides/reader-rules/reader-rules-awareness-general.md`
 3. `transform/guides/reader-rules/reader-rules-awareness-designer.md`
 4. `transform/guides/reader-rules/reader-rules-awareness-academic.md`
-5. 必要に応じて `knowledge/domains/` と `pjdhiro/assets/awareness/survey/`
+5. 必要に応じて `knowledge/topics/` と `pjdhiro/assets/awareness/survey/`
 
 ### Step 2: public Markdown を揃える
 

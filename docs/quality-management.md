@@ -17,7 +17,7 @@
 
 - report は読者向け整理であり、単なる作業計画ではない
 - 一覧 / カード / 詳細の3層を持つ
-- report は `knowledge/domains/` を主な受け皿とする
+- report は `knowledge/topics/` を主な受け皿とする
 - guide の summary を支える reader-facing な論拠になること
 
 ## 3. UI 品質

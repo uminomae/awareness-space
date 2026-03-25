@@ -34,7 +34,7 @@
 
 - `evidence/review/layer0-interoception-reading.md`
 - `evidence/review/neurophenomenology-design.md`
-- `knowledge/domains/four-layers/part-2-interoception.md`
+- `knowledge/topics/four-layers/part-2-interoception.md`
 
 この cluster が言えること:
 
@@ -61,7 +61,7 @@
 
 - `evidence/review/layer1-prediction-error-reading.md`
 - `evidence/review/neurophenomenology-design.md`
-- `knowledge/domains/four-layers/part-3-prediction-error.md`
+- `knowledge/topics/four-layers/part-3-prediction-error.md`
 
 この cluster が言えること:
 

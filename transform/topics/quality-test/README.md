@@ -2,7 +2,7 @@
 
 ## 役割
 
-`transform/domains` で生成する report をレビューするための簡易チェック一覧を保持する。
+`transform/topics` で生成する report をレビューするための簡易チェック一覧を保持する。
 
 - `quality-test-awareness-report.md`: 判定項目本体
 

@@ -2,7 +2,7 @@
 
 **用途**: `domains` 配下の調査トピック report を `evidence` → `transform` → `knowledge` で再生成する。
 **前提**: 対象トピックの evidence が `evidence/` に存在すること。
-**参照**: `transform/PRINCIPLES.md`, `transform/domains/README.md`, `docs/evidence-metadata-awareness.md`
+**参照**: `transform/PRINCIPLES.md`, `transform/topics/README.md`, `docs/evidence-metadata-awareness.md`
 
 ---
 
@@ -17,14 +17,14 @@ ls evidence | rg "(survival-trust-axis|four-layers|withhold|cn-)"
 以下を読む（この順序）:
 
 1. `transform/PRINCIPLES.md`
-2. `transform/domains/README.md`
-3. `transform/domains/reader-rules/reader-rules-awareness-report.md`
-4. `transform/domains/quality-test/quality-test-awareness-report.md`
+2. `transform/topics/README.md`
+3. `transform/topics/reader-rules/reader-rules-awareness-report.md`
+4. `transform/topics/quality-test/quality-test-awareness-report.md`
 5. 対象の evidence（暫定: `evidence/awareness-<slug>.md`）
 
 ### Step 2: MD 生成（暫定）
 
-`reader-rules-awareness-report.md` の構成で `knowledge/domains/<slug>/{ja,en}/report.md` を作成する。
+`reader-rules-awareness-report.md` の構成で `knowledge/topics/<slug>/{ja,en}/report.md` を作成する。
 
 必須:
 
@@ -69,7 +69,7 @@ bash transform/scripts/build-pdf-guide.sh --kind domains --lang all
 
 1. `pjdhiro/assets/awareness/domains/{lang}/md/*.md` を入力に PDF を生成
 2. `pjdhiro/assets/awareness/domains/{lang}/pdf/*.pdf` を更新
-3. `transform/domains/publish/domains/index.json` を更新
+3. `transform/topics/publish/topics/index.json` を更新
 4. `pjdhiro/assets/awareness/manifests/domains.json` を更新
 
 出力確認:
@@ -105,13 +105,13 @@ git push origin develop
 metadata の情報フロー:
 
 ```text
-knowledge/domains/*/{ja,en}/report.md
+knowledge/topics/*/{ja,en}/report.md
     ↓
 pjdhiro/assets/awareness/domains/{ja,en}/md/*.md
     ↓
 pjdhiro/assets/awareness/domains/{ja,en}/pdf/*.pdf
     ↓
-transform/domains/publish/domains/index.json
+transform/topics/publish/topics/index.json
     ↓
 pjdhiro/assets/awareness/manifests/domains.json
 ```
@@ -119,7 +119,7 @@ pjdhiro/assets/awareness/manifests/domains.json
 ## B. 1調査トピックの再生成（既存 report 更新）
 
 A と同じだが、対象 evidence の差分確認が必須。  
-再生成後、`knowledge/domains/<slug>/ja/report.md` の差分比較を取り、レビュー結果を更新する。  
+再生成後、`knowledge/topics/<slug>/ja/report.md` の差分比較を取り、レビュー結果を更新する。  
 公開 assets を更新した場合は Step 7-8 まで進める。
 
 ## C. 全調査トピック一括生成
@@ -140,7 +140,7 @@ FAIL が出たトピックは分離して再生成する。
 公開時は英語版を同時に整備する。追加実行:
 
 1. 日本語版を起点に EN 翻訳下書きを作成
-2. `knowledge/domains/<slug>/en/report.md` 作成
+2. `knowledge/topics/<slug>/en/report.md` 作成
 3. `quality-test-awareness-report.md` を翻訳版にも適用
 4. `bash transform/scripts/build-pdf-guide.sh --kind domains --lang all`
 5. 用語統一を確認し、JA/EN を同時に公開
@@ -157,4 +157,4 @@ FAIL が出たトピックは分離して再生成する。
 
 - `awareness-space` は通常作業ブランチを `develop` とし、`main` への直接 push は行わない。
 - 公開 assets の push は `pjdhiro/main` 側で行い、source repo 側は `develop` を維持する。
-- 現行 publish script は `survival-trust-axis` と `four-layers` を既定対象としている。対象追加時は `transform/scripts/publish-awareness-domains.sh` も更新する。
+- 現行 publish script は `survival-trust-axis` と `four-layers` を既定対象としている。対象追加時は `transform/scripts/publish-awareness-topics.sh` も更新する。

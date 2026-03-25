@@ -30,7 +30,7 @@ const STRINGS = {
                 description: '理論的な比較軸まで含めて検討するための解説。',
             },
         },
-        tabDomains: '調査トピックレポート',
+        tabTopics: '調査トピックレポート',
         openStatus: '調査の現在地',
         statusReportTitle: '調査の現在地',
         metricGenerated: 'manifest',
@@ -72,7 +72,7 @@ const STRINGS = {
                 description: 'An explainer for readers who want the theoretical comparison points.',
             },
         },
-        tabDomains: 'Topic Reports',
+        tabTopics: 'Topic Reports',
         openStatus: 'Research Status',
         statusReportTitle: 'Research Status',
         metricGenerated: 'manifest',
@@ -157,7 +157,7 @@ export function createReportsRenderer({
         state.dom.guideScopeNote = document.getElementById('model-summary-note');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
-        state.dom.domainsHeading = document.getElementById('reports-domains-heading');
+        state.dom.topicsHeading = document.getElementById('reports-topics-heading');
         state.dom.scopeNote = document.getElementById('reports-scope-note');
         state.dom.levelLegend = document.getElementById('reports-level-legend');
         state.dom.metrics = document.getElementById('reports-metrics');
@@ -526,7 +526,7 @@ export function createReportsRenderer({
     function applyStaticText() {
         const strings = getReportsStrings(state.lang);
         if (state.dom.guideScopeNote) state.dom.guideScopeNote.textContent = strings.guideScopeNote;
-        if (state.dom.domainsHeading) state.dom.domainsHeading.textContent = strings.tabDomains;
+        if (state.dom.topicsHeading) state.dom.topicsHeading.textContent = strings.tabTopics;
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);
         if (state.dom.openStatusBtn) state.dom.openStatusBtn.textContent = strings.openStatus;

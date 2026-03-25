@@ -48,12 +48,12 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 
 ### 主要正本
 
-- `docs/domains-mapping.md`
+- `docs/topics-mapping.md`
 - `docs/report-structure.md`
 - `docs/summary-report-pairing.md`
-- `transform/domains/README.md`
-- `transform/domains/WORKFLOW.md`
-- `transform/domains/reader-rules/reader-rules-awareness-report.md`
+- `transform/topics/README.md`
+- `transform/topics/WORKFLOW.md`
+- `transform/topics/reader-rules/reader-rules-awareness-report.md`
 - `transform/survey/reader-rules/reader-rules-awareness-survey.md`
 
 ### 状態
@@ -70,32 +70,32 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 
 ### 主要対象
 
-- `knowledge/domains/README.md`
-- `knowledge/domains/survival-trust-axis/`
-- `knowledge/domains/four-layers/`
-- `knowledge/domains/withhold/`
-- `knowledge/domains/concept-notes/`
+- `knowledge/topics/README.md`
+- `knowledge/topics/survival-trust-axis/`
+- `knowledge/topics/four-layers/`
+- `knowledge/topics/withhold/`
+- `knowledge/topics/concept-notes/`
 
 ### 影響
 
 - path rename は reader-facing link、survey、report overview、evidence/review 内参照に波及する
-- 4層モデルの原著文書群まで `knowledge/domains/` に乗っているため、単純 rename ではなく再配置判断が必要
+- 4層モデルの原著文書群まで `knowledge/topics/` に乗っているため、単純 rename ではなく再配置判断が必要
 
 ### 判断ポイント
 
-- `knowledge/domains/` は最後に触る
+- `knowledge/topics/` は最後に触る
 - 先に topic 概念を固定し、path は legacy として維持する選択肢が強い
 
 ## 4. manifest / scripts / data loader
 
 ### manifest
 
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/publish/topics/index.json`
 - `pjdhiro/assets/awareness/manifests/domains.json`
 
 ### scripts
 
-- `transform/scripts/publish-awareness-domains.sh`
+- `transform/scripts/publish-awareness-topics.sh`
 - `transform/scripts/build-pdf-guide.sh`
 
 ### loader / runtime
@@ -153,10 +153,10 @@ rename を行うなら **reader-facing → docs → internal contract** の順�
 
 判断対象:
 
-- `transform/domains/publish/domains/index.json`
+- `transform/topics/publish/topics/index.json`
 - `pjdhiro/assets/awareness/manifests/domains.json`
 - `survey-domain-index.md`
-- `knowledge/domains/`
+- `knowledge/topics/`
 
 ### Step 4. rename 実装をするなら分割する
 

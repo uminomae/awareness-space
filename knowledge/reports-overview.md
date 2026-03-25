@@ -14,8 +14,8 @@ guide の summary を裏づける reader-facing な論拠層でもある。
 
 現時点では、次の調査トピック report を公開している。
 
-1. `knowledge/domains/survival-trust-axis/ja/report.md`
-2. `knowledge/domains/four-layers/ja/report.md`
+1. `knowledge/topics/survival-trust-axis/ja/report.md`
+2. `knowledge/topics/four-layers/ja/report.md`
 いずれも、計画書や素材メモではなく、読者向けに主題・主要見立て・未解決論点を整理した report である。
 
 一方で、

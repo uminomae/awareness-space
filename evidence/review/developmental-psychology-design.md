@@ -123,7 +123,7 @@
 4. `knowledge/concepts/CN-006_trust-analysis-axes.md`
 5. `knowledge/concepts/CN-007_iss42-measurement-design-principles.md`
 6. `knowledge/survival-trust-axis-starting-memo.md`
-7. `knowledge/domains/survival-trust-axis/ja/report.md`
+7. `knowledge/topics/survival-trust-axis/ja/report.md`
 
 ## 7. この調査から次に分解される Issue
 

@@ -38,7 +38,7 @@ docs/ に置かないもの:
 | `docs/creation-space-parity-map.md` | creation-space 模倣実装の参照地図 |
 | `docs/material-inventory.md` | 初期素材インベントリ |
 | `docs/report-structure.md` | 調査報告の構造メモ |
-| `docs/domains-mapping.md` | awareness-space の domains 読み替えルール |
+| `docs/topics-mapping.md` | awareness-space の topics 読み替えルール |
 | `docs/evidence-metadata-awareness.md` | awareness 固有 metadata 契約の正本 |
 | `docs/quality-management.md` | 品質基準 |
 | `docs/summary-report-pairing.md` | summary と report の対応原則 |
@@ -52,10 +52,10 @@ docs/ に置かないもの:
 | `evidence/review/core-source-map.md` | 中核参照地図の正本 |
 | `knowledge/concepts/index.md` | CN 概念ノート索引 |
 | `knowledge/schema/README.md` | ナレッジスキーマの役割説明 |
-| `knowledge/domains/four-layers/part-1-introduction.md` | 4層モデルの原著文書群 系列（Part1） |
-| `knowledge/domains/README.md` | 領域別レポート導線の役割説明 |
+| `knowledge/topics/four-layers/part-1-introduction.md` | 4層モデルの原著文書群 系列（Part1） |
+| `knowledge/topics/README.md` | 調査トピックレポート導線の役割説明 |
 | `transform/README.md` | 公開用出力 workflow の入口 |
-| `transform/domains/README.md` | awareness-space 版 domains pipeline の入口 |
+| `transform/topics/README.md` | awareness-space 版 topics pipeline の入口 |
 | `transform/image-cards/README.md` | 画像解釈カード workflow の入口 |
 
 ## 3. ファイルカタログ

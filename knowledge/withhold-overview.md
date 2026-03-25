@@ -28,4 +28,4 @@ Withhold は、評価済みの行動準備を即座に実行せず、
 
 - `four-layers-overview.md`
 - `survival-trust-axis-overview.md`
-- `domains/four-layers/part-5-withhold.md`
+- `topics/four-layers/part-5-withhold.md`

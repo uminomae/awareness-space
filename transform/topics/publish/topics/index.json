@@ -50,8 +50,8 @@
         "en": "2026-03-23"
       },
       "md": {
-        "ja": "./knowledge/domains/survival-trust-axis/ja/report.md",
-        "en": "./knowledge/domains/survival-trust-axis/en/report.md"
+        "ja": "./knowledge/topics/survival-trust-axis/ja/report.md",
+        "en": "./knowledge/topics/survival-trust-axis/en/report.md"
       },
       "pdf": {
         "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/ja/pdf/survival-trust-axis.pdf",
@@ -76,8 +76,8 @@
         "en": "2026-03-23"
       },
       "md": {
-        "ja": "./knowledge/domains/four-layers/ja/report.md",
-        "en": "./knowledge/domains/four-layers/en/report.md"
+        "ja": "./knowledge/topics/four-layers/ja/report.md",
+        "en": "./knowledge/topics/four-layers/en/report.md"
       },
       "pdf": {
         "ja": "https://uminomae.github.io/pjdhiro/assets/awareness/domains/ja/pdf/four-layers.pdf",
