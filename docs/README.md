@@ -102,9 +102,9 @@ docs/ に置かないもの:
 ## 7. 現在フェーズ
 
 - Phase 1: bootstrap と UI parity は概ね完了
-- 現在の open 実装線: `#94` creation-space parity map と模倣実装バックログを整備する
+- 現在の open 実装線: なし（必要に応じて新規 Issue を分解して進める）
 - Phase 2 の初期統合フェーズは完了
-- 次は `#94` に沿った parity / workflow / shell 残差の逐次整備を進める段階
+- 次は topics 契約を前提に、必要な実装線を個別 Issue へ分解して進める段階
 
 ## 8. ローカル作業領域
 

@@ -107,7 +107,7 @@
 - `#89` は完了済み
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
-- 現在の open Issue は `#94`
+- 現在の open Issue は なし
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -119,11 +119,11 @@
 
 ### 3.2 現在の主作業
 
-- `#94` で creation-space parity map と模倣実装バックログを整備する
+- topics 契約へ移行した repo を前提に、必要な実装線を個別 Issue へ分解して進める
 
 ### 3.3 次のアクション
 
-- `#94` に沿って shell / workflow / docs の parity 残差を一件ずつ解消する
+- topics 契約への移行後に残る実装課題を個別 Issue 化する
 - survey / guide / report に返した内容の整合を見直す
 
 ### 3.4 ブロッカー
