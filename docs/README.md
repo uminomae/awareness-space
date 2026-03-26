@@ -105,8 +105,8 @@ docs/ に置かないもの:
 - Phase 1: bootstrap と UI parity は概ね完了
 - Phase 2 の初期統合フェーズは完了
 - 現在の open 実装線:
-  - `#99` 仮説→調査→発見→公開の bottom-up 運用を Issue に固定する
   - `#100` creation-space の Gemini SVG 図解 workflow を awareness-space に模倣する
+  - `#104` survival-trust-axis の最小 SVG workflow を実装する
 - topics 契約を前提に、必要な実装線を個別 Issue へ分解して進める段階
 
 ## 8. ローカル作業領域

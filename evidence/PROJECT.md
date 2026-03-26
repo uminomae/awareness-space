@@ -107,8 +107,8 @@
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
 - 現在の open Issue:
-  - `#99` bottom-up 運用整理
   - `#100` Gemini SVG workflow 模倣
+  - `#104` survival-trust-axis 最小 SVG workflow 実装
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -121,12 +121,12 @@
 
 ### 3.2 現在の主作業
 
-- topics 契約へ移行した repo を前提に、bottom-up 公開運用と図解 workflow を個別 Issue で進める
+- topics 契約へ移行した repo を前提に、図解 workflow の最小導入を個別 Issue で進める
 
 ### 3.3 次のアクション
 
-- `#99` で仮説→調査→発見→公開の bottom-up 運用を固定する
 - `#100` で creation-space の Gemini SVG workflow を awareness-space に持ち込む
+- `#104` で survival-trust-axis の 1 topic 1 SVG 導入を進める
 
 ### 3.4 ブロッカー
 
