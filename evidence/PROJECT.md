@@ -106,7 +106,9 @@
 - `#89` は完了済み
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
-- 現在の open Issue は なし
+- 現在の open Issue:
+  - `#99` bottom-up 運用整理
+  - `#100` Gemini SVG workflow 模倣
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -119,12 +121,12 @@
 
 ### 3.2 現在の主作業
 
-- topics 契約へ移行した repo を前提に、必要な実装線を個別 Issue へ分解して進める
+- topics 契約へ移行した repo を前提に、bottom-up 公開運用と図解 workflow を個別 Issue で進める
 
 ### 3.3 次のアクション
 
-- `intake-return-map.md` を起点に、必要な再反映作業があれば個別 Issue 化する
-- survey / guide / report に返した内容の整合を見直す
+- `#99` で仮説→調査→発見→公開の bottom-up 運用を固定する
+- `#100` で creation-space の Gemini SVG workflow を awareness-space に持ち込む
 
 ### 3.4 ブロッカー
 
