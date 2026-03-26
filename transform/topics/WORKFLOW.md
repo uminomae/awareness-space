@@ -105,7 +105,7 @@ pjdhiro/assets/awareness/img/svg/topics/en/<slug>-01-overview-svg.svg
 
 ```bash
 cd /Users/uminomae/dev/pjdhiro
-git add assets/awareness/topics/ assets/awareness/manifests/topics.json
+git add assets/awareness/topics/ assets/awareness/img/svg/topics/ assets/awareness/manifests/topics.json
 git diff --stat
 git commit -m "publish awareness assets YYYY-MM-DD"
 git push origin main
