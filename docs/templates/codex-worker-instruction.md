@@ -29,6 +29,9 @@ git branch --show-current
 
 ## 前提確認
 
+- role:
+  - parent / manager: {誰が統合判断するか}
+  - current worker: {調査 | docs | 実装 | レビュー}
 - 参照ファイル:
   - `path/a`
   - `path/b`
@@ -36,6 +39,8 @@ git branch --show-current
   - `.cache/outbox/...`
 - この worker がやらないこと:
   - ...
+- review worker 起動条件:
+  - {ファイル移動/削除 | cross-repo | publish契約変更 | なし}
 
 ## 作業手順
 
@@ -71,6 +76,20 @@ git push origin {branch}
 #### Step N+2: コミット影響レビュー
 
 - `creation-space/skills/commit-review-with-log/SKILL.md` を参照して `.cache/outbox/REVIEW-*.md` を残す
+- review worker が必要な条件に当てはまる場合は、ここで別 worker を起動するか、その必要を明記して親へ返す
+
+## failure handling
+
+- worker 無応答:
+  write set を狭めて再投入する
+- 出力不足:
+  欠落項目を指定して同 worker に再投入する
+- FAIL:
+  close せず、修正実装 worker を起動する
+- WARN:
+  follow-up Issue か対応先を明記して OPEN 継続する
+- Issue 状態不整合:
+  `DONE-*` と Issue state を同期してから close する
 
 ## Step 気づき
 
@@ -97,5 +116,5 @@ git push origin {branch}
 - [ ] Issue comment がある
 - [ ] DONE / REVIEW / PLAN の必要ファイルがある
 - [ ] Issue state を確認している
+- [ ] review worker が必要な場合、その起動または未起動理由が明記されている
 ```
-

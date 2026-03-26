@@ -96,6 +96,13 @@ Codex を background worker や別 session で動かすときに、
 - 本体実装
 - commit
 
+### review worker を必須にする条件
+
+- ファイル移動・削除・リネームを含む
+- cross-repo 参照を更新する
+- publish 契約 / public contract / manifest / workflow を変更する
+- UI 導線と docs 契約を同時に変更する
+
 ## 3. 指示書の必須項目
 
 ### 全 worker 共通
@@ -138,13 +145,23 @@ Codex を background worker や別 session で動かすときに、
 3. 判定（PASS / WARN / FAIL）
 4. 次の自然な着手先
 
-## 5. テンプレート正本
+## 5. 失敗時の再投入ルール
+
+| 失敗 | 対応 |
+|---|---|
+| worker 無応答 | write set を狭めて再投入 |
+| 出力不足 | 欠落項目を明示して同 worker 再投入 |
+| FAIL | close 禁止。修正 worker を起動 |
+| WARN | follow-up Issue または対応先を固定して OPEN 継続 |
+| state 不整合 | `DONE-*` と Issue state を親が同期 |
+
+## 6. テンプレート正本
 
 Codex worker 用テンプレート正本:
 
 - `docs/templates/codex-worker-instruction.md`
 
-## 6. チェックリスト
+## 7. チェックリスト
 
 - [ ] worker 種別が明記されている
 - [ ] tracked file を触るかどうかが明記されている
@@ -153,4 +170,4 @@ Codex worker 用テンプレート正本:
 - [ ] 参照ファイルが 5〜10 件程度に絞られている
 - [ ] commit を伴う場合のみ commit 手順が書かれている
 - [ ] 調査のみ worker に commit / push が混ざっていない
-
+- [ ] review worker が必要な条件に当てはまるか判断している

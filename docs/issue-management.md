@@ -28,6 +28,33 @@
 - `exploration`: 開いた理論探索・調査作業
 - `ops`: ルール、ツール、運用、保守
 
+## マルチ worker 役割
+
+Issue を並行処理するときは、親セッションと worker の責務を分ける。
+
+| role | 主な責務 | close 権限 |
+|---|---|---|
+| 親（manager） | worker 起動、統合判断、Issue 状態更新 | あり |
+| 調査 worker | 現状分析、parity 調査、構想メモ、仕様未固定論点の整理 | 原則なし |
+| 実装 worker | docs / script / UI / workflow の変更、検証、commit/push | 条件付き |
+| review worker | commit 後レビュー、`REVIEW-*` 作成、PASS/WARN/FAIL コメント | なし |
+
+原則:
+- 1 worker = 1 Issue = 1成果物
+- 調査 worker / review worker は原則 OPEN のまま返す
+- close 判定は親（manager）が最終統合後に行う
+
+## worker 起動トリガー
+
+1. 仕様未固定・依存曖昧:
+   調査 worker を先行起動する
+2. tracked file 編集を伴う:
+   実装 worker を起動する
+3. ファイル移動・削除・横断変更・公開契約変更:
+   review worker を必須起動する
+4. close 前:
+   親が Issue state / `DONE-*` / `REVIEW-*` を最終確認する
+
 ## 必須項目
 
 各 Issue には最低限以下を書く。
