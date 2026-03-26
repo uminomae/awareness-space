@@ -21,6 +21,7 @@ ls evidence | rg "(survival-trust-axis|four-layers)"
 3. `transform/topics/reader-rules/reader-rules-awareness-report.md`
 4. `transform/topics/quality-test/quality-test-awareness-report.md`
 5. 対象の evidence（暫定: `evidence/awareness-<slug>.md`）
+6. `transform/topics/svg-generation-rules.md`（SVG を生成する場合）
 
 ### Step 2: MD 生成（暫定）
 
@@ -78,6 +79,24 @@ bash transform/scripts/build-pdf-guide.sh --kind topics --lang all
 pjdhiro/assets/awareness/topics/ja/pdf/<slug>.pdf
 pjdhiro/assets/awareness/topics/en/pdf/<slug>.pdf
 ```
+
+### Step 6.5: SVG 生成（必要な topic のみ）
+
+初期導入では `1 topic = 1 SVG` を原則とし、まず `survival-trust-axis` を対象にする。
+
+```bash
+cd /Users/uminomae/dev/awareness-space
+bash transform/scripts/generate-awareness-topic-svg.sh --slug survival-trust-axis --lang all
+```
+
+出力先:
+
+```text
+pjdhiro/assets/awareness/img/svg/topics/ja/<slug>-01-overview-svg.svg
+pjdhiro/assets/awareness/img/svg/topics/en/<slug>-01-overview-svg.svg
+```
+
+生成後は `transform/scripts/validate-awareness-svg.py` の PASS を確認する。
 
 ### Step 7: pjdhiro 側 commit & push
 
