@@ -24,6 +24,7 @@
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/topics/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
 - 公開契約は Markdown 正本 + topics PDF + manifest 更新である。
+- topics SVG は品質確保のため `gemini-2.5-pro` を主力にする。
 - 公開本文は外部向けトーンを守り、repo 内パスやアンカータグを含む生HTMLを出さない。
 
 ## ワークフロー

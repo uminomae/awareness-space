@@ -83,6 +83,7 @@ pjdhiro/assets/awareness/topics/en/pdf/<slug>.pdf
 ### Step 6.5: SVG 生成（必要な topic のみ）
 
 初期導入では `1 topic = 1 SVG` を原則とし、まず `survival-trust-axis` と `four-layers` を対象にする。
+品質要件が高いため、主力モデルは `gemini-2.5-pro` とする。
 
 ```bash
 cd /Users/uminomae/dev/awareness-space

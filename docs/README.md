@@ -104,7 +104,8 @@ docs/ に置かないもの:
 
 - Phase 1: bootstrap と UI parity は概ね完了
 - Phase 2 の初期統合フェーズは完了
-- 現在の open 実装線: なし（必要に応じて新規 Issue を分解して進める）
+- 現在の open 実装線:
+  - `#106` topics SVG を Gemini 2.5-pro ベースへ切り替える
 - topics 契約を前提に、必要な実装線を個別 Issue へ分解して進める段階
 
 ## 8. ローカル作業領域

@@ -12,6 +12,8 @@
 | 外部リソース | 不使用 |
 | viewBox | 必須 |
 | 推奨サイズ | `viewBox="0 0 1200 800"` |
+| 主力モデル | `gemini-2.5-pro` |
+| fallback | 既存 SVG を bootstrap / fallback として残してよい |
 
 ## 2. 出力先
 
