@@ -82,11 +82,12 @@ pjdhiro/assets/awareness/topics/en/pdf/<slug>.pdf
 
 ### Step 6.5: SVG 生成（必要な topic のみ）
 
-初期導入では `1 topic = 1 SVG` を原則とし、まず `survival-trust-axis` を対象にする。
+初期導入では `1 topic = 1 SVG` を原則とし、まず `survival-trust-axis` と `four-layers` を対象にする。
 
 ```bash
 cd /Users/uminomae/dev/awareness-space
 bash transform/scripts/generate-awareness-topic-svg.sh --slug survival-trust-axis --lang all
+bash transform/scripts/generate-awareness-topic-svg.sh --slug four-layers --lang all
 ```
 
 出力先:

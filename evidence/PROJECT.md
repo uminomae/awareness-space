@@ -106,8 +106,7 @@
 - `#89` は完了済み
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
-- 現在の open Issue:
-  - `#105` four-layers への SVG workflow 横展開
+- 現在の open Issue は なし
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -120,12 +119,12 @@
 
 ### 3.2 現在の主作業
 
-- topics 契約へ移行した repo を前提に、図解 workflow の最小導入を個別 Issue で進める
+- topics 契約へ移行した repo を前提に、必要な実装線を個別 Issue へ分解して進める
 
 ### 3.3 次のアクション
 
-- `#105` で `four-layers` へ topics SVG workflow を横展開する
-- `survival-trust-axis` 導入で固めた契約を、次の topic 展開へ流用する
+- `survival-trust-axis` と `four-layers` で固めた SVG 契約を、必要な topic 展開へ流用する
+- 追加の図解 task が必要なら個別 Issue 化する
 
 ### 3.4 ブロッカー
 

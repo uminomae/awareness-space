@@ -1,7 +1,7 @@
 # SVG 生成ルール — awareness topics
 
 `awareness-space` の topics report に添える overview SVG を生成する際の最小ルール。
-初期導入では `1 topic = 1 SVG` を原則とし、`survival-trust-axis` から始める。
+初期導入では `1 topic = 1 SVG` を原則とし、まず `survival-trust-axis` と `four-layers` を対象にする。
 
 ## 1. 基本仕様
 
@@ -62,4 +62,4 @@ Markdown 例:
 - creation-space の TYPE A/B/C はそのまま移植しない
 - awareness 側はまず overview 1 枚だけを扱う
 - `survival-trust-axis` は二軸構造が 1 枚に落としやすいため最初の対象とする
-- `four-layers` は後続タスクで同一契約に合わせる
+- `four-layers` は 4層の連鎖を overview 1 枚で示し、同一契約で横展開する
