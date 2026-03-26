@@ -106,8 +106,7 @@
 - `#89` は完了済み
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
-- 現在の open Issue:
-  - `#106` topics SVG を Gemini 2.5-pro ベースへ切り替える
+- 現在の open Issue は なし
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -124,8 +123,8 @@
 
 ### 3.3 次のアクション
 
-- `#106` で topics SVG を Gemini 2.5-pro ベースへ切り替える
-- その後、必要な topic 展開があれば個別 Issue 化する
+- 必要な topic 展開や publish 契約拡張があれば個別 Issue 化する
+- guide / survey / report への再反映が必要な論点を、必要に応じて新規 Issue に分解する
 
 ### 3.4 ブロッカー
 
