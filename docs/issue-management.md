@@ -28,6 +28,33 @@
 - `exploration`: 開いた理論探索・調査作業
 - `ops`: ルール、ツール、運用、保守
 
+## bottom-up 段階
+
+`awareness-space` の主作業は、原則として次の順で進める。
+
+| 段階 | 目的 | 主な置き場 | Issue を分ける目安 |
+|---|---|---|---|
+| 仮説 | 何を検証するか、反証条件、スコープを置く | `evidence/review/*-design*.md`, `knowledge/survival-trust-axis-starting-memo.md` | 仮説が複数 topic に跨る時点 |
+| 調査 | source を読み、未確定論点を survey / design memo 側へ退避する | `evidence/review/*-source-map.md`, `*-intake-map.md`, `intake-return-map.md` | 調査クラスタが分かれた時点 |
+| 事実 / 洞察 | reader-facing report に返せる整理を作る | `knowledge/topics/*/{ja,en}/report.md` | topic ごとに publish 可否が見えた時点 |
+| 整理 | summary / report / survey / design memo の対応を固定する | `docs/summary-report-pairing.md`, `docs/report-structure.md`, manifest | docs 契約変更と UI 契約変更が分離できる時点 |
+| 公開 | public asset と UI 導線へ反映する | `pjdhiro/assets/awareness/*`, `transform/scripts/*`, `src/reports/*` | publish 単位ごと |
+
+原則:
+- 完了していない仮説を先に公開しない
+- 調査で得た事実 / 洞察から順に bottom-up で返す
+- `guide / survey / report / design memo` の境界を越えるときは、新しい Issue に分ける
+
+## Issue 分割ルール
+
+以下に当てはまるとき、同じ親からでも別 Issue に分ける。
+
+1. 仮説整理と調査設計が同時に走る
+2. 調査クラスタが異なる（例: 神経現象学 / 発達心理学）
+3. docs 契約変更と UI 実装変更が同時に発生する
+4. publish 単位が topic ごとに分かれる
+5. review worker が必要な変更と不要な変更が混ざる
+
 ## マルチ worker 役割
 
 Issue を並行処理するときは、親セッションと worker の責務を分ける。
