@@ -1,0 +1,54 @@
+# llms.txt — awareness-space (Consciousness Research)
+
+> This file helps AI assistants and language models understand the structure and content of this site.
+
+## Site Overview
+
+This is the research site of pjdhiro exploring **what consciousness is** — investigating the structure of consciousness through a four-layer model.
+
+- **Primary Language**: Japanese (日本語), with English summaries
+- **Site URL**: https://uminomae.github.io/awareness-space/
+- **Topics**: Consciousness, Intersubjectivity, Interoception, Prediction Error, Neurophenomenology
+
+## Core Concepts
+
+### Intersubjectivity (間主観性)
+
+The shared experiential space between subjects. A foundational concept for understanding how consciousness arises not in isolation but through relational encounters.
+
+### Interoception (内受容感覚)
+
+The perception of internal bodily states — heartbeat, breathing, gut feeling. A key bridge between embodied experience and conscious awareness.
+
+### Prediction Error (予測誤差)
+
+The gap between what the brain predicts and what actually occurs. This mismatch drives learning, attention, and potentially the emergence of conscious experience.
+
+### Withholding (保留)
+
+The capacity to suspend judgment and remain in uncertainty. An essential posture for phenomenological inquiry and deeper awareness.
+
+## Research Approach
+
+- **Neurophenomenology**: Bridging first-person phenomenological experience with third-person neuroscience
+- **Developmental Psychology**: Tracing how consciousness develops through early intersubjective encounters
+- **Four-Layer Model**: A structural framework for organizing different aspects of conscious experience
+
+## Site Structure
+
+- `index.html` — Main entry point with visualization
+- Domain reports and evidence are organized under `evidence/` and `transform/`
+
+## Related Projects
+
+| Project | URL | Focus |
+|---------|-----|-------|
+| pjdhiro | https://uminomae.github.io/pjdhiro/ | Project Design Hub (parent site) |
+| creation-space | https://uminomae.github.io/creation-space/ | Creativity research across 30 academic domains |
+| kesson-space | https://uminomae.github.io/kesson-space/ | Kesson-Driven Thinking framework |
+
+## Author
+
+- Name: pjdhiro
+- Site: https://uminomae.github.io/pjdhiro/
+- Focus: Project Design, Consciousness Research, Human-AI Collaboration

@@ -1,26 +1,44 @@
-# awareness-space
+# 意識とは — awareness-space
 
-`awareness-space` は、「意識とは何か」を独立に探索するための作業リポジトリです。
+**What is Consciousness? Exploring consciousness through intersubjectivity.**
 
-## 入口
+---
 
-- プロジェクト憲章: `PROJECT.md`
-- Codex 作業ルール: `CLAUDE.md`
-- 管理ハブ: `docs/README.md`
-- Issue 運用ルール: `docs/issue-management.md`
+## 概要 / Overview
 
-## ブランチ運用
+間主観性・内受容感覚・予測誤差・保留の4層モデルから意識の構造を探索するプロジェクト。「意識とは何か」という問いに対し、一人称の体験と二人称の関係性の両面からアプローチする。
 
-- `main`: GitHub Pages 公開用
-- `develop`: 日常作業用
+This project explores the structure of consciousness through a Four-Layer Model encompassing intersubjectivity, interoception, prediction error, and suspension. It approaches the question "What is consciousness?" from both first-person experience and second-person relational perspectives.
 
-ローカル確認は `develop` ブランチで行い、既定ポートは `3003`。
-`bash server.sh` で `http://localhost:3003/` を起動できる。
+## 4層モデル / Four-Layer Model
 
-## 体制
+| 層 / Layer | 日本語 | English | 説明 / Description |
+|:---:|--------|---------|---------|
+| 1 | 間主観性 | Intersubjectivity | 意識は個体の内部に閉じず、他者との関係の中で立ち上がる / Consciousness arises not within an individual alone, but in the relationship with others |
+| 2 | 内受容感覚 | Interoception | 身体内部からの信号が意識の土台を形成する / Internal bodily signals form the foundation of conscious experience |
+| 3 | 予測誤差 | Prediction Error | 脳の予測と実際の入力のずれが意識的気づきを駆動する / The gap between the brain's predictions and actual input drives conscious awareness |
+| 4 | 保留 | Suspension | 判断を保留する態度が、より深い意識的探索を可能にする / Suspending judgment enables deeper conscious exploration |
 
-- **現在、Claude のプロジェクト管理対象は `awareness-space` のみ**
-- **`awareness-space` は Codex の担当リポジトリ**
-- Codex はこの repo の bootstrap、実装、構造化、日常作業を担う
-- Claude は親 Issue、優先順位、依存関係、全体進行を管理する
-- この体制変更は pjdhiro の明示指示がある場合のみ
+## Live Site
+
+[https://uminomae.github.io/awareness-space/](https://uminomae.github.io/awareness-space/)
+
+## 技術スタック / Tech Stack
+
+- 静的サイト: HTML + ES Modules
+- 描画: Three.js
+- UI: Bootstrap 5
+- デプロイ: GitHub Pages
+
+## 関連プロジェクト / Related Projects
+
+| リポジトリ / Repository | 概要 / Description |
+|---|---|
+| [pjdhiro](https://github.com/uminomae/pjdhiro) | GitHub Pages ホスティング、ブログ |
+| [creation-space](https://github.com/uminomae/creation-space) | 「創造とは」の探索 — 30領域の学術横断調査 |
+| [kesson-space](https://github.com/uminomae/kesson-space) | 欠損駆動思考の3D体験空間 |
+| [project-design](https://github.com/uminomae/project-design) | プロジェクトデザイン論 — Doing と Being を包含する構想・設計・実行 |
+
+## Author
+
+**pjdhiro** — [https://github.com/uminomae](https://github.com/uminomae)
