@@ -107,7 +107,7 @@
 - `#88` は完了済み
 - `#91`, `#93` は完了済み
 - 現在の open Issue:
-  - `#100` Gemini SVG workflow 模倣
+  - `#105` four-layers への SVG workflow 横展開
 - source map の正本は `evidence/review/core-source-map.md`
 - 神経現象学 intake の正本は `evidence/review/neurophenomenology-intake-map.md`
 - 発達心理学 intake の正本は `evidence/review/developmental-psychology-intake-map.md`
@@ -124,8 +124,8 @@
 
 ### 3.3 次のアクション
 
-- `#100` で creation-space の Gemini SVG workflow を awareness-space に持ち込む
-- `survival-trust-axis` 導入で固めた契約をもとに、次の topic 展開が必要なら個別 Issue 化する
+- `#105` で `four-layers` へ topics SVG workflow を横展開する
+- `survival-trust-axis` 導入で固めた契約を、次の topic 展開へ流用する
 
 ### 3.4 ブロッカー
 
