@@ -82,6 +82,22 @@ Issue を並行処理するときは、親セッションと worker の責務を
 4. close 前:
    親が Issue state / `DONE-*` / `REVIEW-*` を最終確認する
 
+補足:
+- path 変更、リネーム、cross-repo 参照更新も 3 に含める
+- UI 導線変更と docs 契約変更が同時に入る場合も review 必須とする
+
+## review 判定運用
+
+| 判定 | 扱い |
+|---|---|
+| PASS | close 条件を満たすなら close してよい |
+| WARN | 影響が別 Issue で追跡可能な場合のみ許容。対応先 Issue または未解決理由を固定したまま OPEN 継続、または follow-up Issue 作成後に進行 |
+| FAIL | close 禁止。修正実装 worker を起動し、修正後に review worker を再実行する |
+
+原則:
+- 調査 worker / review worker は判定を返すだけで close しない
+- 実装 worker が commit 済みでも、review 必須変更で `REVIEW-*` と PASS/WARN/FAIL コメントが揃う前には close しない
+
 ## 必須項目
 
 各 Issue には最低限以下を書く。

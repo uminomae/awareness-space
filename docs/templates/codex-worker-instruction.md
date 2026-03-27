@@ -29,9 +29,15 @@ git branch --show-current
 
 ## 前提確認
 
-- role:
-  - parent / manager: {誰が統合判断するか}
-  - current worker: {調査 | docs | 実装 | レビュー}
+- role table:
+
+| role | 担当者 | 今回の責務 | close 権限 |
+|---|---|---|---|
+| parent / manager | {親セッション名} | worker 起動、再投入判断、Issue state 最終確認 | あり |
+| current worker | {調査 | docs | 実装 | レビュー} | {今回この worker がやること} | {原則なし | 条件付き | あり} |
+
+- current target layer:
+  - {guide | report | survey | design memo | docs/workflow}
 - 参照ファイル:
   - `path/a`
   - `path/b`
@@ -40,7 +46,10 @@ git branch --show-current
 - この worker がやらないこと:
   - ...
 - review worker 起動条件:
-  - {ファイル移動/削除 | cross-repo | publish契約変更 | なし}
+  - {ファイル移動/削除/リネーム | path 変更 | cross-repo | publish契約変更 | UI導線+docs契約変更 | なし}
+- close guard:
+  - review worker が必要な変更では、`REVIEW-*` と PASS/WARN/FAIL コメントが揃うまで close しない
+  - 調査 worker / review worker は原則 OPEN のまま返す
 
 ## 作業手順
 
@@ -77,8 +86,11 @@ git push origin {branch}
 
 - `creation-space/skills/commit-review-with-log/SKILL.md` を参照して `.cache/outbox/REVIEW-*.md` を残す
 - review worker が必要な条件に当てはまる場合は、ここで別 worker を起動するか、その必要を明記して親へ返す
+- review 必須変更では、`REVIEW-*` と PASS/WARN/FAIL コメントが揃うまで close しない
 
 ## failure handling
+
+必須で以下を埋めること:
 
 - worker 無応答:
   write set を狭めて再投入する
@@ -107,8 +119,9 @@ git push origin {branch}
 1. Issue にコメント
 2. `.cache/outbox/DONE-{issue}-{date}.md` を作成
 3. `gh issue view {issue} --json state,url`
-4. issue close が `する` の場合のみ close
-5. close 後に state を再確認
+4. review worker 必須条件に当てはまる場合、`REVIEW-*` と PASS/WARN/FAIL コメントの有無を確認する
+5. issue close が `する` の場合のみ close
+6. close 後に state を再確認
 
 ## 完了条件
 
@@ -117,4 +130,5 @@ git push origin {branch}
 - [ ] DONE / REVIEW / PLAN の必要ファイルがある
 - [ ] Issue state を確認している
 - [ ] review worker が必要な場合、その起動または未起動理由が明記されている
+- [ ] close 前に review 完了要件の有無を確認している
 ```

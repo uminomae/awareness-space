@@ -13,7 +13,7 @@ agent: "Codex"
 
 # Codex worker 指示書スキル
 
-**バージョン**: 1.0  
+**バージョン**: 1.1
 **作成日**: 2026-03-26  
 **参照元**:
 - `skills/cli-instruction/SKILL.md`
@@ -38,6 +38,7 @@ Codex を background worker や別 session で動かすときに、
 3. 共有は会話ではなく `Issue comment` と `.cache/outbox/*.md` で行う
 4. worker が扱う参照ファイルは、最初は **5〜10件以内** に絞る
 5. 背景 worker は「close する worker」と「close しない worker」を明示的に分ける
+6. close 判定は親セッションが持ち、review 未完了のまま close しない
 
 ## 2. IF 分岐
 
@@ -99,6 +100,7 @@ Codex を background worker や別 session で動かすときに、
 ### review worker を必須にする条件
 
 - ファイル移動・削除・リネームを含む
+- path 変更で参照切れリスクがある
 - cross-repo 参照を更新する
 - publish 契約 / public contract / manifest / workflow を変更する
 - UI 導線と docs 契約を同時に変更する
@@ -113,12 +115,16 @@ Codex を background worker や別 session で動かすときに、
 - 参照ファイル一覧
 - 出力先ファイル
 - Issue を close するかどうか
+- role table（parent / current worker / close 権限）
+- failure handling（無応答 / 出力不足 / FAIL / WARN / state 不整合）
+- target layer（guide / report / survey / design memo / docs/workflow）
 
 ### 調査のみ worker の追加必須
 
 - `.cache/outbox/PLAN-*.md` の出力先
 - OPEN のまま残す理由
 - 親へ返す要約フォーマット
+- close しない理由
 
 ### commit を伴う worker の追加必須
 
@@ -128,6 +134,8 @@ Codex を background worker や別 session で動かすときに、
 - `git push origin develop`
 - `git status --short --branch`
 - `git diff --stat`
+- review worker 必須条件に当てはまるかの判定
+- review 完了前は close しない条件
 
 ## 4. 結果の返し方
 
@@ -155,6 +163,12 @@ Codex を background worker や別 session で動かすときに、
 | WARN | follow-up Issue または対応先を固定して OPEN 継続 |
 | state 不整合 | `DONE-*` と Issue state を親が同期 |
 
+補足:
+
+- review worker は実装しない。検出と報告だけを返す
+- 調査 worker / review worker は原則 Issue を close しない
+- commit を伴う worker でも、review 必須条件に当てはまる変更では `REVIEW-*` 完了前 close 禁止
+
 ## 6. テンプレート正本
 
 Codex worker 用テンプレート正本:
@@ -168,6 +182,9 @@ Codex worker 用テンプレート正本:
 - [ ] close する / しない が明記されている
 - [ ] `.cache/outbox/` の出力先が明記されている
 - [ ] 参照ファイルが 5〜10 件程度に絞られている
+- [ ] role table と failure handling が指示書に入っている
+- [ ] target layer が明記されている
 - [ ] commit を伴う場合のみ commit 手順が書かれている
 - [ ] 調査のみ worker に commit / push が混ざっていない
 - [ ] review worker が必要な条件に当てはまるか判断している
+- [ ] review 必須変更では close guard が書かれている

@@ -55,6 +55,8 @@
 4. `bash scripts/check-issue-close-state.sh` を実行し、DONE と GitHub Issue 状態の不整合を洗い出す
 5. Issue 作業がある場合は、各 Issue の comment / close / `REVIEW-*` / `DONE-*` を確認する
    - 非同期 review worker を起動した Issue では、`REVIEW-*` と PASS/WARN/FAIL コメントが揃うまで close しない
+   - ファイル移動/削除、cross-repo 参照更新、publish 契約変更、UI 導線 + docs 契約の同時変更では review 必須として扱う
+   - review 必須変更なのに `REVIEW-*` がない場合は、そのセッションで close せず、未完了理由を DONE-session に残す
 6. `.cache/outbox/DONE-session-{YYYYMMDD}.md` を更新または作成する
    - 「今回の要点」「問題」「知見」を分けて残す
 7. recurring な問題があれば本ファイルか `docs/standing-approvals.md` に昇格する
@@ -114,3 +116,17 @@
 - 調査 worker / review worker は原則 close しない
 - close 判定は manager 側で `REVIEW-*`, `DONE-*`, Issue state を揃えてから行う
 - 指示書に `issue close: しない / する` を必ず明記する
+
+### 5. review 必須変更を review なしで close しそうになる
+
+症状:
+
+- docs/workflow/public contract を更新した
+- あるいは path 変更や cross-repo 参照更新を含む
+- しかし `REVIEW-*` と PASS/WARN/FAIL コメントがないまま close に進みそうになる
+
+対処:
+
+- 該当変更は review 必須として扱う
+- `REVIEW-*` と判定コメントが揃うまで close しない
+- close を見送る理由を `DONE-*` と `DONE-session-*` に残す
