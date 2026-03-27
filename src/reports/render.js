@@ -102,7 +102,7 @@ export function getDomainReportTitle(report, lang = 'ja') {
     if (!report) return '';
     const useJapanese = normalizeLang(lang) === 'ja';
     const domainLabel = useJapanese ? (report.nameJa || report.nameEn || '') : (report.nameEn || report.nameJa || '');
-    return `${report.id || ''} ${domainLabel}`.trim();
+    return domainLabel.trim();
 }
 
 export function createReportsRenderer({
