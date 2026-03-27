@@ -130,6 +130,12 @@ async function readExistingManifest(manifestPath) {
     }
 }
 
+export function formatImageCardsManifestSummary({ payload, skippedDrafts = [], didWrite = false } = {}) {
+    const verb = didWrite ? 'updated' : 'unchanged';
+    const cardCount = Array.isArray(payload?.cards) ? payload.cards.length : 0;
+    return `image cards manifest ${verb}: ${cardCount} cards / skipped ${skippedDrafts.length} drafts`;
+}
+
 export function normalizeCardMeta(meta = {}) {
     if (typeof meta !== 'object' || !meta) {
         throw new Error('image card meta must be an object');
@@ -272,6 +278,7 @@ export async function buildImageCardsManifest({
             return {
                 payload: existingPayload,
                 skippedDrafts,
+                didWrite: false,
             };
         }
     }
@@ -281,6 +288,7 @@ export async function buildImageCardsManifest({
     return {
         payload,
         skippedDrafts,
+        didWrite: true,
     };
 }
 
@@ -288,9 +296,9 @@ async function main() {
     const awarenessAssetsRoot = '/Users/uminomae/dev/pjdhiro/assets/awareness';
     const itemsDir = path.join(awarenessAssetsRoot, 'image-cards/items');
     const manifestPath = path.join(awarenessAssetsRoot, 'manifests/image-cards.json');
-    const { payload, skippedDrafts } = await buildImageCardsManifest({ itemsDir, manifestPath });
-    console.log(`image cards manifest updated: ${payload.cards.length} cards / skipped ${skippedDrafts.length} drafts`);
-    for (const draft of skippedDrafts) {
+    const result = await buildImageCardsManifest({ itemsDir, manifestPath });
+    console.log(formatImageCardsManifestSummary(result));
+    for (const draft of result.skippedDrafts) {
         console.log(`skipped draft: ${draft.slug}`);
     }
 }

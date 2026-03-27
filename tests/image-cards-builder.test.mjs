@@ -8,13 +8,17 @@ import {
     buildImageCardsManifest,
     createAutoCardMeta,
     findOrphanImages,
+    formatImageCardsManifestSummary,
     formatLocalDate,
     getImageCardCommentaryIssues,
     isDraftCardMeta,
     normalizeCardMeta,
     sortCards,
 } from '../transform/scripts/build-awareness-image-cards.mjs';
-import { ingestAwarenessImageCards } from '../transform/scripts/ingest-awareness-image-cards.mjs';
+import {
+    formatImageCardsIngestSummary,
+    ingestAwarenessImageCards,
+} from '../transform/scripts/ingest-awareness-image-cards.mjs';
 
 test('normalizeCardMeta requires ja title and comment', () => {
     assert.throws(() => normalizeCardMeta({ comment_ja: 'x' }), /title_ja is required/);
@@ -52,7 +56,7 @@ test('buildImageCardsManifest scans image+json sidecars and emits manifest', asy
         sort_order: 5,
     }));
 
-    const { payload, skippedDrafts } = await buildImageCardsManifest({
+    const { payload, skippedDrafts, didWrite } = await buildImageCardsManifest({
         itemsDir,
         manifestPath,
         awarenessBasePath: 'image-cards/items',
@@ -65,6 +69,7 @@ test('buildImageCardsManifest scans image+json sidecars and emits manifest', asy
     assert.equal(payload.cards[0].image, 'image-cards/items/sample.png');
     assert.equal(payload.cards[0].title_en, 'Sample');
     assert.deepEqual(skippedDrafts, []);
+    assert.equal(didWrite, true);
 
     const written = JSON.parse(await fs.readFile(manifestPath, 'utf8'));
     assert.equal(written.cards[0].comment_ja, '図の見方と意味を短く説明する日本語コメントです。');
@@ -98,7 +103,7 @@ test('buildImageCardsManifest keeps existing generated_at and skips manifest rew
     const beforeStat = await fs.stat(manifestPath);
     await new Promise((resolve) => setTimeout(resolve, 20));
 
-    const { payload } = await buildImageCardsManifest({
+    const { payload, didWrite } = await buildImageCardsManifest({
         itemsDir,
         manifestPath,
         awarenessBasePath: 'image-cards/items',
@@ -109,8 +114,28 @@ test('buildImageCardsManifest keeps existing generated_at and skips manifest rew
     const afterStat = await fs.stat(manifestPath);
 
     assert.equal(payload.generated_at, '2026-03-21');
+    assert.equal(didWrite, false);
     assert.equal(afterContent, beforeContent);
     assert.equal(afterStat.mtimeMs, beforeStat.mtimeMs);
+});
+
+test('formatImageCardsManifestSummary distinguishes updated and unchanged writes', () => {
+    assert.equal(
+        formatImageCardsManifestSummary({
+            payload: { cards: [{ id: 'IC01' }] },
+            skippedDrafts: [{ slug: 'draft' }],
+            didWrite: true,
+        }),
+        'image cards manifest updated: 1 cards / skipped 1 drafts',
+    );
+    assert.equal(
+        formatImageCardsManifestSummary({
+            payload: { cards: [{ id: 'IC01' }] },
+            skippedDrafts: [],
+            didWrite: false,
+        }),
+        'image cards manifest unchanged: 1 cards / skipped 0 drafts',
+    );
 });
 
 test('createAutoCardMeta generates draft sidecar text', () => {
@@ -237,4 +262,29 @@ test('ingestAwarenessImageCards creates sidecars for orphan images and rebuilds 
     assert.equal(sidecar.review_status, 'draft');
     assert.equal(result.payload.cards.length, 0);
     assert.deepEqual(result.skippedDrafts, [{ slug: 'intent', review_status: 'draft' }]);
+    assert.equal(result.didWrite, true);
+});
+
+test('ingestAwarenessImageCards reports didWrite false when manifest stays unchanged', async () => {
+    const awarenessRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'awareness-image-ingest-noop-'));
+    const itemsDir = path.join(awarenessRoot, 'image-cards', 'items');
+    await fs.mkdir(itemsDir, { recursive: true });
+    await fs.writeFile(path.join(itemsDir, 'intent.jpg'), '');
+
+    await ingestAwarenessImageCards({
+        awarenessAssetsRoot: awarenessRoot,
+        generatedAt: '2026-03-21',
+    });
+
+    const result = await ingestAwarenessImageCards({
+        awarenessAssetsRoot: awarenessRoot,
+        generatedAt: '2026-03-22',
+    });
+
+    assert.deepEqual(result.created, []);
+    assert.equal(result.didWrite, false);
+    assert.equal(
+        formatImageCardsIngestSummary(result),
+        'image cards ingest complete: 0 cards / created 0 draft sidecars / skipped 1 drafts / manifest unchanged',
+    );
 });
