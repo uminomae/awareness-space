@@ -24,6 +24,13 @@ export const dict = {
             langToggleLabel: 'English',
             langToggleAria: '言語を英語に切り替え',
         },
+        about: {
+            triggerAria: 'このページについて',
+            modalTitle: 'このページについて',
+            closeAria: '閉じる',
+            loading: '読み込み中...',
+            error: 'About の読み込みに失敗しました。',
+        },
     },
     en: {
         page: {
@@ -49,6 +56,13 @@ export const dict = {
             offcanvasModelAria: 'Jump to MODEL / Guide to the Awareness Model section',
             langToggleLabel: '日本語',
             langToggleAria: 'Switch language to Japanese',
+        },
+        about: {
+            triggerAria: 'About this page',
+            modalTitle: 'About this page',
+            closeAria: 'Close',
+            loading: 'Loading...',
+            error: 'Failed to load the about panel.',
         },
     },
 };

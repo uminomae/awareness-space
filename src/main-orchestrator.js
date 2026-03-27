@@ -1,4 +1,5 @@
 import { applySceneState, getDefaultSceneState } from './dev-panel-data.js';
+import { initAboutModal, setAboutModalLanguage } from './about-modal.js';
 import { initDevAuxTools, initDevPanelRuntime } from './dev-runtime.js';
 import { createMainDevStatsTicker } from './main-dev-runtime.js';
 import { prepareMainBootstrap } from './main-bootstrap.js';
@@ -144,12 +145,14 @@ export async function runMainOrchestrator({
         syncControlGuideVisibility(backgroundController.getCurrentMode());
     }
 
+    initAboutModal(initialLang);
     setReportsLanguage(initialLang);
     initImageCards({ lang: initialLang }).catch((error) => {
         console.error('[awareness-space] image cards bootstrap failed:', error);
     });
     initLanguageToggle(initialLang, (lang) => {
         applyPageLanguage(lang);
+        setAboutModalLanguage(lang);
         setReportsLanguage(lang);
         setImageCardsLanguage(lang);
         refreshGuideLang();
