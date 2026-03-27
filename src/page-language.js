@@ -32,7 +32,6 @@ export function applyPageLanguageToDocument(doc, lang) {
     const graphicSwitcherLabel = doc.querySelector('.graphic-switcher-label');
     const graphicRaijinButton = doc.querySelector('[data-graphic-mode="raijin"]');
     const reportsAiNotice = doc.getElementById('reports-ai-notice');
-    const modelSummaryNote = doc.getElementById('model-summary-note');
     const modelSectionHeading = doc.getElementById('model-section-heading');
     const reportsSectionHeading = doc.getElementById('reports-section-heading');
     const offcanvasSectionsTitle = doc.getElementById('offcanvas-sections-title');
@@ -51,7 +50,6 @@ export function applyPageLanguageToDocument(doc, lang) {
     setText(graphicSwitcherLabel, strings.graphicSwitcherLabel);
     setText(graphicRaijinButton, strings.graphicModeRaijin);
     setText(reportsAiNotice, strings.reportsAiNotice);
-    setText(modelSummaryNote, strings.modelSummaryNote);
     setText(modelSectionHeading, strings.modelSectionHeading);
     setText(offcanvasSectionsTitle, strings.offcanvasSectionsTitle);
     setText(offcanvasModelLink, strings.offcanvasModelLink);

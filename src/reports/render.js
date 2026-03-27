@@ -12,7 +12,6 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 const STRINGS = {
     ja: {
         featureRead: 'ガイドを開く',
-        guideScopeNote: 'guide は公開用の解説です。詳しい現在地は調査概要へ、調査トピックごとの本文は各レポートへ進みます。',
         features: {
             general: {
                 title: 'General',
@@ -54,7 +53,6 @@ const STRINGS = {
     },
     en: {
         featureRead: 'Open Guide',
-        guideScopeNote: 'Guides are public explainers. Use the survey for project status and the topic reports for detailed text.',
         features: {
             general: {
                 title: 'General',
@@ -154,7 +152,6 @@ export function createReportsRenderer({
 
     function cacheDom() {
         state.dom.featureCards = document.getElementById('model-guide-cards');
-        state.dom.guideScopeNote = document.getElementById('model-summary-note');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
         state.dom.topicsHeading = document.getElementById('reports-topics-heading');
@@ -525,7 +522,6 @@ export function createReportsRenderer({
 
     function applyStaticText() {
         const strings = getReportsStrings(state.lang);
-        if (state.dom.guideScopeNote) state.dom.guideScopeNote.textContent = strings.guideScopeNote;
         if (state.dom.topicsHeading) state.dom.topicsHeading.textContent = strings.tabTopics;
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);
