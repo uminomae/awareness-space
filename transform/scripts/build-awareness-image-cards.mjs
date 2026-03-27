@@ -114,6 +114,22 @@ export function sortCards(cards = []) {
     });
 }
 
+function stripManifestGeneratedAt(payload = {}) {
+    const { generated_at: _generatedAt, ...rest } = payload;
+    return rest;
+}
+
+async function readExistingManifest(manifestPath) {
+    try {
+        return JSON.parse(await fs.readFile(manifestPath, 'utf8'));
+    } catch (error) {
+        if (error?.code === 'ENOENT' || error instanceof SyntaxError) {
+            return null;
+        }
+        throw error;
+    }
+}
+
 export function normalizeCardMeta(meta = {}) {
     if (typeof meta !== 'object' || !meta) {
         throw new Error('image card meta must be an object');
@@ -247,6 +263,18 @@ export async function buildImageCardsManifest({
             ...card,
         })),
     };
+
+    const existingPayload = await readExistingManifest(manifestPath);
+    if (existingPayload) {
+        const nextComparable = JSON.stringify(stripManifestGeneratedAt(payload));
+        const existingComparable = JSON.stringify(stripManifestGeneratedAt(existingPayload));
+        if (nextComparable === existingComparable) {
+            return {
+                payload: existingPayload,
+                skippedDrafts,
+            };
+        }
+    }
 
     await fs.mkdir(path.dirname(manifestPath), { recursive: true });
     await fs.writeFile(manifestPath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');

@@ -70,6 +70,49 @@ test('buildImageCardsManifest scans image+json sidecars and emits manifest', asy
     assert.equal(written.cards[0].comment_ja, '図の見方と意味を短く説明する日本語コメントです。');
 });
 
+test('buildImageCardsManifest keeps existing generated_at and skips manifest rewrite when cards are unchanged', async () => {
+    const tmpRoot = await fs.mkdtemp(path.join(os.tmpdir(), 'awareness-image-cards-noop-'));
+    const itemsDir = path.join(tmpRoot, 'items');
+    const manifestPath = path.join(tmpRoot, 'manifests', 'image-cards.json');
+    await fs.mkdir(itemsDir, { recursive: true });
+
+    await fs.writeFile(path.join(itemsDir, 'sample.png'), '');
+    await fs.writeFile(path.join(itemsDir, 'sample.json'), JSON.stringify({
+        title_ja: 'サンプル',
+        title_en: 'Sample',
+        comment_ja: '図の意味と読み方を短く説明する日本語コメントです。',
+        comment_en: 'An English comment that briefly explains what the diagram expresses and how to read it.',
+        generated: '2026-03-21',
+        generator_model: 'not_applicable',
+        sort_order: 5,
+    }));
+
+    await buildImageCardsManifest({
+        itemsDir,
+        manifestPath,
+        awarenessBasePath: 'image-cards/items',
+        generatedAt: '2026-03-21',
+    });
+
+    const beforeContent = await fs.readFile(manifestPath, 'utf8');
+    const beforeStat = await fs.stat(manifestPath);
+    await new Promise((resolve) => setTimeout(resolve, 20));
+
+    const { payload } = await buildImageCardsManifest({
+        itemsDir,
+        manifestPath,
+        awarenessBasePath: 'image-cards/items',
+        generatedAt: '2026-03-22',
+    });
+
+    const afterContent = await fs.readFile(manifestPath, 'utf8');
+    const afterStat = await fs.stat(manifestPath);
+
+    assert.equal(payload.generated_at, '2026-03-21');
+    assert.equal(afterContent, beforeContent);
+    assert.equal(afterStat.mtimeMs, beforeStat.mtimeMs);
+});
+
 test('createAutoCardMeta generates draft sidecar text', () => {
     const meta = createAutoCardMeta('intent', { generatedAt: '2026-03-21' });
     assert.equal(meta.title_ja, '意');
