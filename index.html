@@ -92,6 +92,7 @@
   <link rel="stylesheet" href="./src/styles/reports.css">
   <link rel="stylesheet" href="./src/styles/viewer.css">
   <link rel="stylesheet" href="./src/styles/awareness.css">
+  <link rel="stylesheet" href="./src/styles/about-modal.css">
   <link rel="stylesheet" href="./src/styles/dev-legacy.css">
   <link rel="stylesheet" href="./src/styles/dev-panel.css">
 
@@ -178,6 +179,33 @@
       </div>
     </div>
     <h1 id="title-h1">意識とは</h1>
+    <button
+      id="about-trigger"
+      class="about-trigger"
+      type="button"
+      aria-label="このページについて"
+      aria-controls="about-modal">
+      <span class="about-trigger__letter" aria-hidden="true">i</span>
+    </button>
+  </div>
+
+  <div
+    id="about-modal"
+    class="about-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+    aria-labelledby="about-modal-title">
+    <div class="about-modal__backdrop" data-about-close></div>
+    <div class="about-modal__panel" role="document">
+      <h2 id="about-modal-title" class="visually-hidden">このページについて</h2>
+      <button id="about-close" class="about-modal__close" type="button" aria-label="閉じる" data-about-close>×</button>
+      <div
+        id="about-body"
+        class="about-modal__body"
+        data-md-ja="./assets/about/ja.md"
+        data-md-en="./assets/about/en.md"></div>
+    </div>
   </div>
 
   <!-- control-guide は camera 操作がある背景用の説明枠。

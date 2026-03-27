@@ -16,6 +16,7 @@ function setAttr(node, name, value) {
 export function applyPageLanguageToDocument(doc, lang) {
     const normalized = normalizeLang(lang);
     const strings = dict[normalized]?.page || dict.ja.page;
+    const aboutStrings = dict[normalized]?.about || dict.ja.about;
 
     const titleH1 = doc.getElementById('title-h1');
     const topbar = doc.getElementById('kesson-topbar');
@@ -35,6 +36,9 @@ export function applyPageLanguageToDocument(doc, lang) {
     const reportsSectionHeading = doc.getElementById('reports-section-heading');
     const offcanvasSectionsTitle = doc.getElementById('offcanvas-sections-title');
     const offcanvasModelLink = doc.getElementById('offcanvas-model-link');
+    const aboutTrigger = doc.getElementById('about-trigger');
+    const aboutModalTitle = doc.getElementById('about-modal-title');
+    const aboutClose = doc.getElementById('about-close');
 
     doc.querySelectorAll('[data-ja][data-en]').forEach((node) => {
         node.textContent = normalized === 'en' ? node.dataset.en : node.dataset.ja;
@@ -50,6 +54,7 @@ export function applyPageLanguageToDocument(doc, lang) {
     setText(modelSectionHeading, strings.modelSectionHeading);
     setText(offcanvasSectionsTitle, strings.offcanvasSectionsTitle);
     setText(offcanvasModelLink, strings.offcanvasModelLink);
+    setText(aboutModalTitle, aboutStrings.modalTitle);
 
     setAttr(topbar, 'aria-label', strings.topbarNavAria);
     setAttr(topbarToggle, 'aria-label', strings.topbarToggleAria);
@@ -61,6 +66,8 @@ export function applyPageLanguageToDocument(doc, lang) {
     setAttr(modelSectionHeading, 'aria-label', strings.modelSectionHeadingAria);
     setAttr(reportsSectionHeading, 'aria-label', strings.reportsSectionHeadingAria);
     setAttr(offcanvasModelLink, 'aria-label', strings.offcanvasModelAria);
+    setAttr(aboutTrigger, 'aria-label', aboutStrings.triggerAria);
+    setAttr(aboutClose, 'aria-label', aboutStrings.closeAria);
     setText(langToggle, strings.langToggleLabel);
 
     doc.documentElement.lang = normalized;

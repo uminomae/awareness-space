@@ -27,6 +27,9 @@ function createMockDocument() {
         ['model-section-heading', new MockElement()],
         ['offcanvas-sections-title', new MockElement()],
         ['offcanvas-model-link', new MockElement()],
+        ['about-trigger', new MockElement()],
+        ['about-modal-title', new MockElement()],
+        ['about-close', new MockElement()],
     ]);
 
     const graphicLabel = new MockElement();
@@ -64,11 +67,14 @@ function createMockDocument() {
 
 test('english page dictionary contains issue-77 strings', () => {
     const page = dict.en.page;
+    const about = dict.en.about;
     assert.equal(page.documentTitle, 'What Is Awareness');
     assert.equal(page.topbarCollab, 'Working with AI collaboration');
     assert.equal(page.graphicSwitcherLabel, 'Background');
     assert.equal(page.graphicSwitcherAria, 'Switch background graphics');
     assert.equal(page.graphicModeRaijin, 'Fujin-Raijin');
+    assert.equal(about.triggerAria, 'About this page');
+    assert.equal(about.closeAria, 'Close');
 });
 
 test('applyPageLanguageToDocument updates page chrome in english', () => {
@@ -87,4 +93,7 @@ test('applyPageLanguageToDocument updates page chrome in english', () => {
     assert.equal(doc.nodes['lang-toggle'].attributes['aria-label'], 'Switch language to Japanese');
     assert.equal(doc.nodes.bilingualNode.textContent, 'Rethinking awareness from survival and intersubjectivity.');
     assert.equal(doc.nodes['offcanvas-model-link'].textContent, 'MODEL / Awareness Model');
+    assert.equal(doc.nodes['about-trigger'].attributes['aria-label'], 'About this page');
+    assert.equal(doc.nodes['about-modal-title'].textContent, 'About this page');
+    assert.equal(doc.nodes['about-close'].attributes['aria-label'], 'Close');
 });
