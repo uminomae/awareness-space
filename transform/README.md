@@ -2,12 +2,12 @@
 
 ## 5W1H
 
-- **What**: guide / survey / topics report を、公開用 Markdown と必要な PDF に変換する workflow 群。
+- **What**: guide / survey / topics report を、公開用 Markdown と必要な PDF / SVG に変換する workflow 群。
 - **Why**: `pjdhiro/assets/awareness/` を公開正本として育てるため。
 - **Who**: awareness-space の公開物を更新する CLI が使う。
 - **When**: guide を更新するとき、既存出力を再生成するとき。
 - **Where**: 変換ルールは `transform/`、公開配置は `pjdhiro/assets/awareness/`。
-- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → 公開用 MD を正本として必要な PDF を生成 → manifest 更新 → `pjdhiro/main` push の順で進む。
+- **How**: workflow README から入口を選び、reader-rules → front matter 更新 → 公開用 MD を正本として必要な PDF / SVG を生成 → manifest 更新 → `pjdhiro/main` push の順で進む。
 
 **原則**: guide は summary、report は論拠、survey は現在地、design memo は計画中論点として扱う。
 **共通原則**: [PRINCIPLES.md](PRINCIPLES.md)
@@ -65,6 +65,7 @@ bash transform/scripts/build-pdf-guide.sh --setup
 - survey PDF: `pjdhiro/assets/awareness/survey/{lang}/pdf/`
 - topics Markdown: `pjdhiro/assets/awareness/topics/{lang}/md/`
 - topics PDF: `pjdhiro/assets/awareness/topics/{lang}/pdf/`
+- topics SVG: `pjdhiro/assets/awareness/img/svg/topics/{lang}/`
 - manifests: `pjdhiro/assets/awareness/manifests/`
 
 ### metadata

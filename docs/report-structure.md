@@ -58,9 +58,9 @@ manifest を読み込み、
 ## 4. 置き場の役割分担
 
 - 調査原本: `evidence/`
-- summary: `knowledge/guides/`
+- summary: `pjdhiro/assets/awareness/guides/`
 - report 本文: `knowledge/topics/`
-- source_ready の入口文書: `knowledge/` 直下および `knowledge/concepts/`, `knowledge/topics/four-layers/`
+- source_ready の入口文書: `knowledge/concepts/`
 - manifest 正本: `transform/topics/publish/topics/index.json`
 - UI 導線: `index.html`, `src/reports/`
 - design memo: `evidence/review/`

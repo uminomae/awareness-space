@@ -8,6 +8,17 @@ import {
     formatLocalDate,
 } from './build-awareness-image-cards.mjs';
 
+export function formatImageCardsIngestSummary({
+    created = [],
+    payload,
+    skippedDrafts = [],
+    didWrite = false,
+} = {}) {
+    const cardCount = Array.isArray(payload?.cards) ? payload.cards.length : 0;
+    const manifestStatus = didWrite ? 'manifest updated' : 'manifest unchanged';
+    return `image cards ingest complete: ${cardCount} cards / created ${created.length} draft sidecars / skipped ${skippedDrafts.length} drafts / ${manifestStatus}`;
+}
+
 export async function ingestAwarenessImageCards({
     awarenessAssetsRoot = '/Users/uminomae/dev/pjdhiro/assets/awareness',
     generatedAt = formatLocalDate(),
@@ -25,7 +36,7 @@ export async function ingestAwarenessImageCards({
         created.push(path.basename(metaPath));
     }
 
-    const { payload, skippedDrafts } = await buildImageCardsManifest({
+    const { payload, skippedDrafts, didWrite } = await buildImageCardsManifest({
         itemsDir,
         manifestPath,
         generatedAt,
@@ -35,12 +46,13 @@ export async function ingestAwarenessImageCards({
         created,
         payload,
         skippedDrafts,
+        didWrite,
     };
 }
 
 async function main() {
     const result = await ingestAwarenessImageCards();
-    console.log(`image cards ingest complete: ${result.payload.cards.length} cards / created ${result.created.length} draft sidecars / skipped ${result.skippedDrafts.length} drafts`);
+    console.log(formatImageCardsIngestSummary(result));
     for (const filename of result.created) {
         console.log(`created draft sidecar: ${filename}`);
     }

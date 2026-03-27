@@ -28,6 +28,76 @@
 - `exploration`: 開いた理論探索・調査作業
 - `ops`: ルール、ツール、運用、保守
 
+## bottom-up 段階
+
+`awareness-space` の主作業は、原則として次の順で進める。
+
+| 段階 | 目的 | 主な置き場 | Issue を分ける目安 |
+|---|---|---|---|
+| 仮説 | 何を検証するか、反証条件、スコープを置く | `evidence/review/*-design*.md`, `knowledge/survival-trust-axis-starting-memo.md` | 仮説が複数 topic に跨る時点 |
+| 調査 | source を読み、未確定論点を survey / design memo 側へ退避する | `evidence/review/*-source-map.md`, `*-intake-map.md`, `intake-return-map.md` | 調査クラスタが分かれた時点 |
+| 事実 / 洞察 | reader-facing report に返せる整理を作る | `knowledge/topics/*/{ja,en}/report.md` | topic ごとに publish 可否が見えた時点 |
+| 整理 | summary / report / survey / design memo の対応を固定する | `docs/summary-report-pairing.md`, `docs/report-structure.md`, manifest | docs 契約変更と UI 契約変更が分離できる時点 |
+| 公開 | public asset と UI 導線へ反映する | `pjdhiro/assets/awareness/*`, `transform/scripts/*`, `src/reports/*` | publish 単位ごと |
+
+原則:
+- 完了していない仮説を先に公開しない
+- 調査で得た事実 / 洞察から順に bottom-up で返す
+- `guide / survey / report / design memo` の境界を越えるときは、新しい Issue に分ける
+
+## Issue 分割ルール
+
+以下に当てはまるとき、同じ親からでも別 Issue に分ける。
+
+1. 仮説整理と調査設計が同時に走る
+2. 調査クラスタが異なる（例: 神経現象学 / 発達心理学）
+3. docs 契約変更と UI 実装変更が同時に発生する
+4. publish 単位が topic ごとに分かれる
+5. review worker が必要な変更と不要な変更が混ざる
+
+## マルチ worker 役割
+
+Issue を並行処理するときは、親セッションと worker の責務を分ける。
+
+| role | 主な責務 | close 権限 |
+|---|---|---|
+| 親（manager） | worker 起動、統合判断、Issue 状態更新 | あり |
+| 調査 worker | 現状分析、parity 調査、構想メモ、仕様未固定論点の整理 | 原則なし |
+| 実装 worker | docs / script / UI / workflow の変更、検証、commit/push | 条件付き |
+| review worker | commit 後レビュー、`REVIEW-*` 作成、PASS/WARN/FAIL コメント | なし |
+
+原則:
+- 1 worker = 1 Issue = 1成果物
+- 調査 worker / review worker は原則 OPEN のまま返す
+- close 判定は親（manager）が最終統合後に行う
+
+## worker 起動トリガー
+
+1. 仕様未固定・依存曖昧:
+   調査 worker を先行起動する
+2. tracked file 編集を伴う:
+   実装 worker を起動する
+3. ファイル移動・削除・横断変更・公開契約変更:
+   review worker を必須起動する
+4. close 前:
+   親が Issue state / `DONE-*` / `REVIEW-*` を最終確認する
+
+補足:
+- path 変更、リネーム、cross-repo 参照更新も 3 に含める
+- UI 導線変更と docs 契約変更が同時に入る場合も review 必須とする
+
+## review 判定運用
+
+| 判定 | 扱い |
+|---|---|
+| PASS | close 条件を満たすなら close してよい |
+| WARN | 影響が別 Issue で追跡可能な場合のみ許容。対応先 Issue または未解決理由を固定したまま OPEN 継続、または follow-up Issue 作成後に進行 |
+| FAIL | close 禁止。修正実装 worker を起動し、修正後に review worker を再実行する |
+
+原則:
+- 調査 worker / review worker は判定を返すだけで close しない
+- 実装 worker が commit 済みでも、review 必須変更で `REVIEW-*` と PASS/WARN/FAIL コメントが揃う前には close しない
+
 ## 必須項目
 
 各 Issue には最低限以下を書く。

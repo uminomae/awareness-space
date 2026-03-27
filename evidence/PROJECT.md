@@ -123,8 +123,8 @@
 
 ### 3.3 次のアクション
 
-- `intake-return-map.md` を起点に、必要な再反映作業があれば個別 Issue 化する
-- survey / guide / report に返した内容の整合を見直す
+- 必要な topic 展開や publish 契約拡張があれば個別 Issue 化する
+- guide / survey / report への再反映が必要な論点を、必要に応じて新規 Issue に分解する
 
 ### 3.4 ブロッカー
 

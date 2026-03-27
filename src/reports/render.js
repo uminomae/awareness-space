@@ -12,7 +12,6 @@ import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 const STRINGS = {
     ja: {
         featureRead: 'ガイドを開く',
-        guideScopeNote: 'guide は公開用の解説です。詳しい現在地は調査概要へ、調査トピックごとの本文は各レポートへ進みます。',
         features: {
             general: {
                 title: 'General',
@@ -41,7 +40,7 @@ const STRINGS = {
         levelLegendUnavailable: '進捗分類を読み込めませんでした。',
         levelLegendPrefix: '進捗分類',
         levelLegendSingle: '{count}件 / {label}',
-        scopeNote: '調査は進行中です。現在は統合的な全体調査報告を組むための調査トピックごとの個別レポートを掲載しています。',
+        scopeNote: '調査は進行中です。現在は意識モデル構成要素ごとの個別レポートを掲載しています。',
         empty: '表示できるレポートがありません。',
         error: '調査トピックレポート manifest の読み込みに失敗しました。',
         modalTitleDefault: 'Markdown',
@@ -54,7 +53,6 @@ const STRINGS = {
     },
     en: {
         featureRead: 'Open Guide',
-        guideScopeNote: 'Guides are public explainers. Use the survey for project status and the topic reports for detailed text.',
         features: {
             general: {
                 title: 'General',
@@ -83,7 +81,7 @@ const STRINGS = {
         levelLegendUnavailable: 'Progress taxonomy unavailable.',
         levelLegendPrefix: 'Progress',
         levelLegendSingle: '{count} items / {label}',
-        scopeNote: 'Research is still in progress. The current section lists topic reports used to assemble the integrated awareness research report.',
+        scopeNote: 'Research is still in progress. The current section lists individual reports for each awareness-model component.',
         empty: 'No reports available.',
         error: 'Failed to load topic reports manifest.',
         modalTitleDefault: 'Markdown',
@@ -104,7 +102,7 @@ export function getDomainReportTitle(report, lang = 'ja') {
     if (!report) return '';
     const useJapanese = normalizeLang(lang) === 'ja';
     const domainLabel = useJapanese ? (report.nameJa || report.nameEn || '') : (report.nameEn || report.nameJa || '');
-    return `${report.id || ''} ${domainLabel}`.trim();
+    return domainLabel.trim();
 }
 
 export function createReportsRenderer({
@@ -154,7 +152,6 @@ export function createReportsRenderer({
 
     function cacheDom() {
         state.dom.featureCards = document.getElementById('model-guide-cards');
-        state.dom.guideScopeNote = document.getElementById('model-summary-note');
         state.dom.error = document.getElementById('reports-error');
         state.dom.openStatusBtn = document.getElementById('reports-open-status-btn');
         state.dom.topicsHeading = document.getElementById('reports-topics-heading');
@@ -525,7 +522,6 @@ export function createReportsRenderer({
 
     function applyStaticText() {
         const strings = getReportsStrings(state.lang);
-        if (state.dom.guideScopeNote) state.dom.guideScopeNote.textContent = strings.guideScopeNote;
         if (state.dom.topicsHeading) state.dom.topicsHeading.textContent = strings.tabTopics;
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);

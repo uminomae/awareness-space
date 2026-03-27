@@ -67,7 +67,9 @@ docs/ に置かないもの:
 | `src/main.js` | フロントエンド起動点 |
 | `src/backgrounds/` | 背景の tracked prototype |
 | `skills/cli-instruction/SKILL.md` | CLI 指示書作成スキル |
+| `skills/codex-worker-instruction/SKILL.md` | Codex background worker 指示書スキル |
 | `docs/templates/cli-instruction.md` | CLI 指示書テンプレート |
+| `docs/templates/codex-worker-instruction.md` | Codex worker 指示書テンプレート |
 | `docs/session-close-routine.md` | セッション終了時の手順 |
 | `docs/standing-approvals.md` | 継続承認の記録場所 |
 | `docs/creation-space-parity-map.md` | creation-space parity の継続記録 |

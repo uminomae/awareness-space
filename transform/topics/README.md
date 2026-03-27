@@ -24,6 +24,7 @@
 - 一時的に `quality-criteria` は暫定ルール（v0.2）として採用。
 - `knowledge/topics/` 側は `awareness-space` 側で拡張前提。生成先は将来の運用状況に合わせて更新。
 - 公開契約は Markdown 正本 + topics PDF + manifest 更新である。
+- topics SVG は品質確保のため `gemini-2.5-pro` を主力にする。
 - 公開本文は外部向けトーンを守り、repo 内パスやアンカータグを含む生HTMLを出さない。
 
 ## ワークフロー
@@ -43,6 +44,7 @@
 - 共通原則: [../PRINCIPLES.md](../PRINCIPLES.md)
 - 生成ルール: [reader-rules/reader-rules-awareness-report.md](reader-rules/reader-rules-awareness-report.md)
 - 統一テンプレート: [domain-report-template.md](domain-report-template.md)
+- SVG 生成ルール: [svg-generation-rules.md](svg-generation-rules.md)
 - 品質基準: [quality-test/quality-test-awareness-report.md](quality-test/quality-test-awareness-report.md)
 - 3軸基準: [quality-criteria.md](quality-criteria.md)
 - 共通規約: [reader-rules/README.md](reader-rules/README.md)
@@ -52,6 +54,7 @@
 - 調査トピック単位の evidence は原則 `evidence/awareness-<slug>.md` を想定する。
 - report 草案は `knowledge/topics/<slug>/{ja,en}/report.md`、公開配置は `pjdhiro/assets/awareness/topics/{ja,en}/md/<slug>.md` を既定とする。
 - PDF は同じ公開用 MD から `pjdhiro/assets/awareness/topics/{lang}/pdf/<slug>.pdf` を生成する。
+- overview SVG は `pjdhiro/assets/awareness/img/svg/topics/{lang}/{slug}-01-overview-svg.svg` を既定とする。
 - `slug` は次を想定:
   - `survival-trust-axis`
   - `four-layers`
