@@ -27,7 +27,6 @@ function createMockDocument() {
         ['model-section-heading', new MockElement()],
         ['offcanvas-sections-title', new MockElement()],
         ['offcanvas-model-link', new MockElement()],
-        ['offcanvas-research-link', new MockElement()],
     ]);
 
     const graphicLabel = new MockElement();
@@ -88,5 +87,4 @@ test('applyPageLanguageToDocument updates page chrome in english', () => {
     assert.equal(doc.nodes['lang-toggle'].attributes['aria-label'], 'Switch language to Japanese');
     assert.equal(doc.nodes.bilingualNode.textContent, 'Rethinking awareness from survival and intersubjectivity.');
     assert.equal(doc.nodes['offcanvas-model-link'].textContent, 'MODEL / Awareness Model');
-    assert.equal(doc.nodes['offcanvas-research-link'].textContent, 'RESEARCH / Survey and Reports');
 });
