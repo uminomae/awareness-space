@@ -147,9 +147,9 @@
   --kesson-topbar-toggler-border: rgba(145, 178, 242, 0.55);
   --kesson-topbar-toggler-focus: rgba(140, 180, 252, 0.35);
 
-  --kesson-section-heading: 0.80rem;
-  --kesson-card-title: 0.8rem;
-  --kesson-card-text: 0.8rem;
+  --kesson-section-heading: 0.88rem;
+  --kesson-card-title: 1.0rem;
+  --kesson-card-text: 0.92rem;
   --kesson-card-summary: 0.80rem;
   --kesson-overlay-tagline: 0.80rem;
   --kesson-overlay-tagline-en: 0.80rem;
