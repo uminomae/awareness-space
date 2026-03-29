@@ -142,6 +142,51 @@ export function looksLikeHtmlDocument(text) {
     return sample.startsWith('<!doctype html') || sample.startsWith('<html');
 }
 
+export function buildMarkdownFetchCandidates(rawUrl) {
+    const primary = safeUrl(rawUrl, '');
+    if (!primary) return [];
+
+    const candidates = [primary];
+    if (!/\.md(?:$|[?#])/i.test(primary)) {
+        return candidates;
+    }
+
+    try {
+        const parsed = new URL(primary);
+        const pathParts = parsed.pathname.split('/').filter(Boolean);
+        const assetsIndex = pathParts.findIndex((part) => part === 'assets');
+        if (assetsIndex >= 0) {
+            const filePath = pathParts.slice(assetsIndex).join('/');
+            candidates.push(`${PJDHIRO_RAW_BASE}/${filePath}`);
+        }
+    } catch {
+        // keep primary candidate only
+    }
+
+    return [...new Set(candidates)];
+}
+
+function buildAwarenessDomainPresentationSource(report, lang = 'ja') {
+    if (typeof report?.id !== 'string' || typeof report?.slug !== 'string') return null;
+    if (!report.id.trim() || !report.slug.trim()) return null;
+    const idOrig = report.id.trim();
+    const slug = report.slug.trim();
+    const normalizedLang = normalizeLang(lang);
+    const baseName = `domain-${idOrig}-${slug}-presentation-${normalizedLang}`;
+    return {
+        mdUrl: `${PJDHIRO_AWARENESS_RAW}/domains/${normalizedLang}/presentations/md/${baseName}.md`,
+        pdfUrl: `${PJDHIRO_AWARENESS_PAGES}/domains/${normalizedLang}/presentations/pdf/${baseName}.pdf`,
+        htmlUrl: `${PJDHIRO_AWARENESS_PAGES}/domains/${normalizedLang}/presentations/html/${baseName}.html`,
+    };
+}
+
+export function resolveDomainPresentationSources(report, { lang = 'ja' } = {}) {
+    const normalizedLang = normalizeLang(lang);
+    const source = buildAwarenessDomainPresentationSource(report, normalizedLang);
+    if (!source) return [];
+    return [source];
+}
+
 export function safeUrl(rawUrl, fallback = '', baseHref = document.baseURI) {
     if (!hasText(rawUrl)) return fallback;
     try {

@@ -71,6 +71,7 @@ const renderer = createReportsRenderer({
         lang: state.lang,
         assetBaseUrl: state.assetBaseUrl,
     }),
+    wrapSlideOpen: () => null,
 });
 
 historyController = createReportsHistoryController({

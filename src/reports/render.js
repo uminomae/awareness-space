@@ -1,12 +1,16 @@
 import {
     MODEL_GUIDE_LINKS,
     STATUS_REPORT_LINKS,
+    buildMarkdownFetchCandidates,
     countReportsByProgressLevel,
     hasText,
+    looksLikeHtmlDocument,
     normalizeLang,
     normalizeProgressLevelId,
     resolveLocalizedSources,
+    resolveDomainPresentationSources,
 } from './data.js';
+import { openSlideViewer, openRichSlideViewer } from '../slide-viewer.js';
 import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 
 const STRINGS = {
@@ -110,6 +114,7 @@ export function createReportsRenderer({
     openMarkdownModal,
     openDomainModalById,
     getReportSources,
+    wrapSlideOpen,
 }) {
     function getProgressTaxonomyEntry(level) {
         const normalizedLevel = normalizeProgressLevelId(level);
@@ -493,6 +498,74 @@ export function createReportsRenderer({
 
         head.append(idNode, statusNode);
         body.append(head, nameNode);
+
+        // Presentation slide button
+        const presSources = resolveDomainPresentationSources(report, { lang: state.lang });
+        if (presSources.length > 0) {
+            const btnGroup = document.createElement('div');
+            btnGroup.className = 'd-flex flex-wrap gap-1 mt-auto';
+
+            const slideBtn = document.createElement('button');
+            const slideLabel = normalizeLang(state.lang) === 'ja' ? 'スライド' : 'Slides';
+            slideBtn.type = 'button';
+            slideBtn.className = 'reports-slide-btn';
+            slideBtn.textContent = slideLabel;
+            slideBtn.setAttribute('aria-label', `${domainLabel} ${slideLabel}`);
+            slideBtn.addEventListener('click', async (event) => {
+                event.stopPropagation();
+                const currentSources = resolveDomainPresentationSources(report, { lang: state.lang });
+                const source = currentSources[0];
+                if (!source) return;
+                const slideKey = report.id;
+                const slideOnClose = typeof wrapSlideOpen === 'function' ? wrapSlideOpen(slideKey) : null;
+
+                // Try rich HTML first
+                if (source.htmlUrl) {
+                    try {
+                        const htmlResp = await fetch(source.htmlUrl, { method: 'HEAD', cache: 'no-store' });
+                        if (htmlResp.ok) {
+                            openRichSlideViewer({
+                                htmlUrl: source.htmlUrl,
+                                title: `${report.id} ${domainLabel}`,
+                                onClose: slideOnClose,
+                            });
+                            return;
+                        }
+                    } catch {
+                        // Rich HTML not available, fall through to MD
+                    }
+                }
+
+                // DEPRECATED fallback — only runs when rich HTML is unavailable (404/network error)
+                if (!source.mdUrl) return;
+                const candidates = buildMarkdownFetchCandidates(source.mdUrl);
+                let markdownText = '';
+                let mdBaseUrl = '';
+                for (const url of candidates) {
+                    try {
+                        const resp = await fetch(url, { cache: 'no-store' });
+                        if (!resp.ok) continue;
+                        const text = await resp.text();
+                        if (looksLikeHtmlDocument(text)) continue;
+                        markdownText = text;
+                        mdBaseUrl = url.replace(/\/[^/]*$/, '/');
+                        break;
+                    } catch {
+                        continue;
+                    }
+                }
+                if (!markdownText) return;
+                openSlideViewer({
+                    markdownText,
+                    title: `${report.id} ${domainLabel}`,
+                    mdBaseUrl,
+                    onClose: slideOnClose,
+                });
+            });
+            btnGroup.appendChild(slideBtn);
+
+            body.appendChild(btnGroup);
+        }
         tile.appendChild(body);
         col.appendChild(tile);
         return col;
