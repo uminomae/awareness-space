@@ -559,6 +559,14 @@ html[lang="en"] #taglines {
   display: flex;
 }
 
+.kesson-panel {
+  border: 1px solid rgba(var(--color-accent), .12);
+  border-radius: .5rem;
+  background: rgba(20, 25, 40, 0.6);
+  padding: .9rem;
+  box-shadow: var(--kesson-card-shadow-soft);
+}
+
 .card.kesson-card {
   --bs-card-bg: var(--kesson-card-bg);
   background-color: var(--bs-card-bg);
