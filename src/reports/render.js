@@ -482,19 +482,17 @@ export function createReportsRenderer({
         idNode.className = 'reports-domain-item-id';
         idNode.textContent = report.id;
 
-        const statusNode = document.createElement('span');
-        statusNode.className = `badge rounded-pill reports-progress-chip reports-domain-item-status ${paletteClass}`;
-        statusNode.textContent = statusText;
-        if (hoverHint) {
-            statusNode.setAttribute('title', hoverHint);
-        }
+        // 公開中バッジは非表示（安定したら削除する）
+        // const statusNode = document.createElement('span');
+        // statusNode.className = `badge rounded-pill reports-progress-chip reports-domain-item-status ${paletteClass}`;
+        // statusNode.textContent = statusText;
 
         const nameNode = document.createElement('div');
         nameNode.className = 'reports-domain-item-name';
         nameNode.title = domainLabel;
         nameNode.textContent = domainLabel;
 
-        head.append(idNode, statusNode);
+        head.append(idNode);
         body.append(head, nameNode);
 
         // Presentation slide button
@@ -574,7 +572,7 @@ export function createReportsRenderer({
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);
         if (state.dom.openStatusBtn) state.dom.openStatusBtn.textContent = strings.openStatus;
-        renderLevelLegend();
+        // renderLevelLegend(); // 進捗分類レジェンドは不要。安定したら削除する
         updateFilterButtons();
     }
 
@@ -622,7 +620,7 @@ export function createReportsRenderer({
         state.progressLevelCounts = countReportsByProgressLevel(state.reports);
         renderFeatureCards();
         applyStaticText();
-        renderMetrics();
+        // renderMetrics(); // 調査の現在地以外のメトリクスカードは不要。安定したら削除する
         renderDomainGrid();
         setReportsError(state.loadError ? getReportsStrings(state.lang).error : '');
     }
