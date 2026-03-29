@@ -1,16 +1,14 @@
 import {
     MODEL_GUIDE_LINKS,
     STATUS_REPORT_LINKS,
-    buildMarkdownFetchCandidates,
     countReportsByProgressLevel,
     hasText,
-    looksLikeHtmlDocument,
     normalizeLang,
     normalizeProgressLevelId,
     resolveLocalizedSources,
     resolveDomainPresentationSources,
 } from './data.js';
-import { openSlideViewer, openRichSlideViewer } from '../slide-viewer.js';
+import { openRichSlideViewer } from '../slide-viewer.js';
 import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 
 const STRINGS = {
@@ -532,35 +530,12 @@ export function createReportsRenderer({
                             return;
                         }
                     } catch {
-                        // Rich HTML not available, fall through to MD
+                        // Rich HTML not available
                     }
                 }
 
-                // DEPRECATED fallback — only runs when rich HTML is unavailable (404/network error)
-                if (!source.mdUrl) return;
-                const candidates = buildMarkdownFetchCandidates(source.mdUrl);
-                let markdownText = '';
-                let mdBaseUrl = '';
-                for (const url of candidates) {
-                    try {
-                        const resp = await fetch(url, { cache: 'no-store' });
-                        if (!resp.ok) continue;
-                        const text = await resp.text();
-                        if (looksLikeHtmlDocument(text)) continue;
-                        markdownText = text;
-                        mdBaseUrl = url.replace(/\/[^/]*$/, '/');
-                        break;
-                    } catch {
-                        continue;
-                    }
-                }
-                if (!markdownText) return;
-                openSlideViewer({
-                    markdownText,
-                    title: `${report.id} ${domainLabel}`,
-                    mdBaseUrl,
-                    onClose: slideOnClose,
-                });
+                // Rich HTML HEAD check failed; warn and give up silently
+                console.warn('[render] rich HTML slide unavailable for', report.id);
             });
             btnGroup.appendChild(slideBtn);
 
