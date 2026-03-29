@@ -4,6 +4,18 @@
   z-index: 5;
   --reports-font-mono: var(--kesson-font-mono-ui);
   --reports-font-serif: var(--kesson-font-serif-ui);
+  --reports-font-sans: var(--kesson-font-sans-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  --reports-slide-btn-rgb: var(--color-accent);
+  --reports-slide-btn-text: rgba(var(--color-highlight), .82);
+  --reports-slide-btn-text-strong: rgba(var(--color-highlight), .94);
+  --reports-slide-btn-border: rgba(var(--reports-slide-btn-rgb), .24);
+  --reports-slide-btn-border-hover: rgba(var(--reports-slide-btn-rgb), .36);
+  --reports-slide-btn-bg-top: rgba(var(--reports-slide-btn-rgb), .12);
+  --reports-slide-btn-bg-bottom: rgba(var(--reports-slide-btn-rgb), .06);
+  --reports-slide-btn-bg-top-hover: rgba(var(--reports-slide-btn-rgb), .2);
+  --reports-slide-btn-bg-bottom-hover: rgba(var(--reports-slide-btn-rgb), .1);
+  --reports-slide-btn-bg-top-active: rgba(var(--reports-slide-btn-rgb), .24);
+  --reports-slide-btn-bg-bottom-active: rgba(var(--reports-slide-btn-rgb), .12);
   --reports-panel-radius: 0.5rem;
   --reports-panel-padding: 0.9rem;
   --reports-stack-gap: 0.9rem;
@@ -122,7 +134,9 @@
 
 .reports-feature-description {
   color: rgba(var(--color-sub-text), 0.78);
-  line-height: 1.55;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   text-wrap: pretty;
 }
 
@@ -135,8 +149,8 @@
 .reports-subheading {
   margin: 0 0 0.65rem;
   color: var(--kesson-topbar-link-color);
-  font-size: clamp(calc(0.75rem + var(--reports-font-step)), calc(2.2vmin + var(--reports-font-step)), calc(0.9rem + var(--reports-font-step)));
-  letter-spacing: 0.04em;
+  font-size: var(--kesson-card-title, 1.0rem);
+  letter-spacing: var(--kesson-letter-ui-heading);
   font-family: var(--kesson-font-serif-display);
   font-weight: 400;
 }
@@ -144,10 +158,9 @@
 .reports-ai-notice,
 .reports-level-legend {
   color: var(--kesson-topbar-link-color);
-  font-size: calc(0.8rem + var(--reports-font-step));
-  letter-spacing: var(--kesson-letter-ui-tight);
-  line-height: 1.45;
-  font-family: var(--reports-font-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .reports-ai-notice {
@@ -293,6 +306,66 @@
   border-radius: 0.4rem;
   padding: 0.8rem;
   background: rgba(var(--color-accent), 0.04);
+}
+
+.reports-slide-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(5.4rem, 24vw, 6.5rem);
+  min-height: 2.25rem;
+  padding: .38rem .82rem;
+  border: 1px solid var(--reports-slide-btn-border);
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--reports-slide-btn-bg-top), var(--reports-slide-btn-bg-bottom));
+  color: var(--reports-slide-btn-text);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 .4rem 1rem rgba(0, 0, 0, .22), 0 0 .85rem rgba(var(--reports-slide-btn-rgb), .12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--reports-font-sans);
+  font-size: clamp(.78rem, 2.1vmin, .86rem);
+  font-weight: 700;
+  letter-spacing: .05em;
+  line-height: 1.1;
+  white-space: nowrap;
+  text-shadow: 0 0 10px rgba(var(--reports-slide-btn-rgb), .1);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: border-color var(--kesson-transition-standard), background var(--kesson-transition-standard), color var(--kesson-transition-standard), box-shadow var(--kesson-transition-standard), transform var(--kesson-transition-snappy);
+}
+
+.reports-slide-btn:hover,
+.reports-slide-btn:focus-visible {
+  border-color: var(--reports-slide-btn-border-hover);
+  background: linear-gradient(180deg, var(--reports-slide-btn-bg-top-hover), var(--reports-slide-btn-bg-bottom-hover));
+  color: var(--reports-slide-btn-text-strong);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1), 0 .55rem 1.1rem rgba(0, 0, 0, .24), 0 0 1rem rgba(var(--reports-slide-btn-rgb), .18);
+  transform: translateY(-1px);
+}
+
+.reports-slide-btn:focus-visible {
+  outline: 2px solid rgba(var(--reports-slide-btn-rgb), .5);
+  outline-offset: 2px;
+}
+
+.reports-slide-btn:active {
+  background: linear-gradient(180deg, var(--reports-slide-btn-bg-top-active), var(--reports-slide-btn-bg-bottom-active));
+  transform: translateY(0);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 .28rem .7rem rgba(0, 0, 0, .22), 0 0 .85rem rgba(var(--reports-slide-btn-rgb), .12);
+}
+
+.reports-slide-btn:disabled {
+  opacity: .48;
+  transform: none;
+  box-shadow: none;
+}
+
+.reports-domain-item .reports-slide-btn {
+  --reports-slide-btn-rgb: var(--reports-palette-rgb);
 }
 
 .reports-md-modal-content {
