@@ -69,13 +69,30 @@ body.awareness-page {
   margin-top: 1.25rem;
 }
 
-.awareness-card {
+/* === awareness-img-card (正本 techo#58) === */
+.awareness-img-card {
   --bs-card-bg: rgba(20, 25, 40, 0.78);
+  background-color: rgba(20, 25, 40, 0.78);
   border: 1px solid rgba(var(--color-accent), 0.16);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
 }
 
-.awareness-card-kicker {
+.awareness-img-card .card-img-top {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.awareness-img-card > .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+}
+
+.awareness-img-card .card-kicker {
   margin-bottom: 0.55rem;
   color: rgba(var(--color-sub-text), 0.7);
   font-family: var(--kesson-font-mono-ui);
@@ -84,35 +101,27 @@ body.awareness-page {
   text-transform: uppercase;
 }
 
-.awareness-card .card-title {
+.awareness-img-card .card-title {
+  color: #fff;
+  font-size: var(--kesson-card-title, 1.0rem);
+  font-family: 'Noto Serif JP', Georgia, serif;
   margin-bottom: 0.8rem;
 }
 
-.awareness-card .card-text {
+.awareness-img-card .card-text {
+  color: rgba(var(--color-sub-text), 0.82);
+  font-size: 0.875rem;
   line-height: 1.8;
 }
 
-.awareness-image-card .card-img-top {
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: center;
+.awareness-img-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--color-accent), 0.15);
 }
 
-.awareness-image-card-comment {
-  color: rgba(var(--color-sub-text), 0.82);
-}
-
-.awareness-image-card-links {
-  margin-top: auto;
-}
-
-.awareness-card-link {
-  color: rgba(var(--color-link), 0.88);
-  text-decoration: none;
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-font-size-ui-sm, 0.80rem);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.awareness-img-card:focus-visible {
+  outline: 2px solid rgba(var(--color-accent), 0.8);
+  outline-offset: 4px;
 }
 
 .awareness-card-link:hover,

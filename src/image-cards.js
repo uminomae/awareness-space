@@ -180,7 +180,7 @@ function renderImageCards() {
         col.className = 'col';
 
         const article = document.createElement('article');
-        article.className = 'card kesson-card awareness-card awareness-image-card h-100';
+        article.className = 'card awareness-img-card h-100';
         article.setAttribute('role', 'button');
         article.setAttribute('tabindex', '0');
 
@@ -195,10 +195,10 @@ function renderImageCards() {
         }
 
         const body = document.createElement('div');
-        body.className = 'card-body d-flex flex-column gap-2';
+        body.className = 'card-body';
 
         const kicker = document.createElement('div');
-        kicker.className = 'awareness-card-kicker';
+        kicker.className = 'card-kicker';
         kicker.textContent = 'Interpretation';
 
         const title = document.createElement('h3');
@@ -206,7 +206,7 @@ function renderImageCards() {
         title.textContent = copy.title;
 
         const comment = document.createElement('p');
-        comment.className = 'card-text awareness-image-card-comment mb-0';
+        comment.className = 'card-text mb-0';
         comment.textContent = copy.comment;
 
         body.append(kicker, title, comment);
