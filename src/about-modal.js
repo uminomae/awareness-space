@@ -151,32 +151,22 @@ function closeModal() {
     state.closeTimer = window.setTimeout(finish, 500);
 }
 
+export function openAboutModal() {
+    openModal();
+}
+
+export function closeAboutModal() {
+    closeModal();
+}
+
 export function initAboutModal(initialLang = 'ja') {
     if (state.initialized) {
         setAboutModalLanguage(initialLang);
         return;
     }
 
-    const { trigger, modal } = getDom();
-    if (!trigger || !modal) return;
-
-    trigger.addEventListener('click', () => {
-        openModal();
-    });
-
-    modal.addEventListener('click', (event) => {
-        const target = event.target;
-        if (!(target instanceof HTMLElement)) return;
-        if (target.closest('[data-about-close]')) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    });
+    const { modal } = getDom();
+    if (!modal) return;
 
     state.initialized = true;
     setAboutModalLanguage(initialLang);
