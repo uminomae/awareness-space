@@ -1,4 +1,4 @@
-import { normalizeLang, switchLang } from './i18n.js';
+import { normalizeLang } from './i18n.js';
 import { dict } from './i18n/dict.js';
 
 function setText(node, value) {
@@ -107,16 +107,4 @@ export function applyPageLanguageToDocument(doc, lang) {
 
 export function applyPageLanguage(lang) {
     applyPageLanguageToDocument(document, lang);
-}
-
-export function initLanguageToggle(initialLang, onLanguageChanged) {
-    const langToggle = document.getElementById('lang-toggle');
-    if (!langToggle) return;
-
-    langToggle.addEventListener('click', () => {
-        const nextLang = switchLang();
-        if (typeof onLanguageChanged === 'function') {
-            onLanguageChanged(nextLang);
-        }
-    });
 }

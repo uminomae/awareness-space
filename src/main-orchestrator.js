@@ -1,13 +1,14 @@
 import { applySceneState, getDefaultSceneState } from './dev-panel-data.js';
 import { initAboutModal, setAboutModalLanguage } from './about-modal.js';
 import { initDevAuxTools, initDevPanelRuntime } from './dev-runtime.js';
+import { bindAppEvents } from './events.js';
 import { createMainDevStatsTicker } from './main-dev-runtime.js';
 import { prepareMainBootstrap } from './main-bootstrap.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
 import { syncControlGuideVisibility } from './control-guide.js';
 import { initImageCards, setImageCardsLanguage } from './image-cards.js';
 import { LANG_CHANGE_EVENT } from './i18n.js';
-import { applyPageLanguage, initLanguageToggle } from './page-language.js';
+import { applyPageLanguage } from './page-language.js';
 import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
 import { breathValue } from './animation-utils.js';
 import { breathConfig } from './config.js';
@@ -160,7 +161,7 @@ export async function runMainOrchestrator({
         setImageCardsLanguage(lang);
     });
 
-    initLanguageToggle(initialLang);
+    bindAppEvents();
 
     startScrollUiLoop();
     initHashLinks();
