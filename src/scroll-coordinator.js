@@ -1,3 +1,4 @@
+// SOURCE OF TRUTH: awareness-space/src/scroll-coordinator.js
 // scroll-coordinator.js
 // IMPORTANT: window.scrollTo must be owned by this module only.
 // Other modules must request scrolling through requestScroll().
