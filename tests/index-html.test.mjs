@@ -8,7 +8,7 @@ const indexHtml = readFileSync(resolve(process.cwd(), 'index.html'), 'utf8');
 test('graphic switcher exposes only Fujin-Raijin in markup', () => {
     const modeMatches = [...indexHtml.matchAll(/data-graphic-mode="([^"]+)"/g)].map((match) => match[1]);
     assert.deepEqual(modeMatches, ['raijin']);
-    assert.match(indexHtml, /data-en="Fujin-Raijin"/);
+    assert.match(indexHtml, /data-i18n="graphicModeRaijin"/);
     assert.doesNotMatch(indexHtml, /data-graphic-mode="uzu"/);
 });
 
