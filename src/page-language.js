@@ -1,4 +1,4 @@
-import { normalizeLang, syncLangQuery } from './i18n.js';
+import { normalizeLang, switchLang } from './i18n.js';
 import { dict } from './i18n/dict.js';
 
 function setText(node, value) {
@@ -11,6 +11,39 @@ function setAttr(node, name, value) {
     if (node && typeof value === 'string') {
         node.setAttribute(name, value);
     }
+}
+
+function resolvePathValue(source, path) {
+    if (!source || !path) return undefined;
+    return path.split('.').reduce((value, key) => {
+        if (value && Object.prototype.hasOwnProperty.call(value, key)) {
+            return value[key];
+        }
+        return undefined;
+    }, source);
+}
+
+function applyTextBindings(doc, strings) {
+    doc.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.getAttribute('data-i18n');
+        const value = resolvePathValue(strings, key);
+        if (typeof value === 'string') {
+            node.textContent = value;
+        }
+    });
+
+    doc.querySelectorAll('*').forEach((node) => {
+        node.getAttributeNames()
+            .filter((name) => name.startsWith('data-i18n-attr-'))
+            .forEach((name) => {
+                const attrName = name.slice('data-i18n-attr-'.length);
+                const key = node.getAttribute(name);
+                const value = resolvePathValue(strings, key);
+                if (typeof value === 'string') {
+                    node.setAttribute(attrName, value);
+                }
+            });
+    });
 }
 
 export function applyPageLanguageToDocument(doc, lang) {
@@ -40,9 +73,7 @@ export function applyPageLanguageToDocument(doc, lang) {
     const aboutModalTitle = doc.getElementById('about-modal-title');
     const aboutClose = doc.getElementById('about-close');
 
-    doc.querySelectorAll('[data-ja][data-en]').forEach((node) => {
-        node.textContent = normalized === 'en' ? node.dataset.en : node.dataset.ja;
-    });
+    applyTextBindings(doc, strings);
 
     setText(titleH1, strings.title);
     setText(topbarMainTitle, strings.topbarMainTitle);
@@ -82,12 +113,10 @@ export function initLanguageToggle(initialLang, onLanguageChanged) {
     const langToggle = document.getElementById('lang-toggle');
     if (!langToggle) return;
 
-    let currentLang = normalizeLang(initialLang);
     langToggle.addEventListener('click', () => {
-        currentLang = currentLang === 'ja' ? 'en' : 'ja';
-        syncLangQuery(currentLang);
+        const nextLang = switchLang();
         if (typeof onLanguageChanged === 'function') {
-            onLanguageChanged(currentLang);
+            onLanguageChanged(nextLang);
         }
     });
 }
