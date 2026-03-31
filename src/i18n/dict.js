@@ -1,7 +1,7 @@
 export const dict = {
     ja: {
         page: {
-            documentTitle: '意識とは',
+            documentTitle: '意識とは — pjdhiro',
             title: '意識とは',
             topbarMainTitle: '意識とは',
             topbarNavAria: 'メインメニュー',
@@ -41,7 +41,7 @@ export const dict = {
     },
     en: {
         page: {
-            documentTitle: 'What Is Awareness',
+            documentTitle: 'What Is Awareness — pjdhiro',
             title: 'What Is Awareness',
             topbarMainTitle: 'What Is Awareness',
             topbarNavAria: 'Main menu',
