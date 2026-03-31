@@ -177,10 +177,10 @@ function renderImageCards() {
     const fragment = document.createDocumentFragment();
     sortImageCards(state.cards).forEach((card) => {
         const col = document.createElement('div');
-        col.className = 'col';
+        col.className = 'col card-column';
 
         const article = document.createElement('article');
-        article.className = 'card awareness-img-card h-100';
+        article.className = 'img-card';
         article.setAttribute('role', 'button');
         article.setAttribute('tabindex', '0');
 
@@ -188,25 +188,25 @@ function renderImageCards() {
         const imageUrl = resolvePublishedAssetUrl(card.image);
         if (imageUrl) {
             const img = document.createElement('img');
-            img.className = 'card-img-top';
+            img.className = 'img-card-media';
             img.src = imageUrl;
             img.alt = copy.alt;
             article.appendChild(img);
         }
 
         const body = document.createElement('div');
-        body.className = 'card-body';
+        body.className = 'img-card-body';
 
         const kicker = document.createElement('div');
-        kicker.className = 'card-kicker';
+        kicker.className = 'img-card-kicker';
         kicker.textContent = 'Interpretation';
 
         const title = document.createElement('h3');
-        title.className = 'card-title h6';
+        title.className = 'img-card-title';
         title.textContent = copy.title;
 
         const comment = document.createElement('p');
-        comment.className = 'card-text mb-0';
+        comment.className = 'img-card-text';
         comment.textContent = copy.comment;
 
         body.append(kicker, title, comment);
