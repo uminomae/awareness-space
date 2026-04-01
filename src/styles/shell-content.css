@@ -468,6 +468,9 @@ html[lang="en"] #taglines {
   text-transform: uppercase;
   font-family: var(--kesson-font-mono-ui);
   margin: 0 0 0.85rem;
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 1.0),
+    0 0 20px rgba(0, 0, 0, 0.67);
 }
 
 .section-heading-link {
