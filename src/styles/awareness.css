@@ -95,7 +95,7 @@ body.awareness-page {
   border: 1px solid rgba(var(--color-accent), 0.16);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform var(--kesson-transition-snappy), box-shadow var(--kesson-transition-snappy), border-color var(--kesson-transition-snappy);
 }
 
 .img-card-media {
