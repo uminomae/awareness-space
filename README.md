@@ -59,3 +59,7 @@ This project explores the structure of consciousness through a Four-Layer Model 
 ## Author
 
 **pjdhiro** — [https://github.com/uminomae](https://github.com/uminomae)
+
+## License
+
+[MIT License](LICENSE)
