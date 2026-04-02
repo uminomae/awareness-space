@@ -37,7 +37,7 @@ export function applyPageLanguageToDocument(doc, lang) {
     const offcanvasSectionsTitle = doc.getElementById('offcanvas-sections-title');
     const offcanvasModelLink = doc.getElementById('offcanvas-model-link');
     const aboutTrigger = doc.getElementById('about-trigger');
-    const aboutModalTitle = doc.getElementById('about-modal-title');
+    const aboutModalTitle = doc.getElementById('about-overlay-title');
     const aboutClose = doc.getElementById('about-close');
 
     doc.querySelectorAll('[data-ja][data-en]').forEach((node) => {

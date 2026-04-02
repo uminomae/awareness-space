@@ -31,7 +31,7 @@
 }
 
 .about-trigger:focus-visible,
-.about-modal__close:focus-visible {
+.about-close:focus-visible {
   outline: 2px solid var(--kesson-focus-ring);
   outline-offset: 2px;
 }
@@ -45,31 +45,26 @@
   transform: translateY(-1px);
 }
 
-.about-modal {
+#about-overlay {
   position: fixed;
   inset: 0;
   z-index: 72;
   display: none;
   align-items: center;
   justify-content: center;
-}
-
-.about-modal.visible {
-  display: flex;
-}
-
-.about-modal__backdrop {
-  position: absolute;
-  inset: 0;
   background: rgba(5, 10, 20, 0);
   transition: background 0.35s ease;
 }
 
-.about-modal.open .about-modal__backdrop {
+#about-overlay.visible {
+  display: flex;
+}
+
+#about-overlay.open {
   background: rgba(5, 10, 20, 0.58);
 }
 
-.about-modal__panel {
+.about-glass {
   position: relative;
   z-index: 1;
   width: min(92vw, 640px);
@@ -90,12 +85,12 @@
   transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-.about-modal.open .about-modal__panel {
+#about-overlay.open .about-glass {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-.about-modal__close {
+.about-close {
   position: absolute;
   top: 0.9rem;
   right: 0.95rem;
@@ -114,12 +109,12 @@
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-.about-modal__close:hover {
+.about-close:hover {
   background: rgba(255, 255, 255, 0.1);
   color: rgba(var(--color-heading), 1);
 }
 
-.about-modal__body {
+.about-body {
   font-family: var(--kesson-font-serif-display);
   color: rgba(var(--color-highlight), 0.86);
   font-size: 0.93rem;
@@ -127,93 +122,93 @@
   letter-spacing: 0.02em;
 }
 
-.about-modal__body h1,
-.about-modal__body h2 {
+.about-body h1,
+.about-body h2 {
   color: rgba(var(--color-heading), 0.94);
   font-family: var(--kesson-font-serif-display);
   font-weight: 400;
   letter-spacing: 0.08em;
 }
 
-.about-modal__body h1 {
+.about-body h1 {
   margin: 0 0 1.25rem;
   font-size: 1.15rem;
 }
 
-.about-modal__body h2 {
+.about-body h2 {
   margin: 1.8rem 0 0.75rem;
   font-size: 0.88rem;
 }
 
-.about-modal__body p,
-.about-modal__body ul {
+.about-body p,
+.about-body ul {
   margin: 0 0 1rem;
 }
 
-.about-modal__body ul {
+.about-body ul {
   padding-left: 1.2rem;
 }
 
-.about-modal__body li + li {
+.about-body li + li {
   margin-top: 0.35rem;
 }
 
-.about-modal__body a {
+.about-body a {
   color: rgba(var(--color-link), 0.92);
   text-decoration-color: rgba(var(--color-link), 0.36);
 }
 
-.about-modal__body a:hover,
-.about-modal__body a:focus-visible {
+.about-body a:hover,
+.about-body a:focus-visible {
   color: rgba(180, 210, 255, 1);
 }
 
-.about-modal__body strong {
+.about-body strong {
   color: rgba(var(--color-heading), 0.96);
   font-weight: 500;
 }
 
-.about-modal__body hr {
+.about-body hr {
   margin: 1.25rem 0;
   border: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.about-modal__status {
+.about-status {
   margin: 0;
   color: rgba(var(--color-highlight), 0.72);
 }
 
-.about-modal__status--error {
+.about-status--error {
   color: rgba(255, 202, 202, 0.9);
 }
 
-.about-modal__panel::-webkit-scrollbar {
+.about-glass::-webkit-scrollbar {
   width: 6px;
 }
 
-.about-modal__panel::-webkit-scrollbar-thumb {
+.about-glass::-webkit-scrollbar-thumb {
   background: rgba(150, 180, 230, 0.2);
   border-radius: 999px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-modal__backdrop,
-  .about-modal__panel,
+  #about-overlay,
+  .about-glass,
   .about-trigger {
     transition: none;
   }
 }
 
 @media (max-width: 767.98px) {
-  .about-modal__panel {
+  .about-glass {
     width: min(94vw, 640px);
     max-height: min(82vh, 760px);
     padding: 2.6rem 1.35rem 1.5rem;
     border-radius: 10px;
   }
 
-  .about-modal__body {
+  .about-body {
     font-size: 0.88rem;
     line-height: 1.85;
   }

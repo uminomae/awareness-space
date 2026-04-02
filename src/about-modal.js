@@ -28,8 +28,8 @@ async function getMarked() {
 function getDom() {
     return {
         trigger: document.getElementById('about-trigger'),
-        modal: document.getElementById('about-modal'),
-        title: document.getElementById('about-modal-title'),
+        modal: document.getElementById('about-overlay'),
+        title: document.getElementById('about-overlay-title'),
         close: document.getElementById('about-close'),
         body: document.getElementById('about-body'),
     };
@@ -47,12 +47,12 @@ function getMarkdownUrl(body, lang) {
 
 function setLoading(body, lang) {
     if (!body) return;
-    body.innerHTML = `<p class="about-modal__status">${getAboutStrings(lang).loading}</p>`;
+    body.innerHTML = `<p class="about-status">${getAboutStrings(lang).loading}</p>`;
 }
 
 function setError(body, lang) {
     if (!body) return;
-    body.innerHTML = `<p class="about-modal__status about-modal__status--error">${getAboutStrings(lang).error}</p>`;
+    body.innerHTML = `<p class="about-status about-status--error">${getAboutStrings(lang).error}</p>`;
 }
 
 async function loadMarkdown(body, lang) {
@@ -164,12 +164,22 @@ export function initAboutModal(initialLang = 'ja') {
         openModal();
     });
 
+    const panel = modal.querySelector('.about-glass');
+    if (panel) {
+        panel.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
     modal.addEventListener('click', (event) => {
         const target = event.target;
         if (!(target instanceof HTMLElement)) return;
-        if (target.closest('[data-about-close]')) {
+        if (target.closest('.about-close')) {
             closeModal();
+            return;
         }
+        // Click on overlay background closes the modal
+        closeModal();
     });
 
     document.addEventListener('keydown', (event) => {

@@ -185,25 +185,23 @@
       class="about-trigger"
       type="button"
       aria-label="このページについて"
-      aria-controls="about-modal">
+      aria-controls="about-overlay">
       <span class="about-trigger__letter" aria-hidden="true">i</span>
     </button>
   </div>
 
   <div
-    id="about-modal"
-    class="about-modal"
+    id="about-overlay"
     role="dialog"
     aria-modal="true"
     aria-hidden="true"
-    aria-labelledby="about-modal-title">
-    <div class="about-modal__backdrop" data-about-close></div>
-    <div class="about-modal__panel" role="document">
-      <h2 id="about-modal-title" class="visually-hidden">このページについて</h2>
-      <button id="about-close" class="about-modal__close" type="button" aria-label="閉じる" data-about-close>×</button>
+    aria-labelledby="about-overlay-title">
+    <div class="about-glass">
+      <h2 id="about-overlay-title" class="about-title visually-hidden">このページについて</h2>
+      <button id="about-close" class="about-close" type="button" aria-label="閉じる">×</button>
       <div
         id="about-body"
-        class="about-modal__body"
+        class="about-body"
         data-md-ja="./assets/about/ja.md"
         data-md-en="./assets/about/en.md"></div>
     </div>
