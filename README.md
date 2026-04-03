@@ -1,18 +1,18 @@
 # 意識とは — awareness-space
 
-**What is Consciousness? Exploring consciousness through intersubjectivity.**
+**Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, F-O Evaluation, and Withhold.**
 
 ---
 
 ## Overview (English)
 
-**What is Consciousness?** This project explores the structure of consciousness through a Four-Layer Model encompassing intersubjectivity, interoception, prediction error, and suspension. Rather than treating consciousness as a property of individual brains, it investigates how awareness arises in the relational space between subjects, informed by bodily signals and shaped by the capacity to suspend premature judgment.
+**What is Consciousness?** This research explores the operative structure of consciousness through a Four-Layer Model (M1). The four layers are: Interoception (bodily monitoring), Prediction-Error Loop (gap detection and deficit generation), F-O Evaluation (value judgment through survival/attachment axes), and Withhold (meta-cognitive holding for action control). Intersubjectivity is a separate exploration theme outside the four layers of M1.
 
 ### Key Concepts
-- **Four-Layer Model of Consciousness** (意識の4層モデル): Intersubjectivity (間主観性) -- consciousness arises in relationships; Interoception (内受容感覚) -- bodily signals form the foundation; Prediction Error (予測誤差) -- gaps between prediction and reality drive awareness; Suspension (保留) -- withholding judgment enables deeper exploration.
-- **Intersubjectivity in Projects** (プロジェクトにおける間主観性): Meaning and understanding emerge not in isolation but through dialogue and relational engagement within project work.
+- **Four-Layer Model of Consciousness (M1)** (意識の4層モデル): L0 Interoception (内受容感覚) -- bodily monitoring; L1 Prediction-Error Loop (予測-誤差ループ) -- gap detection and deficit generation; L2 F-O Evaluation (F-O評価) -- value judgment through survival/attachment; L3 Withhold (抱持) -- meta-cognitive holding for action control.
+- **Intersubjectivity** (間主観性): A concept outside the four layers of M1. It concerns the shared experiential space between subjects and is explored as a separate theme.
 
-### Related Projects
+### Related Explorations
 - [project-design](https://github.com/uminomae/project-design): Project Design Theory -- the overarching framework
 - [creation-space](https://github.com/uminomae/creation-space): Exploring creative processes across 30 academic domains
 - [kesson-space](https://github.com/uminomae/kesson-space): 3D experiential space for Kesson-Driven Thinking
@@ -23,18 +23,18 @@
 
 ## 概要 / Overview
 
-間主観性・内受容感覚・予測誤差・保留の4層モデルから意識の構造を探索するプロジェクト。「意識とは何か」という問いに対し、一人称の体験と二人称の関係性の両面からアプローチする。
+「意識とは何か」を探索する。内受容感覚・予測-誤差ループ・F-O評価・抱持の4層モデル（M1）で意識の作動構造を記述する。間主観性は M1 の外にある探索テーマとして別途扱う。
 
-This project explores the structure of consciousness through a Four-Layer Model encompassing intersubjectivity, interoception, prediction error, and suspension. It approaches the question "What is consciousness?" from both first-person experience and second-person relational perspectives.
+Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, F-O Evaluation, and Withhold. Intersubjectivity is explored as a separate theme outside M1.
 
-## 4層モデル / Four-Layer Model
+## 4層モデル (M1) / Four-Layer Model (M1)
 
-| 層 / Layer | 日本語 | English | 説明 / Description |
+| Layer | 日本語 | English | 機能 / Function |
 |:---:|--------|---------|---------|
-| 1 | 間主観性 | Intersubjectivity | 意識は個体の内部に閉じず、他者との関係の中で立ち上がる / Consciousness arises not within an individual alone, but in the relationship with others |
-| 2 | 内受容感覚 | Interoception | 身体内部からの信号が意識の土台を形成する / Internal bodily signals form the foundation of conscious experience |
-| 3 | 予測誤差 | Prediction Error | 脳の予測と実際の入力のずれが意識的気づきを駆動する / The gap between the brain's predictions and actual input drives conscious awareness |
-| 4 | 保留 | Suspension | 判断を保留する態度が、より深い意識的探索を可能にする / Suspending judgment enables deeper conscious exploration |
+| L0 | 内受容感覚 | Interoception | 身体モニタリング / Bodily monitoring |
+| L1 | 予測-誤差ループ | Prediction-Error Loop | ズレ検出、欠損生成 / Gap detection, deficit generation |
+| L2 | F-O評価 | F-O Evaluation (Survival/Attachment) | 価値判断（情動価の付与） / Value judgment (emotional valence) |
+| L3 | 抱持 | Withhold (Meta-Cognitive Holding) | 行動制御（保持） / Action control (holding) |
 
 ## Live Site
 
@@ -47,7 +47,7 @@ This project explores the structure of consciousness through a Four-Layer Model 
 - UI: Bootstrap 5
 - デプロイ: GitHub Pages
 
-## 関連プロジェクト / Related Projects
+## 関連探索 / Related Explorations
 
 | リポジトリ / Repository | 概要 / Description |
 |---|---|

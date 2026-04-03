@@ -4,35 +4,43 @@
 
 ## Site Overview
 
-This is the research site of pjdhiro exploring **what consciousness is** — investigating the structure of consciousness through a four-layer model.
+This is the research site of pjdhiro exploring **what consciousness is** — describing the operative structure of consciousness through a Four-Layer Model (M1).
 
 - **Primary Language**: Japanese (日本語), with English summaries
 - **Site URL**: https://uminomae.github.io/awareness-space/
-- **Topics**: Consciousness, Intersubjectivity, Interoception, Prediction Error, Neurophenomenology
+- **Topics**: Consciousness, Interoception, Prediction-Error Loop, F-O Evaluation, Withhold, Neurophenomenology
 
 ## Core Concepts
 
-### Intersubjectivity (間主観性)
+### Four-Layer Model (M1) — 意識の4層モデル
 
-The shared experiential space between subjects. A foundational concept for understanding how consciousness arises not in isolation but through relational encounters.
+The four layers describe the operative structure of consciousness:
 
-### Interoception (内受容感覚)
+#### L0: Interoception (内受容感覚)
 
-The perception of internal bodily states — heartbeat, breathing, gut feeling. A key bridge between embodied experience and conscious awareness.
+Bodily monitoring — the perception of internal bodily states (heartbeat, breathing, gut feeling) that forms the foundation of conscious experience.
 
-### Prediction Error (予測誤差)
+#### L1: Prediction-Error Loop (予測-誤差ループ)
 
-The gap between what the brain predicts and what actually occurs. This mismatch drives learning, attention, and potentially the emergence of conscious experience.
+Gap detection and deficit generation — the mismatch between what the brain predicts and what actually occurs drives awareness and learning.
 
-### Withholding (保留)
+#### L2: F-O Evaluation (F-O評価 — Survival/Attachment)
 
-The capacity to suspend judgment and remain in uncertainty. An essential posture for phenomenological inquiry and deeper awareness.
+Value judgment — emotional valence assignment through survival and attachment axes. This layer determines the significance of detected gaps.
+
+#### L3: Withhold (抱持 — Meta-Cognitive Holding)
+
+Action control through holding — the capacity to hold experience without premature action, enabling deeper exploration and meta-cognitive awareness.
+
+### Intersubjectivity (間主観性) — Outside M1
+
+Intersubjectivity is not part of the four layers. It is a separate exploration theme concerning the shared experiential space between subjects — how consciousness arises in relational encounters. It is explored alongside M1 but is not one of its layers.
 
 ## Research Approach
 
 - **Neurophenomenology**: Bridging first-person phenomenological experience with third-person neuroscience
-- **Developmental Psychology**: Tracing how consciousness develops through early intersubjective encounters
-- **Four-Layer Model**: A structural framework for organizing different aspects of conscious experience
+- **Developmental Psychology**: Tracing how consciousness develops through early encounters
+- **Four-Layer Model (M1)**: A structural framework describing the operative structure of consciousness through L0-L3
 
 ## Site Structure
 

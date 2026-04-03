@@ -2,15 +2,18 @@
 
 Does consciousness happen only inside the head?
 
-This project explores the structure of consciousness
-through four layers.
+This exploration describes the operative structure of consciousness
+through a Four-Layer Model (M1).
 
-Intersubjectivity — consciousness arises not within an individual alone,
-but in the relationship with others.
-Interoception — internal bodily signals form the foundation.
-Prediction error — the gap between what the brain expects
-and what actually arrives drives awareness.
-Suspension — withholding judgment enables deeper exploration.
+L0 Interoception — bodily monitoring. Internal bodily signals form the foundation.
+L1 Prediction-Error Loop — gap detection and deficit generation. The mismatch
+between what the brain expects and what actually arrives drives awareness.
+L2 F-O Evaluation — value judgment (emotional valence) through survival
+and attachment axes.
+L3 Withhold — action control through meta-cognitive holding. Holding experience
+without premature action enables deeper exploration.
+
+Intersubjectivity is explored as a separate theme outside M1.
 
 Structuring through AI collaboration. Still in progress.
 
