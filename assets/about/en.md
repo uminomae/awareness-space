@@ -10,7 +10,7 @@ L1 Prediction-Error Loop — gap detection and deficit generation. The mismatch
 between what the brain expects and what actually arrives drives awareness.
 L2 Survival-Trust Evaluation — value judgment (emotional valence) through survival
 and attachment axes.
-L3 Withhold — action control through meta-cognitive holding. Holding experience
+L3 Containment — action control through meta-cognitive holding. Holding experience
 without premature action enables deeper exploration.
 
 Intersubjectivity is explored as a separate theme outside M1.

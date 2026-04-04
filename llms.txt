@@ -8,7 +8,7 @@ This is the research site of pjdhiro exploring **what consciousness is** — des
 
 - **Primary Language**: Japanese (日本語), with English summaries
 - **Site URL**: https://uminomae.github.io/awareness-space/
-- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Withhold, Neurophenomenology, Negative Capability
+- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Containment, Neurophenomenology, Negative Capability
 
 ## Core Concepts
 
@@ -28,7 +28,7 @@ Gap detection and deficit generation — the mismatch between what the brain pre
 
 Value judgment — emotional valence assignment through survival and attachment axes. This layer determines the significance of detected gaps.
 
-#### L3: Withhold (抱持 — Meta-Cognitive Holding)
+#### L3: Containment (抱持 — Meta-Cognitive Holding)
 
 Action control through holding — the capacity to hold experience without premature action, enabling deeper exploration and meta-cognitive awareness.
 

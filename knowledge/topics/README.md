@@ -26,6 +26,6 @@ path 名も `topics/` に寄せ、`awareness-space` 独自の調査トピック�
 - `survival-trust-axis/ja/report.md`
 - `four-layers/ja/report.md`
 
-`抱持` / `Withhold` は現時点では topics 契約に含めない。
+`抱持` / `Containment` は現時点では topics 契約に含めない。
 独立 topic や独立 report としては扱わず、調査で独立した現象として見えた場合のみ再検討する。
 `concept notes` も現時点では独立 topic report にせず、`knowledge/concepts/` 側の source bundle として扱う。

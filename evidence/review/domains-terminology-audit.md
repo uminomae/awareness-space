@@ -35,7 +35,7 @@
 
 - 生存-信頼軸
 - 4層モデル
-- Withhold
+- Containment
 - concept-notes
 - 4層モデルの原著文書群
 

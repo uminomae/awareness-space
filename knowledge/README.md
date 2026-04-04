@@ -51,6 +51,6 @@ guide に書く主要な要点は、原則として `topics/`（調査トピッ�
 - `knowledge/concepts/` を新設し、CN-001〜CN-007 を追加
 - `knowledge/topics/` に 生存-信頼軸、4層モデル の report を追加
 - Concept Notes は `source_ready` の入口文書として接続済み
-- `抱持` / `Withhold` の専用ファイルは削除し、必要な履歴は監査メモ側へ残す
+- `抱持` / `Containment` の専用ファイルは削除し、必要な履歴は監査メモ側へ残す
 - LLM 再生成しやすい overview / schema / draft は削除し、重要な research と current report source を優先して残す
 - guide 公開正本は `pjdhiro/assets/awareness/guides/` へ移行

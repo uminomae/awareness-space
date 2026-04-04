@@ -3,7 +3,7 @@
 `#54` の判断メモ。
 
 この文書は、
-生存-信頼軸、4層モデル、Withhold のうち、
+生存-信頼軸、4層モデル、Containment のうち、
 どの report を次に厚くするかを決めるための優先順位メモである。
 
 ## 1. 判断基準
@@ -27,7 +27,7 @@
 
 - Layer 0 と Layer 1 の source reading が進んだ
 - M1 の part 群と直接接続している
-- 生存-信頼軸と Withhold を 1 つの流れで束ねる枠組みとして使える
+- 生存-信頼軸と Containment を 1 つの流れで束ねる枠組みとして使える
 
 弱み:
 
@@ -60,7 +60,7 @@
 - **依存関係の中心性: 高**
 - **未解決の大きさ: 高**
 
-### 2-3. Withhold
+### 2-3. Containment
 
 強み:
 
@@ -87,7 +87,7 @@
 
 - 現在もっとも source が揃っている
 - Layer 0 / Layer 1 読解をすでに反映できる
-- 生存-信頼軸と Withhold の両方を包む枠組みとして機能する
+- 生存-信頼軸と Containment の両方を包む枠組みとして機能する
 
 ### 2位: 生存-信頼軸
 
@@ -97,7 +97,7 @@
 - ただし 信頼軸の中心語がまだ揺れている
 - 発達心理学側の信頼 / 間主観性整理を反映してから厚くしたほうがよい
 
-### 3位: Withhold
+### 3位: Containment
 
 理由:
 
@@ -108,13 +108,13 @@
 
 1. 4層モデル report を先に厚くする
 2. 生存-信頼軸 report を次に厚くする
-3. Withhold report はその後に厚くする
+3. Containment report はその後に厚くする
 
 ## 5. 次の Issue 候補
 
 1. 4層モデル report の改稿 issue
 2. 生存-信頼軸 report の改稿 issue
-3. Withhold report の改稿 issue
+3. Containment report の改稿 issue
 
 ## 6. 正本関係
 

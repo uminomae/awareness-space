@@ -1,15 +1,15 @@
 # 意識とは — awareness-space
 
-**Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Withhold.**
+**Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Containment.**
 
 ---
 
 ## Overview (English)
 
-**What is Consciousness?** This research explores the operative structure of consciousness through a Four-Layer Model (M1). The four layers are: Interoception (bodily monitoring), Prediction-Error Loop (gap detection and deficit generation), Survival-Trust Evaluation (value judgment through survival/attachment axes), and Withhold (meta-cognitive holding for action control). Intersubjectivity is a separate exploration theme outside the four layers of M1.
+**What is Consciousness?** This research explores the operative structure of consciousness through a Four-Layer Model (M1). The four layers are: Interoception (bodily monitoring), Prediction-Error Loop (gap detection and deficit generation), Survival-Trust Evaluation (value judgment through survival/attachment axes), and Containment (meta-cognitive holding for action control). Intersubjectivity is a separate exploration theme outside the four layers of M1.
 
 ### Key Concepts
-- **Four-Layer Model of Consciousness (M1)** (意識の4層モデル): L0 Interoception (内受容感覚) -- bodily monitoring; L1 Prediction-Error Loop (予測-誤差ループ) -- gap detection and deficit generation; L2 Survival-Trust Evaluation (生存-信頼評価) -- value judgment through survival/attachment; L3 Withhold (抱持) -- meta-cognitive holding for action control.
+- **Four-Layer Model of Consciousness (M1)** (意識の4層モデル): L0 Interoception (内受容感覚) -- bodily monitoring; L1 Prediction-Error Loop (予測-誤差ループ) -- gap detection and deficit generation; L2 Survival-Trust Evaluation (生存-信頼評価) -- value judgment through survival/attachment; L3 Containment (抱持) -- meta-cognitive holding for action control.
 - **Intersubjectivity** (間主観性): A concept outside the four layers of M1. It concerns the shared experiential space between subjects and is explored as a separate theme.
 
 ### Related Explorations
@@ -25,7 +25,7 @@
 
 「意識とは何か」を探索する。内受容感覚・予測-誤差ループ・生存-信頼評価・抱持の4層モデル（M1）で意識の作動構造を記述する。間主観性は M1 の外にある探索テーマとして別途扱う。
 
-Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Withhold. Intersubjectivity is explored as a separate theme outside M1.
+Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Containment. Intersubjectivity is explored as a separate theme outside M1.
 
 ## 4層モデル (M1) / Four-Layer Model (M1)
 
@@ -34,7 +34,7 @@ Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoceptio
 | L0 | 内受容感覚 | Interoception | 身体モニタリング / Bodily monitoring |
 | L1 | 予測-誤差ループ | Prediction-Error Loop | ズレ検出、欠損生成 / Gap detection, deficit generation |
 | L2 | 生存-信頼評価 | Survival-Trust Evaluation (Survival/Attachment) | 価値判断（情動価の付与） / Value judgment (emotional valence) |
-| L3 | 抱持 | Withhold (Meta-Cognitive Holding) | 行動制御（保持） / Action control (holding) |
+| L3 | 抱持 | Containment (Meta-Cognitive Holding) | 行動制御（保持） / Action control (holding) |
 
 ## Live Site
 

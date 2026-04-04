@@ -11,7 +11,7 @@
 
 - 生存-信頼軸
 - 4層モデル
-- Withhold
+- Containment
 - 4層モデルの原著文書群
 - Concept Notes
 

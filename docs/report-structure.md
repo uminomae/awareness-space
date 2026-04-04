@@ -53,7 +53,7 @@ manifest を読み込み、
 
 - `report_ready`: 生存-信頼軸、4層モデル
 - `source_ready`: なし（現在の公開 topics は 2 本）
-- `topics 対象外`: 抱持 / Withhold（調査観測待ちの候補語）
+- `topics 対象外`: 抱持 / Containment（調査観測待ちの候補語）
 
 ## 4. 置き場の役割分担
 

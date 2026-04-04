@@ -17,7 +17,7 @@
 
 ## 2.1 topics に含めないもの
 
-- `抱持` / `Withhold` は、現時点では意識モデルの topics に含めない
+- `抱持` / `Containment` は、現時点では意識モデルの topics に含めない
 - これは中核仮説でも検証対象でもなく、調査で独立した現象として見えた場合のみ再検討する候補語として扱う
 - `concept notes` は、現時点では独立 topic ではなく source bundle として扱う
 
@@ -26,7 +26,7 @@
 - `transform/topics/` では、この読み替えを前提に report 単位を扱う
 - `knowledge/topics/` はこの調査トピック束の受け皿とする
 - RESEARCH UI の manifest 正本は `transform/topics/publish/topics/index.json` とする
-- `抱持` / `Withhold` を独立 topic や独立 report として先に固定しない
+- `抱持` / `Containment` を独立 topic や独立 report として先に固定しない
 - `concept notes` は `knowledge/concepts/` を正面の置き場とし、独立 report を先に固定しない
 
 ## 4. 非採用
