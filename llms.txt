@@ -8,7 +8,7 @@ This is the research site of pjdhiro exploring **what consciousness is** — des
 
 - **Primary Language**: Japanese (日本語), with English summaries
 - **Site URL**: https://uminomae.github.io/awareness-space/
-- **Topics**: Consciousness, Interoception, Prediction-Error Loop, F-O Evaluation, Withhold, Neurophenomenology
+- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Withhold, Neurophenomenology
 
 ## Core Concepts
 
@@ -24,7 +24,7 @@ Bodily monitoring — the perception of internal bodily states (heartbeat, breat
 
 Gap detection and deficit generation — the mismatch between what the brain predicts and what actually occurs drives awareness and learning.
 
-#### L2: F-O Evaluation (F-O評価 — Survival/Attachment)
+#### L2: Survival-Trust Evaluation (生存-信頼評価 — Survival/Attachment)
 
 Value judgment — emotional valence assignment through survival and attachment axes. This layer determines the significance of detected gaps.
 
