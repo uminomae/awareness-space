@@ -8,7 +8,7 @@ This is the research site of pjdhiro exploring **what consciousness is** — des
 
 - **Primary Language**: Japanese (日本語), with English summaries
 - **Site URL**: https://uminomae.github.io/awareness-space/
-- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Withhold, Neurophenomenology
+- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Withhold, Neurophenomenology, Negative Capability
 
 ## Core Concepts
 
