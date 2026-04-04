@@ -1,5 +1,4 @@
 import { toggles, breathConfig } from './config.js';
-import { detectLang } from './i18n.js';
 import { requestScroll } from './scroll-coordinator.js';
 import { pxFromViewportHeight } from './nav/responsive.js';
 
@@ -37,8 +36,6 @@ export function initScrollUI() {
         _scrollHintTop.addEventListener('click', scrollToTop);
     }
 
-    applyGuideLang();
-
     _cleanup = () => {
         if (_surfaceBtn) _surfaceBtn.removeEventListener('click', scrollToTop);
         if (_scrollHintTop) _scrollHintTop.removeEventListener('click', scrollToTop);
@@ -54,18 +51,8 @@ function scrollToTop() {
     requestScroll(0, 'scroll-ui:scroll-to-top', { behavior: 'smooth' });
 }
 
-function applyGuideLang() {
-    if (!_controlGuide) return;
-    const lang = detectLang();
-    const isJa = lang === 'ja';
-
-    _controlGuide.querySelectorAll('[data-ja]').forEach((el) => {
-        el.textContent = isJa ? el.dataset.ja : el.dataset.en;
-    });
-}
-
 export function refreshGuideLang() {
-    applyGuideLang();
+    // Guide text now follows the shared page-language data-i18n bindings.
 }
 
 function isNearBottom() {

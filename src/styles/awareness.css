@@ -65,59 +65,90 @@ body.awareness-page {
   z-index: 5;
 }
 
-.awareness-card-grid {
-  margin-top: 1.25rem;
+.card-section-container {
+  border: 1px solid rgba(var(--color-accent), 0.12);
+  border-radius: 0.5rem;
+  background: rgba(20, 25, 40, 0.6);
+  padding: 0.9rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
-.awareness-card {
-  --bs-card-bg: rgba(20, 25, 40, 0.78);
+.card-container {
+  margin-top: 0;
+}
+
+.card-column {
+  display: flex;
+}
+
+.card-column > .img-card {
+  width: 100%;
+}
+
+/* === shared image card (as 正本 techo#58) === */
+.img-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(20, 25, 40, 0.78);
   border: 1px solid rgba(var(--color-accent), 0.16);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  transition: transform var(--kesson-transition-snappy), box-shadow var(--kesson-transition-snappy), border-color var(--kesson-transition-snappy);
 }
 
-.awareness-card-kicker {
-  margin-bottom: 0.55rem;
-  color: rgba(var(--color-sub-text), 0.7);
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-font-size-ui-sm, 0.80rem);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.awareness-card .card-title {
-  margin-bottom: 0.8rem;
-}
-
-.awareness-card .card-text {
-  line-height: 1.8;
-}
-
-.awareness-image-card .card-img-top {
+.img-card-media {
+  display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
 }
 
-.awareness-image-card-comment {
-  color: rgba(var(--color-sub-text), 0.82);
+.img-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  min-height: 100%;
 }
 
-.awareness-image-card-links {
-  margin-top: auto;
-}
-
-.awareness-card-link {
-  color: rgba(var(--color-link), 0.88);
-  text-decoration: none;
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-font-size-ui-sm, 0.80rem);
-  letter-spacing: 0.1em;
+.img-card-kicker {
+  margin: 0 0 0.55rem;
+  color: rgba(var(--color-sub-text), 0.7);
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.awareness-card-link:hover,
-.awareness-card-link:focus-visible {
-  color: rgba(180, 210, 255, 1);
+.img-card-title {
+  margin: 0 0 0.8rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: 'Noto Serif JP', Georgia, serif;
+}
+
+.img-card-text {
+  margin: 0;
+  flex: 1 1 auto;
+  color: rgba(var(--color-sub-text), 0.82);
+  font-size: 0.875rem;
+  line-height: 1.8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', 'Noto Sans JP', sans-serif;
+}
+
+.img-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(var(--color-accent), 0.15);
+}
+
+.img-card:focus-visible {
+  outline: 2px solid rgba(var(--color-accent), 0.8);
+  outline-offset: 4px;
 }
 
 .awareness-panel {

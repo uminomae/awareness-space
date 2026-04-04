@@ -155,6 +155,7 @@
               type="button"
               id="lang-toggle"
               class="nav-link topbar-link topbar-link-btn topbar-lang-btn"
+              data-lang-button
               aria-label="言語を英語に切り替え">
               English
             </button>
@@ -166,17 +167,17 @@
 
   <nav id="graphic-switcher" role="group" aria-label="背景グラフィック切り替え">
     <span class="graphic-switcher-label">背景</span>
-    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-ja="風神雷神" data-en="Fujin-Raijin">風神雷神</button>
+    <button type="button" data-graphic-mode="raijin" class="active" aria-pressed="true" data-i18n="graphicModeRaijin">風神雷神</button>
   </nav>
   <div id="dev-version-inline" class="dev-version-inline" aria-live="polite" hidden></div>
   <a id="dev-components-link" class="dev-components-link" href="./dev-components.html">Components</a>
 
   <div id="overlay" role="presentation">
     <div id="taglines">
-      <div class="tagline" data-ja="生存と間主観性から、意識を捉え直す。" data-en="Rethinking awareness from survival and intersubjectivity.">
+      <div class="tagline" data-i18n="heroTaglinePrimary">
         生存と間主観性から、意識を捉え直す。
       </div>
-      <div class="tagline-en" data-ja="生存-信頼軸を起点にした探索の入口。" data-en="An entry point for exploration from the survival-trust axis.">
+      <div class="tagline-en" data-i18n="heroTaglineSecondary">
         生存-信頼軸を起点にした探索の入口。
       </div>
     </div>
@@ -185,6 +186,7 @@
       id="about-trigger"
       class="about-trigger"
       type="button"
+      data-modal-open="about"
       aria-label="このページについて"
       aria-controls="about-overlay">
       <span class="about-trigger__letter" aria-hidden="true">i</span>
@@ -212,9 +214,9 @@
        現在の公開モードは風神雷神のみで camera 操作を使わないため、JS 側で非表示にする。 -->
   <div id="control-guide">
     <div class="guide-row guide-desktop">
-      <span class="guide-key" data-ja="scroll" data-en="scroll">scroll</span>
+      <span class="guide-key" data-i18n="controlGuideScroll">scroll</span>
       <span class="guide-sep">—</span>
-      <span class="guide-action" data-ja="探索を進める" data-en="move through the exploration">探索を進める</span>
+      <span class="guide-action" data-i18n="controlGuideExplore">探索を進める</span>
     </div>
   </div>
 
@@ -235,7 +237,7 @@
   </div>
 
   <div class="room-narration">
-    <p class="room-narration-text" data-ja="三つの入口から、同じ問いに触れられます。" data-en="Three entry points lead to the same question.">三つの入口から、同じ問いに触れられます。</p>
+    <p class="room-narration-text" data-i18n="narrationModelSection">三つの入口から、同じ問いに触れられます。</p>
   </div>
 
   <section id="model-section" aria-labelledby="model-section-heading">
@@ -252,7 +254,7 @@
   </section>
 
   <div class="room-narration">
-    <p class="room-narration-text" data-ja="モデルになる前の思考が、ここに残っています。" data-en="What came before the model remains here.">モデルになる前の思考が、ここに残っています。</p>
+    <p class="room-narration-text" data-i18n="narrationNotesSection">モデルになる前の思考が、ここに残っています。</p>
   </div>
 
   <section id="notes-section" aria-labelledby="notes-section-heading">
@@ -261,8 +263,8 @@
         <h2 class="section-heading">
           <a id="notes-section-heading" href="#notes-section" class="section-heading-link" aria-label="発散思考時note セクションへジャンプ">発散思考時note</a>
         </h2>
-        <div class="kesson-panel">
-          <div id="image-card-grid" class="row row-cols-1 row-cols-md-3 g-3 awareness-card-grid" aria-live="polite">
+        <div class="card-section-container">
+          <div id="image-card-grid" class="row row-cols-1 row-cols-md-3 g-3 card-container" aria-live="polite">
             <div class="col-12 text-body-secondary">読み込み中...</div>
           </div>
         </div>
@@ -271,7 +273,7 @@
   </section>
 
   <div class="room-narration">
-    <p class="room-narration-text" data-ja="問いの一部は、調査へと進んでいます。" data-en="Some of these questions have moved into research.">問いの一部は、調査へと進んでいます。</p>
+    <p class="room-narration-text" data-i18n="narrationReportsSection">問いの一部は、調査へと進んでいます。</p>
   </div>
 
   <section id="reports-section" aria-labelledby="reports-section-heading">
@@ -321,6 +323,7 @@
     <div class="tech-footer-line">Three.js · Bootstrap</div>
     <div class="tech-footer-line">MIT License</div>
     <div id="footer-signature" class="footer-signature">Project Designer: pjdhiro</div>
+    <div class="tech-footer-line">MIT License</div>
     <div class="tech-footer-line"><a id="footer-dev-link" class="footer-dev-link" href="./?dev">dev</a></div>
   </footer>
 

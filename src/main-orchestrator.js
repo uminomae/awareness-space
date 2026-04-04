@@ -1,17 +1,19 @@
 import { applySceneState, getDefaultSceneState } from './dev-panel-data.js';
 import { initAboutModal, setAboutModalLanguage } from './about-modal.js';
 import { initDevAuxTools, initDevPanelRuntime } from './dev-runtime.js';
+import { bindAppEvents } from './events.js';
 import { createMainDevStatsTicker } from './main-dev-runtime.js';
 import { prepareMainBootstrap } from './main-bootstrap.js';
 import { initBackgroundModeSwitcher } from './background-mode.js';
 import { syncControlGuideVisibility } from './control-guide.js';
 import { initImageCards, setImageCardsLanguage } from './image-cards.js';
-import { applyPageLanguage, initLanguageToggle } from './page-language.js';
+import { LANG_CHANGE_EVENT } from './i18n.js';
+import { applyPageLanguage } from './page-language.js';
 import { bindStandaloneMarkdownLinks, initReports, setReportsLanguage } from './reports/index.js';
 import { breathValue } from './animation-utils.js';
 import { breathConfig } from './config.js';
 import { requestScroll } from './scroll-coordinator.js';
-import { getScrollProgress, refreshGuideLang, updateScrollUI } from './scroll-ui.js';
+import { getScrollProgress, updateScrollUI } from './scroll-ui.js';
 import { applyUiThemeState } from './ui-theme.js';
 
 const DEV_MESSAGE_SOURCE = 'awareness-space-dev-panel';
@@ -150,13 +152,16 @@ export async function runMainOrchestrator({
     initImageCards({ lang: initialLang }).catch((error) => {
         console.error('[awareness-space] image cards bootstrap failed:', error);
     });
-    initLanguageToggle(initialLang, (lang) => {
+
+    window.addEventListener(LANG_CHANGE_EVENT, (event) => {
+        const lang = event.detail?.lang || initialLang;
         applyPageLanguage(lang);
         setAboutModalLanguage(lang);
         setReportsLanguage(lang);
         setImageCardsLanguage(lang);
-        refreshGuideLang();
     });
+
+    bindAppEvents();
 
     startScrollUiLoop();
     initHashLinks();

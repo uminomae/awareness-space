@@ -1,7 +1,7 @@
 export const dict = {
     ja: {
         page: {
-            documentTitle: '意識とは',
+            documentTitle: '意識とは — pjdhiro',
             title: '意識とは',
             topbarMainTitle: '意識とは',
             topbarNavAria: 'メインメニュー',
@@ -23,6 +23,13 @@ export const dict = {
             offcanvasModelAria: 'MODEL / 意識モデルの解説 セクションへ移動',
             langToggleLabel: 'English',
             langToggleAria: '言語を英語に切り替え',
+            heroTaglinePrimary: '生存と間主観性から、意識を捉え直す。',
+            heroTaglineSecondary: '生存-信頼軸を起点にした探索の入口。',
+            controlGuideScroll: 'scroll',
+            controlGuideExplore: '探索を進める',
+            narrationModelSection: '三つの入口から、同じ問いに触れられます。',
+            narrationNotesSection: 'モデルになる前の思考が、ここに残っています。',
+            narrationReportsSection: '問いの一部は、調査へと進んでいます。',
         },
         about: {
             triggerAria: 'このページについて',
@@ -34,7 +41,7 @@ export const dict = {
     },
     en: {
         page: {
-            documentTitle: 'What Is Awareness',
+            documentTitle: 'What Is Awareness — pjdhiro',
             title: 'What Is Awareness',
             topbarMainTitle: 'What Is Awareness',
             topbarNavAria: 'Main menu',
@@ -56,6 +63,13 @@ export const dict = {
             offcanvasModelAria: 'Jump to MODEL / Guide to the Awareness Model section',
             langToggleLabel: '日本語',
             langToggleAria: 'Switch language to Japanese',
+            heroTaglinePrimary: 'Rethinking awareness from survival and intersubjectivity.',
+            heroTaglineSecondary: 'An entry point for exploration from the survival-trust axis.',
+            controlGuideScroll: 'scroll',
+            controlGuideExplore: 'move through the exploration',
+            narrationModelSection: 'Three entry points lead to the same question.',
+            narrationNotesSection: 'What came before the model remains here.',
+            narrationReportsSection: 'Some of these questions have moved into research.',
         },
         about: {
             triggerAria: 'About this page',

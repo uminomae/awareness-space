@@ -5,14 +5,22 @@ import { dict } from '../src/i18n/dict.js';
 import { applyPageLanguageToDocument } from '../src/page-language.js';
 
 class MockElement {
-    constructor({ dataset = {}, textContent = '' } = {}) {
+    constructor({ dataset = {}, textContent = '', attributes = {} } = {}) {
         this.dataset = dataset;
         this.textContent = textContent;
-        this.attributes = {};
+        this.attributes = { ...attributes };
     }
 
     setAttribute(name, value) {
         this.attributes[name] = value;
+    }
+
+    getAttribute(name) {
+        return this.attributes[name] ?? null;
+    }
+
+    getAttributeNames() {
+        return Object.keys(this.attributes);
     }
 }
 
@@ -34,12 +42,17 @@ function createMockDocument() {
 
     const graphicLabel = new MockElement();
     const graphicRaijin = new MockElement({
-        dataset: { ja: '風神雷神', en: 'Fujin-Raijin' },
+        textContent: '風神雷神',
+        attributes: { 'data-i18n': 'graphicModeRaijin' },
     });
-    const bilingualNode = new MockElement({
-        dataset: { ja: '生存と間主観性から、意識を捉え直す。', en: 'Rethinking awareness from survival and intersubjectivity.' },
+    const translatedNode = new MockElement({
         textContent: '生存と間主観性から、意識を捉え直す。',
+        attributes: { 'data-i18n': 'heroTaglinePrimary' },
     });
+    const attrNode = new MockElement({
+        attributes: { 'data-i18n-attr-aria-label': 'graphicSwitcherAria' },
+    });
+    const allNodes = [graphicRaijin, translatedNode, attrNode];
 
     return {
         title: '意識とは',
@@ -53,14 +66,16 @@ function createMockDocument() {
             return null;
         },
         querySelectorAll(selector) {
-            if (selector === '[data-ja][data-en]') return [bilingualNode, graphicRaijin];
+            if (selector === '[data-i18n]') return [graphicRaijin, translatedNode];
+            if (selector === '*') return allNodes;
             return [];
         },
         nodes: {
             ...Object.fromEntries(elementsById),
             graphicLabel,
             graphicRaijin,
-            bilingualNode,
+            translatedNode,
+            attrNode,
         },
     };
 }
@@ -91,7 +106,8 @@ test('applyPageLanguageToDocument updates page chrome in english', () => {
     assert.equal(doc.nodes['graphic-switcher'].attributes['aria-label'], 'Switch background graphics');
     assert.equal(doc.nodes['lang-toggle'].textContent, '日本語');
     assert.equal(doc.nodes['lang-toggle'].attributes['aria-label'], 'Switch language to Japanese');
-    assert.equal(doc.nodes.bilingualNode.textContent, 'Rethinking awareness from survival and intersubjectivity.');
+    assert.equal(doc.nodes.translatedNode.textContent, 'Rethinking awareness from survival and intersubjectivity.');
+    assert.equal(doc.nodes.attrNode.attributes['aria-label'], 'Switch background graphics');
     assert.equal(doc.nodes['offcanvas-model-link'].textContent, 'MODEL / Awareness Model');
     assert.equal(doc.nodes['about-trigger'].attributes['aria-label'], 'About this page');
     assert.equal(doc.nodes['about-modal-title'].textContent, 'About this page');

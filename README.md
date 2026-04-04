@@ -59,3 +59,7 @@ Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoceptio
 ## Author
 
 **pjdhiro** — [https://github.com/uminomae](https://github.com/uminomae)
+
+## License
+
+[MIT License](LICENSE)

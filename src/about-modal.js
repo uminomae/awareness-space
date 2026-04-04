@@ -151,42 +151,22 @@ function closeModal() {
     state.closeTimer = window.setTimeout(finish, 500);
 }
 
+export function openAboutModal() {
+    openModal();
+}
+
+export function closeAboutModal() {
+    closeModal();
+}
+
 export function initAboutModal(initialLang = 'ja') {
     if (state.initialized) {
         setAboutModalLanguage(initialLang);
         return;
     }
 
-    const { trigger, modal } = getDom();
-    if (!trigger || !modal) return;
-
-    trigger.addEventListener('click', () => {
-        openModal();
-    });
-
-    const panel = modal.querySelector('.about-glass');
-    if (panel) {
-        panel.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    }
-
-    modal.addEventListener('click', (event) => {
-        const target = event.target;
-        if (!(target instanceof HTMLElement)) return;
-        if (target.closest('.about-close')) {
-            closeModal();
-            return;
-        }
-        // Click on overlay background closes the modal
-        closeModal();
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            closeModal();
-        }
-    });
+    const { modal } = getDom();
+    if (!modal) return;
 
     state.initialized = true;
     setAboutModalLanguage(initialLang);
