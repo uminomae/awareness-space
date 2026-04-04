@@ -52,6 +52,7 @@ Intersubjectivity is not part of the four layers. It is a separate exploration t
 | Project | URL | Focus |
 |---------|-----|-------|
 | pjdhiro | https://uminomae.github.io/pjdhiro/ | Project Design Hub (parent site) |
+| project-design | https://uminomae.github.io/project-design/ | Project Design theory linking design thinking, management, and execution |
 | creation-space | https://uminomae.github.io/creation-space/ | Creativity research across 30 academic domains |
 | kesson-space | https://uminomae.github.io/kesson-space/ | Kesson-Driven Thinking framework |
 
