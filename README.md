@@ -17,7 +17,7 @@
 - [creation-space](https://github.com/uminomae/creation-space): Exploring creative processes across 30 academic domains
 - [kesson-space](https://github.com/uminomae/kesson-space): 3D experiential space for Kesson-Driven Thinking
 
-> For the full theoretical framework, see [Project Design](https://uminomae.github.io/pjdhiro/project-design/).
+> For the full theoretical framework, see [Project Design](https://uminomae.github.io/project-design/).
 
 ---
 
