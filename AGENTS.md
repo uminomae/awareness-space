@@ -53,6 +53,18 @@
 ## 指示書 / 完了報告
 
 - CLI 指示書を作るときは `skills/cli-instruction/SKILL.md` と `docs/templates/cli-instruction.md` を参照する
+
+### instruction の正規配置とライフサイクル
+
+- **配置**: `.cache/inbox/_instructions-{issue}-{slug}.md`
+- **テンプレート正本**: `~/dev/project-design/.claude/skills/cli-instruction/templates/cli-instruction.md`
+- **ライフサイクル**:
+  1. 作成: `.cache/inbox/` に配置（Git 追跡なし）
+  2. 実行: CLI / Codex が読み取り、作業を実施
+  3. 完了: `.cache/outbox/DONE-{issue}-{YYYYMMDD}.md` を作成
+  4. アーカイブ: 完了後は `.cache/inbox/archive/` に移動
+- **tracked docs に instruction を置かない**: `docs/prompts/INSTRUCTION-*.md` のような配置は禁止。GitHub Issue を正本とし、別のローカル backlog を育てない
+
 - review を伴う作業では `.cache/outbox/REVIEW-*.md` を残す
 - 完了シグナルとして `.cache/outbox/DONE-*.md` を残す
 - Step 最終では `gh issue view --json state` による終了状況確認を必須とする
