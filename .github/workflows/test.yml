@@ -1,0 +1,22 @@
+name: Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for shell escapes in JS
+        run: |
+          if grep -rn '\\!' --include='*.js' --include='*.mjs' src/ 2>/dev/null; then
+            echo "FAIL: shell escape \\! found in JS files"
+            exit 1
+          else
+            echo "PASS: no shell escapes"
+          fi
