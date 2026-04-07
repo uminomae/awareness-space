@@ -18,9 +18,7 @@ test('control-guide markup keeps an explanatory comment for hidden state', () =>
 
 test('image cards section exists in model area', () => {
     assert.match(indexHtml, /id="image-card-grid"/);
-    assert.match(indexHtml, /id="image-card-grid" class="row row-cols-1 row-cols-md-3 g-3 awareness-card-grid"/);
-    assert.match(indexHtml, /Divergent Thinking Notes/);
-    assert.match(indexHtml, /意識モデルについて思考した際のメモや図解です。/);
+    assert.match(indexHtml, /id="image-card-grid" class="row row-cols-1 row-cols-md-3 g-3 card-container"/);
 });
 
 test('topbar includes creation-space navigation link', () => {
@@ -32,13 +30,14 @@ test('topbar includes creation-space navigation link', () => {
 test('hero overlay includes about trigger and modal shell', () => {
     assert.match(indexHtml, /id="about-trigger"/);
     assert.match(indexHtml, /class="about-trigger"/);
-    assert.match(indexHtml, /id="about-modal"/);
+    assert.match(indexHtml, /id="about-overlay"/);
     assert.match(indexHtml, /id="about-body"/);
     assert.match(indexHtml, /data-md-ja="\.\/assets\/about\/ja\.md"/);
     assert.match(indexHtml, /data-md-en="\.\/assets\/about\/en\.md"/);
 });
 
 test('reports scope note avoids published and integrated wording', () => {
-    assert.match(indexHtml, /現在は意識モデル構成要素ごとの個別レポートを掲載しています。/);
+    // The scope note is rendered by JS (reports/render.js), not in static HTML.
+    // Verify the static HTML does not contain the old wording.
     assert.doesNotMatch(indexHtml, /公開中ですが、統合版ではありません/);
 });

@@ -36,7 +36,7 @@ function createMockDocument() {
         ['offcanvas-sections-title', new MockElement()],
         ['offcanvas-model-link', new MockElement()],
         ['about-trigger', new MockElement()],
-        ['about-modal-title', new MockElement()],
+        ['about-overlay-title', new MockElement()],
         ['about-close', new MockElement()],
     ]);
 
@@ -83,7 +83,7 @@ function createMockDocument() {
 test('english page dictionary contains issue-77 strings', () => {
     const page = dict.en.page;
     const about = dict.en.about;
-    assert.equal(page.documentTitle, 'What Is Awareness');
+    assert.equal(page.documentTitle, 'What Is Awareness — pjdhiro');
     assert.equal(page.topbarCollab, 'Working with AI collaboration');
     assert.equal(page.graphicSwitcherLabel, 'Background');
     assert.equal(page.graphicSwitcherAria, 'Switch background graphics');
@@ -96,7 +96,7 @@ test('applyPageLanguageToDocument updates page chrome in english', () => {
     const doc = createMockDocument();
     applyPageLanguageToDocument(doc, 'en');
 
-    assert.equal(doc.title, 'What Is Awareness');
+    assert.equal(doc.title, 'What Is Awareness — pjdhiro');
     assert.equal(doc.documentElement.lang, 'en');
     assert.equal(doc.nodes['title-h1'].textContent, 'What Is Awareness');
     assert.equal(doc.nodes['topbar-main-title'].textContent, 'What Is Awareness');
@@ -110,6 +110,6 @@ test('applyPageLanguageToDocument updates page chrome in english', () => {
     assert.equal(doc.nodes.attrNode.attributes['aria-label'], 'Switch background graphics');
     assert.equal(doc.nodes['offcanvas-model-link'].textContent, 'MODEL / Awareness Model');
     assert.equal(doc.nodes['about-trigger'].attributes['aria-label'], 'About this page');
-    assert.equal(doc.nodes['about-modal-title'].textContent, 'About this page');
+    assert.equal(doc.nodes['about-overlay-title'].textContent, 'About this page');
     assert.equal(doc.nodes['about-close'].attributes['aria-label'], 'Close');
 });

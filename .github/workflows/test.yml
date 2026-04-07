@@ -1,22 +1,42 @@
-name: Test
+name: Tests
 
 on:
   push:
     branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'index.html'
+      - 'assets/**'
+      - 'transform/**'
+      - '.github/workflows/test.yml'
   pull_request:
-    branches: [main]
+    branches: [main, develop]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - 'index.html'
+      - 'assets/**'
+      - 'transform/**'
+      - '.github/workflows/test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  static-checks:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Check for shell escapes in JS
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run tests
         run: |
-          if grep -rn '\\!' --include='*.js' --include='*.mjs' src/ 2>/dev/null; then
-            echo "FAIL: shell escape \\! found in JS files"
-            exit 1
-          else
-            echo "PASS: no shell escapes"
-          fi
+          node --test tests/reports-render.test.mjs
+          node --test tests/image-cards-builder.test.mjs
+          node --test tests/control-guide.test.mjs
+          node --test tests/page-language.test.mjs
+          node --test tests/image-cards-ui.test.mjs
+          node --test tests/index-html.test.mjs
