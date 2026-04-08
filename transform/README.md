@@ -1,5 +1,23 @@
 # transform/ — awareness-space の変換層
 
+## 汎用ワークフロー正本
+
+汎用的なワークフロー・ルール・視覚仕様の正本は project-design に置く。
+本 repo の `transform/` には awareness-space 固有のルール（reader-rules, テンプレート, 品質チェック項目）のみ配置する。
+
+**正本パス**: `/Users/uminomae/dev/project-design/knowledge/workflow/`
+
+| 参照先 | 内容 |
+|--------|------|
+| `workflow/PRINCIPLES.md` | 全 workflow 共通原則（§2 スコープは本 repo で上書き） |
+| `workflow/WORKFLOW-TEMPLATE.md` | evidence → generate → test → publish の骨格 |
+| `workflow/rules/translation-rules.md` | JA↔EN 翻訳ルール（§3 用語表は本 repo で定義） |
+| `workflow/rules/evidence-constraint.md` | evidence 外挿入禁止の原則 |
+| `workflow/rules/quality-test-framework.md` | PASS/WARN/FAIL 方法論 |
+| `workflow/visual/diagram-strategy.md` | スライドタイプ別図解パターン |
+| `workflow/visual/svg-generation-rules.md` | SVG スタイルガイド（§2 カラーは本 repo で定義） |
+| `workflow/visual/rich-slides-design-spec.md` | スライド HTML/CSS 仕様 |
+
 ## 5W1H
 
 - **What**: guide / survey / topics report を、公開用 Markdown と必要な PDF / SVG に変換する workflow 群。
