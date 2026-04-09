@@ -17,17 +17,17 @@ const STRINGS = {
         features: {
             general: {
                 title: 'General',
-                modalTitle: '意識とは何か — 生存と間主観性を手がかりに',
+                modalTitle: '意識とは何か — 身体・予測・情動・社会性から間主観性へ',
                 description: '全体像を初めて読む人向けの解説。',
             },
             designer: {
                 title: 'Designer',
-                modalTitle: '意識モデルを観察の道具として使う',
+                modalTitle: '意識の探索を観察の手がかりに — 教育・支援・チームの現場で',
                 description: '教育・支援・チーム設計に引きつけて読むための解説。',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: '意識モデルと神経現象学・心理学の接続',
+                modalTitle: '意識と間主観性 — 神経現象学・心理学・哲学からの状況証拠',
                 description: '理論的な比較軸まで含めて検討するための解説。',
             },
         },
@@ -58,17 +58,17 @@ const STRINGS = {
         features: {
             general: {
                 title: 'General',
-                modalTitle: 'What Is Awareness? — Survival and Intersubjectivity',
+                modalTitle: 'What Is Awareness? — From Body, Prediction, Emotion, and Sociality to Intersubjectivity',
                 description: 'An explainer for readers who want the overall picture first.',
             },
             designer: {
                 title: 'Designer',
-                modalTitle: 'Using the Awareness Model as an Observation Tool',
+                modalTitle: 'Turning the Exploration of Awareness into Observational Tools — For Education, Support, and Team Contexts',
                 description: 'An explainer for education, support, and team design contexts.',
             },
             academic: {
                 title: 'Academic',
-                modalTitle: 'Awareness Model in Dialogue with Neurophenomenology and Psychology',
+                modalTitle: 'Awareness and Intersubjectivity — Circumstantial Evidence from Neurophenomenology, Psychology, and Philosophy',
                 description: 'An explainer for readers who want the theoretical comparison points.',
             },
         },
