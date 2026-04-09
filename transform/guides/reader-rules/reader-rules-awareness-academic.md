@@ -1,79 +1,84 @@
-# awareness academic — 生成ルール v1.2
+# awareness academic — 生成ルール v2.0
 
-**タイトル**: 意識モデルと神経現象学・心理学の接続  
-**読者**: 神経現象学・認知科学・発達心理・臨床心理に関心を持つ学際的探索者  
-**文書類型**: 分析的モデル解説  
-**文体**: である調。学術的だが査読論文ではない  
+**タイトル**: 意識と間主観性 — 神経現象学・心理学・哲学からの状況証拠
+**読者**: 神経現象学・認知科学・発達心理・臨床心理に関心を持つ学際的探索者
+**文書類型**: 分析的モデル解説
+**文体**: である調。学術的だが査読論文ではない
 **文字数**: 8,000〜15,000字
+
+## v2.0 変更点（techo#105, #121）
+
+- 4層モデル（Layer 0-3）への言及を除外
+- 叩き台 + v3 ベースの構造に準拠
+- 証拠の多層構造（分子→疫学→哲学）を明示
 
 ## 構成
 
-見出しは学術寄りであっても、目的、要旨、前提、示唆、課題、参照先が追える一般的な報告書型に揃える。
-3 本共通の骨格を使い、学術 guide では内容の密度で差をつける。
-
 1. **本書の目的**
-   - guide がモデル全体の解説であり、探索的文書であることを最初に明示する
-   - 完成理論の宣言ではなく、仮説・調査・現在地の整理であることを書く
-   - 神経現象学と心理学を中心比較軸に置くことを宣言する
+   - 学際的な探索の現在地を整理する文書
+   - 完成理論ではなく、確立された知見・状況証拠・仮説を区別して提示
 
 2. **要旨**
-   - 3点前後の箇条書きで主要メッセージを先に置く
-   - 起点仮説、比較軸、未解決論点を短く整理する
+   - 核心仮説、証拠構造、未解決論点を短く整理
 
-3. **モデルの基本構成**
-   - 生存-信頼軸を起点仮説として定義する
-   - 4層モデルを意識記述の構造枠として定義する
-   - 過去の source 束は歴史的素材であり、現在の正本ではないと書く
+3. **確立された知見**
+   - 叩き台 §2-5 に対応。学術読者向けに原典の方法論・限界まで記述
+     a. 内受容感覚と意識の基盤（Craig 2002, Damasio 1994）
+     b. 予測符号化と自由エネルギー原理（Friston 2010）— Clark (2013) はLLM参考として注記
+     c. 情動の構成論争（Barrett 2017 vs Panksepp 1998, van Heijst et al. 2025 の評価）
+     d. 社会的神経科学の知見群
 
-4. **調査の前提と参照領域**
-   - なぜ神経現象学と心理学を中心参照に置くのかを書く
-   - 神経現象学は「身体性 / 差異の前景化 / 一人称記述単位 / 前反省的気づき」の束として書く
-   - 心理学は「愛着と安全基地 / 内的作業モデル / 信頼と間主観性 / 修復可能性と関係調整」の束として書く
-   - 既存 source と今後の intake の関係を書く
+4. **核心仮説と状況証拠**
+   - v3 §2 に対応。多層的証拠構造:
+     a. 分子レベル: Cole (2007) CTRA
+     b. 内分泌レベル: Smith & Wang (2014) — 論拠の弱さを明記
+     c. 神経回路レベル: Eisenberger (2003) dACC論争, Panksepp PANIC/GRIEF系
+     d. 生理/行動レベル: Coan & Sbarra (2015) Social Baseline Theory
+     e. 心理レベル: Baumeister & Leary (1995) 所属欲求
+     f. 疫学レベル: Holt-Lunstad (2010, 2015) メタ分析
+     g. 進化レベル: Dunbar (1998) 社会脳仮説
+     h. 社会/歴史レベル: Durkheim (1897)
+   - 証拠の強度評価（最も堅牢 / 因果メカニズム / 論争中）
+   - 反証可能性の明示
 
-5. **現時点の見解**
-   - 生存-信頼軸と4層モデルから導ける既知を整理する
-   - 「有力な構造」「補助的な論点」「まだ仮説」を分けて書く
-   - 一致、近接、相違、未整理を分ける
-   - 主要な見立てごとに、支える report / survey / design memo が追えるように書く
+5. **哲学的・臨床的基盤**
+   - v3 §3 に対応。「証拠」ではなく「同じ方向を指す別の視点」
+     a. Merleau-Ponty: 間身体性
+     b. Stolorow: 間主観性の崩壊とトラウマ
+     c. 龍樹・般若心経・量子の場理論: 非二元性
+     d. 収束する思想群の表（Husserl, Heidegger, Buber, Winnicott, Mbiti, Mauss, Tomasello, Vygotsky, Noddings, Watson）
 
-6. **留意点と今後の課題**
-   - source 束は厚いが、主質問はまだ粗いことを書く
-   - 神経現象学と心理学の接続設計は未完であることを書く
-   - 生存-信頼軸の境界、4層モデルの妥当性、観測可能性、統合条件を列挙する
+6. **検証待ち仮説**
+   - 間主観性→信頼→抱持のチェーン
+   - 未確定であることを明示
 
-7. **関連資料**
-   - survey
-   - general / designer
-   - 構成要素 report
+7. **留意点と今後の課題**
+   - 探索進行中
+   - 生存-信頼軸の構造的詳細は未確定
+   - 非二元性（生存と間主観性の分離不可能性）の記述が今後の鍵
+
+8. **参考文献**
+   - 全引用文献のリスト
+
+9. **関連資料**
+   - survey、general、designer 版、原典 wiki への導線
 
 ## 注意
 
-- 優劣比較ではなく構造比較として書く
+- 優劣比較ではなく構造比較
 - 断定しすぎない
-- `欠損駆動思考`, `Kesson`, `D1-D4`, `kesson-driven-thinking` を本文に出さない
-- 過去素材を現在の正本・命名源・理論権威として扱わない
-- raw source の内部メモや Issue 文脈を本文へ出さない
-- `reader-facing`, `report-backed`, `design memo` など制作工程の語を本文の主役にしない
-- repo 内の相対パスや存在しない公開リンクを本文に出さない
-- 探索的であることと、根拠が薄いことを混同しない
-- report のない主張を、既知の結論として扱わない
+- `欠損駆動思考`, `Kesson`, `D1-D4` を本文に出さない
+- **4層モデル（Layer 0-3）を使わない**
+- 脳部位の詳細マッピングを含めない（原典の記述は可）
+- 探索的であることと根拠が薄いことを混同しない
 
 ## ソース
 
 必読:
-
-- `evidence/PROJECT.md`
-- `evidence/review/research-design-baseline.md`
-- `evidence/review/core-source-map.md`
-- `evidence/review/neurophenomenology-intake-map.md`
-- `evidence/review/developmental-psychology-intake-map.md`
-- `/Users/uminomae/dev/pjdhiro/assets/awareness/survey/ja/md/survey-status.md`
+- `build/theory/what-is-consciousness.md`（叩き台）
+- v3: DRAFT-awareness-model-v3.md
+- 判断基準12項目: REVIEW-v2-dialogue-20260408.md
 
 補助:
-
+- 原典 wiki（pd wiki/sources/）
 - `knowledge/survival-trust-axis-starting-memo.md`
-- `knowledge/topics/survival-trust-axis/ja/report.md`
-- `knowledge/topics/four-layers/ja/report.md`
-- `knowledge/concepts/index.md`
-- 神経現象学 / 発達心理 / trust / measurement 系 review 文書
