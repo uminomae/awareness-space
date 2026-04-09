@@ -8,6 +8,7 @@ import {
     parseFrontmatter,
     resolveFirstAvailablePdfUrl,
 } from './data.js';
+import { injectWikiLinks } from '../wiki-links.js';
 
 function rewriteRelativeUrls(html, baseUrl) {
     if (!baseUrl) return html;
@@ -91,7 +92,7 @@ export function createReportsModalController({
         setMarkdownModalLoading({ title, pdfUrl, hidePdfButton });
         modal.show();
 
-        const safeHtml = DOMPurify.sanitize(html);
+        const safeHtml = DOMPurify.sanitize(injectWikiLinks(html));
         if (requestId !== state.mdRequestId) return true;
 
         if (state.dom.mdModalContent) {
@@ -171,6 +172,7 @@ export function createReportsModalController({
             const mdBaseUrl = resolvedSource.mdUrl ? resolvedSource.mdUrl.replace(/\/[^/]*$/, '/') : '';
             let parsedHtml = marked.parse(body || raw);
             parsedHtml = rewriteRelativeUrls(parsedHtml, mdBaseUrl);
+            parsedHtml = injectWikiLinks(parsedHtml);
             const html = DOMPurify.sanitize(parsedHtml);
             const availablePdfUrl = await resolveFirstAvailablePdfUrl(modalSources);
 

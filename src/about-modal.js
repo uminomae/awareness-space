@@ -61,17 +61,27 @@ async function loadMarkdown(body, lang) {
         return state.cache.get(normalized);
     }
 
-    const url = getMarkdownUrl(body, normalized);
-    if (!url) {
+    const sourceUrl = getMarkdownUrl(body, normalized);
+    if (!sourceUrl) {
         throw new Error(`Missing about markdown URL for ${normalized}`);
     }
 
-    const response = await fetch(url, { cache: 'no-store' });
-    if (!response.ok) {
-        throw new Error(`Failed to load about markdown: HTTP ${response.status}`);
+    // compiled 版を優先、失敗時に source 版にフォールバック
+    const compiledUrl = sourceUrl.replace(/\/about\//, '/about/compiled/');
+    let raw = '';
+    try {
+        const res = await fetch(compiledUrl, { cache: 'no-store' });
+        if (res.ok) raw = await res.text();
+    } catch { /* fall through */ }
+
+    if (!raw) {
+        const res = await fetch(sourceUrl, { cache: 'no-store' });
+        if (!res.ok) {
+            throw new Error(`Failed to load about markdown: HTTP ${res.status}`);
+        }
+        raw = await res.text();
     }
 
-    const raw = await response.text();
     state.cache.set(normalized, raw);
     return raw;
 }

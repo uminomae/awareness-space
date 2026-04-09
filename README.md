@@ -1,16 +1,16 @@
 # 意識とは — awareness-space
 
-**Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Containment.**
+**Exploring "What is consciousness?" through the Survival-Trust Axis hypothesis: consciousness evaluates discrepancies along survival and trust dimensions, and misapplication between them is a core source of human suffering.**
 
 ---
 
 ## Overview (English)
 
-**What is Consciousness?** This research explores the operative structure of consciousness through a Four-Layer Model (M1). The four layers are: Interoception (bodily monitoring), Prediction-Error Loop (gap detection and deficit generation), Survival-Trust Evaluation (value judgment through survival/attachment axes), and Containment (meta-cognitive holding for action control). Intersubjectivity is a separate exploration theme outside the four layers of M1.
+**What is Consciousness?** This research explores the operative structure of consciousness through a hypothesis called the Survival-Trust Axis. It asks whether human conscious experience evaluates discrepancies and deficits along at least two directions: survival (threat, safety, status, resources) and trust (attachment, belonging, intersubjectivity). Much human suffering may arise from attempting to solve trust-axis problems through survival-axis achievement.
 
 ### Key Concepts
-- **Four-Layer Model of Consciousness (M1)** (意識の4層モデル): L0 Interoception (内受容感覚) -- bodily monitoring; L1 Prediction-Error Loop (予測-誤差ループ) -- gap detection and deficit generation; L2 Survival-Trust Evaluation (生存-信頼評価) -- value judgment through survival/attachment; L3 Containment (抱持) -- meta-cognitive holding for action control.
-- **Intersubjectivity** (間主観性): A concept outside the four layers of M1. It concerns the shared experiential space between subjects and is explored as a separate theme.
+- **Survival-Trust Axis** (生存-信頼軸): An exploratory hypothesis positing that consciousness operates across two evaluative dimensions — survival and trust — and that misapplication between them is a key source of suffering.
+- **Intersubjectivity** (間主観性): The shared experiential space between subjects. Central to the trust axis and a key investigative question of this exploration.
 
 ### Related Explorations
 - [project-design](https://github.com/uminomae/project-design): Project Design Theory -- the overarching framework
@@ -23,18 +23,16 @@
 
 ## 概要 / Overview
 
-「意識とは何か」を探索する。内受容感覚・予測-誤差ループ・生存-信頼評価・抱持の4層モデル（M1）で意識の作動構造を記述する。間主観性は M1 の外にある探索テーマとして別途扱う。
+「意識とは何か」を探索する。生存-信頼軸という仮説を出発点に、意識体験が生存（脅威・安全・地位・資源）と信頼（愛着・所属・間主観性）の少なくとも二方向でズレや欠損を評価しているのではないかを問う。信頼軸の問題を生存軸の達成で解こうとする誤適用が、多くの苦しみの核心ではないかという仮説である。
 
-Exploring "What is consciousness?" through a Four-Layer Model (M1): Interoception, Prediction-Error Loop, Survival-Trust Evaluation, and Containment. Intersubjectivity is explored as a separate theme outside M1.
+Exploring "What is consciousness?" through the Survival-Trust Axis hypothesis. It asks whether conscious experience evaluates discrepancies along at least two directions — survival and trust — and whether misapplication between them is a core source of suffering.
 
-## 4層モデル (M1) / Four-Layer Model (M1)
+## 生存-信頼軸 / Survival-Trust Axis
 
-| Layer | 日本語 | English | 機能 / Function |
+| 軸 / Axis | 日本語 | English | 評価対象 / Evaluates |
 |:---:|--------|---------|---------|
-| L0 | 内受容感覚 | Interoception | 身体モニタリング / Bodily monitoring |
-| L1 | 予測-誤差ループ | Prediction-Error Loop | ズレ検出、欠損生成 / Gap detection, deficit generation |
-| L2 | 生存-信頼評価 | Survival-Trust Evaluation (Survival/Attachment) | 価値判断（情動価の付与） / Value judgment (emotional valence) |
-| L3 | 抱持 | Containment (Meta-Cognitive Holding) | 行動制御（保持） / Action control (holding) |
+| 生存軸 | 生存軸 | Survival Axis | 脅威・安全・地位・資源 / Threat, safety, status, resources |
+| 信頼軸 | 信頼軸 | Trust Axis | 愛着・所属・信頼・間主観性 / Attachment, belonging, trust, intersubjectivity |
 
 ## Live Site
 

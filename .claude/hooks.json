@@ -55,6 +55,10 @@
           {
             "type": "command",
             "command": ".claude/hooks/instruction-lint.sh"
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/content-compile.sh"
           }
         ]
       }

@@ -10,7 +10,3 @@ Trust axis — evaluation of attachment, belonging, trust, and intersubjectivity
 Much human suffering arises from misapplication — attempting to solve trust-axis problems through survival-axis achievement. This is the core of the hypothesis.
 
 Structuring through AI collaboration. Still in progress.
-
----
-
-pjdhiro

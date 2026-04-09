@@ -4,43 +4,43 @@
 
 ## Site Overview
 
-This is the research site of pjdhiro exploring **what consciousness is** — describing the operative structure of consciousness through a Four-Layer Model (M1).
+This is the research site of pjdhiro exploring **what consciousness is** — starting from the Survival-Trust Axis hypothesis.
 
 - **Primary Language**: Japanese (日本語), with English summaries
 - **Site URL**: https://uminomae.github.io/awareness-space/
-- **Topics**: Consciousness, Interoception, Prediction-Error Loop, Survival-Trust Evaluation, Containment, Neurophenomenology, Negative Capability
+- **Topics**: Consciousness, Survival-Trust Axis, Intersubjectivity, Misapplication, Neurophenomenology, Negative Capability
 
 ## Core Concepts
 
-### Four-Layer Model (M1) — 意識の4層モデル
+### Survival-Trust Axis (生存-信頼軸)
 
-The four layers describe the operative structure of consciousness:
+An exploratory hypothesis positing that human conscious experience evaluates discrepancies and deficits along at least two directions:
 
-#### L0: Interoception (内受容感覚)
+#### Survival Axis (生存軸)
 
-Bodily monitoring — the perception of internal bodily states (heartbeat, breathing, gut feeling) that forms the foundation of conscious experience.
+Evaluation of threat, safety, status, and resources. Bodily signals and prediction errors form the foundation of awareness along this axis. Includes not just physical danger but also social standing and resource preservation.
 
-#### L1: Prediction-Error Loop (予測-誤差ループ)
+#### Trust Axis (信頼軸)
 
-Gap detection and deficit generation — the mismatch between what the brain predicts and what actually occurs drives awareness and learning.
+Evaluation of attachment, belonging, trust, and intersubjectivity. This axis asks how consciousness operates within relationships — how social signals shape our experience and sense of self.
 
-#### L2: Survival-Trust Evaluation (生存-信頼評価 — Survival/Attachment)
+#### Misapplication (誤適用)
 
-Value judgment — emotional valence assignment through survival and attachment axes. This layer determines the significance of detected gaps.
+Much human suffering may arise from attempting to solve trust-axis problems through survival-axis achievement. This misapplication structure is the core of the hypothesis.
 
-#### L3: Containment (抱持 — Meta-Cognitive Holding)
+### Intersubjectivity (間主観性)
 
-Action control through holding — the capacity to hold experience without premature action, enabling deeper exploration and meta-cognitive awareness.
-
-### Intersubjectivity (間主観性) — Outside M1
-
-Intersubjectivity is not part of the four layers. It is a separate exploration theme concerning the shared experiential space between subjects — how consciousness arises in relational encounters. It is explored alongside M1 but is not one of its layers.
+Central to the trust axis. Intersubjectivity concerns the shared experiential space between subjects — how consciousness arises in relational encounters. It is not merely information exchange but experience sharing, and is a key investigative question of this exploration.
 
 ## Research Approach
 
 - **Neurophenomenology**: Bridging first-person phenomenological experience with third-person neuroscience
 - **Developmental Psychology**: Tracing how consciousness develops through early encounters
-- **Four-Layer Model (M1)**: A structural framework describing the operative structure of consciousness through L0-L3
+- **Exploratory Hypothesis**: The Survival-Trust Axis is a working hypothesis under investigation, not an adopted certainty
+
+## Important Note
+
+This research is in progress. It distinguishes between established knowledge (body, prediction, emotion, sociality) and what is still hypothesis (the survival-trust axis framework). This uncertainty is made explicit throughout.
 
 ## Site Structure
 
