@@ -1,0 +1,379 @@
+/* ==========================================================================
+   Slide Viewer -- Typography & Slide-type Styles
+   (page content: headings, body, lists, tables, code, images, slide types)
+   ========================================================================== */
+
+#slide-viewer-overlay .slide-viewer-page h1,
+#slide-viewer-overlay .slide-viewer-page h2,
+#slide-viewer-overlay .slide-viewer-page h3 {
+  margin-top: 0;
+  text-transform: none;
+  text-shadow: none;
+}
+
+#slide-viewer-overlay .slide-viewer-page h1 {
+  font-family: var(--slide-font-heading);
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+}
+
+#slide-viewer-overlay .slide-viewer-page h2 {
+  font-family: var(--slide-font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--slide-border-subtle);
+}
+
+#slide-viewer-overlay .slide-viewer-page h3 {
+  font-family: var(--slide-font-heading);
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: rgba(167, 139, 250, 0.9);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.5em;
+}
+
+#slide-viewer-overlay .slide-viewer-page p {
+  margin: 0 0 0.72em;
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--slide-text-primary);
+}
+
+#slide-viewer-overlay .slide-viewer-page ul,
+#slide-viewer-overlay .slide-viewer-page ol {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+#slide-viewer-overlay .slide-viewer-page li {
+  margin-bottom: 0.5em;
+  padding-left: 0.25em;
+}
+
+#slide-viewer-overlay .slide-viewer-page ul > li::marker {
+  color: var(--slide-accent-blue);
+}
+
+#slide-viewer-overlay .slide-viewer-page ol > li::marker {
+  color: var(--slide-accent-violet);
+  font-family: var(--slide-font-mono);
+  font-size: 0.85em;
+}
+
+#slide-viewer-overlay .slide-viewer-page strong {
+  color: rgba(96, 165, 250, 0.95);
+  font-weight: 600;
+}
+
+#slide-viewer-overlay .slide-viewer-page em {
+  color: var(--slide-text-secondary);
+  font-style: italic;
+}
+
+#slide-viewer-overlay .slide-viewer-page blockquote {
+  margin: 1em 0;
+  padding: 1rem 1.4rem;
+  border: 1px solid var(--slide-glass-border);
+  border-left: 3px solid var(--slide-accent-blue);
+  border-radius: 0 var(--slide-radius-sm) var(--slide-radius-sm) 0;
+  background: rgba(17, 24, 39, 0.58);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#slide-viewer-overlay .slide-viewer-page table {
+  width: 100%;
+  margin: 1em 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--slide-border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page th {
+  padding: 0.65em 0.9em;
+  background: var(--slide-bg-elevated);
+  border-bottom: 1px solid var(--slide-border-medium);
+  text-align: left;
+  color: var(--slide-text-secondary);
+  font-family: var(--slide-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#slide-viewer-overlay .slide-viewer-page td {
+  padding: 0.55em 0.9em;
+  border-bottom: 1px solid var(--slide-border-subtle);
+  text-align: left;
+}
+
+#slide-viewer-overlay .slide-viewer-page tr:last-child td {
+  border-bottom: none;
+}
+
+#slide-viewer-overlay .slide-viewer-page code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: rgba(52, 211, 153, 0.08);
+  color: var(--slide-accent-green);
+  font-family: var(--slide-font-mono);
+  font-size: 0.82em;
+}
+
+#slide-viewer-overlay .slide-viewer-page pre {
+  width: 100%;
+  margin: 1em 0;
+  box-shadow: none;
+}
+
+#slide-viewer-overlay .slide-viewer-page pre code {
+  display: block;
+  max-height: 42vh;
+  overflow: auto;
+  padding: 1em 1.2em;
+  border: 1px solid var(--slide-border-subtle);
+  border-radius: var(--slide-radius-sm);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--slide-text-primary);
+}
+
+#slide-viewer-overlay .slide-viewer-page img {
+  display: block;
+  max-width: 82%;
+  max-height: 42vh;
+  margin: 0.8em auto;
+  border: 1px solid var(--slide-border-subtle);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#slide-viewer-overlay .slide-viewer-page img[src$=".svg"] {
+  max-width: 72%;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.22);
+  border-radius: 12px;
+}
+
+#slide-viewer-overlay .slide-inline-svg {
+  width: min(72%, 640px);
+  margin: 0.8em auto;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.22);
+}
+
+#slide-viewer-overlay .slide-inline-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* -- Slide type: title -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-title .slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 3rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-title h2 {
+  font-size: 2rem;
+  border-bottom: none;
+  margin-bottom: 0.3em;
+  letter-spacing: 0.05em;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin: 0.6em auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--slide-accent-blue), var(--slide-accent-violet));
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-title p {
+  max-width: 80%;
+  font-size: 1.08rem;
+  color: var(--slide-text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* -- Slide type: visual -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-visual .slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-visual h2 {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-visual img {
+  max-width: 92%;
+  max-height: 58vh;
+  margin: 0;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-visual img[src$=".svg"] {
+  padding: 1.25rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-visual .slide-inline-svg {
+  width: min(92%, 760px);
+  margin: 0;
+  padding: 1.25rem;
+}
+
+/* -- Slide type: overview / conclusion -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-overview ul,
+#slide-viewer-overlay .slide-viewer-page.slide-conclusion ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-overview li {
+  padding: 0.7em 1.2em;
+  border: 1px solid var(--slide-glass-border);
+  border-left: 3px solid var(--slide-accent-blue);
+  border-radius: var(--slide-radius-sm);
+  background: rgba(17, 24, 39, 0.58);
+  margin-bottom: 0.6em;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-overview li::marker {
+  content: "";
+}
+
+/* -- Slide type: table -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-table .slide-content {
+  padding: 1.6rem 2rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-table h2 {
+  font-size: 1.28rem;
+  margin-bottom: 0.55em;
+}
+
+/* -- Slide type: entry -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-entry .slide-content {
+  padding: 1.75rem 2.25rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-entry p {
+  font-size: 0.88rem;
+  line-height: 1.78;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-entry strong {
+  display: inline-block;
+  margin-right: 0.3em;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  font-family: var(--slide-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+/* -- Slide type: conclusion -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-conclusion h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 0.4em;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--slide-accent-green), transparent);
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-conclusion li {
+  padding: 0.5em 0;
+  border-bottom: 1px solid var(--slide-border-subtle);
+  font-size: 0.95rem;
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-conclusion li:last-child {
+  border-bottom: none;
+}
+
+/* -- Slide type: patterns -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-patterns h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin-top: 0.4em;
+  background: linear-gradient(90deg, var(--slide-accent-violet), var(--slide-accent-blue));
+  border-radius: 2px;
+}
+
+/* -- Slide type: questions -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-questions h2 {
+  color: rgba(167, 139, 250, 0.9);
+  border-bottom-color: rgba(167, 139, 250, 0.2);
+}
+
+#slide-viewer-overlay .slide-viewer-page.slide-questions li {
+  padding: 0.55em 1em 0.55em 1.5em;
+  border-left: 2px solid rgba(167, 139, 250, 0.4);
+  margin-bottom: 0.5em;
+}
+
+/* -- Entry slide -- strong pill background -- */
+
+#slide-viewer-overlay .slide-viewer-page.slide-entry strong {
+  background: rgba(96, 165, 250, 0.12);
+  color: var(--slide-accent-blue);
+}
+
+/* -- Table striping & first-column emphasis -- */
+
+#slide-viewer-overlay .slide-viewer-page tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+#slide-viewer-overlay .slide-viewer-page td:first-child {
+  color: var(--slide-text-primary);
+  font-weight: 500;
+}
+
+/* -- h2 accent line for regular content slides -- */
+
+#slide-viewer-overlay .slide-viewer-page:not(.slide-title):not(.slide-visual) h2 {
+  padding-bottom: 0.4em;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.5), transparent);
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  border-bottom: none;
+}
