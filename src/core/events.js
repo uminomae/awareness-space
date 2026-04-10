@@ -1,9 +1,9 @@
-import { switchLang } from './i18n.js';
-import { closeAboutModal, openAboutModal } from './about-modal.js';
+import { switchLang } from '../i18n.js';
+import { closeAboutModal, openAboutModal } from '../about-modal.js';
 import {
     collapseMobileNavForClickTarget,
     collapseMobileNavOnOutsideClick,
-} from './topbar-nav.js';
+} from '../topbar-nav.js';
 
 export function bindAppEvents() {
     function handleDocumentClick(event) {

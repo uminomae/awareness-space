@@ -1,4 +1,4 @@
-import { toggles, breathConfig } from './config.js';
+import { toggles, breathConfig } from './core/config.js';
 import { requestScroll } from './scroll-coordinator.js';
 import { pxFromViewportHeight } from './nav/responsive.js';
 

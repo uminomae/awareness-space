@@ -1,6 +1,6 @@
 import { DEV_VERSION, DEV_VERSION_DATE } from './version.js';
 import { installStartupErrorHandlers, showStartupErrorOverlay } from './startup-error-overlay.js';
-import { runMainOrchestrator } from './main-orchestrator.js';
+import { runMainOrchestrator } from './core/main-orchestrator.js';
 import { createMainRuntimeContext } from './main-runtime-context.js';
 
 installStartupErrorHandlers();
