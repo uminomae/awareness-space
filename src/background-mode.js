@@ -24,62 +24,58 @@ function setButtonState(mode) {
     });
 }
 
-function createBackgroundFrame() {
-    const container = document.getElementById('canvas-container');
-    if (!(container instanceof HTMLElement)) return null;
+const MODULE_MAP = {
+    raijin: () => import('./backgrounds/kitai.js'),
+};
 
-    let frame = document.getElementById('background-frame');
-    if (frame instanceof HTMLIFrameElement) return frame;
+let activeModule = null;
+let activeMode = null;
 
-    frame = document.createElement('iframe');
-    frame.id = 'background-frame';
-    frame.className = 'background-frame';
-    frame.setAttribute('title', 'Awareness background');
-    frame.setAttribute('aria-hidden', 'true');
-    frame.tabIndex = -1;
-    container.appendChild(frame);
-    return frame;
-}
-
-function resolveBackgroundSrc(mode) {
+async function loadBackground(mode, container) {
     const normalized = normalizeMode(mode);
-    const filename = 'kitai.html';
-    const url = new URL(`./src/backgrounds/${filename}`, window.location.href);
-    url.searchParams.set('variant', normalized);
-    return url.toString();
+    const loader = MODULE_MAP[normalized];
+    if (!loader) return null;
+
+    if (activeModule?.cleanup) {
+        activeModule.cleanup();
+    }
+
+    const mod = await loader();
+    mod.init(container);
+    activeModule = mod;
+    activeMode = normalized;
+    return mod;
 }
 
 export function initBackgroundModeSwitcher(options = {}) {
     const onModeChange = typeof options.onModeChange === 'function' ? options.onModeChange : null;
-    const onFrameLoad = typeof options.onFrameLoad === 'function' ? options.onFrameLoad : null;
-    const frame = createBackgroundFrame();
-    if (!(frame instanceof HTMLIFrameElement)) return;
+    const onLoad = typeof options.onLoad === 'function' ? options.onLoad : null;
+    const container = document.getElementById('canvas-container');
+    if (!(container instanceof HTMLElement)) return;
 
     function getCurrentMode() {
-        return normalizeMode(frame.dataset.mode || DEFAULT_MODE);
+        return activeMode || DEFAULT_MODE;
     }
 
-    function applyMode(nextMode, { emitChange = true } = {}) {
+    async function applyMode(nextMode, { emitChange = true } = {}) {
         const normalized = normalizeMode(nextMode);
-        if (frame.dataset.mode === normalized && frame.src === resolveBackgroundSrc(normalized)) {
+        if (activeMode === normalized) {
             setButtonState(normalized);
             syncModeQuery(normalized);
             return;
         }
-        frame.dataset.mode = normalized;
-        frame.src = resolveBackgroundSrc(normalized);
         setButtonState(normalized);
         syncModeQuery(normalized);
+
+        await loadBackground(normalized, container);
+
         if (emitChange && onModeChange) {
-            onModeChange(normalized, { frame });
+            onModeChange(normalized);
+        }
+        if (onLoad) {
+            onLoad(normalized);
         }
     }
-
-    frame.addEventListener('load', () => {
-        if (onFrameLoad) {
-            onFrameLoad(getCurrentMode(), { frame });
-        }
-    });
 
     const initial = normalizeMode(new URL(window.location.href).searchParams.get('graphic') || DEFAULT_MODE);
     applyMode(initial, { emitChange: false });
@@ -93,13 +89,14 @@ export function initBackgroundModeSwitcher(options = {}) {
     });
 
     return {
-        frame,
         getCurrentMode,
         setMode(nextMode) {
             applyMode(nextMode);
         },
-        getFrameWindow() {
-            return frame.contentWindow;
+        applyState(nextState) {
+            if (activeModule?.applyState) {
+                activeModule.applyState(nextState);
+            }
         },
     };
 }

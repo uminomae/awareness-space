@@ -1,0 +1,266 @@
+import * as THREE from 'three';
+
+const defaultState = {
+    renderScale: 0.8,
+    speed: 0.22,
+    pulseScale: 4.0,
+    pulseThreshold: 0.68,
+    glowGain: 1.0,
+    densityLow: 0.32,
+    densityHigh: 0.72,
+    exposure: 1.0,
+    vignette: 0.16,
+    waterA: '#061824',
+    waterB: '#0d6d67',
+    glow: '#7df6ff',
+};
+const state = { ...defaultState };
+
+let scene, camera, renderer, material, animationId;
+const uniforms = {
+    uTime: { value: 0.0 },
+    uResolution: { value: new THREE.Vector2() },
+    uSpeed: { value: state.speed },
+    uPulseScale: { value: state.pulseScale },
+    uPulseThreshold: { value: state.pulseThreshold },
+    uGlowGain: { value: state.glowGain },
+    uDensityLow: { value: state.densityLow },
+    uDensityHigh: { value: state.densityHigh },
+    uExposure: { value: state.exposure },
+    uVignette: { value: state.vignette },
+    uWaterA: { value: new THREE.Color(state.waterA) },
+    uWaterB: { value: new THREE.Color(state.waterB) },
+    uGlow: { value: new THREE.Color(state.glow) },
+};
+
+const vertexShader = `
+    void main() {
+        gl_Position = vec4(position, 1.0);
+    }
+`;
+
+const fragmentShader = `
+    uniform float uTime;
+    uniform vec2 uResolution;
+    uniform float uSpeed;
+    uniform float uPulseScale;
+    uniform float uPulseThreshold;
+    uniform float uGlowGain;
+    uniform float uDensityLow;
+    uniform float uDensityHigh;
+    uniform float uExposure;
+    uniform float uVignette;
+    uniform vec3 uWaterA;
+    uniform vec3 uWaterB;
+    uniform vec3 uGlow;
+
+    float hash(vec3 p) {
+        return fract(sin(dot(p, vec3(127.1, 311.7, 191.999))) * 43758.5453123);
+    }
+
+    float noise(vec3 p) {
+        vec3 i = floor(p);
+        vec3 f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+
+        return mix(
+            mix(
+                mix(hash(i + vec3(0.0, 0.0, 0.0)), hash(i + vec3(1.0, 0.0, 0.0)), f.x),
+                mix(hash(i + vec3(0.0, 1.0, 0.0)), hash(i + vec3(1.0, 1.0, 0.0)), f.x),
+                f.y
+            ),
+            mix(
+                mix(hash(i + vec3(0.0, 0.0, 1.0)), hash(i + vec3(1.0, 0.0, 1.0)), f.x),
+                mix(hash(i + vec3(0.0, 1.0, 1.0)), hash(i + vec3(1.0, 1.0, 1.0)), f.x),
+                f.y
+            ),
+            f.z
+        );
+    }
+
+    float fbm(vec3 p) {
+        float value = 0.0;
+        float amp = 0.5;
+        for (int i = 0; i < 3; i++) {
+            float octave = float(i);
+            vec3 phaseOffset = vec3(
+                sin(uTime * uSpeed * 0.41 + octave * 1.13),
+                cos(uTime * uSpeed * 0.33 + octave * 0.87),
+                sin(uTime * uSpeed * 0.27 + octave * 1.57)
+            ) * (0.55 + octave * 0.08);
+            value += amp * noise(p + phaseOffset);
+            p = p * 1.96 + vec3(7.0, 13.0, 17.0) + phaseOffset;
+            amp *= 0.5;
+        }
+        return value;
+    }
+
+    void main() {
+        vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / uResolution.y;
+        float orbitA = uTime * 0.11;
+        float orbitB = uTime * 0.07;
+        mat2 rot = mat2(cos(orbitA), -sin(orbitA), sin(orbitA), cos(orbitA));
+        vec2 rotatedUv = rot * uv;
+
+        vec3 ro = vec3(
+            sin(orbitA) * 0.34 + sin(uTime * 0.031) * 0.08,
+            cos(orbitB) * 0.18 + sin(uTime * 0.043) * 0.06,
+            3.15 + sin(uTime * 0.023) * 0.12
+        );
+        vec3 rd = normalize(vec3(
+            rotatedUv + vec2(
+                sin(orbitB) * 0.07,
+                cos(orbitA) * 0.05
+            ),
+            -1.0
+        ));
+        vec3 bgTop = vec3(0.78, 0.84, 0.92);
+        vec3 bgMid = vec3(0.47, 0.60, 0.74);
+        vec3 bgLow = vec3(0.23, 0.31, 0.42);
+        float horizon = clamp(uv.y * 0.9 + 0.5, 0.0, 1.0);
+        vec3 bgColor = mix(bgLow, bgMid, smoothstep(0.0, 0.55, horizon));
+        bgColor = mix(bgColor, bgTop, smoothstep(0.45, 1.0, horizon));
+        bgColor += vec3(0.08, 0.09, 0.10) * (1.0 - smoothstep(0.0, 0.7, horizon));
+        vec3 color = bgColor;
+        float t = 0.0;
+
+        for (int i = 0; i < 22; i++) {
+            vec3 p = ro + rd * t;
+            vec3 drift = vec3(
+                sin(uTime * 0.41 + p.y * 0.24 + sin(uTime * 0.019) * 2.3),
+                cos(uTime * 0.29 + p.x * 0.19 + cos(uTime * 0.017) * 1.9),
+                sin(uTime * 0.23 + p.z * 0.17 + sin(uTime * 0.013) * 2.7)
+            ) * 0.22;
+            float n = fbm(p + drift + vec3(
+                sin(uTime * 0.061) * 1.7,
+                uTime * 0.05,
+                cos(uTime * 0.047) * 1.9
+            ));
+            float density = smoothstep(uDensityLow, uDensityHigh, n);
+            vec3 waterColor = mix(uWaterA, uWaterB, density) * (0.07 + density * 0.05);
+
+            float iface = smoothstep(0.06, 0.0, abs(n - 0.5));
+            float pulseA = noise(vec3(
+                p.x * (1.1 + uPulseScale * 0.18) + uTime * 0.37,
+                p.y * (1.4 + uPulseScale * 0.24) - uTime * 0.23,
+                p.z * (0.8 + uPulseScale * 0.12) + uTime * 0.17
+            ));
+            float pulseB = noise(vec3(
+                length(p.xy) * (1.8 + uPulseScale * 0.16) - uTime * 0.19,
+                p.z * (1.0 + uPulseScale * 0.15) + uTime * 0.27,
+                n * (4.0 + uPulseScale * 0.8) + uTime * 0.11
+            ));
+            float pulse = smoothstep(uPulseThreshold, 1.0, pulseA) * 0.72
+                + smoothstep(max(0.0, uPulseThreshold - 0.04), 1.0, pulseB) * 0.44;
+            float halo = smoothstep(0.06, 0.0, abs(n - 0.5));
+            vec3 emitColor = uGlow * (iface * pulse * (7.0 + uPulseScale * 1.7) + halo * 0.02) * uGlowGain;
+
+            color += (waterColor * 0.006 + emitColor) * exp(-t * 0.4) * 0.05;
+            t += 0.10;
+        }
+
+        color = pow(max(color * uExposure, vec3(0.0)), vec3(1.0 / 2.2));
+        color *= 1.0 - length(uv) * uVignette;
+        gl_FragColor = vec4(color, 1.0);
+    }
+`;
+
+let resizeHandler = null;
+
+function resizeRenderer() {
+    if (!renderer) return;
+    const scale = Math.max(0.6, Math.min(1.0, state.renderScale));
+    const width = Math.max(1, Math.round(window.innerWidth * scale));
+    const height = Math.max(1, Math.round(window.innerHeight * scale));
+    renderer.setSize(width, height, false);
+    uniforms.uResolution.value.set(width, height);
+}
+
+export function init(container, variant) {
+    scene = new THREE.Scene();
+    camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    renderer = new THREE.WebGLRenderer({ antialias: false, powerPreference: 'high-performance' });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.0));
+    container.appendChild(renderer.domElement);
+
+    material = new THREE.ShaderMaterial({
+        vertexShader,
+        fragmentShader,
+        uniforms,
+    });
+
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    scene.add(new THREE.Mesh(geometry, material));
+
+    resizeHandler = () => resizeRenderer();
+    window.addEventListener('resize', resizeHandler);
+
+    resizeRenderer();
+
+    const clock = new THREE.Clock();
+    function animate() {
+        animationId = requestAnimationFrame(animate);
+        uniforms.uTime.value = clock.getElapsedTime();
+        renderer.render(scene, camera);
+    }
+
+    applyState(state);
+    animate();
+}
+
+export function applyState(nextState = {}) {
+    state.renderScale = typeof nextState.renderScale === 'number' ? nextState.renderScale : state.renderScale;
+    state.speed = typeof nextState.speed === 'number' ? nextState.speed : state.speed;
+    state.pulseScale = typeof nextState.pulseScale === 'number' ? nextState.pulseScale : state.pulseScale;
+    state.pulseThreshold = typeof nextState.pulseThreshold === 'number' ? nextState.pulseThreshold : state.pulseThreshold;
+    state.glowGain = typeof nextState.glowGain === 'number' ? nextState.glowGain : state.glowGain;
+    state.densityLow = typeof nextState.densityLow === 'number' ? nextState.densityLow : state.densityLow;
+    state.densityHigh = typeof nextState.densityHigh === 'number' ? nextState.densityHigh : state.densityHigh;
+    state.exposure = typeof nextState.exposure === 'number' ? nextState.exposure : state.exposure;
+    state.vignette = typeof nextState.vignette === 'number' ? nextState.vignette : state.vignette;
+    state.waterA = typeof nextState.waterA === 'string' ? nextState.waterA : state.waterA;
+    state.waterB = typeof nextState.waterB === 'string' ? nextState.waterB : state.waterB;
+    state.glow = typeof nextState.glow === 'string' ? nextState.glow : state.glow;
+
+    uniforms.uSpeed.value = state.speed;
+    uniforms.uPulseScale.value = state.pulseScale;
+    uniforms.uPulseThreshold.value = state.pulseThreshold;
+    uniforms.uGlowGain.value = state.glowGain;
+    uniforms.uDensityLow.value = state.densityLow;
+    uniforms.uDensityHigh.value = state.densityHigh;
+    uniforms.uExposure.value = state.exposure;
+    uniforms.uVignette.value = state.vignette;
+    uniforms.uWaterA.value.set(state.waterA);
+    uniforms.uWaterB.value.set(state.waterB);
+    uniforms.uGlow.value.set(state.glow);
+    resizeRenderer();
+    window.__awarenessDevState = { variant: 'raijin', state: { ...state } };
+}
+
+export function cleanup() {
+    if (resizeHandler) {
+        window.removeEventListener('resize', resizeHandler);
+        resizeHandler = null;
+    }
+    if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+    }
+    if (scene) {
+        scene.traverse((obj) => {
+            if (obj.geometry) obj.geometry.dispose();
+            if (obj.material) obj.material.dispose();
+        });
+    }
+    if (renderer) {
+        const canvas = renderer.domElement;
+        renderer.dispose();
+        if (canvas && canvas.parentNode) {
+            canvas.parentNode.removeChild(canvas);
+        }
+        renderer = null;
+    }
+    scene = null;
+    camera = null;
+    material = null;
+}

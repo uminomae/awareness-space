@@ -16,8 +16,6 @@ import { requestScroll } from './scroll-coordinator.js';
 import { getScrollProgress, updateScrollUI } from './scroll-ui.js';
 import { applyUiThemeState } from './ui-theme.js';
 
-const DEV_MESSAGE_SOURCE = 'awareness-space-dev-panel';
-
 function initHashLinks() {
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.addEventListener('click', (event) => {
@@ -90,14 +88,7 @@ export async function runMainOrchestrator({
     }
 
     function postSceneState(backgroundController, sceneVariant) {
-        const frameWindow = backgroundController?.getFrameWindow?.();
-        if (!frameWindow) return;
-        frameWindow.postMessage({
-            source: DEV_MESSAGE_SOURCE,
-            type: 'dev:apply-state',
-            variant: sceneVariant,
-            state: getSceneState(sceneVariant),
-        }, window.location.origin);
+        backgroundController?.applyState?.(getSceneState(sceneVariant));
     }
 
     function mountDevPanel(backgroundController, sceneVariant) {
@@ -132,7 +123,7 @@ export async function runMainOrchestrator({
             mountDevPanel(backgroundController, sceneVariant);
             postSceneState(backgroundController, sceneVariant);
         },
-        onFrameLoad: (sceneVariant) => {
+        onLoad: (sceneVariant) => {
             syncControlGuideVisibility(sceneVariant);
             if (backgroundController?.getCurrentMode?.() === sceneVariant) {
                 applySceneUiTheme(sceneVariant);
