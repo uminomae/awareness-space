@@ -1,9 +1,9 @@
-import { applyMainDevChrome } from '../main-dev-runtime.js';
-import { initFontSizeCtrl } from '../font-size-ctrl.js';
+import { applyMainDevChrome } from '../dev/main-dev-runtime.js';
+import { initFontSizeCtrl } from '../ui/font-size-ctrl.js';
 import { detectLang } from '../i18n.js';
 import { applyPageLanguage } from '../page-language.js';
-import { initMobileNavAutoCollapse } from '../topbar-nav.js';
-import { initScrollUI } from '../scroll-ui.js';
+import { initMobileNavAutoCollapse } from '../ui/topbar-nav.js';
+import { initScrollUI } from '../ui/scroll-ui.js';
 
 export function prepareMainBootstrap({
     devMode,

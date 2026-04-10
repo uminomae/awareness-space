@@ -5,7 +5,7 @@ import {
     MODES_WITHOUT_CONTROL_GUIDE,
     shouldShowControlGuide,
     syncControlGuideVisibility,
-} from '../src/control-guide.js';
+} from '../src/ui/control-guide.js';
 import {
     AVAILABLE_BACKGROUND_MODES,
     DEFAULT_MODE,

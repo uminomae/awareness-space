@@ -1,6 +1,6 @@
-import { toggles, breathConfig } from './core/config.js';
+import { toggles, breathConfig } from '../core/config.js';
 import { requestScroll } from './scroll-coordinator.js';
-import { pxFromViewportHeight } from './nav/responsive.js';
+import { pxFromViewportHeight } from '../nav/responsive.js';
 
 const DIVE_SCROLL_VH = 1.5;
 

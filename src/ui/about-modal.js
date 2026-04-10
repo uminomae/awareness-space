@@ -1,7 +1,7 @@
 import DOMPurify from 'dompurify';
 
-import { normalizeLang } from './i18n.js';
-import { dict } from './i18n/dict.js';
+import { normalizeLang } from '../i18n.js';
+import { dict } from '../i18n/dict.js';
 
 const state = {
     initialized: false,

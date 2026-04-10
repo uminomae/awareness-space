@@ -8,7 +8,7 @@ import {
     resolveLocalizedSources,
     resolveDomainPresentationSources,
 } from './data.js';
-import { openRichSlideViewer } from '../slide-viewer.js';
+import { openRichSlideViewer } from '../ui/slide-viewer.js';
 import { DOMAIN_HISTORY_MODE_PUSH } from './history.js';
 import { getReportsStrings, getDomainReportTitle } from './strings.js';
 import { createFilterButton, createMetricCard } from './dom-helpers.js';
