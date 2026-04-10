@@ -1,3 +1,5 @@
+import { normalizeLang } from '../i18n.js';
+
 const DEFAULT_BASE_URL = './';
 const DOMAIN_ID_PATTERN = /^[A-Z0-9][A-Z0-9_-]*$/i;
 const PJDHIRO_PAGES_BASE = 'https://uminomae.github.io/pjdhiro';
@@ -94,9 +96,7 @@ export const DEFAULT_PROGRESS_TAXONOMY = [
     },
 ];
 
-export function normalizeLang(lang) {
-    return lang === 'en' ? 'en' : 'ja';
-}
+export { normalizeLang };
 
 export function hasText(value) {
     return typeof value === 'string' && value.trim().length > 0;
