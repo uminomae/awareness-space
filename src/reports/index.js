@@ -15,6 +15,15 @@ import {
 } from './history.js';
 import { createReportsModalController } from './modal.js';
 import { createReportsRenderer, getDomainReportTitle, getReportsStrings } from './render.js';
+import { findWikiUrlByText } from '../wiki-links.js';
+
+function resolveReportWikiUrl(report) {
+    if (!report) return '';
+    const haystack = [report.nameJa, report.nameEn, report.summaryJa, report.summaryEn]
+        .filter(Boolean)
+        .join(' ');
+    return findWikiUrlByText(haystack) || '';
+}
 
 const state = {
     lang: 'ja',
@@ -51,6 +60,8 @@ const state = {
         mdModalMeta: null,
         mdModalContent: null,
         mdOpenPdf: null,
+        openWikiBtn: null,
+        mdOpenWiki: null,
     },
 };
 
@@ -140,6 +151,7 @@ openDomainModalByIdImpl = function openDomainModalById(
     modalController.openMarkdownModal({
         title: getDomainReportTitle(report, state.lang),
         sources,
+        wikiUrl: resolveReportWikiUrl(report),
         modalContext: {
             type: 'domain',
             domainId: normalizedId,

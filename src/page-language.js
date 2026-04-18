@@ -58,6 +58,7 @@ export function applyPageLanguageToDocument(doc, lang) {
     const topbarFontSizeCtrl = doc.querySelector('#kesson-topbar .topbar-font-size-ctrl');
     const topbarHomeLink = doc.getElementById('topbar-home-link');
     const topbarCreationLink = doc.getElementById('topbar-creation-link');
+    const topbarWikiLink = doc.getElementById('topbar-wiki-link');
     const topbarCollab = doc.getElementById('credit-collab');
     const footerSignature = doc.getElementById('footer-signature');
     const langToggle = doc.getElementById('lang-toggle');
@@ -94,6 +95,7 @@ export function applyPageLanguageToDocument(doc, lang) {
     setAttr(langToggle, 'aria-label', strings.langToggleAria);
     setAttr(topbarHomeLink, 'aria-label', strings.topbarHomeAria);
     setAttr(topbarCreationLink, 'aria-label', strings.topbarCreationAria);
+    setAttr(topbarWikiLink, 'aria-label', strings.topbarWikiAria);
     setAttr(modelSectionHeading, 'aria-label', strings.modelSectionHeadingAria);
     setAttr(reportsSectionHeading, 'aria-label', strings.reportsSectionHeadingAria);
     setAttr(offcanvasModelLink, 'aria-label', strings.offcanvasModelAria);

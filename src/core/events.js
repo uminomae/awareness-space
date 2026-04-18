@@ -20,6 +20,11 @@ export function bindAppEvents() {
             return;
         }
 
+        if (target.id === 'about-overlay') {
+            closeAboutModal();
+            return;
+        }
+
         const langButton = target.closest('[data-lang-button]');
         if (langButton) {
             switchLang();

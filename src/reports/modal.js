@@ -8,7 +8,7 @@ import {
     parseFrontmatter,
     resolveFirstAvailablePdfUrl,
 } from './data.js';
-import { injectWikiLinks } from '../wiki-links.js';
+import { injectWikiLinks, WIKI_INDEX_URL } from '../wiki-links.js';
 
 function rewriteRelativeUrls(html, baseUrl) {
     if (!baseUrl) return html;
@@ -49,6 +49,11 @@ export function createReportsModalController({
         return Boolean(state.dom.mdModal?.classList.contains('show'));
     }
 
+    function setModalWikiButton(wikiUrl) {
+        if (!state.dom.mdOpenWiki) return;
+        state.dom.mdOpenWiki.href = wikiUrl || WIKI_INDEX_URL;
+    }
+
     function setModalPdfButton(pdfUrl, { hideWhenUnavailable = false } = {}) {
         if (!state.dom.mdOpenPdf) return;
         const strings = getStrings(state.lang);
@@ -68,7 +73,7 @@ export function createReportsModalController({
         state.dom.mdOpenPdf.setAttribute('aria-disabled', 'true');
     }
 
-    function setMarkdownModalLoading({ title, pdfUrl = '', hidePdfButton = false }) {
+    function setMarkdownModalLoading({ title, pdfUrl = '', wikiUrl = '', hidePdfButton = false }) {
         const strings = getStrings(state.lang);
         if (state.dom.mdModalTitle) state.dom.mdModalTitle.textContent = title || strings.modalTitleDefault;
         if (state.dom.mdModalMeta) state.dom.mdModalMeta.textContent = '';
@@ -81,15 +86,16 @@ export function createReportsModalController({
             `;
         }
         setModalPdfButton(pdfUrl, { hideWhenUnavailable: hidePdfButton });
+        setModalWikiButton(wikiUrl);
     }
 
-    function renderModalHtml({ title = '', html = '', metaParts = [], pdfUrl = '', hidePdfButton = true } = {}) {
+    function renderModalHtml({ title = '', html = '', metaParts = [], pdfUrl = '', wikiUrl = '', hidePdfButton = true } = {}) {
         const modal = ensureMdModalInstance();
         if (!modal) return false;
 
         setActiveDomainModalState('', '');
         const requestId = ++state.mdRequestId;
-        setMarkdownModalLoading({ title, pdfUrl, hidePdfButton });
+        setMarkdownModalLoading({ title, pdfUrl, wikiUrl, hidePdfButton });
         modal.show();
 
         const safeHtml = DOMPurify.sanitize(injectWikiLinks(html));
@@ -118,10 +124,11 @@ export function createReportsModalController({
         }
 
         setModalPdfButton(pdfUrl, { hideWhenUnavailable: hidePdfButton });
+        setModalWikiButton(wikiUrl);
         return true;
     }
 
-    async function openMarkdownModal({ mdUrl, pdfUrl = '', title = '', sources = [], modalContext = null }) {
+    async function openMarkdownModal({ mdUrl, pdfUrl = '', wikiUrl = '', title = '', sources = [], modalContext = null }) {
         const modalSources = normalizeModalSources({ mdUrl, pdfUrl, sources });
         if (!modalSources.length) return;
         const firstSource = modalSources[0];
@@ -140,7 +147,7 @@ export function createReportsModalController({
         }
 
         const requestId = ++state.mdRequestId;
-        setMarkdownModalLoading({ title, pdfUrl: '', hidePdfButton: !hasAnyPdfSource });
+        setMarkdownModalLoading({ title, pdfUrl: '', wikiUrl, hidePdfButton: !hasAnyPdfSource });
         modal.show();
 
         try {

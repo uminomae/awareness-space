@@ -9,7 +9,8 @@
  *   const html = injectWikiLinks(parsedHtml);
  */
 
-const WIKI_BASE = '/project-design/wiki';
+export const WIKI_BASE = '/project-design/wiki';
+export const WIKI_INDEX_URL = `${WIKI_BASE}/`;
 
 // pd wiki/concepts/ + wiki/entities/ から生成（長い順にソート済み）
 const TERM_MAP = [
@@ -48,6 +49,21 @@ const TERM_MAP = [
   term,
   url: `${WIKI_BASE}/${category}/${encodeURIComponent(term)}`,
 }));
+
+/**
+ * 文字列内に含まれる wiki 用語を長い順に走査し、最初に見つかった用語の URL を返す。
+ * 見つからない場合は null。TERM_MAP は長さ降順にソート済みなので、より具体的な用語が優先される。
+ *
+ * @param {string} text - 検索対象の文字列（例: report.nameJa + report.summaryJa）
+ * @returns {string | null}
+ */
+export function findWikiUrlByText(text) {
+  if (!text) return null;
+  for (const { term, url } of TERM_MAP) {
+    if (text.includes(term)) return url;
+  }
+  return null;
+}
 
 /**
  * parsed HTML 内の用語初出を wiki リンクに置換する。

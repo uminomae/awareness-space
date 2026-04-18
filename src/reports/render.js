@@ -76,6 +76,8 @@ export function createReportsRenderer({
         state.dom.mdModalMeta = document.getElementById('reports-md-meta');
         state.dom.mdModalContent = document.getElementById('reports-md-content');
         state.dom.mdOpenPdf = document.getElementById('reports-md-open-pdf');
+        state.dom.openWikiBtn = document.getElementById('reports-open-wiki-btn');
+        state.dom.mdOpenWiki = document.getElementById('reports-md-open-wiki');
     }
 
     function setReportsError(message) {
@@ -433,6 +435,14 @@ export function createReportsRenderer({
         if (state.dom.scopeNote) state.dom.scopeNote.textContent = strings.scopeNote;
         if (state.dom.filterGroup) state.dom.filterGroup.setAttribute('aria-label', strings.filterGroupAria);
         if (state.dom.openStatusBtn) state.dom.openStatusBtn.textContent = strings.openStatus;
+        if (state.dom.openWikiBtn) {
+            state.dom.openWikiBtn.textContent = strings.openWiki;
+            state.dom.openWikiBtn.setAttribute('aria-label', strings.openWikiAria);
+        }
+        if (state.dom.mdOpenWiki) {
+            state.dom.mdOpenWiki.textContent = strings.modalOpenWiki;
+            state.dom.mdOpenWiki.setAttribute('aria-label', strings.modalOpenWikiAria);
+        }
         // renderLevelLegend(); // 進捗分類レジェンドは不要。安定したら削除する
         updateFilterButtons();
     }
