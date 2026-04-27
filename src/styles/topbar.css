@@ -3,23 +3,23 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: var(--kesson-topbar-height);
+  min-height: var(--as-topbar-height);
   z-index: 60;
   background: linear-gradient(
     to bottom,
-    var(--kesson-topbar-bg-start) 0%,
-    var(--kesson-topbar-bg-end) 100%
+    var(--as-topbar-bg-start) 0%,
+    var(--as-topbar-bg-end) 100%
   );
-  border-bottom: 1px solid var(--kesson-topbar-border-color);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, var(--kesson-topbar-shadow-alpha));
-  backdrop-filter: blur(var(--kesson-topbar-blur)) saturate(var(--kesson-topbar-saturate));
-  -webkit-backdrop-filter: blur(var(--kesson-topbar-blur)) saturate(var(--kesson-topbar-saturate));
+  border-bottom: 1px solid var(--as-topbar-border-color);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, var(--as-topbar-shadow-alpha));
+  backdrop-filter: blur(var(--as-topbar-blur)) saturate(var(--as-topbar-saturate));
+  -webkit-backdrop-filter: blur(var(--as-topbar-blur)) saturate(var(--as-topbar-saturate));
   padding-top: 0;
   padding-bottom: 0;
 }
 
 #kesson-topbar .container-fluid {
-  min-height: var(--kesson-topbar-height);
+  min-height: var(--as-topbar-height);
 }
 
 #kesson-topbar .topbar-brand-wrap {
@@ -34,9 +34,9 @@
 }
 
 #kesson-topbar .topbar-main-title {
-  color: var(--kesson-topbar-title-color);
-  font-family: var(--kesson-font-serif-display);
-  font-size: var(--kesson-topbar-main-title-size);
+  color: var(--as-topbar-title-color);
+  font-family: var(--ds-font-serif-display);
+  font-size: var(--as-topbar-main-title-size);
   letter-spacing: 0.04em;
   line-height: 1;
   text-transform: none;
@@ -48,13 +48,13 @@
 
 #kesson-topbar .topbar-main-title:hover,
 #kesson-topbar .topbar-main-title:focus-visible {
-  color: var(--kesson-topbar-title-hover-color);
+  color: var(--as-topbar-title-hover-color);
 }
 
 #kesson-topbar .topbar-subtitle {
-  font-size: var(--kesson-topbar-subtitle-size);
-  color: var(--kesson-topbar-subtitle-color);
-  letter-spacing: var(--kesson-letter-ui-wide);
+  font-size: var(--as-topbar-subtitle-size);
+  color: var(--as-topbar-subtitle-color);
+  letter-spacing: var(--ds-letter-ui-wide);
   line-height: 1;
   text-transform: none;
   flex: 0 0 auto;
@@ -64,7 +64,7 @@
 #kesson-topbar .topbar-subtitle::before,
 #kesson-topbar .topbar-meta::before {
   content: '·';
-  color: var(--kesson-topbar-divider-color);
+  color: var(--as-topbar-divider-color);
   margin-right: 0.45rem;
 }
 
@@ -72,23 +72,23 @@
   display: block;
   flex: 0 0 auto;
   padding: 0;
-  font-size: var(--kesson-topbar-meta-size);
+  font-size: var(--as-topbar-meta-size);
   line-height: 1;
   letter-spacing: 0.05em;
-  color: var(--kesson-topbar-meta-color);
-  font-family: var(--kesson-font-serif-ui);
+  color: var(--as-topbar-meta-color);
+  font-family: var(--ds-font-serif-ui);
   pointer-events: none;
 }
 
 #kesson-topbar .topbar-meta--author {
-  font-size: var(--kesson-topbar-meta-author-size);
-  color: var(--kesson-topbar-meta-author-color);
+  font-size: var(--as-topbar-meta-author-size);
+  color: var(--as-topbar-meta-author-color);
 }
 
 #kesson-topbar .topbar-link {
-  color: var(--kesson-topbar-link-color);
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-topbar-link-size);
+  color: var(--as-topbar-link-color);
+  font-family: var(--ds-font-mono-ui);
+  font-size: var(--as-topbar-link-size);
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.4rem 0.72rem;
@@ -98,8 +98,8 @@
 
 #kesson-topbar .topbar-link:hover,
 #kesson-topbar .topbar-link:focus-visible {
-  color: var(--kesson-topbar-link-hover-color);
-  background: var(--kesson-topbar-link-hover-bg);
+  color: var(--as-topbar-link-hover-color);
+  background: var(--as-topbar-link-hover-bg);
 }
 
 #kesson-topbar .topbar-link-btn {
@@ -111,28 +111,28 @@
 }
 
 #kesson-topbar .topbar-lang-btn {
-  color: var(--kesson-topbar-lang-color);
-  border: 1px solid var(--kesson-topbar-lang-border);
-  background: var(--kesson-topbar-lang-bg);
+  color: var(--as-topbar-lang-color);
+  border: 1px solid var(--as-topbar-lang-border);
+  background: var(--as-topbar-lang-bg);
 }
 
 #kesson-topbar .topbar-collab-item {
   margin-left: 0.45rem;
   padding-left: 0.55rem;
-  border-left: 1px solid var(--kesson-topbar-note-divider-color);
+  border-left: 1px solid var(--as-topbar-note-divider-color);
 }
 
 #kesson-topbar .topbar-collab-note {
   display: inline-block;
-  font-family: var(--kesson-font-serif-ui);
-  font-size: var(--kesson-topbar-note-size);
+  font-family: var(--ds-font-serif-ui);
+  font-size: var(--as-topbar-note-size);
   line-height: 1;
-  letter-spacing: var(--kesson-letter-ui-normal);
-  color: var(--kesson-topbar-note-color);
+  letter-spacing: var(--ds-letter-ui-normal);
+  color: var(--as-topbar-note-color);
   white-space: nowrap;
   margin-left: 0.5rem;
   padding-left: 0.56rem;
-  border-left: 1px solid var(--kesson-topbar-note-divider-color);
+  border-left: 1px solid var(--as-topbar-note-divider-color);
   min-width: 0;
   max-width: min(42vw, 18rem);
   overflow: hidden;
@@ -146,19 +146,19 @@
 }
 
 .topbar-font-btn {
-  font-family: var(--kesson-font-mono-ui);
-  font-size: var(--kesson-topbar-credit-size, 0.80rem);
+  font-family: var(--ds-font-mono-ui);
+  font-size: var(--as-topbar-credit-size, 0.80rem);
   letter-spacing: 0.08em;
   padding: 0.2rem 0.5rem;
   background: transparent;
-  border: 1px solid var(--kesson-topbar-nav-border);
-  color: var(--kesson-topbar-link-color);
+  border: 1px solid var(--as-topbar-nav-border);
+  color: var(--as-topbar-link-color);
   line-height: 1.4;
 }
 
 .topbar-font-btn:hover:not(:disabled) {
-  background: var(--kesson-topbar-link-hover-bg);
-  color: var(--kesson-topbar-link-hover-color);
+  background: var(--as-topbar-link-hover-bg);
+  color: var(--as-topbar-link-hover-color);
 }
 
 .topbar-font-btn:disabled {
@@ -167,13 +167,13 @@
 }
 
 #kesson-topbar .topbar-toggler {
-  border-color: var(--kesson-topbar-toggler-border);
+  border-color: var(--as-topbar-toggler-border);
   padding: 0.18rem 0.44rem;
-  color: var(--kesson-topbar-link-color);
+  color: var(--as-topbar-link-color);
 }
 
 #kesson-topbar .topbar-toggler:focus {
-  box-shadow: 0 0 0 0.14rem var(--kesson-topbar-toggler-focus);
+  box-shadow: 0 0 0 0.14rem var(--as-topbar-toggler-focus);
 }
 
 #kesson-topbar .navbar-toggler-icon {
@@ -190,8 +190,8 @@
   margin-top: 0.35rem;
   padding: 0.35rem 0.2rem 0.5rem;
   border-radius: 0.6rem;
-  background: var(--kesson-topbar-nav-bg);
-  border: 1px solid var(--kesson-topbar-nav-border);
+  background: var(--as-topbar-nav-bg);
+  border: 1px solid var(--as-topbar-nav-border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -222,7 +222,7 @@
   }
 
   #kesson-topbar .topbar-subtitle {
-    font-size: var(--kesson-topbar-subtitle-size-md);
+    font-size: var(--as-topbar-subtitle-size-md);
   }
 }
 
@@ -232,11 +232,11 @@
   }
 
   #kesson-topbar .topbar-main-title {
-    font-size: var(--kesson-topbar-main-title-size-sm);
+    font-size: var(--as-topbar-main-title-size-sm);
   }
 
   #kesson-topbar .topbar-collab-note {
-    font-size: var(--kesson-topbar-credit-size);
+    font-size: var(--as-topbar-credit-size);
     letter-spacing: 0.05em;
     margin-left: 0.36rem;
     padding-left: 0.36rem;

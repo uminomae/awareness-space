@@ -1,15 +1,15 @@
 .dev-components-link {
   display: none;
   position: fixed;
-  top: calc(var(--kesson-topbar-actual-height, var(--kesson-topbar-height)) + 2.95rem);
+  top: calc(var(--as-topbar-actual-height, var(--as-topbar-height)) + 2.95rem);
   right: 0.95rem;
   z-index: 58;
   padding: 0.2rem 0.48rem;
   border-radius: 999px;
-  border: 1px solid var(--kesson-dev-hud-border);
-  background: var(--kesson-dev-hud-bg);
-  color: var(--kesson-dev-hud-text);
-  font-size: var(--kesson-dev-hud-font-size, 0.80rem);
+  border: 1px solid var(--as-dev-hud-border);
+  background: var(--as-dev-hud-bg);
+  color: var(--as-dev-hud-text);
+  font-size: var(--as-dev-hud-font-size, 0.80rem);
   letter-spacing: 0.04em;
   line-height: 1;
   font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
@@ -32,14 +32,14 @@
 
 #dev-version-inline {
   position: fixed;
-  top: calc(var(--kesson-topbar-actual-height, var(--kesson-topbar-height)) + 2.5rem);
+  top: calc(var(--as-topbar-actual-height, var(--as-topbar-height)) + 2.5rem);
   left: 1rem;
   z-index: 58;
   color: rgba(var(--color-sub-text), 0.4);
-  font-size: var(--kesson-graphic-switcher-btn, 0.88rem);
+  font-size: var(--as-graphic-switcher-btn, 0.88rem);
   letter-spacing: 0.06em;
   line-height: 1;
-  font-family: var(--kesson-font-mono-ui);
+  font-family: var(--ds-font-mono-ui);
   pointer-events: none;
   user-select: none;
   transition: opacity 0.6s ease;
@@ -59,13 +59,13 @@
   right: 0;
   transform: translateY(-50%);
   z-index: 1001;
-  background: var(--kesson-dev-toggle-bg);
+  background: var(--as-dev-toggle-bg);
   backdrop-filter: blur(8px);
-  border: 1px solid var(--kesson-dev-toggle-border);
+  border: 1px solid var(--as-dev-toggle-border);
   border-right: none;
   border-radius: 4px 0 0 4px;
-  color: var(--kesson-dev-toggle-text);
-  font-size: var(--kesson-dev-hud-font-size, 0.80rem);
+  color: var(--as-dev-toggle-text);
+  font-size: var(--as-dev-hud-font-size, 0.80rem);
   font-family: monospace;
   padding: 8px 5px;
   cursor: pointer;
@@ -75,8 +75,8 @@
 }
 
 #dev-links-toggle:hover {
-  color: var(--kesson-dev-toggle-text-hover);
-  background: var(--kesson-dev-toggle-bg-hover);
+  color: var(--as-dev-toggle-text-hover);
+  background: var(--as-dev-toggle-bg-hover);
 }
 
 .offcanvas-links {
@@ -133,7 +133,7 @@
 
 @media (max-width: 767.98px) {
   #dev-version-inline {
-    top: calc(var(--kesson-topbar-actual-height, var(--kesson-topbar-height)) + 2.1rem);
+    top: calc(var(--as-topbar-actual-height, var(--as-topbar-height)) + 2.1rem);
     left: 0.6rem;
     font-size: 0.62rem;
   }

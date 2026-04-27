@@ -5,23 +5,23 @@ body.awareness-page {
   --awareness-hero-tagline-sub-rgb: 80, 105, 146;
   --awareness-ui-text-rgb: 74, 102, 145;
   --awareness-ui-text-strong-rgb: 43, 66, 108;
-  --kesson-topbar-divider-color: rgba(var(--awareness-ui-text-rgb), 0.34);
-  --kesson-topbar-title-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
-  --kesson-topbar-title-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 1);
-  --kesson-topbar-subtitle-color: rgba(var(--awareness-ui-text-rgb), 0.82);
-  --kesson-topbar-meta-color: rgba(var(--awareness-ui-text-rgb), 0.78);
-  --kesson-topbar-meta-author-color: rgba(var(--awareness-ui-text-rgb), 0.8);
-  --kesson-topbar-link-color: rgba(var(--awareness-ui-text-rgb), 0.86);
-  --kesson-topbar-link-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 0.98);
-  --kesson-topbar-link-hover-bg: rgba(var(--awareness-ui-text-rgb), 0.12);
-  --kesson-topbar-note-divider-color: rgba(var(--awareness-ui-text-rgb), 0.26);
-  --kesson-topbar-note-color: rgba(var(--awareness-ui-text-rgb), 0.82);
-  --kesson-topbar-lang-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
-  --kesson-topbar-lang-border: rgba(var(--awareness-ui-text-rgb), 0.32);
-  --kesson-topbar-lang-bg: rgba(var(--awareness-ui-text-rgb), 0.1);
-  --kesson-topbar-nav-border: rgba(var(--awareness-ui-text-rgb), 0.22);
-  --kesson-topbar-toggler-border: rgba(var(--awareness-ui-text-rgb), 0.55);
-  --kesson-topbar-toggler-focus: rgba(var(--awareness-ui-text-rgb), 0.28);
+  --as-topbar-divider-color: rgba(var(--awareness-ui-text-rgb), 0.34);
+  --as-topbar-title-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
+  --as-topbar-title-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 1);
+  --as-topbar-subtitle-color: rgba(var(--awareness-ui-text-rgb), 0.82);
+  --as-topbar-meta-color: rgba(var(--awareness-ui-text-rgb), 0.78);
+  --as-topbar-meta-author-color: rgba(var(--awareness-ui-text-rgb), 0.8);
+  --as-topbar-link-color: rgba(var(--awareness-ui-text-rgb), 0.86);
+  --as-topbar-link-hover-color: rgba(var(--awareness-ui-text-strong-rgb), 0.98);
+  --as-topbar-link-hover-bg: rgba(var(--awareness-ui-text-rgb), 0.12);
+  --as-topbar-note-divider-color: rgba(var(--awareness-ui-text-rgb), 0.26);
+  --as-topbar-note-color: rgba(var(--awareness-ui-text-rgb), 0.82);
+  --as-topbar-lang-color: rgba(var(--awareness-ui-text-strong-rgb), 0.96);
+  --as-topbar-lang-border: rgba(var(--awareness-ui-text-rgb), 0.32);
+  --as-topbar-lang-bg: rgba(var(--awareness-ui-text-rgb), 0.1);
+  --as-topbar-nav-border: rgba(var(--awareness-ui-text-rgb), 0.22);
+  --as-topbar-toggler-border: rgba(var(--awareness-ui-text-rgb), 0.55);
+  --as-topbar-toggler-focus: rgba(var(--awareness-ui-text-rgb), 0.28);
   background:
     radial-gradient(circle at 18% 18%, rgba(46, 72, 116, 0.18), transparent 38%),
     radial-gradient(circle at 78% 28%, rgba(74, 114, 179, 0.14), transparent 42%),
@@ -91,7 +91,7 @@ body.awareness-page {
   border: 1px solid rgba(var(--color-accent), 0.16);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
   overflow: hidden;
-  transition: transform var(--kesson-transition-snappy), box-shadow var(--kesson-transition-snappy), border-color var(--kesson-transition-snappy);
+  transition: transform var(--ds-transition-snappy), box-shadow var(--ds-transition-snappy), border-color var(--ds-transition-snappy);
 }
 
 .img-card-media {
@@ -176,13 +176,13 @@ body.awareness-page {
 }
 
 .offcanvas-kesson {
-  --bs-offcanvas-width: var(--kesson-offcanvas-width);
-  width: var(--kesson-offcanvas-width);
-  background: var(--kesson-offcanvas-bg);
+  --bs-offcanvas-width: var(--as-offcanvas-width);
+  width: var(--as-offcanvas-width);
+  background: var(--as-offcanvas-bg);
 }
 
 .offcanvas-kesson .offcanvas-title {
-  color: var(--kesson-offcanvas-heading);
+  color: var(--as-offcanvas-heading);
   letter-spacing: 0.15em;
 }
 
@@ -195,7 +195,7 @@ body.awareness-page {
 }
 
 .offcanvas-kesson .offcanvas-body::-webkit-scrollbar-thumb {
-  background: var(--kesson-scrollbar-thumb);
+  background: var(--as-scrollbar-thumb);
   border-radius: 3px;
 }
 
