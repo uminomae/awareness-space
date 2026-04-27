@@ -7,14 +7,14 @@
 }
 
 .offcanvas-body::-webkit-scrollbar-thumb {
-  background: var(--kesson-scrollbar-thumb);
+  background: var(--as-scrollbar-thumb);
   border-radius: 3px;
 }
 
 .offcanvas-kesson {
-  --bs-offcanvas-width: var(--kesson-offcanvas-width);
-  width: var(--kesson-offcanvas-width);
-  background: var(--kesson-offcanvas-bg);
+  --bs-offcanvas-width: var(--as-offcanvas-width);
+  width: var(--as-offcanvas-width);
+  background: var(--as-offcanvas-bg);
 }
 
 .md-article {
@@ -30,34 +30,34 @@
 
 .md-body h1 {
   font-size: 1.2rem;
-  color: var(--kesson-md-h1);
+  color: var(--as-md-h1);
   margin: 2rem 0 0.8rem;
   line-height: 1.4;
 }
 
 .md-body h1:first-child {
   font-size: 1.3rem;
-  color: var(--kesson-md-h1-strong);
+  color: var(--as-md-h1-strong);
   margin-top: 0;
   margin-bottom: 1.2rem;
 }
 
 .md-body h2 {
   font-size: 1.05rem;
-  color: var(--kesson-md-h2);
+  color: var(--as-md-h2);
   margin: 1.8rem 0 0.7rem;
   line-height: 1.4;
 }
 
 .md-body h3 {
   font-size: 0.95rem;
-  color: var(--kesson-md-h3);
+  color: var(--as-md-h3);
   margin: 1.4rem 0 0.5rem;
 }
 
 .md-body h4 {
   font-size: 0.9rem;
-  color: var(--kesson-md-h4);
+  color: var(--as-md-h4);
   margin: 1.2rem 0 0.4rem;
 }
 
@@ -71,7 +71,7 @@
   border-left: 2px solid rgba(var(--color-accent), 0.15);
   padding-left: 1em;
   margin: 1em 0;
-  color: var(--kesson-md-quote);
+  color: var(--as-md-quote);
   font-style: italic;
 }
 
@@ -82,20 +82,20 @@
 }
 
 .md-body a:hover {
-  color: var(--kesson-md-link-hover);
+  color: var(--as-md-link-hover);
 }
 
 .md-body strong {
-  color: var(--kesson-md-strong);
+  color: var(--as-md-strong);
   font-weight: 600;
 }
 
 .md-body em {
-  color: var(--kesson-md-em);
+  color: var(--as-md-em);
 }
 
 .md-body pre {
-  background: var(--kesson-md-pre-bg);
+  background: var(--as-md-pre-bg);
   border: 1px solid rgba(var(--color-accent), 0.08);
   border-radius: 3px;
   padding: 1em 1.2em;
@@ -119,8 +119,8 @@
 .md-body code {
   font-family: 'SF Mono', 'Consolas', 'Monaco', 'Menlo', monospace;
   font-size: 0.85em;
-  color: var(--kesson-md-inline-code);
-  background: var(--kesson-md-inline-code-bg);
+  color: var(--as-md-inline-code);
+  background: var(--as-md-inline-code-bg);
   padding: 0.15em 0.4em;
   border-radius: 2px;
 }
@@ -157,13 +157,13 @@
 }
 
 .md-body th {
-  background: var(--kesson-md-table-head-bg);
-  color: var(--kesson-md-table-head-text);
+  background: var(--as-md-table-head-bg);
+  color: var(--as-md-table-head-text);
   font-weight: 500;
 }
 
 .md-body td {
-  color: var(--kesson-md-table-cell-text);
+  color: var(--as-md-table-cell-text);
 }
 
 .md-body img {

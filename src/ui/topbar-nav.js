@@ -1,4 +1,4 @@
-const TOPBAR_ACTUAL_HEIGHT_VAR = '--kesson-topbar-actual-height';
+const TOPBAR_ACTUAL_HEIGHT_VAR = '--as-topbar-actual-height';
 
 function syncTopbarHeight() {
     const topbar = document.getElementById('kesson-topbar');

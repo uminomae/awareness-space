@@ -32,12 +32,12 @@
 
 .about-trigger:focus-visible,
 .about-close:focus-visible {
-  outline: 2px solid var(--kesson-focus-ring);
+  outline: 2px solid var(--ds-focus-ring);
   outline-offset: 2px;
 }
 
 .about-trigger__letter {
-  font-family: var(--kesson-font-serif-ui);
+  font-family: var(--ds-font-serif-ui);
   font-size: 1.2rem;
   font-style: italic;
   line-height: 1;
@@ -115,7 +115,7 @@
 }
 
 .about-body {
-  font-family: var(--kesson-font-serif-display);
+  font-family: var(--ds-font-serif-display);
   color: rgba(var(--color-highlight), 0.86);
   font-size: 0.93rem;
   line-height: 1.95;
@@ -125,7 +125,7 @@
 .about-body h1,
 .about-body h2 {
   color: rgba(var(--color-heading), 0.94);
-  font-family: var(--kesson-font-serif-display);
+  font-family: var(--ds-font-serif-display);
   font-weight: 400;
   letter-spacing: 0.08em;
 }
