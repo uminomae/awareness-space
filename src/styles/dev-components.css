@@ -1,0 +1,67 @@
+/* dev-components.css — styles for dev-components.html (issue #28 dev HUD/Panel/Links 確認用) */
+
+body {
+  min-height: 100vh;
+  color: rgba(var(--color-sub-text), 0.84);
+  background:
+    radial-gradient(circle at top left, rgba(46, 72, 116, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(7, 12, 24, 0.98), rgba(4, 8, 16, 1));
+}
+
+main {
+  width: min(1120px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0 4rem;
+}
+
+.ds-hero,
+.ds-card {
+  border: 1px solid rgba(var(--color-accent), 0.14);
+  background:
+    radial-gradient(circle at top right, rgba(var(--color-accent), 0.08), transparent 38%),
+    rgba(9, 13, 24, 0.78);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.26);
+}
+
+.ds-hero {
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ds-card {
+  border-radius: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+.ds-kicker,
+.ds-chip,
+code {
+  font-family: var(--ds-font-mono-ui);
+}
+
+.ds-kicker,
+.ds-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--color-accent), 0.14);
+  background: rgba(var(--color-accent), 0.08);
+  color: rgba(var(--color-highlight), 0.84);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.ds-swatch {
+  height: 4.5rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(var(--color-heading), 0.08);
+}
