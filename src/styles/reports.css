@@ -1,7 +1,7 @@
 #model-section,
 #reports-section {
   position: relative;
-  z-index: 5;
+  z-index: var(--as-z-raised);
   --reports-font-mono: var(--ds-font-mono-ui);
   --reports-font-serif: var(--ds-font-serif-ui);
   --reports-font-sans: var(--as-font-sans-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
@@ -312,7 +312,7 @@
   appearance: none;
   -webkit-appearance: none;
   position: relative;
-  z-index: 2;
+  z-index: var(--as-z-content-2);
   display: inline-flex;
   align-items: center;
   justify-content: center;

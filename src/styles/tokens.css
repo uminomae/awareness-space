@@ -194,4 +194,21 @@
   /* --- graphic-switcher-* --- */
   --as-graphic-switcher-btn: 0.88rem;
   --as-graphic-switcher-label: 0.88rem;
+
+  /* --- z-index semantic layers (cs#233 と命名同型、claude 横断理解用) --- */
+  --as-z-content: 1;
+  --as-z-content-2: 2;
+  --as-z-raised: 5;
+  --as-z-ui-low: 10;
+  --as-z-ui-mid: 15;
+  --as-z-ui-mid-2: 20;
+  --as-z-ui-mid-3: 21;
+  --as-z-ui-high: 58;
+  --as-z-topbar: 60;
+  --as-z-about-overlay: 72;
+  --as-z-hud: 100;
+  --as-z-dev-overlay: 1001;
+  --as-z-dev-panel: 1200;
+  --as-z-slides: 1500;
+  --as-z-slides-top: 1510;
 }

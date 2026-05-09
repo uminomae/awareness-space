@@ -4,7 +4,7 @@
   position: fixed;
   top: calc(var(--as-topbar-height) + 0.7rem);
   left: 1rem;
-  z-index: 58;
+  z-index: var(--as-z-ui-high);
   display: flex;
   align-items: center;
   gap: 0.1rem;
@@ -51,7 +51,7 @@
 
 .nav-label {
   position: fixed;
-  z-index: 15;
+  z-index: var(--as-z-ui-mid);
   pointer-events: auto;
   cursor: pointer;
   background: none;
@@ -113,7 +113,7 @@
   position: fixed;
   top: 3%;
   left: 3%;
-  z-index: 10;
+  z-index: var(--as-z-ui-low);
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -139,7 +139,7 @@
   position: fixed;
   bottom: 8%;
   left: 5%;
-  z-index: 10;
+  z-index: var(--as-z-ui-low);
   pointer-events: none;
   text-align: left;
   opacity: 0.4;
@@ -208,14 +208,14 @@ html[lang="en"] #taglines {
 #hero-spacer {
   position: relative;
   height: 125vh;
-  z-index: 5;
+  z-index: var(--as-z-raised);
   pointer-events: none;
 }
 
 #articles-spacer {
   position: relative;
   height: 80vh;
-  z-index: 5;
+  z-index: var(--as-z-raised);
   pointer-events: none;
 }
 
@@ -224,7 +224,7 @@ html[lang="en"] #taglines {
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 15;
+  z-index: var(--as-z-ui-mid);
   text-align: center;
   pointer-events: none;
   opacity: 0;
@@ -265,7 +265,7 @@ html[lang="en"] #taglines {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  z-index: 15;
+  z-index: var(--as-z-ui-mid);
   text-align: center;
   text-decoration: none;
   transition: opacity 0.6s ease, visibility 0.6s ease;
@@ -292,7 +292,7 @@ html[lang="en"] #taglines {
   top: calc(var(--as-topbar-actual-height, var(--as-topbar-height)) + 6px);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 20;
+  z-index: var(--as-z-ui-mid-2);
   text-align: center;
   cursor: pointer;
   opacity: 0;
@@ -321,7 +321,7 @@ html[lang="en"] #taglines {
   position: fixed;
   top: calc(var(--as-topbar-actual-height, var(--as-topbar-height)) + 0.7rem);
   right: 1rem;
-  z-index: 10;
+  z-index: var(--as-z-ui-low);
   pointer-events: none;
   text-align: right;
   transition: opacity 0.6s ease;
@@ -413,7 +413,7 @@ html[lang="en"] #taglines {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  z-index: 20;
+  z-index: var(--as-z-ui-mid-2);
   --bs-btn-color: var(--as-action-text);
   --bs-btn-bg: var(--as-action-bg);
   --bs-btn-border-color: var(--as-action-border);
@@ -435,7 +435,7 @@ html[lang="en"] #taglines {
 
 .room-narration {
   position: relative;
-  z-index: 21;
+  z-index: var(--as-z-ui-mid-3);
   padding: 8rem 1.5rem 1.5rem;
   text-align: center;
 }
@@ -456,7 +456,7 @@ html[lang="en"] #taglines {
 
 .section-content-wrap {
   position: relative;
-  z-index: 20;
+  z-index: var(--as-z-ui-mid-2);
   padding: var(--ds-section-content-padding);
 }
 
@@ -530,7 +530,7 @@ html[lang="en"] #taglines {
 
 #tech-footer {
   position: relative;
-  z-index: 5;
+  z-index: var(--as-z-raised);
   text-align: left;
   padding: 2rem 3% 1.5rem;
   pointer-events: none;

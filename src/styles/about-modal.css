@@ -48,7 +48,7 @@
 #about-overlay {
   position: fixed;
   inset: 0;
-  z-index: 72;
+  z-index: var(--as-z-about-overlay);
   display: none;
   align-items: center;
   justify-content: center;
@@ -66,7 +66,7 @@
 
 .about-glass {
   position: relative;
-  z-index: 1;
+  z-index: var(--as-z-content);
   width: min(92vw, 640px);
   max-height: min(78vh, 760px);
   overflow-y: auto;
