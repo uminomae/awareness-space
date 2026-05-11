@@ -80,6 +80,14 @@ CSS（`src/styles/` 配下）を変更する前に:
 - 生 `rgba(100, 150, 255, ...)` を書かない (token 化必須)
 - action は accent-backed (cs の surface-based と対照)、typography は cs より tight
 
+### Bootstrap 優先原則
+
+- レイアウト（flex, grid, spacing）は Bootstrap ユーティリティクラスを最優先で使う
+- ボタンは Bootstrap `.btn` をベースとし、テーマ上書きはCSS変数で行う
+- レスポンシブ表示切替は Bootstrap の `d-{breakpoint}-*` クラスを使う
+- カスタム CSS は Bootstrap で実現不可能なもの（独自アニメーション、glassmorphism、Three.js連携、デザイントークン）に限定する
+- 新しいCSSプロパティを手書きする前に、同等の Bootstrap クラスが存在しないか確認する
+
 ## ディレクトリ構造
 
 | パス | 役割 |
