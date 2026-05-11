@@ -64,6 +64,22 @@
 - `bash server.sh` で `http://localhost:3003/` を起動する
 - `3003` は macOS の LaunchAgent で常時起動する前提で扱う
 
+## Design system
+
+CSS（`src/styles/` 配下）を変更する前に:
+1. `DESIGN.md` (root) を読む — design system 全体像 (Stitch DESIGN.md format, Claude Design 互換)
+2. `src/styles/tokens.css` を読む — source of truth (CSS custom properties)
+3. `dev-components.html` のソースを読み、変更対象の影響範囲を確認する
+
+並走ファイル: `src/styles/tokens.json` — W3C Design Tokens 形式 (機械可読補助)
+
+変更時の制約:
+- `--ds-*` token は cs/as/ks 横断で同型 (値同一)、as 固有は `--as-*` namespace
+- 色は `rgb()` ではなく `r, g, b` の 3 値で定義 (`rgba()` で透明度を柔軟に変えるため)
+- z-index は数値直書き禁止、`--as-z-*` semantic tokens を使う
+- 生 `rgba(100, 150, 255, ...)` を書かない (token 化必須)
+- action は accent-backed (cs の surface-based と対照)、typography は cs より tight
+
 ## ディレクトリ構造
 
 | パス | 役割 |
